@@ -2,39 +2,41 @@ package modelo;
 
 import java.io.Serializable;
 import java.util.Date;
-import modelo.enums.TipoPessoa;
+import modelo.enums.TipoFuncionario;
 
 /**
  *
  * @author Maíra & Rafael
  */
-public abstract class Funcionario extends PessoaFisica implements Serializable {
+public abstract class Funcionario extends Pessoa implements Serializable {
     
     private static final long serialVersionUID = 1L;  
-    private Integer codFunc;
+    private Integer codigoFunc;
     private String cargo;
     private String permissao;
     private String nomeUsuario;
     private String senha;    
     private Date dtAdmissao;
-    private Date dtDemissao;
+    private Date dtLimiteLogin;
+    private TipoFuncionario tipoFuncionario;
         
     public Funcionario (){}
 
-    public Funcionario(Integer codFunc,String cargo, String permissao, String nomeUsuario, String senha, 
-                       Date dtAdmissao, Date dtDemissao, String rg, String cpf, String nome, 
-                       Endereco endereco, Contato contato, TipoPessoa tipoPessoa) {
+    public Funcionario(Integer codigoFunc, String cargo, String permissao, String nomeUsuario, String senha, 
+                       Date dtAdmissao, Date dtLimiteLogin, TipoFuncionario tipoFuncionario, Endereco endereco, 
+                       Contato contato, String rg, String cpf, String nome, Date dataNasc) {
         
-        super(rg, cpf, nome, endereco, contato, tipoPessoa);
-        this.codFunc = codFunc;
+        super(endereco, contato, rg, cpf, nome, dataNasc);
+        this.codigoFunc = codigoFunc;
         this.cargo = cargo;
         this.permissao = permissao;
         this.nomeUsuario = nomeUsuario;
         this.senha = senha;
         this.dtAdmissao = dtAdmissao;
-        this.dtDemissao = dtDemissao;
+        this.dtLimiteLogin = dtLimiteLogin;
+        this.tipoFuncionario = tipoFuncionario;
     }
-   
+
     public String getCargo() {
         return cargo;
     }
@@ -75,24 +77,34 @@ public abstract class Funcionario extends PessoaFisica implements Serializable {
         this.dtAdmissao = dtAdmissao;
     }
 
-    public Date getDtDemissao() {
-        return dtDemissao;
+    public Date getDtLimiteLogin() {
+        return dtLimiteLogin;
     }
 
-    public void setDtDemissao(Date dtDemissao) {
-        this.dtDemissao = dtDemissao;
+    public void setDtLimiteLogin(Date dtLimiteLogin) {
+        this.dtLimiteLogin = dtLimiteLogin;
     }
 
-    public Integer getCodFunc() {
-        return codFunc;
+    public Integer getCodigoFunc() {
+        return codigoFunc;
     }
 
-    public void setCodFunc(Integer codFunc) {
-        this.codFunc = codFunc;
+    public void setCodigoFunc(Integer codigoFunc) {
+        this.codigoFunc = codigoFunc;
+    }
+
+    public TipoFuncionario getTipoFuncionario() {
+        return tipoFuncionario;
+    }
+
+    public void setTipoFuncionario(TipoFuncionario tipoFuncionario) {
+        this.tipoFuncionario = tipoFuncionario;
     }
 
     @Override
     public String toString() {
-        return "Funcionario{" + "codFunc=" + codFunc + ", cargo=" + cargo + ", permissao=" + permissao + ", nomeUsuario=" + nomeUsuario + ", senha=" + senha + ", dtAdmissao=" + dtAdmissao + ", dtDemissao=" + dtDemissao + '}';
-    }
+        return "Funcionario{" + "codigoFunc=" + codigoFunc + ", cargo=" + cargo + ", permissao=" + permissao + 
+                            ", nomeUsuario=" + nomeUsuario + ", senha=" + senha + ", dtAdmissao=" + dtAdmissao + 
+                            ", dtLimiteLogin=" + dtLimiteLogin + ", tipoFuncionario=" + tipoFuncionario + '}';
+    }    
 }

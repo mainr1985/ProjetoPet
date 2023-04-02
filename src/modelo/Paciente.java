@@ -2,6 +2,7 @@ package modelo;
 
 import java.io.Serializable;
 import java.util.Date;
+import modelo.enums.TipoEspecie;
 
 /**
  *
@@ -10,11 +11,35 @@ import java.util.Date;
 public class Paciente implements Serializable{
     
     private static final long serialVersionUID = 1L; 
+    
+    private Integer codigoPaciente;
     private String nome;
-    private String raca;
-    private Date nascimento;
     private Integer idade;
+    private Date dtNascimento;    
+    private String raca;
     private Tutor tutor;
+    private TipoEspecie especie;
+
+    public Paciente() {
+    }
+
+    public Paciente(Integer codigoPaciente, String nome, Integer idade, Date dtNascimento, String raca, Tutor tutor, TipoEspecie especie) {
+        this.codigoPaciente = codigoPaciente;
+        this.nome = nome;
+        this.idade = idade;
+        this.dtNascimento = dtNascimento;
+        this.raca = raca;
+        this.tutor = tutor;
+        this.especie = especie;
+    }
+
+    public Integer getCodigoPaciente() {
+        return codigoPaciente;
+    }
+
+    public void setCodigoPaciente(Integer codigoPaciente) {
+        this.codigoPaciente = codigoPaciente;
+    }
     
     public void setNome (String nome)
     {
@@ -36,14 +61,14 @@ public class Paciente implements Serializable{
         return this.raca;
     }
     
-    public void setNascimento(Date nascimento)
+    public void setDtNascimento(Date dtNascimento)
     {
-        this.nascimento = nascimento;
+        this.dtNascimento = dtNascimento;
     }
     
-    public Date getNascimento()
+    public Date getDtNascimento()
     {
-        return this.nascimento;
+        return this.dtNascimento;
     }
     
     public void setIdade(Integer idade)
@@ -64,8 +89,17 @@ public class Paciente implements Serializable{
         this.tutor = tutor;
     }   
 
+    public TipoEspecie getEspecie() {
+        return especie;
+    }
+
+    public void setEspecie(TipoEspecie especie) {
+        this.especie = especie;
+    }
+
     @Override
     public String toString() {
-        return "Paciente{" + "nome=" + nome + ", raca=" + raca + ", nascimento=" + nascimento + ", idade=" + idade + ", tutor=" + tutor + '}';
+        return "Paciente{" + "codigoPaciente=" + codigoPaciente + ", nome=" + nome + ", idade=" + idade + 
+                         ", dtNascimento=" + dtNascimento + ", raca=" + raca + ", tutor=" + tutor + ", especie=" + especie + '}';
     }
 }

@@ -1,7 +1,6 @@
 package modelo;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  *
@@ -11,15 +10,19 @@ public class Afericao implements Serializable{
     
    private static final long serialVersionUID = 1L;  
    private Integer codigo;
-   private Double tempMin, tempMax, tempMomento;
+   private Double tempMin, tempMax;
    private Veterinario responsavel;
+   private String equipamento;
+   private String observacoes;
     
-   public Afericao(Integer codigo, Double tempMin, Double tempMax, Double tempMomento, Veterinario responsavel) {
+   public Afericao(Integer codigo, Double tempMin, Double tempMax, Veterinario responsavel, String equipamento, String observacoes) {
+        
         this.codigo = codigo;
         this.tempMin = tempMin;
-        this.tempMax = tempMax;
-        this.tempMomento = tempMomento;
+        this.tempMax = tempMax;        
         this.responsavel = responsavel;
+        this.equipamento = equipamento;
+        this.observacoes = observacoes;
     }
     
     public Integer getCodigo() {
@@ -46,14 +49,6 @@ public class Afericao implements Serializable{
         this.tempMax = tempMax;
     }
 
-    public Double getTempMomento() {
-        return tempMomento;
-    }
-
-    public void setTempMomento(Double tempMomento) {
-        this.tempMomento = tempMomento;
-    }
-
     public Veterinario getResponsavel() {
         return responsavel;
     }
@@ -62,37 +57,29 @@ public class Afericao implements Serializable{
         this.responsavel = responsavel;
     }
     
-    public void cadastrarMedicao(Afericao temperatura){
-        
-    }    
-    
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 37 * hash + Objects.hashCode(this.codigo);
-        return hash;
+    public String getEquipamento() {
+        return equipamento;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Afericao other = (Afericao) obj;
-        if (!Objects.equals(this.codigo, other.codigo)) {
-            return false;
-        }
-        return true;
+    public String getObservacoes() {
+        return observacoes;
+    }
+
+    public void setObservacoes(String observacoes) {
+        this.observacoes = observacoes;
+    }
+
+    public void setEquipamento(String equipamento) {
+        this.equipamento = equipamento;
+    }
+
+    public void cadastrarMedicao(Afericao temperatura){
+        
     }    
 
     @Override
     public String toString() {
-        return "Afericao{" + "codigo=" + codigo + ", tempMin=" + tempMin + ", tempMax=" + tempMax + ", tempMomento=" + tempMomento + ", responsavel=" + responsavel + '}';
-    }
+        return "Afericao{" + "codigo=" + codigo + ", tempMin=" + tempMin + ", tempMax=" + tempMax + ", responsavel=" + responsavel + 
+                ", equipamento=" + equipamento + ", observacoes=" + observacoes + '}';
+    }   
 }

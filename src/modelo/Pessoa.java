@@ -1,7 +1,7 @@
 package modelo;
 
 import java.io.Serializable;
-import modelo.enums.TipoPessoa;
+import java.util.Date;
 
 /**
  *
@@ -14,17 +14,19 @@ public class Pessoa implements Serializable{
     private String rg;
     private String cpf;
     private String nome;
-    private Date dtNascimento;
-
+    private Date dataNasc;
 
     public Pessoa() {
     }
 
-    public Pessoa(Endereco endereco, Contato contato, TipoPessoa tipoPessoa) {
+    public Pessoa(Endereco endereco, Contato contato, String rg, String cpf, String nome, Date dataNasc) {
         this.endereco = endereco;
         this.contato = contato;
-        this.tipoPessoa = tipoPessoa;
-    }
+        this.rg = rg;
+        this.cpf = cpf;
+        this.nome = nome;
+        this.dataNasc = dataNasc;
+    }   
 
     public Endereco getEndereco() {
         return endereco;
@@ -42,16 +44,40 @@ public class Pessoa implements Serializable{
         this.contato = contato;
     }
 
-    public TipoPessoa getTipoPessoa() {
-        return tipoPessoa;
+    public String getRg() {
+        return rg;
     }
 
-    public void setTipoPessoa(TipoPessoa tipoPessoa) {
-        this.tipoPessoa = tipoPessoa;
+    public void setRg(String rg) {
+        this.rg = rg;
     }
 
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Date getDataNasc() {
+        return dataNasc;
+    }
+
+    public void setDataNasc(Date dataNasc) {
+        this.dataNasc = dataNasc;
+    }
+    
     @Override
     public String toString() {
-        return "Pessoa{" + "endereco=" + endereco + ", contato=" + contato + ", tipoPessoa=" + tipoPessoa + '}';
+        return "Pessoa{" + "endereco=" + endereco + ", contato=" + contato + '}';
     }
 }

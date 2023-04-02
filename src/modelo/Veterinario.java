@@ -2,7 +2,7 @@ package modelo;
 
 import java.io.Serializable;
 import java.util.Date;
-import modelo.enums.TipoPessoa;
+import modelo.enums.TipoFuncionario;
 
 /**
  *
@@ -17,11 +17,10 @@ public class Veterinario extends Funcionario implements Serializable{
     public Veterinario(){
     }
 
-    public Veterinario(Integer crmv, String especialidade, String cargo, String permissao, 
-                       String nomeUsuario, String senha, Date dtAdmissao, Date dtDemissao, String rg, String cpf, 
-                       String nome, Endereco endereco, Contato contato, TipoPessoa tipoPessoa) {
+    public Veterinario(Integer crmv, String especialidade, Integer codigoFunc, String cargo, String permissao, String nomeUsuario, String senha, Date dtAdmissao, Date dtLimiteLogin, TipoFuncionario tipoFuncionario, 
+                       Endereco endereco, Contato contato, String rg, String cpf, String nome, Date dataNasc) {
         
-        super(cargo, permissao, nomeUsuario, senha, dtAdmissao, dtDemissao, rg, cpf, nome, endereco, contato, tipoPessoa);
+        super(codigoFunc, cargo, permissao, nomeUsuario, senha, dtAdmissao, dtLimiteLogin, tipoFuncionario, endereco, contato, rg, cpf, nome, dataNasc);
         this.crmv = crmv;
         this.especialidade = especialidade;
     }
@@ -45,5 +44,5 @@ public class Veterinario extends Funcionario implements Serializable{
     @Override
     public String toString() {
         return "Veterinario{" + "crmv=" + crmv + ", especialidade=" + especialidade + '}';
-    }    
+    }
 }

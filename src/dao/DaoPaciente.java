@@ -11,7 +11,7 @@ import modelo.Veterinario;
  *
  * @author Maíra
  */
-public class DaoFuncionario extends DaoFactory{
+public class DaoPaciente extends DaoFactory{
             
     public void salvarFuncionario(Veterinario v) throws SQLException{
         

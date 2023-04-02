@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
 
 import java.sql.Connection;
@@ -25,7 +20,7 @@ public class DaoTutor extends DaoFactory{
         
        String insert = "INSERT INTO tutor (codtutor,cpf,rg,nome,endereco,numero,complemento,bairro,cidade,dtcadastro) VALUES (?,?,?,?,?,?,?,?,?,sysdate)";
        salvar (insert,
-               t.getCodTutor(),
+               t.getCodigoTutor(),
                t.getCpf(),
                t.getRg(),
                t.getNome(),
