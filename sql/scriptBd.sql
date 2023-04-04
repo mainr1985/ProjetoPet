@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS funcionario ( id_funcionario serial NOT NULL, cpf var
                                          cidade character varying(40), cargo character varying(30), nomeusuario character varying(20),
                                          senha character varying(10), permissao character varying(30), email character varying(30),
                                          dtnascimento date, dtadmissao date, dtdemissao date, tipo_funcionario tipofuncionario not null,
+                                                
                                          CONSTRAINT funcionario_pkey PRIMARY KEY (id_funcionario),
                                          CONSTRAINT funcionario_cpf_key UNIQUE (cpf) );
 
@@ -63,3 +64,12 @@ create table if not exists afericao (codafericao serial not null primary key,
 				     equipamento varchar(30) not null,
 				     observacoes varchar(300) not null,
 				     constraint fk_crmv_responsavel foreign key (crmv_responsavel) references veterinario(crmv));
+
+/*Tabela Endereco*/
+create table if not exists endereco (codEndereco serial not null primary key,
+				     logradouro varchar(40) not null,
+				     numero integer not null,
+				     complemento varchar(40) not null,
+				     cidade varchar(40) not null,
+                                     bairro varchar(40) not null
+				     );

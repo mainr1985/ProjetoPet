@@ -22,11 +22,11 @@ public abstract class Funcionario extends Pessoa implements Serializable {
         
     public Funcionario (){}
 
-    public Funcionario(Integer codigoFunc, String cargo, String permissao, String nomeUsuario, String senha, 
-                       Date dtAdmissao, Date dtLimiteLogin, TipoFuncionario tipoFuncionario, Endereco endereco, 
-                       Contato contato, String rg, String cpf, String nome, Date dataNasc) {
+    public Funcionario(Integer codigoFunc, String cargo, String permissao, String nomeUsuario, String senha, Date dtAdmissao, Date dtLimiteLogin, 
+                       TipoFuncionario tipoFuncionario, String rg, String cpf, String nome, Date dataNasc, String email, String endereco, String complemento, 
+                       String bairro, String cidade, String telefone) {
         
-        super(endereco, contato, rg, cpf, nome, dataNasc);
+        super(rg, cpf, nome, dataNasc, email, endereco, complemento, bairro, cidade, telefone);
         this.codigoFunc = codigoFunc;
         this.cargo = cargo;
         this.permissao = permissao;

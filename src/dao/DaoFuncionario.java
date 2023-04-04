@@ -13,24 +13,18 @@ import modelo.Veterinario;
  */
 public class DaoFuncionario extends DaoFactory{
             
-    public void salvarFuncionario(Veterinario v) throws SQLException{
+    public void salvarFuncionario(Veterinario veterinario) throws SQLException{
         
        String insert = "INSERT INTO funcionario "
                      + " (cpf, rg, nome, cargo, endereco /*, email, endereco, numero, complemento, cidade, dtnascimento, dtdemissao*/) "
                      + " VALUES (?,?,?,?,?/*,?,?,?,?,?,?*/)";
        
        salvar (insert, 
-               v.getCpf(),               
-               v.getRg(),               
-               v.getNome(),
-               v.getCargo(),
-               v.getEndereco().getLogradouro());//,
-               //v.getEndereco().getLogradouro(),
-               //v.getEndereco().getNumero(),
-               //v.getEndereco().getComplemento());
-               //v.getEndereco().getBairro(),
-               //v.getEndereco().getCidade(),
-//               v.getContato().getEmail());       
+               veterinario.getCpf(),               
+               veterinario.getRg(),               
+               veterinario.getNome(),
+               veterinario.getCargo(),
+               veterinario.getEndereco());               
     }    
         
     //DESCOBRIR COMO PEGAR O ID DO USUARIO CLICADO PARA PASSAR PRO UPDATE -> NÃO É INSERT!

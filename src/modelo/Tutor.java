@@ -16,8 +16,10 @@ public class Tutor extends Pessoa implements Serializable{
     public Tutor(){        
     }
 
-    public Tutor(Integer codigoTutor, Date dtCadastro, Endereco endereco, Contato contato, String rg, String cpf, String nome, Date dataNasc) {
-        super(endereco, contato, rg, cpf, nome, dataNasc);
+    public Tutor(Integer codigoTutor, Date dtCadastro, String rg, String cpf, String nome, Date dataNasc, String email, String endereco, 
+                 String complemento, String bairro, String cidade, String telefone) {
+        
+        super(rg, cpf, nome, dataNasc, email, endereco, complemento, bairro, cidade, telefone);
         this.codigoTutor = codigoTutor;
         this.dtCadastro = dtCadastro;
     }

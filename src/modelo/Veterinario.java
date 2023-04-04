@@ -17,10 +17,11 @@ public class Veterinario extends Funcionario implements Serializable{
     public Veterinario(){
     }
 
-    public Veterinario(Integer crmv, String especialidade, Integer codigoFunc, String cargo, String permissao, String nomeUsuario, String senha, Date dtAdmissao, Date dtLimiteLogin, TipoFuncionario tipoFuncionario, 
-                       Endereco endereco, Contato contato, String rg, String cpf, String nome, Date dataNasc) {
+    public Veterinario(Integer crmv, String especialidade, Integer codigoFunc, String cargo, String permissao, String nomeUsuario, String senha, 
+                       Date dtAdmissao, Date dtLimiteLogin, TipoFuncionario tipoFuncionario, String rg, String cpf, String nome, Date dataNasc, 
+                       String email, String endereco, String complemento, String bairro, String cidade, String telefone) {
         
-        super(codigoFunc, cargo, permissao, nomeUsuario, senha, dtAdmissao, dtLimiteLogin, tipoFuncionario, endereco, contato, rg, cpf, nome, dataNasc);
+        super(codigoFunc, cargo, permissao, nomeUsuario, senha, dtAdmissao, dtLimiteLogin, tipoFuncionario, rg, cpf, nome, dataNasc, email, endereco, complemento, bairro, cidade, telefone);
         this.crmv = crmv;
         this.especialidade = especialidade;
     }

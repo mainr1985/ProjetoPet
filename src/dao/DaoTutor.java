@@ -16,15 +16,15 @@ public class DaoTutor extends DaoFactory{
     private PreparedStatement ps;
     private ResultSet r;
         
-    public void salvar(Tutor t) throws SQLException{
+    public void salvar(Tutor tutor) throws SQLException{
         
        String insert = "INSERT INTO tutor (codtutor,cpf,rg,nome,endereco,numero,complemento,bairro,cidade,dtcadastro) VALUES (?,?,?,?,?,?,?,?,?,sysdate)";
        salvar (insert,
-               t.getCodigoTutor(),
-               t.getCpf(),
-               t.getRg(),
-               t.getNome(),
-               t.getEndereco()
+               tutor.getCodigoTutor(),
+               tutor.getCpf(),
+               tutor.getRg(),
+               tutor.getNome(),
+               tutor.getEndereco()
                /*t.getNumero(),
                t.getComplemento(),
                t.getBairro(),
