@@ -5,6 +5,8 @@ import java.text.ParseException;
 import modelo.Veterinario;
 import dao.DaoFuncionario;
 import dao.DaoVeterinario;
+import java.util.Date;
+import modelo.enums.TipoFuncionario;
 
 /**
  *
@@ -14,87 +16,63 @@ public class ControleFuncionario{
 
     public ControleFuncionario() {}
     
-    public void salvarVeterinario (Integer crmv, String especialidade, /*Integer codFuncionario,*/ 
-                                   String nome, String cpf, String rg, String cargo
-                                   
-                                   /*String dtcadastro,*/ /*String logradouro, 
-                                   Integer numero, String complemento, String bairro, String cidade,/*String ddd, String telefone, String dddcel, 
-                                   String celular, String email*/
-                                   ) throws SQLException, ParseException{
+    public void salvarVeterinario (Integer codFuncionario, String nome, String rg, String cpf, Date dtNasc, Date dtCadastro, Date dtAdmissao, 
+                                   String endereco, String complemento, String bairro, String cidade, String telefone, String celular, 
+                                   String email, String cargo, Integer crmv, String especialidade) throws SQLException, ParseException{
         
-        Veterinario v = new Veterinario(); 
+        Veterinario veterinario = new Veterinario(); 
                
-            v.setCrmv(crmv);
-            v.setEspecialidade(especialidade);        
+        veterinario.setNome(nome);
+        veterinario.setRg(rg);
+        veterinario.setCpf(cpf);
+        veterinario.setDataNasc(dtNasc);
+        veterinario.setDtCadastro(dtCadastro);
+        veterinario.setDtAdmissao(dtAdmissao);
+        veterinario.setEndereco(endereco);
+        veterinario.setComplemento(complemento);
+        veterinario.setBairro(bairro);
+        veterinario.setTelefone(telefone);
+        veterinario.setCelular(celular);
+        veterinario.setEmail(email);
+        veterinario.setCrmv(crmv);
+        veterinario.setEspecialidade(especialidade);        
+        veterinario.setCargo(TipoFuncionario.VETERINARIO);
+        
             //v.setCodFuncionario(codFuncionario);
             //v.setCodFuncionario(new DaoFuncionario().getCodigoFuncionario(v));
-            v.setNome(nome);
-            v.setCpf(cpf);
-            v.setRg(rg);
-            v.setCargo(cargo);
-            
-            //v.getEndereco().setLogradouro(logradouro);
-            //v.getEndereco().setNumero(numero);
-            //v.getEndereco().setComplemento(complemento);
-            //v.getEndereco().setBairro(bairro);
-            //v.getEndereco().setCidade(cidade);  
-            //v.getContato().setEmail(email);
-           
-            
-            //v.getContato().setDdd(ddd);
-            //v.getContato().setNumero(telefone);
-            
-            //consertar daovet e testar
         
-            new DaoFuncionario().salvarFuncionario(v);            
-            new DaoVeterinario().salvar(v);
-        }        
+        new DaoFuncionario().salvarFuncionario(veterinario);            
+        new DaoVeterinario().salvar(veterinario);
+    }        
      
          
     //INCLUIR ASSISTENTE
-    public void salvarAssistente (String rg, String cpf, String nome, String cargo, String logradouro) throws SQLException{
-        Veterinario v = new Veterinario();
+    public void salvarAssistente (String rg, String cpf, String nome, TipoFuncionario cargo, String endereco) throws SQLException{
+        Veterinario assistente = new Veterinario();
          
             //v.setCodFuncionario(codFuncionario);
-            v.setRg(rg);
-            v.setCpf(cpf);
-            v.setNome(nome);
-            v.setCargo(cargo);
-            v.getEndereco().setLogradouro(logradouro);
+            assistente.setRg(rg);
+            assistente.setCpf(cpf);
+            assistente.setNome(nome);
+            assistente.setCargo(TipoFuncionario.ASSISTENTE);
             
-            new DaoFuncionario().salvarFuncionario(v);
-         }
+            
+            new DaoFuncionario().salvarFuncionario(assistente);
+        
     
-                                   /*String endereco,
-                                   String complemento,
-                                   String bairro,
-                                   String cidade,
-                                   String telefone,
-                                   String celular,
-                                   String email) throws SQLException, ParseException{
-        
-        /*v.setEndereco(endereco);
-        v.setComplemento(complemento);
-        v.setBairro(bairro);
-        v.setCidade(cidade);
-        v.setTelefone(telefone);
-        
-        new DaoFuncionario().salvarFuncionario(v);
-        new DaoFuncionario().salvar(v);
-    }    */
+    }    
     
     //INCLUIR ADMINISTRADOR
-    /*public void salvarAdm (Integer codFuncionario, String rg, String cpf, String nome, String cargo) throws SQLException{
-        Veterinario v = new Veterinario();
+    public void salvarAdministrador (String rg, String cpf, String nome, TipoFuncionario cargo, String endereco) throws SQLException{
+        Veterinario administrador = new Veterinario();
+         
+            //v.setCodFuncionario(codFuncionario);
+            administrador.setRg(rg);
+            administrador.setCpf(cpf);
+            administrador.setNome(nome);
+            administrador.setCargo(TipoFuncionario.ADMINISTRADOR);
             
-            v.setCodFuncionario(codFuncionario);
-            v.setRg(rg);
-            v.setCpf(cpf);
-            v.setNome(nome);
-            v.setCargo("Administrador");
-        
-            new DaoFuncionario().salvarFuncionario(v);
-         }
-    }*/
-    
-}
+            
+            new DaoFuncionario().salvarFuncionario(administrador);
+    }
+}    

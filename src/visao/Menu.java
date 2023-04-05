@@ -4012,7 +4012,9 @@ public class Menu extends javax.swing.JFrame {
         int cargo = cmbCargo.getSelectedIndex();
         if (cargo==0){
             try{
-               controleFuncionario.salvarVeterinario(Integer.parseInt(txtCrmv.getText()), 
+               controleFuncionario.salvarVeterinario(cargo, especialidade, cargo, nome, cpf, rg, cargo, dtAdmissao, endereco, complemento, bairro, cidade, telefone, celular, email);
+                
+                controleFuncionario.salvarVeterinario(Integer.parseInt(txtCrmv.getText()), 
                                     txtEspecialidade.getText(),
                                     txtNomeFuncNovo.getText(),
                                     txtCPF_Func.getText(),

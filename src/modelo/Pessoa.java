@@ -20,12 +20,13 @@ public class Pessoa implements Serializable{
     private String bairro;
     private String cidade;
     private String telefone;
+    private String celular;
     
 
     public Pessoa() {
     }
 
-    public Pessoa(String rg, String cpf, String nome, Date dataNasc, String email, String endereco, String complemento, String bairro, String cidade, String telefone) {
+    public Pessoa(String rg, String cpf, String nome, Date dataNasc, String email, String endereco, String complemento, String bairro, String cidade, String telefone, String celular) {
         this.rg = rg;
         this.cpf = cpf;
         this.nome = nome;
@@ -36,6 +37,7 @@ public class Pessoa implements Serializable{
         this.bairro = bairro;
         this.cidade = cidade;
         this.telefone = telefone;
+        this.celular = celular;
     }
 
     public String getRg() {
@@ -118,9 +120,16 @@ public class Pessoa implements Serializable{
         this.telefone = telefone;
     }
 
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+
     @Override
     public String toString() {
-        return "Pessoa{" + "rg=" + rg + ", cpf=" + cpf + ", nome=" + nome + ", dataNasc=" + dataNasc + ", email=" + email + 
-                       ", endereco=" + endereco + ", complemento=" + complemento + ", bairro=" + bairro + ", cidade=" + cidade + ", telefone=" + telefone + '}';
+        return "Pessoa{" + "rg=" + rg + ", cpf=" + cpf + ", nome=" + nome + ", dataNasc=" + dataNasc + ", email=" + email + ", endereco=" + endereco + ", complemento=" + complemento + ", bairro=" + bairro + ", cidade=" + cidade + ", telefone=" + telefone + ", celular=" + celular + '}';
     }
 }

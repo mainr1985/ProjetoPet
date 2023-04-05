@@ -64,12 +64,3 @@ create table if not exists afericao (codafericao serial not null primary key,
 				     equipamento varchar(30) not null,
 				     observacoes varchar(300) not null,
 				     constraint fk_crmv_responsavel foreign key (crmv_responsavel) references veterinario(crmv));
-
-/*Tabela Endereco*/
-create table if not exists endereco (codEndereco serial not null primary key,
-				     logradouro varchar(40) not null,
-				     numero integer not null,
-				     complemento varchar(40) not null,
-				     cidade varchar(40) not null,
-                                     bairro varchar(40) not null
-				     );
