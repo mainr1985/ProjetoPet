@@ -16,15 +16,17 @@ public class DaoFuncionario extends DaoFactory{
     public void salvarFuncionario(Veterinario veterinario) throws SQLException{
         
        String insert = "INSERT INTO funcionario "
-                     + " (cpf, rg, nome, cargo, endereco /*, email, endereco, numero, complemento, cidade, dtnascimento, dtdemissao*/) "
-                     + " VALUES (?,?,?,?,?/*,?,?,?,?,?,?*/)";
+                     + " (cpf, rg, nome, cargo, endereco , email, endereco, complemento, cidade/*, dtnascimento, dtdemissao*/) "
+                     + " VALUES (?,?,?,?,?,?,?,?,?/*,?,?*/)";
        
        salvar (insert, 
                veterinario.getCpf(),               
                veterinario.getRg(),               
                veterinario.getNome(),
                veterinario.getCargo(),
-               veterinario.getEndereco());               
+               veterinario.getEndereco(),
+               veterinario.getComplemento(),
+               veterinario.getCidade());               
     }    
         
     //DESCOBRIR COMO PEGAR O ID DO USUARIO CLICADO PARA PASSAR PRO UPDATE -> NÃO É INSERT!

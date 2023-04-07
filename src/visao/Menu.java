@@ -8,7 +8,7 @@ import java.text.ParseException;
 import javax.swing.DefaultComboBoxModel;
 import modelo.enums.TipoFuncionario;
 import modelo.enums.TipoEspecie;
-
+import modelo.Veterinario;
 
 /**
  *
@@ -245,7 +245,7 @@ public class Menu extends javax.swing.JFrame {
         txtRgFunc = new javax.swing.JFormattedTextField();
         jLabel242 = new javax.swing.JLabel();
         jLabel247 = new javax.swing.JLabel();
-        txtDtNascFunc6 = new javax.swing.JFormattedTextField();
+        txtDtNascFunc = new javax.swing.JFormattedTextField();
         jLabel248 = new javax.swing.JLabel();
         cmbCargo = new javax.swing.JComboBox<>();
         jLabel249 = new javax.swing.JLabel();
@@ -254,19 +254,19 @@ public class Menu extends javax.swing.JFrame {
         txtCrmv = new javax.swing.JTextField();
         lblCrmv4 = new javax.swing.JLabel();
         jLabel250 = new javax.swing.JLabel();
-        txtDtAdmissao6 = new javax.swing.JFormattedTextField();
+        txtDtAdmissao = new javax.swing.JFormattedTextField();
         jLabel260 = new javax.swing.JLabel();
-        txtLogFunc3 = new javax.swing.JTextField();
+        txtEndFunc = new javax.swing.JTextField();
         jLabel265 = new javax.swing.JLabel();
-        txtComplFunc3 = new javax.swing.JTextField();
+        txtComplFunc = new javax.swing.JTextField();
         jLabel266 = new javax.swing.JLabel();
-        txtBairroFunc3 = new javax.swing.JTextField();
+        txtBairroFunc = new javax.swing.JTextField();
         jLabel268 = new javax.swing.JLabel();
-        txtCidadeFunc3 = new javax.swing.JTextField();
+        txtCidadeFunc = new javax.swing.JTextField();
         jLabel269 = new javax.swing.JLabel();
-        txtTelFixoFunc6 = new javax.swing.JFormattedTextField();
+        txtTelFixoFunc = new javax.swing.JFormattedTextField();
         jLabel271 = new javax.swing.JLabel();
-        txtCelularFunc6 = new javax.swing.JFormattedTextField();
+        txtCelularFunc = new javax.swing.JFormattedTextField();
         jLabel272 = new javax.swing.JLabel();
         txtEmailFunc = new javax.swing.JTextField();
         btnSalvaFuncionario = new javax.swing.JButton();
@@ -2286,13 +2286,13 @@ public class Menu extends javax.swing.JFrame {
         jLabel247.setText("Dt. Nascimento:");
 
         try {
-            txtDtNascFunc6.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            txtDtNascFunc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        txtDtNascFunc6.addActionListener(new java.awt.event.ActionListener() {
+        txtDtNascFunc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDtNascFunc6ActionPerformed(evt);
+                txtDtNascFuncActionPerformed(evt);
             }
         });
 
@@ -2330,13 +2330,13 @@ public class Menu extends javax.swing.JFrame {
         jLabel250.setText("Dt. Admissão:");
 
         try {
-            txtDtAdmissao6.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            txtDtAdmissao.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        txtDtAdmissao6.addActionListener(new java.awt.event.ActionListener() {
+        txtDtAdmissao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDtAdmissao6ActionPerformed(evt);
+                txtDtAdmissaoActionPerformed(evt);
             }
         });
 
@@ -2356,7 +2356,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel269.setText("Telefone:");
 
         try {
-            txtTelFixoFunc6.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
+            txtTelFixoFunc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -2365,7 +2365,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel271.setText("Celular:");
 
         try {
-            txtCelularFunc6.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)9####-####")));
+            txtCelularFunc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)9####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -2403,11 +2403,6 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jPanel53Layout.createSequentialGroup()
                 .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel53Layout.createSequentialGroup()
-                        .addGap(344, 344, 344)
-                        .addComponent(btnSalvaFuncionario)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnCancelarFunc7))
-                    .addGroup(jPanel53Layout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel53Layout.createSequentialGroup()
@@ -2420,17 +2415,22 @@ public class Menu extends javax.swing.JFrame {
                                     .addComponent(jLabel272))
                                 .addGap(46, 46, 46)
                                 .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtLogFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtTelFixoFunc6, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtCelularFunc6, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtEndFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtTelFixoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtCelularFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtEmailFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txtBairroFunc3)
-                                        .addComponent(txtCidadeFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(jPanel53Layout.createSequentialGroup()
+                                        .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtBairroFunc)
+                                            .addComponent(txtCidadeFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(140, 140, 140)
+                                        .addComponent(btnSalvaFuncionario)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnCancelarFunc7))))
                             .addGroup(jPanel53Layout.createSequentialGroup()
                                 .addComponent(jLabel265)
                                 .addGap(14, 14, 14)
-                                .addComponent(txtComplFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(txtComplFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel53Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel249, javax.swing.GroupLayout.PREFERRED_SIZE, 882, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -2456,7 +2456,7 @@ public class Menu extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel247)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtDtNascFunc6, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtDtNascFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel53Layout.createSequentialGroup()
                                 .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtCPF_Func, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2475,7 +2475,7 @@ public class Menu extends javax.swing.JFrame {
                                     .addGroup(jPanel53Layout.createSequentialGroup()
                                         .addGap(68, 68, 68)
                                         .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtDtAdmissao6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtDtAdmissao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel53Layout.createSequentialGroup()
                                                 .addComponent(jLabel250)
                                                 .addGap(175, 175, 175))))
@@ -2495,12 +2495,12 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(txtNomeFuncNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel211, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel247)
-                    .addComponent(txtDtNascFunc6, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDtNascFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
                 .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel250)
-                        .addComponent(txtDtAdmissao6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtDtAdmissao, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtCPF_Func, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel221)
@@ -2518,37 +2518,36 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jLabel249)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtLogFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEndFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel260))
                 .addGap(19, 19, 19)
                 .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtComplFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtComplFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel265, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtBairroFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtBairroFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel266))
-                .addGap(23, 23, 23)
+                .addGap(21, 21, 21)
                 .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel268, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCidadeFunc3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCidadeFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnSalvaFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCancelarFunc7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(23, 23, 23)
                 .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel269)
-                    .addComponent(txtTelFixoFunc6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTelFixoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel271)
-                    .addComponent(txtCelularFunc6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCelularFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24)
                 .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel272)
                     .addComponent(txtEmailFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSalvaFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCancelarFunc7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22))
+                .addGap(74, 74, 74))
         );
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
@@ -3987,9 +3986,9 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtRgFuncActionPerformed
 
-    private void txtDtNascFunc6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDtNascFunc6ActionPerformed
+    private void txtDtNascFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDtNascFuncActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtDtNascFunc6ActionPerformed
+    }//GEN-LAST:event_txtDtNascFuncActionPerformed
 
     private void cmbCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCargoActionPerformed
         
@@ -4010,16 +4009,26 @@ public class Menu extends javax.swing.JFrame {
     private void btnSalvaFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvaFuncionarioActionPerformed
         ControleFuncionario controleFuncionario = new ControleFuncionario();
         int cargo = cmbCargo.getSelectedIndex();
+       // Veterinario veterinario = new Veterinario();
+        
+        //veterinario
         if (cargo==0){
             try{
-               controleFuncionario.salvarVeterinario(cargo, especialidade, cargo, nome, cpf, rg, cargo, dtAdmissao, endereco, complemento, bairro, cidade, telefone, celular, email);
-                
-                controleFuncionario.salvarVeterinario(Integer.parseInt(txtCrmv.getText()), 
-                                    txtEspecialidade.getText(),
-                                    txtNomeFuncNovo.getText(),
-                                    txtCPF_Func.getText(),
-                                    txtRgFunc.getText(),
-                                    "Veterinário");
+               controleFuncionario.salvarVeterinario(txtNomeFuncNovo.getText(),
+                                                     txtRgFunc.getText(),
+                                                     txtCPF_Func.getText(),
+                                                     //txtDtNascFunc.getText(),
+                                                     //txtDtAdmissao.getText(),
+                                                     txtEndFunc.getText(),
+                                                     txtComplFunc.getText(),
+                                                     txtBairroFunc.getText(),
+                                                     txtCidadeFunc.getText(),
+                                                     /*txtTelFixoFunc.getText(),
+                                                     txtCelularFunc.getText(),
+                                                     txtEmailFunc.getText(),*/
+                                                     TipoFuncionario.valueOf("VETERINARIO"),
+                                                     Integer.parseInt(txtCrmv.getText()), 
+                                                     txtEspecialidade.getText());
                                             
                        JOptionPane.showMessageDialog(null, "Veterinário cadastrado com sucesso. \nVocê será redirecionado para o Cadastro de Usuário");  
                        painelFunc.setSelectedIndex(3);
@@ -4031,7 +4040,9 @@ public class Menu extends javax.swing.JFrame {
                 e.printStackTrace();
             }      
         }  
-        else if (cargo==2){
+        
+        //assistente
+        /*else if (cargo==2){
             try{
               // controleFuncionario.salvarAssistente(txtRgFunc.getText(), txtCPF_Func.getText(),txtNomeFuncNovo.getText(),"Assistente");
                JOptionPane.showMessageDialog(null, "Veterinário cadastrado com sucesso. \nVocê será redirecionado para o Cadastro de Usuário");          
@@ -4040,7 +4051,7 @@ public class Menu extends javax.swing.JFrame {
             catch(SQLException e){
                 e.printStackTrace();
             }            
-        }
+        }*/
     }//GEN-LAST:event_btnSalvaFuncionarioActionPerformed
 
     private void btnSalvaTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvaTutorActionPerformed
@@ -4148,9 +4159,9 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSalvarAfericao1ActionPerformed
 
-    private void txtDtAdmissao6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDtAdmissao6ActionPerformed
+    private void txtDtAdmissaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDtAdmissaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtDtAdmissao6ActionPerformed
+    }//GEN-LAST:event_txtDtAdmissaoActionPerformed
 
     private void txtDtAdmissao7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDtAdmissao7ActionPerformed
         // TODO add your handling code here:
@@ -4456,8 +4467,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JRadioButton radioSim5;
     private javax.swing.JRadioButton radioSim8;
     private javax.swing.JRadioButton radioSim9;
+    private javax.swing.JTextField txtBairroFunc;
     private javax.swing.JTextField txtBairroFunc1;
-    private javax.swing.JTextField txtBairroFunc3;
     private javax.swing.JTextField txtBairroTutor;
     private javax.swing.JTextField txtBairroTutor2;
     private javax.swing.JFormattedTextField txtCPF;
@@ -4476,30 +4487,30 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField txtCelTutor;
     private javax.swing.JFormattedTextField txtCelTutor1;
     private javax.swing.JFormattedTextField txtCelTutor2;
+    private javax.swing.JFormattedTextField txtCelularFunc;
     private javax.swing.JFormattedTextField txtCelularFunc4;
-    private javax.swing.JFormattedTextField txtCelularFunc6;
+    private javax.swing.JTextField txtCidadeFunc;
     private javax.swing.JTextField txtCidadeFunc1;
-    private javax.swing.JTextField txtCidadeFunc3;
     private javax.swing.JTextField txtCidadeTutor;
     private javax.swing.JTextField txtCidadeTutor2;
     private javax.swing.JTextField txtCodFuncBusca;
     private javax.swing.JTextField txtCodTutor;
+    private javax.swing.JTextField txtComplFunc;
     private javax.swing.JTextField txtComplFunc1;
-    private javax.swing.JTextField txtComplFunc3;
     private javax.swing.JTextField txtComplementoTutor;
     private javax.swing.JTextField txtComplementoTutor2;
     private javax.swing.JTextField txtCor2;
     private javax.swing.JTextField txtCor4;
     private javax.swing.JTextField txtCrmv;
     private javax.swing.JTextField txtCrmv2;
+    private javax.swing.JFormattedTextField txtDtAdmissao;
     private javax.swing.JFormattedTextField txtDtAdmissao4;
-    private javax.swing.JFormattedTextField txtDtAdmissao6;
     private javax.swing.JFormattedTextField txtDtAdmissao7;
     private javax.swing.JFormattedTextField txtDtAfericao1;
     private javax.swing.JFormattedTextField txtDtAfericaoEdit1;
     private javax.swing.JFormattedTextField txtDtDemissao4;
+    private javax.swing.JFormattedTextField txtDtNascFunc;
     private javax.swing.JFormattedTextField txtDtNascFunc4;
-    private javax.swing.JFormattedTextField txtDtNascFunc6;
     private javax.swing.JFormattedTextField txtDtNascPet3;
     private javax.swing.JFormattedTextField txtDtNascPet5;
     private javax.swing.JFormattedTextField txtDtNascTutor;
@@ -4509,6 +4520,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField txtEmailFunc1;
     private javax.swing.JTextField txtEmailTutor;
     private javax.swing.JTextField txtEmailTutor2;
+    private javax.swing.JTextField txtEndFunc;
     private javax.swing.JTextField txtEnderecoTutor;
     private javax.swing.JTextField txtEnderecoTutor2;
     private javax.swing.JTextField txtEspecialidade;
@@ -4517,7 +4529,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField txtIdade3;
     private javax.swing.JTextField txtIdade5;
     private javax.swing.JTextField txtLogFunc1;
-    private javax.swing.JTextField txtLogFunc3;
     private javax.swing.JTextField txtLogradouro;
     private javax.swing.JTextField txtLogradouro1;
     private javax.swing.JTextField txtLogradouro2;
@@ -4545,8 +4556,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField txtRgTutor;
     private javax.swing.JFormattedTextField txtRgTutor1;
     private javax.swing.JPasswordField txtSenhaUsu;
+    private javax.swing.JFormattedTextField txtTelFixoFunc;
     private javax.swing.JFormattedTextField txtTelFixoFunc4;
-    private javax.swing.JFormattedTextField txtTelFixoFunc6;
     private javax.swing.JFormattedTextField txtTelTutor;
     private javax.swing.JFormattedTextField txtTelTutor3;
     private javax.swing.JFormattedTextField txtTelTutor5;
@@ -4600,7 +4611,7 @@ public class Menu extends javax.swing.JFrame {
 */
     //métodos criados para alimentar os comboBox com o conteúdo dos enums
     private void loadComboBoxes(){
-        //cmbCargo.setModel(new DefaultComboBoxModel<>(TipoFuncionario.values()));
+        cmbCargo.setModel(new DefaultComboBoxModel<>(TipoFuncionario.values()));
         cmbEspecie.setModel(new DefaultComboBoxModel<>(TipoEspecie.values()));               
         
         //cmbEspecieVac.setModel(new DefaultComboBoxModel<>(getEspecies().toString()));           

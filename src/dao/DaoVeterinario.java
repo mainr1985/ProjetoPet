@@ -19,11 +19,7 @@ public class DaoVeterinario extends DaoFactory{
     public void salvar(Veterinario v) throws SQLException{
               
        String insert = "INSERT INTO veterinario (crmv,especialidade,id_funcionario) VALUES (?,?,?)";
-       /*String update;
-       String delete;
-       String list;
-       String listById;
-       */
+       
        salvar (insert,v.getCrmv(),v.getEspecialidade());//, /*,v.getCodFuncionario()*/);  
     }    
       

@@ -5,6 +5,7 @@ import java.text.ParseException;
 import modelo.Veterinario;
 import dao.DaoFuncionario;
 import dao.DaoVeterinario;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import modelo.enums.TipoFuncionario;
 
@@ -16,27 +17,30 @@ public class ControleFuncionario{
 
     public ControleFuncionario() {}
     
-    public void salvarVeterinario (Integer codFuncionario, String nome, String rg, String cpf, Date dtNasc, Date dtCadastro, Date dtAdmissao, 
-                                   String endereco, String complemento, String bairro, String cidade, String telefone, String celular, 
-                                   String email, String cargo, Integer crmv, String especialidade) throws SQLException, ParseException{
+    public void salvarVeterinario (/*Integer codFuncionario, */String nome, String rg, String cpf, /*String dtNasc,Date dtCadastro, Date dtAdmissao,*/ 
+                                   String endereco, String complemento, String bairro, String cidade, 
+                                   //String telefone, String celular, String email, 
+                                   TipoFuncionario cargo, Integer crmv, String especialidade) throws SQLException, ParseException{
         
         Veterinario veterinario = new Veterinario(); 
-               
+        //SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
+                
+        //veterinario.setCodigoFunc(codFuncionario);
         veterinario.setNome(nome);
         veterinario.setRg(rg);
         veterinario.setCpf(cpf);
-        veterinario.setDataNasc(dtNasc);
-        veterinario.setDtCadastro(dtCadastro);
-        veterinario.setDtAdmissao(dtAdmissao);
+        //veterinario.setDataNasc(dtNasc);
+        //veterinario.setDtCadastro(dtCadastro);
+        //veterinario.setDtAdmissao(dtAdmissao);
         veterinario.setEndereco(endereco);
         veterinario.setComplemento(complemento);
         veterinario.setBairro(bairro);
-        veterinario.setTelefone(telefone);
+/*        veterinario.setTelefone(telefone);
         veterinario.setCelular(celular);
-        veterinario.setEmail(email);
+        veterinario.setEmail(email);*/
         veterinario.setCrmv(crmv);
         veterinario.setEspecialidade(especialidade);        
-        veterinario.setCargo(TipoFuncionario.VETERINARIO);
+        veterinario.setCargo(TipoFuncionario.valueOf("VETERINARIO"));
         
             //v.setCodFuncionario(codFuncionario);
             //v.setCodFuncionario(new DaoFuncionario().getCodigoFuncionario(v));

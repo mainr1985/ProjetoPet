@@ -3221,12 +3221,6 @@
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="344" max="-2" attributes="0"/>
-                                          <Component id="btnSalvaFuncionario" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="btnCancelarFunc7" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" attributes="0">
@@ -3240,20 +3234,26 @@
                                                   </Group>
                                                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="txtLogFunc3" alignment="0" min="-2" pref="393" max="-2" attributes="0"/>
-                                                      <Component id="txtTelFixoFunc6" alignment="0" min="-2" pref="112" max="-2" attributes="0"/>
-                                                      <Component id="txtCelularFunc6" alignment="0" min="-2" pref="112" max="-2" attributes="0"/>
+                                                      <Component id="txtEndFunc" alignment="0" min="-2" pref="393" max="-2" attributes="0"/>
+                                                      <Component id="txtTelFixoFunc" alignment="0" min="-2" pref="112" max="-2" attributes="0"/>
+                                                      <Component id="txtCelularFunc" alignment="0" min="-2" pref="112" max="-2" attributes="0"/>
                                                       <Component id="txtEmailFunc" min="-2" pref="225" max="-2" attributes="0"/>
-                                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="txtBairroFunc3" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="txtCidadeFunc3" alignment="0" min="-2" pref="247" max="-2" attributes="0"/>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                              <Component id="txtBairroFunc" alignment="0" max="32767" attributes="0"/>
+                                                              <Component id="txtCidadeFunc" alignment="0" min="-2" pref="247" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
+                                                          <Component id="btnSalvaFuncionario" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                          <Component id="btnCancelarFunc7" min="-2" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                               </Group>
                                               <Group type="102" attributes="0">
                                                   <Component id="jLabel265" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                                  <Component id="txtComplFunc3" min="-2" pref="140" max="-2" attributes="0"/>
+                                                  <Component id="txtComplFunc" min="-2" pref="140" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -3288,7 +3288,7 @@
                                                   <EmptySpace max="32767" attributes="0"/>
                                                   <Component id="jLabel247" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="txtDtNascFunc6" min="-2" pref="136" max="-2" attributes="0"/>
+                                                  <Component id="txtDtNascFunc" min="-2" pref="136" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="1" attributes="0">
                                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -3312,7 +3312,7 @@
                                                       <Group type="102" attributes="0">
                                                           <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                                                           <Group type="103" groupAlignment="0" attributes="0">
-                                                              <Component id="txtDtAdmissao6" alignment="1" min="-2" pref="136" max="-2" attributes="0"/>
+                                                              <Component id="txtDtAdmissao" alignment="1" min="-2" pref="136" max="-2" attributes="0"/>
                                                               <Group type="102" alignment="1" attributes="0">
                                                                   <Component id="jLabel250" min="-2" max="-2" attributes="0"/>
                                                                   <EmptySpace min="-2" pref="175" max="-2" attributes="0"/>
@@ -3343,13 +3343,13 @@
                                       <Component id="txtNomeFuncNovo" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                       <Component id="jLabel211" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                                       <Component id="jLabel247" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtDtNascFunc6" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Component id="txtDtNascFunc" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="jLabel250" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="txtDtAdmissao6" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                          <Component id="txtDtAdmissao" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="txtCPF_Func" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
@@ -3371,45 +3371,44 @@
                                   <Component id="jLabel249" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="txtLogFunc3" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="txtEndFunc" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                       <Component id="jLabel260" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="txtComplFunc3" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Component id="txtComplFunc" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                       <Component id="jLabel265" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="txtBairroFunc3" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="txtBairroFunc" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                       <Component id="jLabel266" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel268" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
-                                      <Component id="txtCidadeFunc3" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="txtCidadeFunc" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                                          <Component id="btnSalvaFuncionario" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                          <Component id="btnCancelarFunc7" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel269" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtTelFixoFunc6" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                                      <Component id="txtTelFixoFunc" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel271" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtCelularFunc6" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="txtCelularFunc" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel272" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtEmailFunc" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="btnSalvaFuncionario" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                                      <Component id="btnCancelarFunc7" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -3475,14 +3474,14 @@
                             <Property name="text" type="java.lang.String" value="Dt. Nascimento:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JFormattedTextField" name="txtDtNascFunc6">
+                        <Component class="javax.swing.JFormattedTextField" name="txtDtNascFunc">
                           <Properties>
                             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                               <Format format="##/##/####" subtype="-1" type="5"/>
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDtNascFunc6ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDtNascFuncActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel248">
@@ -3554,14 +3553,14 @@
                             <Property name="text" type="java.lang.String" value="Dt. Admiss&#xe3;o:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JFormattedTextField" name="txtDtAdmissao6">
+                        <Component class="javax.swing.JFormattedTextField" name="txtDtAdmissao">
                           <Properties>
                             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                               <Format format="##/##/####" subtype="-1" type="5"/>
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDtAdmissao6ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDtAdmissaoActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel260">
@@ -3572,7 +3571,7 @@
                             <Property name="text" type="java.lang.String" value="Endere&#xe7;o:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="txtLogFunc3">
+                        <Component class="javax.swing.JTextField" name="txtEndFunc">
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel265">
                           <Properties>
@@ -3582,7 +3581,7 @@
                             <Property name="text" type="java.lang.String" value="Complemento:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="txtComplFunc3">
+                        <Component class="javax.swing.JTextField" name="txtComplFunc">
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel266">
                           <Properties>
@@ -3592,7 +3591,7 @@
                             <Property name="text" type="java.lang.String" value="Bairro:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="txtBairroFunc3">
+                        <Component class="javax.swing.JTextField" name="txtBairroFunc">
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel268">
                           <Properties>
@@ -3602,7 +3601,7 @@
                             <Property name="text" type="java.lang.String" value="Cidade:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="txtCidadeFunc3">
+                        <Component class="javax.swing.JTextField" name="txtCidadeFunc">
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel269">
                           <Properties>
@@ -3612,7 +3611,7 @@
                             <Property name="text" type="java.lang.String" value="Telefone:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JFormattedTextField" name="txtTelFixoFunc6">
+                        <Component class="javax.swing.JFormattedTextField" name="txtTelFixoFunc">
                           <Properties>
                             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                               <Format format="(##)####-####" subtype="-1" type="5"/>
@@ -3627,7 +3626,7 @@
                             <Property name="text" type="java.lang.String" value="Celular:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JFormattedTextField" name="txtCelularFunc6">
+                        <Component class="javax.swing.JFormattedTextField" name="txtCelularFunc">
                           <Properties>
                             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                               <Format format="(##)9####-####" subtype="-1" type="5"/>
