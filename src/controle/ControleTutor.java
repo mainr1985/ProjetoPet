@@ -26,13 +26,11 @@ public class ControleTutor {
         tutor.setTelefone(telefone);
         tutor.setCelular(celular);
         tutor.setEmail(email);
-        
-         
+                
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
         java.sql.Date dataNascimento = new java.sql.Date(formato.parse(dtNasc).getTime());
         tutor.setDataNasc(dataNascimento);
                 
-       new DaoTutor().salvar(tutor);                
-        
+       new DaoTutor().salvar(tutor);  
     }
 }
