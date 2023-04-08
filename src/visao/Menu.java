@@ -11,6 +11,7 @@ import modelo.enums.TipoEspecie;
 import modelo.Veterinario;
 import modelo.Tutor;
 import controle.ControleTutor;
+import java.text.SimpleDateFormat;
 
 /**
  *
@@ -4060,10 +4061,11 @@ public class Menu extends javax.swing.JFrame {
     private void btnSalvaTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvaTutorActionPerformed
 
         ControleTutor controleTutor = new ControleTutor();
+       
         try{
             controleTutor.salvarTutor(txtNomeTutor.getText(), txtRgTutor.getText(), txtCPFTutor.getText(), txtEnderecoTutor.getText(), 
                                       txtComplementoTutor.getText(),txtBairroTutor.getText(),txtCidadeTutor.getText(),txtEmailTutor.getText(),
-                                      txtTelTutor.getText(),txtCelTutor.getText());
+                                      txtTelTutor.getText(),txtCelTutor.getText(),txtDtNascTutor.getText());
             
             JOptionPane.showMessageDialog(null, "Tutor cadastrado com sucesso. \nVocê será redirecionado para o Cadastro de Pets", "Salvar Tutor", JOptionPane.INFORMATION_MESSAGE);
             painelMenu.setSelectedIndex(1);

@@ -34,7 +34,7 @@ create table if not exists veterinario ( crmv numeric not null primary key, id_f
 
 /*Tabela Tutor*/
 create table IF NOT EXISTS tutor ( codtutor serial not null primary key, cpf numeric not null, rg numeric not null,
-                                   nome varchar(50) not null, endereco varchar(50) not null, numero numeric not null,
+                                   nome varchar(50) not null, dtnasc date not null, endereco varchar(50) not null, numero numeric not null,
                                    complemento varchar(30), bairro varchar(50) not null, cidade varchar(50) not null,
                                    cargo varchar(30) not null, dtcadastro Date not null, telefone numeric,
                                    celular numeric, email varchar(50) not null );
