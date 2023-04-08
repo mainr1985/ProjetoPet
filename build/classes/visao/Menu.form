@@ -3385,12 +3385,14 @@
                                       <Component id="jLabel266" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel268" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
-                                      <Component id="txtCidadeFunc" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="btnSalvaFuncionario" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                           <Component id="btnCancelarFunc7" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel268" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
+                                          <Component id="txtCidadeFunc" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>

@@ -1,10 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controle;
-
+import dao.DaoTutor;
+import java.sql.SQLException;
+import java.text.ParseException;
 import modelo.Tutor;
 
 /**
@@ -13,7 +10,22 @@ import modelo.Tutor;
  */
 public class ControleTutor {
  
-    public void salvarTutor(Tutor t){
+    public void salvarTutor(String nome, String rg, String cpf, String endereco, String complemento, String bairro, String cidade, 
+                            String telefone, String celular, String email) throws SQLException, ParseException{
+
+        Tutor tutor = new Tutor();
+        tutor.setNome(nome);
+        tutor.setCpf(cpf);
+        tutor.setRg(rg);
+        tutor.setEndereco(endereco);
+        tutor.setComplemento(complemento);
+        tutor.setBairro(bairro);
+        tutor.setCidade(cidade);
+        tutor.setTelefone(telefone);
+        tutor.setCelular(celular);
+        tutor.setEmail(email);
+                
+       new DaoTutor().salvar(tutor);                
         
     }
 }

@@ -1,10 +1,10 @@
 package controle;
-
 import java.sql.SQLException;
 import java.text.ParseException;
 import modelo.Veterinario;
 import dao.DaoFuncionario;
 import dao.DaoVeterinario;
+import java.text.Normalizer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import modelo.enums.TipoFuncionario;
@@ -26,7 +26,7 @@ public class ControleFuncionario{
         //SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
                 
         //veterinario.setCodigoFunc(codFuncionario);
-        veterinario.setNome(nome);
+        veterinario.setNome(Normalizer.normalize(nome,Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", ""));
         veterinario.setRg(rg);
         veterinario.setCpf(cpf);
         //veterinario.setDataNasc(dtNasc);
@@ -47,8 +47,7 @@ public class ControleFuncionario{
         
         new DaoFuncionario().salvarFuncionario(veterinario);            
         new DaoVeterinario().salvar(veterinario);
-    }        
-     
+    }             
          
     //INCLUIR ASSISTENTE
     public void salvarAssistente (String rg, String cpf, String nome, TipoFuncionario cargo, String endereco) throws SQLException{
@@ -60,10 +59,7 @@ public class ControleFuncionario{
             assistente.setNome(nome);
             assistente.setCargo(TipoFuncionario.ASSISTENTE);
             
-            
-            new DaoFuncionario().salvarFuncionario(assistente);
-        
-    
+            new DaoFuncionario().salvarFuncionario(assistente);    
     }    
     
     //INCLUIR ADMINISTRADOR
@@ -74,8 +70,7 @@ public class ControleFuncionario{
             administrador.setRg(rg);
             administrador.setCpf(cpf);
             administrador.setNome(nome);
-            administrador.setCargo(TipoFuncionario.ADMINISTRADOR);
-            
+            administrador.setCargo(TipoFuncionario.ADMINISTRADOR);            
             
             new DaoFuncionario().salvarFuncionario(administrador);
     }

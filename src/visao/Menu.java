@@ -9,6 +9,8 @@ import javax.swing.DefaultComboBoxModel;
 import modelo.enums.TipoFuncionario;
 import modelo.enums.TipoEspecie;
 import modelo.Veterinario;
+import modelo.Tutor;
+import controle.ControleTutor;
 
 /**
  *
@@ -2529,12 +2531,13 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(txtBairroFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel266))
                 .addGap(21, 21, 21)
-                .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel268, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCidadeFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnSalvaFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnCancelarFunc7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnCancelarFunc7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel268, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCidadeFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(23, 23, 23)
                 .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel269)
@@ -4056,15 +4059,14 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnSalvaTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvaTutorActionPerformed
 
-        /* ControleTutor controleTutor = new ControleTutor();
-
+        ControleTutor controleTutor = new ControleTutor();
         try{
-            controleTutor.salvarTutor(Integer.parseInt(txtCodTutor1.getText()),
-                txtEspecialidade.getText(),
-                Integer.parseInt(txtCodFuncNovo.getText()),
-                txtCPF_Func.getText(),
-                txtRgFunc.getText());
+            controleTutor.salvarTutor(txtNomeTutor.getText(), txtRgTutor.getText(), txtCPFTutor.getText(), txtEnderecoTutor.getText(), 
+                                      txtComplementoTutor.getText(),txtBairroTutor.getText(),txtCidadeTutor.getText(),txtEmailTutor.getText(),
+                                      txtTelTutor.getText(),txtCelTutor.getText());
+            
             JOptionPane.showMessageDialog(null, "Tutor cadastrado com sucesso. \nVocê será redirecionado para o Cadastro de Pets", "Salvar Tutor", JOptionPane.INFORMATION_MESSAGE);
+            painelMenu.setSelectedIndex(1);
             painelOpcoesPaciente.setSelectedIndex(2);
         }
         catch(SQLException e){
@@ -4072,14 +4074,6 @@ public class Menu extends javax.swing.JFrame {
         }
         catch(ParseException e){
             e.printStackTrace();
-        }
-        limparFuncNovo(evt);
-        }
-        /*else if (cargo>0){
-            //txtEspecialidade.setEnabled(false);
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Não foi possível realizar o cadastro. Erro");
         }
     }//GEN-LAST:event_btnSalvaTutorActionPerformed
 
