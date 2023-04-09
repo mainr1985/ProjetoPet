@@ -18,18 +18,22 @@ public class DaoTutor extends DaoFactory{
         
     public void salvar(Tutor tutor) throws SQLException{
         
-       String insert = "INSERT INTO tutor (cpf, rg, nome, dtnasc, endereco, complemento, bairro, cidade, "
-               + "/*dtcadastro,*/"
-               + " telefone, "
-               + " celular, "
-               + " email ) "
-               + "     VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+       String insert = " INSERT INTO tutor (cpf, rg, nome, dtnasc, endereco, complemento, bairro, cidade, telefone, celular, email, dtcadastro) VALUES (?,?,?,?,?,?,?,?,?,?,?,?) ";       
        
        salvar (insert,
                /*tutor.getCodigoTutor(),*/
-               tutor.getCpf(), tutor.getRg(), tutor.getNome(), tutor.getDataNasc(), tutor.getEndereco(),
-               tutor.getComplemento(), tutor.getBairro(), tutor.getCidade(), tutor.getTelefone(),
-               tutor.getCelular(), tutor.getEmail()
+               tutor.getCpf(), 
+               tutor.getRg(), 
+               tutor.getNome(), 
+               tutor.getDataNasc(), 
+               tutor.getEndereco(),
+               tutor.getComplemento(), 
+               tutor.getBairro(), 
+               tutor.getCidade(), 
+               tutor.getTelefone(),
+               tutor.getCelular(), 
+               tutor.getEmail(),
+               tutor.getDtCadastro()
                );  
     }    
       

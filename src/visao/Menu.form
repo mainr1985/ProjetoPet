@@ -1365,48 +1365,54 @@
                                           <Group type="102" attributes="0">
                                               <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel33" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel32" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="txtCidadeTutor" min="-2" pref="195" max="-2" attributes="0"/>
+                                                          <Component id="txtBairroTutor" min="-2" pref="195" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="txtEnderecoTutor" min="-2" pref="289" max="-2" attributes="0"/>
+                                                          <Component id="txtComplementoTutor" min="-2" pref="195" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                              </Group>
+                                              <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jLabel33" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jLabel32" alignment="0" min="-2" max="-2" attributes="0"/>
                                                           <Component id="jLabel35" alignment="0" min="-2" max="-2" attributes="0"/>
                                                           <Component id="jLabel31" alignment="0" min="-2" max="-2" attributes="0"/>
                                                       </Group>
-                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <EmptySpace max="32767" attributes="0"/>
-                                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                                  <Component id="txtCidadeTutor" min="-2" pref="195" max="-2" attributes="0"/>
-                                                                  <Component id="txtBairroTutor" min="-2" pref="195" max="-2" attributes="0"/>
-                                                                  <Component id="txtEmailTutor" alignment="0" min="-2" pref="195" max="-2" attributes="0"/>
-                                                                  <Component id="txtTelTutor" alignment="0" min="-2" pref="129" max="-2" attributes="0"/>
-                                                                  <Component id="txtCelTutor" alignment="0" min="-2" pref="129" max="-2" attributes="0"/>
-                                                              </Group>
-                                                              <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
-                                                          </Group>
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                                  <Component id="txtEnderecoTutor" min="-2" pref="289" max="-2" attributes="0"/>
-                                                                  <Component id="txtComplementoTutor" min="-2" pref="195" max="-2" attributes="0"/>
-                                                              </Group>
-                                                          </Group>
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="txtEmailTutor" alignment="0" min="-2" pref="195" max="-2" attributes="0"/>
+                                                          <Component id="txtTelTutor" alignment="0" min="-2" pref="129" max="-2" attributes="0"/>
+                                                          <Component id="txtCelTutor" alignment="0" min="-2" pref="129" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                               </Group>
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="335" max="-2" attributes="0"/>
-                                      <Component id="btnSalvaTutor" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                                      <Component id="btnCancelarTutor" min="-2" max="-2" attributes="0"/>
-                                  </Group>
                               </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="331" max="-2" attributes="0"/>
+                              <Component id="btnSalvaTutor" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                              <Component id="btnCancelarTutor" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -1445,41 +1451,46 @@
                                   <Component id="jLabel30" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtComplementoTutor" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtBairroTutor" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                                  <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtCidadeTutor" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtEmailTutor" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtTelTutor" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtCelTutor" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                  <Component id="jLabel31" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtComplementoTutor" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="txtBairroTutor" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                                          <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtCidadeTutor" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtEmailTutor" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtTelTutor" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="txtCelTutor" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                          <Component id="jLabel31" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="btnSalvaTutor" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                   <Component id="btnCancelarTutor" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="243" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
