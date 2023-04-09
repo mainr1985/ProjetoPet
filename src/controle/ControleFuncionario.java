@@ -17,7 +17,7 @@ public class ControleFuncionario{
 
     public ControleFuncionario() {}
     
-    public void salvarVeterinario (/*Integer codFuncionario, */String nome, String rg, String cpf, String dtNasc,String dtCadastro, String dtAdmissao, 
+    public void salvarVeterinario (/*Integer codFuncionario, */String nome, String rg, String cpf, String dtNasc, String dtAdmissao, 
                                    String endereco, String complemento, String bairro, String cidade, String telefone, String celular, String email, 
                                    TipoFuncionario cargo, Integer crmv, String especialidade) throws SQLException, ParseException{
         
@@ -34,6 +34,7 @@ public class ControleFuncionario{
         java.sql.Date dataCadastro = new java.sql.Date(formato.parse(dataAtual).getTime());
         veterinario.setDtCadastro(dataCadastro);
         
+        //pegando a data de nascimento e de admissão
         java.sql.Date dtNascimento = new java.sql.Date(formato.parse(dtNasc).getTime());
         java.sql.Date dtAdmissao1 = new java.sql.Date(formato.parse(dtAdmissao).getTime());
         

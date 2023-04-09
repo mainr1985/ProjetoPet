@@ -4021,24 +4021,32 @@ public class Menu extends javax.swing.JFrame {
         int cargo = cmbCargo.getSelectedIndex();
        // Veterinario veterinario = new Veterinario();
         
+       /*
+       (String nome, String rg, String cpf, String dtNasc,String dtCadastro, String dtAdmissao, 
+                                   String endereco, String complemento, String bairro, String cidade, String telefone, String celular, String email, 
+                                   TipoFuncionario cargo, Integer crmv, String especialidade)
+       
+       */
+       
+       
         //veterinario
         if (cargo==0){
             try{
-               controleFuncionario.salvarVeterinario(txtNomeFuncNovo.getText(),
-                                                     txtRgFunc.getText(),
-                                                     txtCPF_Func.getText(),
-                                                     //txtDtNascFunc.getText(),
-                                                     //txtDtAdmissao.getText(),
-                                                     txtEndFunc.getText(),
-                                                     txtComplFunc.getText(),
-                                                     txtBairroFunc.getText(),
-                                                     txtCidadeFunc.getText(),
-                                                     /*txtTelFixoFunc.getText(),
-                                                     txtCelularFunc.getText(),
-                                                     txtEmailFunc.getText(),*/
-                                                     TipoFuncionario.valueOf("VETERINARIO"),
-                                                     Integer.parseInt(txtCrmv.getText()), 
-                                                     txtEspecialidade.getText());
+                controleFuncionario.salvarVeterinario(txtNomeFuncNovo.getText(), 
+                                                      txtRgFunc.getText(), 
+                                                      txtCPF_Func.getText(), 
+                                                      txtDtNascFunc.getText(), 
+                                                      txtDtAdmissao.getText(), 
+                                                      txtEndFunc.getText(), 
+                                                      txtComplFunc.getText(), 
+                                                      txtBairroFunc.getText(), 
+                                                      txtCidadeFunc.getText(), 
+                                                      txtTelFixoFunc.getText(), 
+                                                      txtCelularFunc.getText(), 
+                                                      txtEmailFunc.getText(), 
+                                                      TipoFuncionario.valueOf("VETERINARIO"), 
+                                                      Integer.parseInt(txtCrmv.getText()), 
+                                                      txtEspecialidade.getText());
                                             
                        JOptionPane.showMessageDialog(null, "Veterinário cadastrado com sucesso. \nVocê será redirecionado para o Cadastro de Usuário");  
                        painelFunc.setSelectedIndex(3);

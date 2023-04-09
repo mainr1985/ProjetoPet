@@ -33,17 +33,16 @@ create table if not exists veterinario ( crmv numeric not null primary key, id_f
                                          constraint fk_idfuncionario foreign key (id_funcionario) references funcionario(id_funcionario) );
 
 /*Tabela Tutor*/
-create table IF NOT EXISTS tutor ( codtutor serial not null primary key, cpf numeric not null, rg numeric not null,
-                                   nome varchar(50) not null, dtnasc date not null, endereco varchar(50) not null, numero numeric not null,
+create table IF NOT EXISTS tutor ( codtutor serial not null primary key, cpf numeric not null, rg numeric not null, 
+                                   nome varchar(50) not null, dtnasc date not null, endereco varchar(50) not null,
                                    complemento varchar(30), bairro varchar(50) not null, cidade varchar(50) not null,
-                                   cargo varchar(30) not null, dtcadastro Date not null, telefone numeric,
-                                   celular numeric, email varchar(50) not null );
+                                   dtcadastro date not null, telefone varchar(30), celular varchar(30), email varchar(50) not null );
 
 /*Tabela Paciente*/
 create table IF NOT EXISTS paciente ( codpaciente serial not null primary key, nome varchar(40) not null, apelido varchar(30) not null,
                                      sexo char not null, dtnasc date, idade varchar(30) not null, raca varchar(40) not null,
                                      especie tipoespecie not null, cor varchar(30) not null, esterelizado char not null,
-                                     porte varchar(30) not null, codtutor integer not null );
+                                     porte varchar(30) not null, codtutor integer not null, dtcadastro date not null );
 
 /*Adicionando a Fk de tutor em paciente*/   
 alter table paciente add constraint fk_codtutor foreign key (codtutor) references tutor(codtutor);
