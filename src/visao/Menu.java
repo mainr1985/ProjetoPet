@@ -988,6 +988,11 @@ public class Menu extends javax.swing.JFrame {
         btnCancelarTutor2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnCancelarTutor2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/cancel.png"))); // NOI18N
         btnCancelarTutor2.setText("Cancelar");
+        btnCancelarTutor2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarTutor2ActionPerformed(evt);
+            }
+        });
 
         btnSalvaTutor1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnSalvaTutor1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/accept.png"))); // NOI18N
@@ -1269,6 +1274,11 @@ public class Menu extends javax.swing.JFrame {
         btnCancelarTutor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnCancelarTutor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/cancel.png"))); // NOI18N
         btnCancelarTutor.setText("Cancelar");
+        btnCancelarTutor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarTutorActionPerformed(evt);
+            }
+        });
 
         btnSalvaTutor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnSalvaTutor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/accept.png"))); // NOI18N
@@ -1997,6 +2007,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel136.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel136.setText("Espécie:");
 
+        cmbEspecie.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         cmbEspecie.setBorder(null);
         cmbEspecie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2086,8 +2097,8 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jPanel50Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel119)
-                .addGap(18, 18, 18)
-                .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(jLabel120, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -2202,12 +2213,12 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCor4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel231))
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel131)
                     .addComponent(radioSim8)
                     .addComponent(radioNao16))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel139)
                     .addComponent(radioSim9)
@@ -2308,6 +2319,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel248.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel248.setText("Cargo:");
 
+        cmbCargo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         cmbCargo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbCargoActionPerformed(evt);
@@ -4178,6 +4190,14 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDtAdmissao7ActionPerformed
 
+    private void btnCancelarTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarTutorActionPerformed
+        limparTutor();
+    }//GEN-LAST:event_btnCancelarTutorActionPerformed
+
+    private void btnCancelarTutor2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarTutor2ActionPerformed
+        painelOpcoesTutor.setSelectedIndex(0);
+    }//GEN-LAST:event_btnCancelarTutor2ActionPerformed
+
     //private void limparFuncNovo(ActionEvent evt) {             
        /*txtCodFuncNovo.setText("");
        txtCPF_Func.setText("");
@@ -4624,20 +4644,10 @@ public class Menu extends javax.swing.JFrame {
     private void loadComboBoxes(){
         cmbCargo.setModel(new DefaultComboBoxModel<>(TipoFuncionario.values()));
         cmbEspecie.setModel(new DefaultComboBoxModel<>(TipoEspecie.values()));               
-        
-        //cmbEspecieVac.setModel(new DefaultComboBoxModel<>(getEspecies().toString()));           
-        //cmbEspecieVac.setModel(new javax.swing.DefaultComboBoxModel(TipoEspecie.getDescricao());
     }   
     
-    /*public TipoEspecie[] getEspecies(){
-        TipoEspecie[] especies = TipoEspecie.values();
-        especies.toString().toLowerCase();
-        return especies;
-    }*/
-    
     public void limparTutor(){
- 
-        
+         
         txtNomeTutor.setText("");
         txtRgTutor.setText("");
         txtCPFTutor.setText(""); 
