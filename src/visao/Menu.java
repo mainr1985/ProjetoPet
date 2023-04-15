@@ -4056,7 +4056,8 @@ public class Menu extends javax.swing.JFrame {
                                                       txtTelFixoFunc.getText(), 
                                                       txtCelularFunc.getText(), 
                                                       txtEmailFunc.getText(), 
-                                                      TipoFuncionario.valueOf("VETERINARIO"), 
+                                                      TipoFuncionario.VETERINARIO,
+                                                      //TipoFuncionario.valueOf("VETERINARIO"), 
                                                       Integer.parseInt(txtCrmv.getText()), 
                                                       txtEspecialidade.getText());
                                             

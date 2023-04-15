@@ -49,7 +49,8 @@ public class ControleFuncionario{
         veterinario.setEmail(email);
         veterinario.setCrmv(crmv);
         veterinario.setEspecialidade(Normalizer.normalize(especialidade,Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", ""));        
-        veterinario.setCargo(TipoFuncionario.valueOf("VETERINARIO"));
+        veterinario.setCargo(TipoFuncionario.VETERINARIO);
+        //veterinario.setCargo(TipoFuncionario.valueOf("VETERINARIO"));
         
             //v.setCodFuncionario(codFuncionario);
             //v.setCodFuncionario(new DaoFuncionario().getCodigoFuncionario(v));

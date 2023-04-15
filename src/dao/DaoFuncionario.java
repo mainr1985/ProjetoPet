@@ -17,7 +17,7 @@ public class DaoFuncionario extends DaoFactory{
         
        String insert = "INSERT INTO funcionario "
                      + " (cpf, rg, nome, cargo, endereco , email, endereco, complemento, cidade, dtnascimento, dtcadastro, dtadmissao) "
-                     + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+                     + " VALUES (?,?,?,?::tipofuncionario,?,?,?,?,?,?,?,?)";
        
        salvar (insert, 
                veterinario.getCpf(),               
