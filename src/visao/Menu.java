@@ -4087,22 +4087,31 @@ public class Menu extends javax.swing.JFrame {
     private void btnSalvaTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvaTutorActionPerformed
 
         ControleTutor controleTutor = new ControleTutor();
-       
-        try{
-            controleTutor.salvarTutor(txtNomeTutor.getText(), txtRgTutor.getText(), txtCPFTutor.getText(), txtEnderecoTutor.getText(), 
-                                      txtComplementoTutor.getText(),txtBairroTutor.getText(),txtCidadeTutor.getText(),txtEmailTutor.getText(),
-                                      txtTelTutor.getText(),txtCelTutor.getText(),txtDtNascTutor.getText());
-            
-            JOptionPane.showMessageDialog(null, "Tutor cadastrado com sucesso. \nVocê será redirecionado para o Cadastro de Pets", "Salvar Tutor", JOptionPane.INFORMATION_MESSAGE);
-            limparTutor();
-            painelMenu.setSelectedIndex(1);
-            painelOpcoesPaciente.setSelectedIndex(2);
+        
+        if (
+            txtNomeTutor.getText().equals("")||txtRgTutor.getText().equals("")||txtCPFTutor.getText().equals("")||txtEnderecoTutor.getText().equals("")
+            ||txtComplementoTutor.getText().equals("")||txtBairroTutor.getText().equals("")||txtCidadeTutor.getText().equals("")||txtEmailTutor.getText().equals("")
+            ||txtTelTutor.getText().equals("")||txtCelTutor.getText().equals("")||txtDtNascTutor.getText().equals("")
+            ){
+            JOptionPane.showMessageDialog(null,"Favor verificar o preenchimento de todos os campos do formulário.","Aviso",JOptionPane.WARNING_MESSAGE);    
         }
-        catch(SQLException e){
-            e.printStackTrace();
-        }
-        catch(ParseException e){
-            e.printStackTrace();
+        else{
+            try{
+                controleTutor.salvarTutor(txtNomeTutor.getText(), txtRgTutor.getText(), txtCPFTutor.getText(), txtEnderecoTutor.getText(), 
+                                          txtComplementoTutor.getText(),txtBairroTutor.getText(),txtCidadeTutor.getText(),txtEmailTutor.getText(),
+                                          txtTelTutor.getText(),txtCelTutor.getText(),txtDtNascTutor.getText());
+
+                JOptionPane.showMessageDialog(null, "Tutor cadastrado com sucesso. \nVocê será redirecionado para o Cadastro de Pets", "Salvar Tutor", JOptionPane.INFORMATION_MESSAGE);
+                limparTutor();
+                painelMenu.setSelectedIndex(1);
+                painelOpcoesPaciente.setSelectedIndex(2);
+            }
+            catch(SQLException e){
+                e.printStackTrace();
+            }
+            catch(ParseException e){
+                e.printStackTrace();
+            }
         }
     }//GEN-LAST:event_btnSalvaTutorActionPerformed
 
