@@ -12,15 +12,30 @@ import modelo.Veterinario;
  */
 public class DaoVeterinario extends DaoFactory{
    
-    private Connection c;
+    private Connection conexao;
     private PreparedStatement ps;
     private ResultSet r;
         
-    public void salvar(Veterinario v) throws SQLException{
+    public void salvar(Veterinario veterinario) throws SQLException{
               
-       String insert = "INSERT INTO veterinario (crmv,especialidade,id_funcionario) VALUES (?,?,?)";
+       //int codigoFuncionario;
+       String sql = "SELECT MAX(id_funcionario) FROM funcionario ";
+       try{
+           ps = conexao.prepareStatement(sql);
+           r = ps.executeQuery();
+           while (r.next()){
+               veterinario.setCodigoFunc(r.getInt("id_funcionario"));
+           }
+           r.close();
+           ps.close();
+           conexao.close();
+       }
+       catch(SQLException e){
+           e.printStackTrace();
+       }
        
-       salvar (insert,v.getCrmv(),v.getEspecialidade());//, /*,v.getCodFuncionario()*/);  
+       String insert = "INSERT INTO veterinario (crmv,especialidade,id_funcionario) VALUES (?,?,?)";
+       salvar (insert,veterinario.getCrmv(),veterinario.getEspecialidade(),veterinario.getCodigoFunc());
     }    
       
     public void alterar(Veterinario v) throws SQLException {

@@ -4,9 +4,13 @@ import java.text.ParseException;
 import modelo.Veterinario;
 import dao.DaoFuncionario;
 import dao.DaoVeterinario;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.text.Normalizer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import modelo.enums.TipoFuncionario;
 
 /**
@@ -15,16 +19,21 @@ import modelo.enums.TipoFuncionario;
  */
 public class ControleFuncionario{
 
+    private Connection c;
+    private PreparedStatement ps;
+    private ResultSet r;
+    
     public ControleFuncionario() {}
     
-    public void salvarVeterinario (/*Integer codFuncionario, */String nome, String rg, String cpf, String dtNasc, String dtAdmissao, 
+    public void salvarVeterinario (String nome, String rg, String cpf, String dtNasc, String dtAdmissao, 
                                    String endereco, String complemento, String bairro, String cidade, String telefone, String celular, String email, 
                                    TipoFuncionario cargo, Integer crmv, String especialidade) throws SQLException, ParseException{
         
         Veterinario veterinario = new Veterinario(); 
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");         
         
-        //veterinario.setCodigoFunc(codFuncionario);
+        //atribuindo código do funcionário do bd
+        getCodigoFuncionario(veterinario);
         veterinario.setNome(Normalizer.normalize(nome,Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", ""));
         veterinario.setRg(rg);
         veterinario.setCpf(cpf);
@@ -50,10 +59,9 @@ public class ControleFuncionario{
         veterinario.setCrmv(crmv);
         veterinario.setEspecialidade(Normalizer.normalize(especialidade,Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", ""));        
         veterinario.setCargo(TipoFuncionario.VETERINARIO);
-        //veterinario.setCargo(TipoFuncionario.valueOf("VETERINARIO"));
-        
-            //v.setCodFuncionario(codFuncionario);
-            //v.setCodFuncionario(new DaoFuncionario().getCodigoFuncionario(v));
+
+        //v.setCodFuncionario(codFuncionario);
+        //v.setCodFuncionario(new DaoFuncionario().getCodigoFuncionario(v));
         
         new DaoFuncionario().salvarFuncionario(veterinario);            
         new DaoVeterinario().salvar(veterinario);
@@ -125,6 +133,19 @@ public class ControleFuncionario{
         new DaoFuncionario().salvarFuncionario(administrador);    
     }       
     
-
-
+     public int getCodigoFuncionario(Veterinario veterinario) throws SQLException{
+        int i=0;
+        try{
+            ps = c.prepareStatement("SELECT max(id_funcionario) FROM funcionario");
+            r = ps.executeQuery();
+            if (r.next()){
+                i = r.getInt(1);
+                veterinario.setCodigoFunc(i);
+            }
+        }
+        catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "Operação não realizada. Motivo : " + e.getMessage(), "Alerta", JOptionPane.WARNING_MESSAGE);
+        }
+        return i;
+     }    
 }    

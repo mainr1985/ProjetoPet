@@ -16,14 +16,14 @@ public class DaoFuncionario extends DaoFactory{
     public void salvarFuncionario(Veterinario veterinario) throws SQLException{
         
        String insert = "INSERT INTO funcionario "
-                     + " (cpf, rg, nome, cargo, endereco , email, endereco, complemento, cidade, dtnascimento, dtcadastro, dtadmissao) "
-                     + " VALUES (?,?,?,?::tipofuncionario,?,?,?,?,?,?,?,?)";
+                     + " (cpf, rg, nome, cargo, endereco, complemento, cidade, dtnascimento, dtcadastro, dtadmissao/*,email*/) "
+                     + " VALUES (?,?,?,?,?,?,?,?,?,?)";
        
        salvar (insert, 
                veterinario.getCpf(),               
                veterinario.getRg(),               
                veterinario.getNome(),
-               veterinario.getCargo(),
+               veterinario.getCargo().toString().toUpperCase(),
                veterinario.getEndereco(),
                veterinario.getComplemento(),
                veterinario.getCidade(),

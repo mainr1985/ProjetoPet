@@ -1,16 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controle;
-import modelo.entities.Afericao;
 import visao.Menu;
 /**
  *
  * @author Maíra
  */
-public class ControlerAfericoes {
+public class ControleAfericoes {
     Menu temperatura = new Menu();
     
     public boolean cadastrarMedicao (int codigo, double tempMin, double tempMax, String responsavel, ){

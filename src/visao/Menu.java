@@ -4040,9 +4040,24 @@ public class Menu extends javax.swing.JFrame {
        
        */
        
+     
+       
+       
        
         //veterinario
         if (cargo==0){
+            /*
+           if 
+            txtNomeFuncNovo.getText().equals("") || txtRgFunc.getText().equals("") || txtCPF_Func.getText().equals("") 
+            || txtDtNascFunc.getText().equals("") || txtDtAdmissao.getText().equals("") || txtEndFunc.getText().equals("") 
+            || txtComplFunc.getText().equals("") || txtBairroFunc.getText().equals("") || txtCidadeFunc.getText().equals("")
+            || txtTelFixoFunc.getText().equals("") || txtCelularFunc.getText().equals("") || txtEmailFunc.getText().equals("")
+            || txtCrmv.getText().equals("") || txtEspecialidade.getText().equals("")){
+                JOptionPane.showMessageDialog(null,"Favor verificar o preenchimento de todos os campos do formulário.","Aviso",JOptionPane.WARNING_MESSAGE);    
+           }
+           else
+           */   
+            
             try{
                 controleFuncionario.salvarVeterinario(txtNomeFuncNovo.getText(), 
                                                       txtRgFunc.getText(), 
@@ -4056,8 +4071,7 @@ public class Menu extends javax.swing.JFrame {
                                                       txtTelFixoFunc.getText(), 
                                                       txtCelularFunc.getText(), 
                                                       txtEmailFunc.getText(), 
-                                                      TipoFuncionario.VETERINARIO,
-                                                      //TipoFuncionario.valueOf("VETERINARIO"), 
+                                                      TipoFuncionario.VETERINARIO, 
                                                       Integer.parseInt(txtCrmv.getText()), 
                                                       txtEspecialidade.getText());
                                             
