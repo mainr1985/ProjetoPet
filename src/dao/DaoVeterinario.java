@@ -19,7 +19,7 @@ public class DaoVeterinario extends DaoFactory{
     public void salvar(Veterinario veterinario) throws SQLException{
               
        //int codigoFuncionario;
-       String sql = "SELECT MAX(id_funcionario) FROM funcionario ";
+       String sql = "SELECT MAX(id_funcionario) FROM funcionario WHERE cargo = 'Veterinario'"; //descobrir como pegar o codigo do funcionário q está sendo incluído.
        try{
            ps = conexao.prepareStatement(sql);
            r = ps.executeQuery();

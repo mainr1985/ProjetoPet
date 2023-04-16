@@ -4,17 +4,6 @@ create database petfree1;
 /*Conectando com o BD*/
 \c petfree1;
 
-/*********  CRIAÇÃO DOS ENUMS  *******/
-
-/*Enum Especie pra tabela paciente*/
-CREATE TYPE TIPOESPECIE AS ENUM ( 'CANINO','FELINO' );
-
-/*Enum TipoFuncionario*/
-CREATE TYPE TIPOFUNCIONARIO AS ENUM ('VETERINARIO','ASSISTENTE', 'ADMINISTRADOR');
-
-/* CONSULTA AOS ENUMS 
-SELECT enum_range(NULL::nomeenum)*/
-
 /*********  CRIAÇÃO DAS TABELAS  *******/
 
 /*Tabela Funcionario*/
@@ -22,7 +11,8 @@ CREATE TABLE IF NOT EXISTS funcionario ( id_funcionario serial NOT NULL, cpf var
                                          nome character varying(50), endereco character varying(50), complemento character varying(40),
                                          cidade character varying(40), cargo character varying(30), nomeusuario character varying(20),
                                          senha character varying(10), permissao character varying(30), email character varying(30),
-                                         dtnascimento date, dtadmissao date, dtdemissao date, tipo_funcionario tipofuncionario not null,
+                                         dtnascimento date, dtadmissao date, dtdemissao date, dtcadastro date, telefone varchar(30),
+                                         celular varchar(20),
                                                 
                                          CONSTRAINT funcionario_pkey PRIMARY KEY (id_funcionario),
                                          CONSTRAINT funcionario_cpf_key UNIQUE (cpf) );
@@ -41,7 +31,7 @@ create table IF NOT EXISTS tutor ( codtutor serial not null primary key, cpf num
 /*Tabela Paciente*/
 create table IF NOT EXISTS paciente ( codpaciente serial not null primary key, nome varchar(40) not null, apelido varchar(30) not null,
                                      sexo char not null, dtnasc date, idade varchar(30) not null, raca varchar(40) not null,
-                                     especie tipoespecie not null, cor varchar(30) not null, esterelizado char not null,
+                                     especie varchar(30) not null, cor varchar(30) not null, esterelizado char not null,
                                      porte varchar(30) not null, codtutor integer not null, dtcadastro date not null );
 
 /*Adicionando a Fk de tutor em paciente*/   

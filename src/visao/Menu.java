@@ -206,37 +206,37 @@ public class Menu extends javax.swing.JFrame {
         jPanel50 = new javax.swing.JPanel();
         jLabel116 = new javax.swing.JLabel();
         jLabel119 = new javax.swing.JLabel();
-        jTextField15 = new javax.swing.JTextField();
+        txtNomeTutorPet = new javax.swing.JTextField();
         jLabel120 = new javax.swing.JLabel();
-        txtCPFTutor11 = new javax.swing.JFormattedTextField();
+        txtCPFTutorPet = new javax.swing.JFormattedTextField();
         jLabel129 = new javax.swing.JLabel();
         txtNomePet = new javax.swing.JTextField();
         jLabel130 = new javax.swing.JLabel();
-        txtDtNascPet5 = new javax.swing.JFormattedTextField();
+        txtDtNascPet = new javax.swing.JFormattedTextField();
         jLabel131 = new javax.swing.JLabel();
         radioSim8 = new javax.swing.JRadioButton();
         radioNao16 = new javax.swing.JRadioButton();
         jLabel133 = new javax.swing.JLabel();
-        txtIdade5 = new javax.swing.JTextField();
+        txtIdade = new javax.swing.JTextField();
         jLabel134 = new javax.swing.JLabel();
-        radioMacho4 = new javax.swing.JRadioButton();
-        radioFemea4 = new javax.swing.JRadioButton();
+        radioMacho = new javax.swing.JRadioButton();
+        radioFemea = new javax.swing.JRadioButton();
         jLabel135 = new javax.swing.JLabel();
-        txtRaca5 = new javax.swing.JTextField();
+        txtRaca = new javax.swing.JTextField();
         jLabel136 = new javax.swing.JLabel();
         cmbEspecie = new javax.swing.JComboBox<>();
         btnSalvaPaciente5 = new javax.swing.JButton();
         btnCancelarTutor12 = new javax.swing.JButton();
         jLabel137 = new javax.swing.JLabel();
         jLabel138 = new javax.swing.JLabel();
-        txtTelTutor7 = new javax.swing.JFormattedTextField();
+        txtTelTutorPet = new javax.swing.JFormattedTextField();
         jLabel139 = new javax.swing.JLabel();
         radioSim9 = new javax.swing.JRadioButton();
         radioNao17 = new javax.swing.JRadioButton();
         radioNao18 = new javax.swing.JRadioButton();
         radioNao19 = new javax.swing.JRadioButton();
         jLabel231 = new javax.swing.JLabel();
-        txtCor4 = new javax.swing.JTextField();
+        txtCor = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         painelFunc = new javax.swing.JTabbedPane();
         jPanel16 = new javax.swing.JPanel();
@@ -1919,15 +1919,15 @@ public class Menu extends javax.swing.JFrame {
         jLabel120.setText("CPF:");
 
         try {
-            txtCPFTutor11.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            txtCPFTutorPet.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        txtCPFTutor11.setNextFocusableComponent(txtRgTutor);
-        txtCPFTutor11.setSelectionColor(new java.awt.Color(255, 204, 204));
-        txtCPFTutor11.addActionListener(new java.awt.event.ActionListener() {
+        txtCPFTutorPet.setNextFocusableComponent(txtRgTutor);
+        txtCPFTutorPet.setSelectionColor(new java.awt.Color(255, 204, 204));
+        txtCPFTutorPet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCPFTutor11ActionPerformed(evt);
+                txtCPFTutorPetActionPerformed(evt);
             }
         });
 
@@ -1945,15 +1945,15 @@ public class Menu extends javax.swing.JFrame {
         jLabel130.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel130.setText("Nascimento:");
 
-        txtDtNascPet5.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        txtDtNascPet.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
         try {
-            txtDtNascPet5.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            txtDtNascPet.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        txtDtNascPet5.addActionListener(new java.awt.event.ActionListener() {
+        txtDtNascPet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDtNascPet5ActionPerformed(evt);
+                txtDtNascPetActionPerformed(evt);
             }
         });
 
@@ -1979,30 +1979,30 @@ public class Menu extends javax.swing.JFrame {
         jLabel133.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel133.setText("Idade: ");
 
-        txtIdade5.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        txtIdade5.setFocusCycleRoot(true);
-        txtIdade5.setNextFocusableComponent(txtCPFTutor);
-        txtIdade5.addActionListener(new java.awt.event.ActionListener() {
+        txtIdade.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        txtIdade.setFocusCycleRoot(true);
+        txtIdade.setNextFocusableComponent(txtCPFTutor);
+        txtIdade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIdade5ActionPerformed(evt);
+                txtIdadeActionPerformed(evt);
             }
         });
 
         jLabel134.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel134.setText("Sexo:");
 
-        radioMacho4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        radioMacho4.setText("Macho");
+        radioMacho.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        radioMacho.setText("Macho");
 
-        radioFemea4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        radioFemea4.setText("Fêmea");
+        radioFemea.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        radioFemea.setText("Fêmea");
 
         jLabel135.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel135.setText("Raça:");
 
-        txtRaca5.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        txtRaca5.setFocusCycleRoot(true);
-        txtRaca5.setNextFocusableComponent(txtCPFTutor);
+        txtRaca.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        txtRaca.setFocusCycleRoot(true);
+        txtRaca.setNextFocusableComponent(txtCPFTutor);
 
         jLabel136.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel136.setText("Espécie:");
@@ -2037,14 +2037,14 @@ public class Menu extends javax.swing.JFrame {
         jLabel138.setText("Telefone:");
 
         try {
-            txtTelTutor7.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
+            txtTelTutorPet.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        txtTelTutor7.setNextFocusableComponent(txtCelTutor);
-        txtTelTutor7.addActionListener(new java.awt.event.ActionListener() {
+        txtTelTutorPet.setNextFocusableComponent(txtCelTutor);
+        txtTelTutorPet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTelTutor7ActionPerformed(evt);
+                txtTelTutorPetActionPerformed(evt);
             }
         });
 
@@ -2086,9 +2086,9 @@ public class Menu extends javax.swing.JFrame {
         jLabel231.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel231.setText("Cor:");
 
-        txtCor4.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
-        txtCor4.setFocusCycleRoot(true);
-        txtCor4.setNextFocusableComponent(txtCPFTutor);
+        txtCor.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), null));
+        txtCor.setFocusCycleRoot(true);
+        txtCor.setNextFocusableComponent(txtCPFTutor);
 
         javax.swing.GroupLayout jPanel50Layout = new javax.swing.GroupLayout(jPanel50);
         jPanel50.setLayout(jPanel50Layout);
@@ -2098,15 +2098,15 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(jLabel119)
                 .addGap(56, 56, 56)
-                .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNomeTutorPet, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(jLabel120, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(txtCPFTutor11, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtCPFTutorPet, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel138)
                 .addGap(20, 20, 20)
-                .addComponent(txtTelTutor7, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtTelTutorPet, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(73, 73, 73))
             .addGroup(jPanel50Layout.createSequentialGroup()
                 .addContainerGap()
@@ -2124,15 +2124,15 @@ public class Menu extends javax.swing.JFrame {
                             .addComponent(jLabel231))
                         .addGap(52, 52, 52)
                         .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtRaca5, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtRaca, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cmbEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCor4, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtCor, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel50Layout.createSequentialGroup()
                         .addComponent(jLabel133)
                         .addGap(58, 58, 58)
                         .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtIdade5, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDtNascPet5, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDtNascPet, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel50Layout.createSequentialGroup()
                         .addComponent(jLabel131, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -2162,9 +2162,9 @@ public class Menu extends javax.swing.JFrame {
                         .addGap(61, 61, 61)
                         .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel50Layout.createSequentialGroup()
-                                .addComponent(radioMacho4)
+                                .addComponent(radioMacho)
                                 .addGap(29, 29, 29)
-                                .addComponent(radioFemea4))
+                                .addComponent(radioFemea))
                             .addComponent(txtNomePet, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -2175,13 +2175,13 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtTelTutor7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtTelTutorPet, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel138))
                     .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel119, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNomeTutorPet, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel120)
-                        .addComponent(txtCPFTutor11, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtCPFTutorPet, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel137)
                 .addGap(18, 18, 18)
@@ -2191,27 +2191,27 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel134)
-                    .addComponent(radioMacho4)
-                    .addComponent(radioFemea4))
+                    .addComponent(radioMacho)
+                    .addComponent(radioFemea))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDtNascPet5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDtNascPet, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel130))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel133, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtIdade5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel135)
-                    .addComponent(txtRaca5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtRaca, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel136))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCor4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel231))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -3864,17 +3864,17 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_radioNao11ActionPerformed
 
-    private void txtCPFTutor11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCPFTutor11ActionPerformed
+    private void txtCPFTutorPetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCPFTutorPetActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCPFTutor11ActionPerformed
+    }//GEN-LAST:event_txtCPFTutorPetActionPerformed
 
     private void txtNomePetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomePetActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomePetActionPerformed
 
-    private void txtDtNascPet5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDtNascPet5ActionPerformed
+    private void txtDtNascPetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDtNascPetActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtDtNascPet5ActionPerformed
+    }//GEN-LAST:event_txtDtNascPetActionPerformed
 
     private void radioSim8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioSim8ActionPerformed
         // TODO add your handling code here:
@@ -3884,21 +3884,28 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_radioNao16ActionPerformed
 
-    private void txtIdade5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdade5ActionPerformed
+    private void txtIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdadeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtIdade5ActionPerformed
+    }//GEN-LAST:event_txtIdadeActionPerformed
 
     private void cmbEspecieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbEspecieActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbEspecieActionPerformed
 
     private void btnSalvaPaciente5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvaPaciente5ActionPerformed
-        
+        /*if (txtNomePet.getText().equals("") || /*radioMacho4.get || radioFemea.get  txtDtNascPet.getText().equals("")
+           || txtIdade.getText().equals("") || txtRaca.getText().equals("") || /*especie em branco descobrir txtCor.getText().equals("")
+           /*|| esterelizado e porte em branco descobrir)     {
+            JOptionPane.showMessageDialog(null,"Favor verificar o preenchimento de todos os campos do formulário.","Aviso",JOptionPane.WARNING_MESSAGE);    
+        }
+        else {
+            
+        }*/
     }//GEN-LAST:event_btnSalvaPaciente5ActionPerformed
 
-    private void txtTelTutor7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelTutor7ActionPerformed
+    private void txtTelTutorPetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelTutorPetActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelTutor7ActionPerformed
+    }//GEN-LAST:event_txtTelTutorPetActionPerformed
 
     private void radioSim9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioSim9ActionPerformed
         // TODO add your handling code here:
@@ -4044,7 +4051,7 @@ public class Menu extends javax.swing.JFrame {
        
        
        
-        //veterinario
+        
         if (cargo==0){
             /*
            if 
@@ -4086,17 +4093,63 @@ public class Menu extends javax.swing.JFrame {
             }      
         }  
         
-        //assistente
-        /*else if (cargo==2){
+        else if (cargo==1){
             try{
-              // controleFuncionario.salvarAssistente(txtRgFunc.getText(), txtCPF_Func.getText(),txtNomeFuncNovo.getText(),"Assistente");
-               JOptionPane.showMessageDialog(null, "Veterinário cadastrado com sucesso. \nVocê será redirecionado para o Cadastro de Usuário");          
-               painelFunc.setSelectedIndex(3);
+                controleFuncionario.salvarAdministrador(txtNomeFuncNovo.getText(), 
+                                                        txtRgFunc.getText(), 
+                                                        txtCPF_Func.getText(), 
+                                                        txtDtNascFunc.getText(), 
+                                                        txtDtAdmissao.getText(), 
+                                                        TipoFuncionario.ADMINISTRADOR,
+                                                        txtEndFunc.getText(),  
+                                                        txtComplFunc.getText(), 
+                                                        txtBairroFunc.getText(), 
+                                                        txtCidadeFunc.getText(), 
+                                                        txtTelFixoFunc.getText(), 
+                                                        txtCelularFunc.getText(), 
+                                                        txtEmailFunc.getText()
+                                                     ) ;
+                                                      
+                                            
+                       JOptionPane.showMessageDialog(null, "Veterinário cadastrado com sucesso. \nVocê será redirecionado para o Cadastro de Usuário");  
+                       painelFunc.setSelectedIndex(3);
             }
             catch(SQLException e){
                 e.printStackTrace();
-            }            
-        }*/
+            }         
+            catch(ParseException e){
+                e.printStackTrace();
+            }      
+        }
+        
+        else if (cargo==2){
+            try{
+                controleFuncionario.salvarAssistente(txtNomeFuncNovo.getText(), 
+                                                     txtRgFunc.getText(), 
+                                                     txtCPF_Func.getText(), 
+                                                     txtDtNascFunc.getText(), 
+                                                     txtDtAdmissao.getText(), 
+                                                     TipoFuncionario.ASSISTENTE,
+                                                     txtEndFunc.getText(), 
+                                                     txtComplFunc.getText(), 
+                                                     txtBairroFunc.getText(), 
+                                                     txtCidadeFunc.getText(), 
+                                                     txtTelFixoFunc.getText(), 
+                                                     txtCelularFunc.getText(), 
+                                                     txtEmailFunc.getText()
+                                                     ) ;
+                                                      
+                                            
+                       JOptionPane.showMessageDialog(null, "Veterinário cadastrado com sucesso. \nVocê será redirecionado para o Cadastro de Usuário");  
+                       painelFunc.setSelectedIndex(3);
+            }
+            catch(SQLException e){
+                e.printStackTrace();
+            }         
+            catch(ParseException e){
+                e.printStackTrace();
+            }      
+        }
     }//GEN-LAST:event_btnSalvaFuncionarioActionPerformed
 
     private void btnSalvaTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvaTutorActionPerformed
@@ -4494,7 +4547,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea6;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel lblCrmv2;
@@ -4506,10 +4558,10 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTabbedPane painelOpcoes1;
     private javax.swing.JTabbedPane painelOpcoesPaciente;
     private javax.swing.JTabbedPane painelOpcoesTutor;
+    private javax.swing.JRadioButton radioFemea;
     private javax.swing.JRadioButton radioFemea2;
-    private javax.swing.JRadioButton radioFemea4;
+    private javax.swing.JRadioButton radioMacho;
     private javax.swing.JRadioButton radioMacho2;
-    private javax.swing.JRadioButton radioMacho4;
     private javax.swing.JRadioButton radioNao10;
     private javax.swing.JRadioButton radioNao11;
     private javax.swing.JRadioButton radioNao16;
@@ -4531,10 +4583,10 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField txtCPF2;
     private javax.swing.JFormattedTextField txtCPF4;
     private javax.swing.JFormattedTextField txtCPFTutor;
-    private javax.swing.JFormattedTextField txtCPFTutor11;
     private javax.swing.JFormattedTextField txtCPFTutor2;
     private javax.swing.JFormattedTextField txtCPFTutor5;
     private javax.swing.JFormattedTextField txtCPFTutor9;
+    private javax.swing.JFormattedTextField txtCPFTutorPet;
     private javax.swing.JFormattedTextField txtCPF_Func;
     private javax.swing.JFormattedTextField txtCPF_Func2;
     private javax.swing.JTextField txtCRMVResp3;
@@ -4554,8 +4606,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField txtComplFunc1;
     private javax.swing.JTextField txtComplementoTutor;
     private javax.swing.JTextField txtComplementoTutor2;
+    private javax.swing.JTextField txtCor;
     private javax.swing.JTextField txtCor2;
-    private javax.swing.JTextField txtCor4;
     private javax.swing.JTextField txtCrmv;
     private javax.swing.JTextField txtCrmv2;
     private javax.swing.JFormattedTextField txtDtAdmissao;
@@ -4566,8 +4618,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField txtDtDemissao4;
     private javax.swing.JFormattedTextField txtDtNascFunc;
     private javax.swing.JFormattedTextField txtDtNascFunc4;
+    private javax.swing.JFormattedTextField txtDtNascPet;
     private javax.swing.JFormattedTextField txtDtNascPet3;
-    private javax.swing.JFormattedTextField txtDtNascPet5;
     private javax.swing.JFormattedTextField txtDtNascTutor;
     private javax.swing.JFormattedTextField txtDtNascTutor1;
     private javax.swing.JTextField txtEmail;
@@ -4581,8 +4633,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField txtEspecialidade;
     private javax.swing.JTextField txtEspecialidade2;
     private javax.swing.JFormattedTextField txtHoraAfericao5;
+    private javax.swing.JTextField txtIdade;
     private javax.swing.JTextField txtIdade3;
-    private javax.swing.JTextField txtIdade5;
     private javax.swing.JTextField txtLogFunc1;
     private javax.swing.JTextField txtLogradouro;
     private javax.swing.JTextField txtLogradouro1;
@@ -4601,8 +4653,9 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField txtNomeTutor1;
     private javax.swing.JTextField txtNomeTutorBusca;
     private javax.swing.JTextField txtNomeTutorBusca6;
+    private javax.swing.JTextField txtNomeTutorPet;
+    private javax.swing.JTextField txtRaca;
     private javax.swing.JTextField txtRaca3;
-    private javax.swing.JTextField txtRaca5;
     private javax.swing.JTextField txtResp3;
     private javax.swing.JTextField txtResp5;
     private javax.swing.JTextField txtResponsavel1;
@@ -4616,7 +4669,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField txtTelTutor;
     private javax.swing.JFormattedTextField txtTelTutor3;
     private javax.swing.JFormattedTextField txtTelTutor5;
-    private javax.swing.JFormattedTextField txtTelTutor7;
+    private javax.swing.JFormattedTextField txtTelTutorPet;
     private javax.swing.JTextField txtTempMax3;
     private javax.swing.JTextField txtTempMax5;
     private javax.swing.JTextField txtTempMin3;

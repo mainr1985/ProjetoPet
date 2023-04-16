@@ -52,15 +52,13 @@ public class PetFree {
         //TelaLogin telaLogin = new TelaLogin(); 
         //telaLogin.setVisible(true);
          
-       /*String especie[];
-       for (TipoEspecie especies: TipoEspecie.values()){
-           especie
-       }*/
-       Menu menu = new Menu();
-       menu.setVisible(true);
+      // Menu menu = new Menu();
+       //menu.setVisible(true);
         //menu.modoInicialVet();
         //menu.modoInicialAdm();
        // System.out.println(getCodigoFuncionario());
+       
+       
         
     }
  }
