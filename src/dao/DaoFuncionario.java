@@ -37,8 +37,8 @@ public class DaoFuncionario extends DaoFactory{
                veterinario.getDtAdmissao(),
                veterinario.getEmail(),
                veterinario.getTelefone(),
-               veterinario.getCelular(),
-               veterinario.getCodigoFunc());               
+               veterinario.getCelular()
+               );               
     }    
         
     //DESCOBRIR COMO PEGAR O ID DO USUARIO CLICADO PARA PASSAR PRO UPDATE -> NÃO É INSERT!
