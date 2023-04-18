@@ -18,6 +18,7 @@ public class ControleTutor {
 
         Tutor tutor = new Tutor();
         
+        tutor.setCodigoTutor(new DaoTutor().getCodigoTutor()+1);
         tutor.setNome(Normalizer.normalize(nome,Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", ""));
         tutor.setCpf(cpf);
         tutor.setRg(rg);

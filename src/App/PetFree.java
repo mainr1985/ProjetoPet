@@ -57,8 +57,11 @@ public class PetFree {
         //menu.modoInicialVet();
         //menu.modoInicialAdm();
        // System.out.println(getCodigoFuncionario());
-       
-       
+        
+        //System.out.println("Código:" + new DaoFuncionario().getCodigoFuncionario());
+        //Veterinario vet = new Veterinario();
+        //vet.setCodigoFunc(new DaoFuncionario().getCodigoFuncionario());
+        //System.out.println("Código do getter: " + new DaoFuncionario().getCodigoFuncionario());
         
     }
  }

@@ -11,7 +11,7 @@ import modelo.enums.TipoEspecie;
 import modelo.Veterinario;
 import modelo.Tutor;
 import controle.ControleTutor;
-import java.text.SimpleDateFormat;
+
 
 /**
  *
@@ -4081,7 +4081,7 @@ public class Menu extends javax.swing.JFrame {
                                                       TipoFuncionario.VETERINARIO, 
                                                       Integer.parseInt(txtCrmv.getText()), 
                                                       txtEspecialidade.getText());
-                                            
+            
                        JOptionPane.showMessageDialog(null, "Veterinário cadastrado com sucesso. \nVocê será redirecionado para o Cadastro de Usuário");  
                        painelFunc.setSelectedIndex(3);
            }
@@ -4156,11 +4156,10 @@ public class Menu extends javax.swing.JFrame {
 
         ControleTutor controleTutor = new ControleTutor();
         
-        if (
-            txtNomeTutor.getText().equals("")||txtRgTutor.getText().equals("")||txtCPFTutor.getText().equals("")||txtEnderecoTutor.getText().equals("")
+        if (txtNomeTutor.getText().equals("")||txtRgTutor.getText().equals("")||txtCPFTutor.getText().equals("")||txtEnderecoTutor.getText().equals("")
             ||txtComplementoTutor.getText().equals("")||txtBairroTutor.getText().equals("")||txtCidadeTutor.getText().equals("")||txtEmailTutor.getText().equals("")
-            ||txtTelTutor.getText().equals("")||txtCelTutor.getText().equals("")||txtDtNascTutor.getText().equals("")
-            ){
+            ||txtTelTutor.getText().equals("")||txtCelTutor.getText().equals("")||txtDtNascTutor.getText().equals("")){
+            
             JOptionPane.showMessageDialog(null,"Favor verificar o preenchimento de todos os campos do formulário.","Aviso",JOptionPane.WARNING_MESSAGE);    
         }
         else{

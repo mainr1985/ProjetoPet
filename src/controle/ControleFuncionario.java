@@ -10,7 +10,6 @@ import java.sql.ResultSet;
 import java.text.Normalizer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import javax.swing.JOptionPane;
 import modelo.enums.TipoFuncionario;
 
 /**
@@ -22,6 +21,7 @@ public class ControleFuncionario{
     private Connection c;
     private PreparedStatement ps;
     private ResultSet r;
+    DaoFuncionario daoFuncionario = new DaoFuncionario();
     
     public ControleFuncionario() {}
     
@@ -32,8 +32,7 @@ public class ControleFuncionario{
         Veterinario veterinario = new Veterinario(); 
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");         
         
-        //atribuindo código do funcionário do bd
-        getCodigoFuncionario(veterinario);
+        veterinario.setCodigoFunc(new DaoFuncionario().getCodigoFuncionario()+1);
         veterinario.setNome(Normalizer.normalize(nome,Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", ""));
         veterinario.setRg(rg);
         veterinario.setCpf(cpf);
@@ -60,7 +59,7 @@ public class ControleFuncionario{
         veterinario.setEspecialidade(Normalizer.normalize(especialidade,Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", ""));        
         veterinario.setCargo(TipoFuncionario.VETERINARIO);
 
-        new DaoFuncionario().salvarFuncionario(veterinario);            
+        daoFuncionario.salvarFuncionario(veterinario);
         new DaoVeterinario().salvar(veterinario);
     }             
          
@@ -71,7 +70,7 @@ public class ControleFuncionario{
         Veterinario assistente = new Veterinario();
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");         
         
-        //v.setCodFuncionario(codFuncionario);
+        assistente.setCodigoFunc(new DaoFuncionario().getCodigoFuncionario()+1);
         assistente.setNome(Normalizer.normalize(nome,Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", ""));
         assistente.setRg(rg);
         assistente.setCpf(cpf);
@@ -94,7 +93,7 @@ public class ControleFuncionario{
         assistente.setCelular(celular);
         assistente.setEmail(email);
             
-        new DaoFuncionario().salvarFuncionario(assistente);    
+        daoFuncionario.salvarFuncionario(assistente);
     }    
     
     //INCLUIR ADMINISTRADOR
@@ -103,8 +102,8 @@ public class ControleFuncionario{
        
         Veterinario administrador = new Veterinario();
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");         
-        
-        //v.setCodFuncionario(codFuncionario);
+    
+        administrador.setCodigoFunc(new DaoFuncionario().getCodigoFuncionario()+1);
         administrador.setNome(Normalizer.normalize(nome,Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", ""));
         administrador.setRg(rg);
         administrador.setCpf(cpf);
@@ -126,22 +125,6 @@ public class ControleFuncionario{
         administrador.setCelular(celular);
         administrador.setEmail(email);
             
-        new DaoFuncionario().salvarFuncionario(administrador);    
+        daoFuncionario.salvarFuncionario(administrador);    
     }       
-    
-     public int getCodigoFuncionario(Veterinario veterinario) throws SQLException{
-        int i=0;
-        try{
-            ps = c.prepareStatement("SELECT max(id_funcionario) FROM funcionario");
-            r = ps.executeQuery();
-            if (r.next()){
-                i = r.getInt(1);
-                veterinario.setCodigoFunc(i);
-            }
-        }
-        catch(SQLException e){
-            JOptionPane.showMessageDialog(null, "Operação não realizada. Motivo : " + e.getMessage(), "Alerta", JOptionPane.WARNING_MESSAGE);
-        }
-        return i;
-     }    
 }    

@@ -16,7 +16,7 @@ public class DaoFuncionario extends DaoFactory{
             
     private Connection conexao;
     private PreparedStatement ps;
-    private ResultSet r;
+    private ResultSet rs;
         
     public void salvarFuncionario(Veterinario veterinario) throws SQLException{
         
@@ -37,7 +37,8 @@ public class DaoFuncionario extends DaoFactory{
                veterinario.getDtAdmissao(),
                veterinario.getEmail(),
                veterinario.getTelefone(),
-               veterinario.getCelular());               
+               veterinario.getCelular(),
+               veterinario.getCodigoFunc());               
     }    
         
     //DESCOBRIR COMO PEGAR O ID DO USUARIO CLICADO PARA PASSAR PRO UPDATE -> NÃO É INSERT!
@@ -74,14 +75,18 @@ public class DaoFuncionario extends DaoFactory{
         update(update, v.getNomeUsuario(),v.getSenha(), v.getPermissao());*/
     }    
     
-    public int getCodigoFuncionario(Veterinario veterinario) throws SQLException{
+    public int getCodigoFuncionario() throws SQLException{
         int i=0;
+        String sql = "SELECT max(id_funcionario) FROM funcionario";
         try{
-            ps = conexao.prepareStatement("SELECT max(id_funcionario) FROM funcionario");
-            r = ps.executeQuery();
-            if (r.next()){
-                i = r.getInt(1);
-                veterinario.setCodigoFunc(i);
+            PreparedStatement ps = getConnection().prepareStatement(sql);
+            rs = ps.executeQuery();
+            if (rs.next()){
+                
+                i = rs.getInt(1);                
+                //Veterinario vet = new Veterinario();
+                //vet.setCodigoFunc(i);
+                System.out.println("entrei");
             }
         }
         catch(SQLException e){

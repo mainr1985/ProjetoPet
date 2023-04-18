@@ -16,7 +16,6 @@ public abstract class DaoFactory {
         this.connection = ConnectionFactory.getConnection();
     }
     
-     //método que retorna um objeto de conexão com o BD. QUando precisar chamar uma conexão em algum lugar, chama esse método.
     protected Connection getConnection(){
         return connection;
     }

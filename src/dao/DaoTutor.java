@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import modelo.Tutor;
 
 /**
@@ -14,14 +15,14 @@ public class DaoTutor extends DaoFactory{
     
     private Connection c;
     private PreparedStatement ps;
-    private ResultSet r;
+    private ResultSet rs;
         
     public void salvar(Tutor tutor) throws SQLException{
         
-       String insert = " INSERT INTO tutor (cpf, rg, nome, dtnasc, endereco, complemento, bairro, cidade, telefone, celular, email, dtcadastro) VALUES (?,?,?,?,?,?,?,?,?,?,?,?) ";       
+       String insert = " INSERT INTO tutor (cpf, rg, nome, dtnasc, endereco, complemento, bairro, cidade, telefone, celular, email, dtcadastro) "
+               + "                   VALUES (?,?,?,?,?,?,?,?,?,?,?,?) ";       
        
        salvar (insert,
-               /*tutor.getCodigoTutor(),*/
                tutor.getCpf(), 
                tutor.getRg(), 
                tutor.getNome(), 
@@ -43,19 +44,20 @@ public class DaoTutor extends DaoFactory{
                         "WHERE id_funcionario = ? ";
         update(update, v.getCrmv(),v.getEspecialidade());
     }
-    
-    public int getCodigoVeterinario(Veterinario v) throws SQLException{
+*/    
+    public int getCodigoTutor() throws SQLException{
         int i=0;
+        String sql = "SELECT max(codtutor) FROM tutor";
         try{
-            ps = c.prepareStatement("SELECT max(id_funcionario) FROM funcionario");
-            r = ps.executeQuery();
-            if (r.next()){
-                i = r.getInt(1);
+            PreparedStatement ps = getConnection().prepareStatement(sql);
+            rs = ps.executeQuery();
+            if (rs.next()){
+                i = rs.getInt(1);                                
             }
         }
         catch(SQLException e){
             JOptionPane.showMessageDialog(null, "Operação não realizada. Motivo : " + e.getMessage(), "Alerta", JOptionPane.WARNING_MESSAGE);
         }
         return i;
-    }*/
+     }    
 }
