@@ -14,6 +14,10 @@ public class Afericao implements Serializable{
    private Veterinario responsavel;
    private String equipamento;
    private String observacoes;
+   
+   //crmv,nomevet??
+   
+   public Afericao(){}
     
    public Afericao(Integer codigo, Double tempMin, Double tempMax, Veterinario responsavel, String equipamento, String observacoes) {
         
@@ -72,10 +76,6 @@ public class Afericao implements Serializable{
     public void setEquipamento(String equipamento) {
         this.equipamento = equipamento;
     }
-
-    public void cadastrarMedicao(Afericao temperatura){
-        
-    }    
 
     @Override
     public String toString() {

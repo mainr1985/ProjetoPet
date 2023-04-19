@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS paciente_tutor ( codpaciente integer NOT NULL, codtut
                                             CONSTRAINT fk_codtutor FOREIGN KEY (codtutor) REFERENCES tutor (codtutor) );
 
 /*Tabela Aferição*/
-create table if not exists afericao (codafericao serial not null primary key,
+create table if not exists afericao (cod_afericao serial not null primary key,
 				     responsavel varchar(40) not null,
 				     crmv_responsavel integer not null,
 				     dhafericao timestamp without time zone not null,

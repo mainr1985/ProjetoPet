@@ -4038,33 +4038,16 @@ public class Menu extends javax.swing.JFrame {
     private void btnSalvaFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvaFuncionarioActionPerformed
         ControleFuncionario controleFuncionario = new ControleFuncionario();
         int cargo = cmbCargo.getSelectedIndex();
-       // Veterinario veterinario = new Veterinario();
         
-       /*
-       (String nome, String rg, String cpf, String dtNasc,String dtCadastro, String dtAdmissao, 
-                                   String endereco, String complemento, String bairro, String cidade, String telefone, String celular, String email, 
-                                   TipoFuncionario cargo, Integer crmv, String especialidade)
-       
-       */
-       
-     
-       
-       
-       
-        
-        if (cargo==0){
-            /*
-           if 
-            txtNomeFuncNovo.getText().equals("") || txtRgFunc.getText().equals("") || txtCPF_Func.getText().equals("") 
+        if(txtNomeFuncNovo.getText().equals("") || txtRgFunc.getText().equals("") || txtCPF_Func.getText().equals("") 
             || txtDtNascFunc.getText().equals("") || txtDtAdmissao.getText().equals("") || txtEndFunc.getText().equals("") 
             || txtComplFunc.getText().equals("") || txtBairroFunc.getText().equals("") || txtCidadeFunc.getText().equals("")
             || txtTelFixoFunc.getText().equals("") || txtCelularFunc.getText().equals("") || txtEmailFunc.getText().equals("")
             || txtCrmv.getText().equals("") || txtEspecialidade.getText().equals("")){
-                JOptionPane.showMessageDialog(null,"Favor verificar o preenchimento de todos os campos do formulário.","Aviso",JOptionPane.WARNING_MESSAGE);    
-           }
-           else
-           */   
-            
+                JOptionPane.showMessageDialog(null,"Favor verificar o preenchimento de todos os campos do formulário.","Aviso",JOptionPane.WARNING_MESSAGE);     
+        }
+        else{
+            if (cargo==0){
             try{
                 controleFuncionario.salvarVeterinario(txtNomeFuncNovo.getText(), 
                                                       txtRgFunc.getText(), 
@@ -4094,6 +4077,7 @@ public class Menu extends javax.swing.JFrame {
         }  
         
         else if (cargo==1){
+            
             try{
                 controleFuncionario.salvarAdministrador(txtNomeFuncNovo.getText(), 
                                                         txtRgFunc.getText(), 
@@ -4150,6 +4134,8 @@ public class Menu extends javax.swing.JFrame {
                 e.printStackTrace();
             }      
         }
+    }
+    
     }//GEN-LAST:event_btnSalvaFuncionarioActionPerformed
 
     private void btnSalvaTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvaTutorActionPerformed
