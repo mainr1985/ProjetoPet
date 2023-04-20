@@ -11,6 +11,9 @@ import modelo.enums.TipoEspecie;
 import modelo.Veterinario;
 import modelo.Tutor;
 import controle.ControleTutor;
+import dao.DaoTutor;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -1914,6 +1917,12 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel119.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel119.setText("Nome:");
+
+        txtNomeTutorPet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeTutorPetActionPerformed(evt);
+            }
+        });
 
         jLabel120.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel120.setText("CPF:");
@@ -3893,14 +3902,19 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbEspecieActionPerformed
 
     private void btnSalvaPaciente5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvaPaciente5ActionPerformed
-        /*if (txtNomePet.getText().equals("") || /*radioMacho4.get || radioFemea.get  txtDtNascPet.getText().equals("")
-           || txtIdade.getText().equals("") || txtRaca.getText().equals("") || /*especie em branco descobrir txtCor.getText().equals("")
-           /*|| esterelizado e porte em branco descobrir)     {
-            JOptionPane.showMessageDialog(null,"Favor verificar o preenchimento de todos os campos do formulário.","Aviso",JOptionPane.WARNING_MESSAGE);    
-        }
-        else {
+        try {
+            /*if (txtNomePet.getText().equals("") || /*radioMacho4.get || radioFemea.get  txtDtNascPet.getText().equals("")
+            || txtIdade.getText().equals("") || txtRaca.getText().equals("") || /*especie em branco descobrir txtCor.getText().equals("")
+            /*|| esterelizado e porte em branco descobrir)     {
+            JOptionPane.showMessageDialog(null,"Favor verificar o preenchimento de todos os campos do formulário.","Aviso",JOptionPane.WARNING_MESSAGE);
+            }
+            else {
             
-        }*/
+            }*/
+            JOptionPane.showMessageDialog(null, new DaoTutor().getCodigoTutor());
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }//GEN-LAST:event_btnSalvaPaciente5ActionPerformed
 
     private void txtTelTutorPetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelTutorPetActionPerformed
@@ -4259,6 +4273,16 @@ public class Menu extends javax.swing.JFrame {
     private void btnCancelarTutor2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarTutor2ActionPerformed
         painelOpcoesTutor.setSelectedIndex(0);
     }//GEN-LAST:event_btnCancelarTutor2ActionPerformed
+
+    private void txtNomeTutorPetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeTutorPetActionPerformed
+        Integer codTutor = null;
+        try {
+            codTutor = new DaoTutor().getCodigoTutor();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        txtNomeTutorPet.setText(codTutor.toString());
+    }//GEN-LAST:event_txtNomeTutorPetActionPerformed
 
     //private void limparFuncNovo(ActionEvent evt) {             
        /*txtCodFuncNovo.setText("");
