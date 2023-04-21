@@ -12,9 +12,8 @@ import modelo.Veterinario;
 import modelo.Tutor;
 import controle.ControleTutor;
 import dao.DaoTutor;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
+import javax.swing.JTextField;
+import controle.ControleAfericoes;
 
 /**
  *
@@ -379,8 +378,8 @@ public class Menu extends javax.swing.JFrame {
         btnCancelar7 = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         jLabel171 = new javax.swing.JLabel();
-        txtResp3 = new javax.swing.JTextField();
-        txtCRMVResp3 = new javax.swing.JTextField();
+        txtVetResp = new javax.swing.JTextField();
+        txtCRMVResp = new javax.swing.JTextField();
         jLabel173 = new javax.swing.JLabel();
         jLabel184 = new javax.swing.JLabel();
         jLabel196 = new javax.swing.JLabel();
@@ -388,11 +387,11 @@ public class Menu extends javax.swing.JFrame {
         jRadioButton11 = new javax.swing.JRadioButton();
         jRadioButton12 = new javax.swing.JRadioButton();
         jLabel203 = new javax.swing.JLabel();
-        txtTempMax3 = new javax.swing.JTextField();
+        txtTempMax = new javax.swing.JTextField();
         jLabel204 = new javax.swing.JLabel();
-        txtTempMin3 = new javax.swing.JTextField();
+        txtTempMin = new javax.swing.JTextField();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
+        txaObservacoes = new javax.swing.JTextArea();
         jLabel206 = new javax.swing.JLabel();
         btnSalvarAfericao1 = new javax.swing.JButton();
         btnCancelar5 = new javax.swing.JButton();
@@ -3511,6 +3510,12 @@ public class Menu extends javax.swing.JFrame {
         jLabel171.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel171.setText("Responsável:");
 
+        txtVetResp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtVetRespActionPerformed(evt);
+            }
+        });
+
         jLabel173.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel173.setText("CRMV:");
 
@@ -3540,15 +3545,15 @@ public class Menu extends javax.swing.JFrame {
         jLabel204.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel204.setText("ºC");
 
-        txtTempMin3.addActionListener(new java.awt.event.ActionListener() {
+        txtTempMin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTempMin3ActionPerformed(evt);
+                txtTempMinActionPerformed(evt);
             }
         });
 
-        jTextArea4.setColumns(20);
-        jTextArea4.setRows(5);
-        jScrollPane6.setViewportView(jTextArea4);
+        txaObservacoes.setColumns(20);
+        txaObservacoes.setRows(5);
+        jScrollPane6.setViewportView(txaObservacoes);
 
         jLabel206.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel206.setText("Observações");
@@ -3582,16 +3587,16 @@ public class Menu extends javax.swing.JFrame {
                             .addGroup(jPanel9Layout.createSequentialGroup()
                                 .addComponent(jLabel171)
                                 .addGap(27, 27, 27)
-                                .addComponent(txtResp3, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtVetResp, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel9Layout.createSequentialGroup()
                                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel184)
                                     .addComponent(jLabel173))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtCRMVResp3, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtCRMVResp, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel9Layout.createSequentialGroup()
-                                        .addComponent(txtTempMin3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtTempMin, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel204))))
                             .addGroup(jPanel9Layout.createSequentialGroup()
@@ -3606,7 +3611,7 @@ public class Menu extends javax.swing.JFrame {
                                     .addGroup(jPanel9Layout.createSequentialGroup()
                                         .addComponent(jLabel196)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txtTempMax3, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtTempMax, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel203))
                                     .addComponent(jLabel206)
@@ -3630,19 +3635,19 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel171)
-                    .addComponent(txtResp3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtVetResp, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel173)
-                    .addComponent(txtCRMVResp3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCRMVResp, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtTempMin3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTempMin, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel184)
                     .addComponent(jLabel204))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtTempMax3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTempMax, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel203)
                     .addComponent(jLabel196))
                 .addGap(27, 27, 27)
@@ -4250,12 +4255,39 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton12ActionPerformed
 
-    private void txtTempMin3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTempMin3ActionPerformed
+    private void txtTempMinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTempMinActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtTempMin3ActionPerformed
+    }//GEN-LAST:event_txtTempMinActionPerformed
 
     private void btnSalvarAfericao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarAfericao1ActionPerformed
-        // TODO add your handling code here:
+         ControleAfericoes controleAfericoes = new ControleAfericoes();
+                
+        if (txtVetResp.getText().equals("")||txtCRMVResp.getText().equals("")||txtTempMin.getText().equals("")||txtTempMax.getText().equals("")
+            ||txaObservacoes.getText().equals("")
+                ){
+            
+            JOptionPane.showMessageDialog(null,"Favor verificar o preenchimento de todos os campos do formulário.","Aviso",JOptionPane.WARNING_MESSAGE);    
+        }
+        else{
+            try{
+                controleAfericoes.salvarAfericao(txtVetResp.getText(), 
+                                                 Integer.parseInt(txtCRMVResp.getText()), 
+                                                 Double.parseDouble(txtTempMin.getText()), 
+                                                 Double.parseDouble(txtTempMax.getText()), /*equipamento,*/ 
+                                                 txaObservacoes.getText());
+                
+                JOptionPane.showMessageDialog(null, "Aferição cadastrada com sucesso.", "Salvar Aferição", JOptionPane.INFORMATION_MESSAGE);
+                limparAfericao();
+                painelMenu.setSelectedIndex(1);
+                painelOpcoesPaciente.setSelectedIndex(2);
+            }
+            catch(SQLException e){
+                e.printStackTrace();
+            }
+            catch(ParseException e){
+                e.printStackTrace();
+            }
+        }        
     }//GEN-LAST:event_btnSalvarAfericao1ActionPerformed
 
     private void txtDtAdmissaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDtAdmissaoActionPerformed
@@ -4283,6 +4315,10 @@ public class Menu extends javax.swing.JFrame {
         }
         txtNomeTutorPet.setText(codTutor.toString());
     }//GEN-LAST:event_txtNomeTutorPetActionPerformed
+
+    private void txtVetRespActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVetRespActionPerformed
+       
+    }//GEN-LAST:event_txtVetRespActionPerformed
 
     //private void limparFuncNovo(ActionEvent evt) {             
        /*txtCodFuncNovo.setText("");
@@ -4552,7 +4588,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable7;
     private javax.swing.JTable jTable8;
-    private javax.swing.JTextArea jTextArea4;
     private javax.swing.JTextArea jTextArea6;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
@@ -4583,6 +4618,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JRadioButton radioSim5;
     private javax.swing.JRadioButton radioSim8;
     private javax.swing.JRadioButton radioSim9;
+    private javax.swing.JTextArea txaObservacoes;
     private javax.swing.JTextField txtBairroFunc;
     private javax.swing.JTextField txtBairroFunc1;
     private javax.swing.JTextField txtBairroTutor;
@@ -4598,7 +4634,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField txtCPFTutorPet;
     private javax.swing.JFormattedTextField txtCPF_Func;
     private javax.swing.JFormattedTextField txtCPF_Func2;
-    private javax.swing.JTextField txtCRMVResp3;
+    private javax.swing.JTextField txtCRMVResp;
     private javax.swing.JTextField txtCRMVResp5;
     private javax.swing.JFormattedTextField txtCelTutor;
     private javax.swing.JFormattedTextField txtCelTutor1;
@@ -4665,7 +4701,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField txtNomeTutorPet;
     private javax.swing.JTextField txtRaca;
     private javax.swing.JTextField txtRaca3;
-    private javax.swing.JTextField txtResp3;
     private javax.swing.JTextField txtResp5;
     private javax.swing.JTextField txtResponsavel1;
     private javax.swing.JFormattedTextField txtRgFunc;
@@ -4679,11 +4714,12 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField txtTelTutor3;
     private javax.swing.JFormattedTextField txtTelTutor5;
     private javax.swing.JFormattedTextField txtTelTutorPet;
-    private javax.swing.JTextField txtTempMax3;
+    private javax.swing.JTextField txtTempMax;
     private javax.swing.JTextField txtTempMax5;
-    private javax.swing.JTextField txtTempMin3;
+    private javax.swing.JTextField txtTempMin;
     private javax.swing.JTextField txtTempMin5;
     private javax.swing.JTextField txtUser;
+    private javax.swing.JTextField txtVetResp;
     // End of variables declaration//GEN-END:variables
 
     /**
@@ -4746,4 +4782,22 @@ public class Menu extends javax.swing.JFrame {
         txtCelTutor.setText("");
         txtDtNascTutor.setText("");
     }
+
+    public JTextField getTxtNomeTutorPet() {
+        return txtNomeTutorPet;
+    }
+
+    public void setTxtNomeTutorPet(JTextField txtNomeTutorPet) {
+        this.txtNomeTutorPet = txtNomeTutorPet;
+    }
+ 
+    public void limparAfericao(){
+ 
+        txtVetResp.setText(""); 
+        txtCRMVResp.setText(""); 
+        txtTempMin.setText(""); 
+        txtTempMax.setText(""); 
+        txaObservacoes.setText("");
+    }
+    
 }

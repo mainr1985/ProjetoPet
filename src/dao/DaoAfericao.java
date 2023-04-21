@@ -19,19 +19,20 @@ public class DaoAfericao extends DaoFactory{
     private PreparedStatement ps;
     private ResultSet rs;
             
-    public void salvarAfericao(Afericao afericao, Veterinario veterinario) throws SQLException{
+    public void salvarAfericao(Afericao afericao) throws SQLException{
         
        String insert = "INSERT INTO afericao "
-                     + " (responsavel, crmv, dhafericao, temp_min, temp_max, equipamento, observacoes) "
+                     + " (responsavel, crmv, temp_min, temp_max, /*equipamento,*/ observacoes, dhafericao) "
                      + " VALUES (?,?,?,?,?,?,?) ";
        
        salvar (insert, 
-               veterinario.getNome(),
-               veterinario.getCrmv(),
+               afericao.getResponsavel().getNome(),
+               afericao.getResponsavel().getCrmv(),
                afericao.getTempMin(),
                afericao.getTempMax(),
-               afericao.getEquipamento(),
-               afericao.getObservacoes());               
+               //afericao.getEquipamento(),
+               afericao.getObservacoes(),
+               afericao.getDhAfericao());               
     }    
         
     public void alterar(Veterinario veterinario, Afericao afericao) throws SQLException {
