@@ -14,6 +14,7 @@ import controle.ControleTutor;
 import dao.DaoTutor;
 import javax.swing.JTextField;
 import controle.ControleAfericoes;
+import controle.ControlePaciente;
 
 /**
  *
@@ -3907,7 +3908,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbEspecieActionPerformed
 
     private void btnSalvaPaciente5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvaPaciente5ActionPerformed
-        try {
+        //try {
             /*if (txtNomePet.getText().equals("") || /*radioMacho4.get || radioFemea.get  txtDtNascPet.getText().equals("")
             || txtIdade.getText().equals("") || txtRaca.getText().equals("") || /*especie em branco descobrir txtCor.getText().equals("")
             /*|| esterelizado e porte em branco descobrir)     {
@@ -3916,10 +3917,60 @@ public class Menu extends javax.swing.JFrame {
             else {
             
             }*/
-            JOptionPane.showMessageDialog(null, new DaoTutor().getCodigoTutor());
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
+            
+            //ControlePaciente controlePaciente = new ControlePaciente();
+            String sexo = "";
+            if (radioMacho.isSelected()){
+               sexo = "Macho"; 
+            }               
+            else {
+                sexo = "Fêmea";
+            }
+            JOptionPane.showMessageDialog(null, sexo);
+            radioMacho.setSelected(false);
+            radioFemea.setSelected(false);
+            
+            /*String porte = 
+            String esterelizado = */
+                    
+        
+                /*if (txtNomePet.getText().equals("") || /*radioMacho4.get || radioFemea.get  txtDtNascPet.getText().equals("")
+                    || txtIdade.getText().equals("") || txtRaca.getText().equals("") || /*especie em branco descobrir txtCor.getText().equals("")
+                /*|| esterelizado e porte em branco descobrir)     {
+            
+                JOptionPane.showMessageDialog(null,"Favor verificar o preenchimento de todos os campos do formulário.","Aviso",JOptionPane.WARNING_MESSAGE);     
+            }
+            else{*/
+               /* if (cargo==0){
+                    try{
+                        controlePaciente.salvarVeterinario(txtNomeFuncNovo.getText(), 
+                                                              txtRgFunc.getText(), 
+                                                              txtCPF_Func.getText(), 
+                                                              txtDtNascFunc.getText(), 
+                                                              txtDtAdmissao.getText(), 
+                                                              txtEndFunc.getText(), 
+                                                              txtComplFunc.getText(), 
+                                                              txtBairroFunc.getText(), 
+                                                              txtCidadeFunc.getText(), 
+                                                              txtTelFixoFunc.getText(), 
+                                                              txtCelularFunc.getText(), 
+                                                              txtEmailFunc.getText(), 
+                                                              TipoFuncionario.VETERINARIO, 
+                                                              Integer.parseInt(txtCrmv.getText()), 
+                                                              txtEspecialidade.getText());
+
+                               JOptionPane.showMessageDialog(null, "Veterinário cadastrado com sucesso. \nVocê será redirecionado para o Cadastro de Usuário");  
+                               painelFunc.setSelectedIndex(3);
+           }
+            catch(SQLException e){
+                e.printStackTrace();
+            }
+            catch(ParseException e){
+                e.printStackTrace();
+            }      
+            
+            JOptionPane.showMessageDialog(null, new DaoTutor().getCodigoTutor());*/
+        
     }//GEN-LAST:event_btnSalvaPaciente5ActionPerformed
 
     private void txtTelTutorPetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelTutorPetActionPerformed

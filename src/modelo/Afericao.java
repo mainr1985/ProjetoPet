@@ -11,19 +11,19 @@ public class Afericao implements Serializable{
    private static final long serialVersionUID = 1L;  
    private Integer codigo;
    private Double tempMin, tempMax;
-   private Veterinario responsavel;
+   private Veterinario veterinario;
    private String equipamento;
    private String observacoes;
    private String dhAfericao;
    
    public Afericao(){}
     
-   public Afericao(Integer codigo, Double tempMin, Double tempMax, Veterinario responsavel, String equipamento, String observacoes,String dhAfericao) {
+   public Afericao(Integer codigo, Double tempMin, Double tempMax, Veterinario veterinario, String equipamento, String observacoes,String dhAfericao) {
         
         this.codigo = codigo;
         this.tempMin = tempMin;
         this.tempMax = tempMax;        
-        this.responsavel = responsavel;
+        this.veterinario = veterinario;
         this.equipamento = equipamento;
         this.observacoes = observacoes;
         this.dhAfericao = dhAfericao;
@@ -54,11 +54,11 @@ public class Afericao implements Serializable{
     }
 
     public Veterinario getResponsavel() {
-        return responsavel;
+        return veterinario;
     }
 
-    public void setResponsavel(Veterinario responsavel) {
-        this.responsavel = responsavel;
+    public void setResponsavel(Veterinario veterinario) {
+        this.veterinario = veterinario;
     }
     
     public String getEquipamento() {
@@ -87,7 +87,7 @@ public class Afericao implements Serializable{
 
     @Override
     public String toString() {
-        return "Afericao{" + "codigo=" + codigo + ", tempMin=" + tempMin + ", tempMax=" + tempMax + ", responsavel=" + responsavel + ", equipamento=" 
+        return "Afericao{" + "codigo=" + codigo + ", tempMin=" + tempMin + ", tempMax=" + tempMax + ", veterinario=" + veterinario + ", equipamento=" 
                 + equipamento + ", observacoes=" + observacoes + ", dhAfericao=" + dhAfericao + '}';
     }
 }
