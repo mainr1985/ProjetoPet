@@ -38,19 +38,20 @@ public class DaoPaciente extends DaoFactory{
     }*/
     
     public void salvar(Paciente paciente) throws SQLException {
-        String insert = " INSERT INTO paciente (nome, sexo, dtnasc, idade, raca, especie, cor, esterelizado, porte, codtutor) "
+        String insert = " INSERT INTO paciente (nome, sexo, dtnasc, idade, raca, especie, cor, esterelizado, porte, codtutor, dtcadastro) "
                        + "VALUES (?,?,?,?,?,?,?,?,?,?) ";    
         
         salvar (insert,
-                paciente.getCodigoPaciente(),
                 paciente.getNome(), 
+                paciente.getSexo(),
                 paciente.getDtNascimento(), 
                 paciente.getIdade(),
                 paciente.getRaca(),
-                //paciente.getEspecie(),
+                paciente.getEspecie(),
                 paciente.getCor(),
-                //paciente.getEsterelizado(),
-                //paciente.getPorte(),
+                paciente.getEsterelizado(),
+                paciente.getPorte(),
+                paciente.getTutor(),
                 paciente.getDtCadastro()
                );  
     }

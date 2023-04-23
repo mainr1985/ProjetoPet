@@ -6,7 +6,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import modelo.Paciente;
-import modelo.enums.TipoEspecie;
+import visao.Menu;
+//import modelo.enums.TipoEspecie;
 
 /**
  *
@@ -14,10 +15,11 @@ import modelo.enums.TipoEspecie;
  */
 public class ControlePaciente {
 
+    Menu tela = new Menu();
     public ControlePaciente() {
     }
     
-    public void salvarPaciente(String nome, String idade, String cor, String dataNascimento, String raca, /*TipoEspecie especie,*/ 
+    public void salvarPaciente(String nome, String idade, String cor, String dataNascimento, String raca, String especie,
                                String sexo, String porte, Boolean esterelizado) throws SQLException, ParseException{
      
         Paciente paciente = new Paciente();
@@ -26,6 +28,7 @@ public class ControlePaciente {
         paciente.setIdade(idade);
         paciente.setCor(cor);
         
+        
         //convertendo a data digitada para inserção no banco de dados
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
         java.sql.Date dtNascimento = new java.sql.Date(formato.parse(dataNascimento).getTime());
@@ -33,7 +36,9 @@ public class ControlePaciente {
         
         paciente.setRaca(raca);
         paciente.setSexo(sexo);
-        //descobrir como pegar o enum sem saber qual a opção marcada.
+        paciente.setEspecie(tela.getEspeciePet());
+
+        //descobr ir como pegar o enum sem saber qual a opção marcada.
         paciente.setPorte(porte);
         paciente.setEsterelizado(esterelizado);
         
@@ -44,4 +49,6 @@ public class ControlePaciente {
         
         new DaoPaciente().salvar(paciente);  
     }
+    
+    
 }

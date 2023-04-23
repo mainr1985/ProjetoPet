@@ -3917,7 +3917,12 @@ public class Menu extends javax.swing.JFrame {
         String sexo = getSexoPet(new Paciente());
         Boolean esterelizado = esterelizado(new Paciente());
         String porte = getPortePet(new Paciente());
-        String especie = getEspeciePet(new Paciente());
+       
+        /*
+        public void salvarPaciente(String nome, String idade, String cor, String dataNascimento, String raca, TipoEspecie especie,
+                               String sexo, String porte, Boolean esterelizado)        
+        */
+
         
         try {
             if ( (txtNomePet.getText().equals("") 
@@ -3925,7 +3930,7 @@ public class Menu extends javax.swing.JFrame {
                   || txtDtNascPet.getText().equals("") 
                   || txtIdade.getText().equals("") 
                   || txtRaca.getText().equals("") 
-                  //|| /*especie em branco descobrir
+                  || cmbEspecie.getSelectedItem() == null
                   || txtCor.getText().equals("")
                   || ((!rdbSim.isSelected()) && (!rdbNao.isSelected()))
                   || ( (!rdbPequeno.isSelected()) && (!rdbMedio.isSelected()) && (!rdbGrande.isSelected()) && (!rdbGigante.isSelected())))
@@ -3940,7 +3945,8 @@ public class Menu extends javax.swing.JFrame {
                                                 txtCor.getText(), 
                                                 txtDtNascPet.getText(), 
                                                 txtRaca.getText(), 
-                                                especie,
+                                                cmbEspecie.getSelectedIndex(),
+                                                sexo,
                                                 porte,
                                                 esterelizado);
                 JOptionPane.showMessageDialog(null, "Paciente cadastrado com sucesso.");  
@@ -4902,7 +4908,7 @@ public class Menu extends javax.swing.JFrame {
         return sexo;
     }
     
-    public String getEspeciePet(Paciente paciente){
+    public String getEspeciePet(){
         String especie = "";
         if (cmbEspecie.getSelectedIndex()==0){
             especie=TipoEspecie.CANINA.toString();

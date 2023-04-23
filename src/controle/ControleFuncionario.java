@@ -25,8 +25,8 @@ public class ControleFuncionario{
     
     public ControleFuncionario() {}
     
-    public void salvarVeterinario (String nome, String rg, String cpf, String dtNasc, String dtAdmissao, 
-                                   String endereco, String complemento, String bairro, String cidade, String telefone, String celular, String email, 
+    public void salvarVeterinario (String nome, String rg, String cpf, String dtNasc, String dtAdmissao, String endereco, 
+                                   String complemento, String bairro, String cidade, String telefone, String celular, String email, 
                                    TipoFuncionario cargo, Integer crmv, String especialidade) throws SQLException, ParseException{
         
         Veterinario veterinario = new Veterinario(); 
