@@ -1,6 +1,4 @@
-
 package controle;
-
 import dao.DaoPaciente;
 import java.sql.SQLException;
 import java.text.Normalizer;
@@ -19,13 +17,12 @@ public class ControlePaciente {
     public ControlePaciente() {
     }
     
-    public void salvarPaciente(String nome, String apelido, Integer idade, String cor, String dataNascimento, String raca, /*TipoEspecie especie,*/ 
-                               /*String porte, Boolean esterelizado,*/ String dtCadastro) throws SQLException, ParseException{
+    public void salvarPaciente(String nome, String idade, String cor, String dataNascimento, String raca, /*TipoEspecie especie,*/ 
+                               String sexo, String porte, Boolean esterelizado) throws SQLException, ParseException{
      
         Paciente paciente = new Paciente();
         paciente.setCodigoPaciente(new DaoPaciente().getCodigoPaciente()+1);
         paciente.setNome((Normalizer.normalize(nome,Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "")));
-        paciente.setApelido((Normalizer.normalize(apelido,Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "")));
         paciente.setIdade(idade);
         paciente.setCor(cor);
         
@@ -35,9 +32,10 @@ public class ControlePaciente {
         paciente.setDtNascimento(dtNascimento);
         
         paciente.setRaca(raca);
+        paciente.setSexo(sexo);
         //descobrir como pegar o enum sem saber qual a opção marcada.
-        //paciente.setPorte(porte);
-        //paciente.setEsterelizado(esterelizado);
+        paciente.setPorte(porte);
+        paciente.setEsterelizado(esterelizado);
         
          //pegando a data atual
         String dataAtual = formato.format(new Date());

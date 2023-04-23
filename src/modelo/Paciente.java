@@ -1,5 +1,4 @@
 package modelo;
-
 import java.io.Serializable;
 import java.util.Date;
 import modelo.enums.TipoEspecie;
@@ -14,30 +13,29 @@ public class Paciente implements Serializable{
     
     private Integer codigoPaciente;
     private String nome;
-    private String apelido;
-    private Integer idade;
+    private String idade;
     private String cor;
+    private String sexo;
     private Date dtNascimento;    
     private String raca;
     private TipoEspecie especie;
     private String porte;
     private Boolean esterelizado;
-    private Date dtCadastro;    
-   
+    private Date dtCadastro;     
     private Tutor tutor;    
 
     public Paciente() {
     }
 
-    public Paciente(Integer codigoPaciente, String nome, String apelido, Integer idade, Date dtNascimento, String cor, 
+    public Paciente(Integer codigoPaciente, String nome, String idade, Date dtNascimento, String cor, String sexo,
                     String raca, TipoEspecie especie, String porte, Boolean esterelizado, Tutor tutor, Date dtCadastro) {
         
         this.codigoPaciente = codigoPaciente;
-        this.nome = nome;
-        this.apelido = apelido;
+        this.nome = nome;        
         this.idade = idade;
         this.dtNascimento = dtNascimento;
         this.cor = cor;
+        this.sexo = sexo;
         this.raca = raca;
         this.especie = especie;
         this.porte = porte;
@@ -84,12 +82,12 @@ public class Paciente implements Serializable{
         return this.dtNascimento;
     }
     
-    public void setIdade(Integer idade)
+    public void setIdade(String idade)
     {
         this.idade = idade;
     }
     
-    public Integer getIdade()
+    public String getIdade()
     {
         return this.idade;
     }
@@ -108,14 +106,6 @@ public class Paciente implements Serializable{
 
     public void setEspecie(TipoEspecie especie) {
         this.especie = especie;
-    }
-
-    public String getApelido() {
-        return apelido;
-    }
-
-    public void setApelido(String apelido) {
-        this.apelido = apelido;
     }
 
     public String getCor() {
@@ -149,11 +139,19 @@ public class Paciente implements Serializable{
     public void setDtCadastro(Date dtCadastro) {
         this.dtCadastro = dtCadastro;
     }
+    
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+    
+    public String getSexo(){
+        return sexo;
+    }
 
     @Override
     public String toString() {
-        return "Paciente{" + "codigoPaciente=" + codigoPaciente + ", nome=" + nome + ", apelido=" + apelido + ", idade=" + idade 
-                           + ", cor=" + cor + ", dtNascimento=" + dtNascimento + ", raca=" + raca + ", especie=" + especie 
-                           + ", porte=" + porte + ", esterelizado=" + esterelizado + ", dtCadastro=" + dtCadastro + ", tutor=" + tutor + '}';
+        return "Paciente{" + "codigoPaciente=" + codigoPaciente + ", nome=" + nome + ", idade=" + idade + ", cor=" + cor 
+                         + ", sexo=" + sexo + ", dtNascimento=" + dtNascimento + ", raca=" + raca + ", especie=" + especie + ", porte=" + porte 
+                         + ", esterelizado=" + esterelizado + ", dtCadastro=" + dtCadastro + ", tutor=" + tutor + '}';
     }
 }

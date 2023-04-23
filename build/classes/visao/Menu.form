@@ -2646,81 +2646,91 @@
                                   <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel116" alignment="0" min="-2" pref="888" max="-2" attributes="0"/>
-                                      <Component id="jLabel137" alignment="0" min="-2" pref="888" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel133" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="txtIdade" alignment="0" min="-2" pref="225" max="-2" attributes="0"/>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="txtDtNascPet" min="-2" pref="113" max="-2" attributes="0"/>
+                                                          <EmptySpace min="-2" pref="202" max="-2" attributes="0"/>
+                                                          <Component id="jLabel131" min="-2" pref="88" max="-2" attributes="0"/>
+                                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                          <Component id="rdbSim" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                                                          <Component id="rdbNao" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                              </Group>
+                                              <Component id="jLabel130" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jLabel134" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel129" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="rdbMacho" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                                          <Component id="rdbFemea" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="txtNomePet" alignment="0" min="-2" pref="234" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jLabel135" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel136" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel231" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="txtRaca" alignment="0" min="-2" pref="225" max="-2" attributes="0"/>
+                                                      <Component id="cmbEspecie" alignment="0" min="-2" pref="225" max="-2" attributes="0"/>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="txtCor" min="-2" pref="225" max="-2" attributes="0"/>
+                                                          <EmptySpace max="32767" attributes="0"/>
+                                                          <Group type="103" groupAlignment="0" attributes="0">
+                                                              <Component id="jLabel139" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
+                                                              <Group type="102" alignment="0" attributes="0">
+                                                                  <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                                                                  <Group type="103" groupAlignment="1" attributes="0">
+                                                                      <Group type="102" alignment="1" attributes="0">
+                                                                          <Component id="rdbPequeno" min="-2" max="-2" attributes="0"/>
+                                                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                                                          <Component id="rdbMedio" min="-2" max="-2" attributes="0"/>
+                                                                      </Group>
+                                                                      <Group type="102" alignment="1" attributes="0">
+                                                                          <Component id="btnSalvaPaciente5" min="-2" max="-2" attributes="0"/>
+                                                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                                          <Component id="btnCancelarTutor12" min="-2" max="-2" attributes="0"/>
+                                                                      </Group>
+                                                                  </Group>
+                                                                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                                                                  <Component id="rdbGrande" min="-2" max="-2" attributes="0"/>
+                                                                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                                                                  <Component id="rdbGigante" min="-2" max="-2" attributes="0"/>
+                                                              </Group>
+                                                          </Group>
+                                                      </Group>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel116" alignment="0" min="-2" pref="888" max="-2" attributes="0"/>
+                                              <Component id="jLabel137" alignment="0" min="-2" pref="888" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
                                   <EmptySpace min="0" pref="35" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel135" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel136" alignment="1" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel231" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="txtRaca" alignment="0" min="-2" pref="225" max="-2" attributes="0"/>
-                                              <Component id="cmbEspecie" alignment="0" min="-2" pref="225" max="-2" attributes="0"/>
-                                              <Component id="txtCor" alignment="0" min="-2" pref="225" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel133" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="txtIdade" alignment="0" min="-2" pref="225" max="-2" attributes="0"/>
-                                              <Component id="txtDtNascPet" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel131" min="-2" pref="88" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="radioSim9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="radioSim8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="radioNao16" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="radioNao17" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                                                  <Component id="radioNao18" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                                                  <Component id="radioNao19" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                      </Group>
-                                      <Component id="jLabel130" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel139" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="332" max="-2" attributes="0"/>
-                                          <Component id="btnSalvaPaciente5" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="btnCancelarTutor12" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel134" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel129" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="radioMacho" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                                                  <Component id="radioFemea" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="txtNomePet" alignment="0" min="-2" pref="234" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -2751,23 +2761,37 @@
                                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel134" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="radioMacho" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="radioFemea" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rdbMacho" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rdbFemea" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="txtDtNascPet" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                                      <Component id="jLabel130" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="txtDtNascPet" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                              <Component id="jLabel130" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel131" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rdbSim" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rdbNao" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Component id="jLabel133" alignment="1" min="-2" pref="32" max="-2" attributes="0"/>
                                       <Component id="txtIdade" alignment="1" min="-2" pref="36" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel135" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtRaca" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="btnCancelarTutor12" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Component id="btnSalvaPaciente5" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -2778,27 +2802,13 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="txtCor" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                       <Component id="jLabel231" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel131" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="radioSim8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="radioNao16" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace pref="9" max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel139" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="radioSim9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="radioNao17" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="radioNao18" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="radioNao19" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rdbPequeno" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rdbMedio" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rdbGrande" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rdbGigante" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="btnSalvaPaciente5" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                                      <Component id="btnCancelarTutor12" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
+                                  <EmptySpace pref="255" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -2914,7 +2924,7 @@
                             <Property name="text" type="java.lang.String" value="Esterelizado:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JRadioButton" name="radioSim8">
+                        <Component class="javax.swing.JRadioButton" name="rdbSim">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="0"/>
@@ -2922,10 +2932,10 @@
                             <Property name="text" type="java.lang.String" value="Sim"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioSim8ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdbSimActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JRadioButton" name="radioNao16">
+                        <Component class="javax.swing.JRadioButton" name="rdbNao">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="0"/>
@@ -2933,7 +2943,7 @@
                             <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioNao16ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdbNaoActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel133">
@@ -2970,7 +2980,7 @@
                             <Property name="text" type="java.lang.String" value="Sexo:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JRadioButton" name="radioMacho">
+                        <Component class="javax.swing.JRadioButton" name="rdbMacho">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="0"/>
@@ -2978,7 +2988,7 @@
                             <Property name="text" type="java.lang.String" value="Macho"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JRadioButton" name="radioFemea">
+                        <Component class="javax.swing.JRadioButton" name="rdbFemea">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="0"/>
@@ -3105,7 +3115,7 @@
                             <Property name="text" type="java.lang.String" value="Porte:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JRadioButton" name="radioSim9">
+                        <Component class="javax.swing.JRadioButton" name="rdbPequeno">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="0"/>
@@ -3113,10 +3123,10 @@
                             <Property name="text" type="java.lang.String" value="Pequeno"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioSim9ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdbPequenoActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JRadioButton" name="radioNao17">
+                        <Component class="javax.swing.JRadioButton" name="rdbMedio">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="0"/>
@@ -3124,10 +3134,10 @@
                             <Property name="text" type="java.lang.String" value="M&#xe9;dio"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioNao17ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdbMedioActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JRadioButton" name="radioNao18">
+                        <Component class="javax.swing.JRadioButton" name="rdbGrande">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="0"/>
@@ -3135,10 +3145,10 @@
                             <Property name="text" type="java.lang.String" value="Grande"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioNao18ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdbGrandeActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JRadioButton" name="radioNao19">
+                        <Component class="javax.swing.JRadioButton" name="rdbGigante">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="0"/>
@@ -3146,7 +3156,7 @@
                             <Property name="text" type="java.lang.String" value="Gigante"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioNao19ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdbGiganteActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel231">

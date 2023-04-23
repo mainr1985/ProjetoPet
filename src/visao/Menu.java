@@ -15,6 +15,7 @@ import dao.DaoTutor;
 import javax.swing.JTextField;
 import controle.ControleAfericoes;
 import controle.ControlePaciente;
+import modelo.Paciente;
 
 /**
  *
@@ -217,13 +218,13 @@ public class Menu extends javax.swing.JFrame {
         jLabel130 = new javax.swing.JLabel();
         txtDtNascPet = new javax.swing.JFormattedTextField();
         jLabel131 = new javax.swing.JLabel();
-        radioSim8 = new javax.swing.JRadioButton();
-        radioNao16 = new javax.swing.JRadioButton();
+        rdbSim = new javax.swing.JRadioButton();
+        rdbNao = new javax.swing.JRadioButton();
         jLabel133 = new javax.swing.JLabel();
         txtIdade = new javax.swing.JTextField();
         jLabel134 = new javax.swing.JLabel();
-        radioMacho = new javax.swing.JRadioButton();
-        radioFemea = new javax.swing.JRadioButton();
+        rdbMacho = new javax.swing.JRadioButton();
+        rdbFemea = new javax.swing.JRadioButton();
         jLabel135 = new javax.swing.JLabel();
         txtRaca = new javax.swing.JTextField();
         jLabel136 = new javax.swing.JLabel();
@@ -234,10 +235,10 @@ public class Menu extends javax.swing.JFrame {
         jLabel138 = new javax.swing.JLabel();
         txtTelTutorPet = new javax.swing.JFormattedTextField();
         jLabel139 = new javax.swing.JLabel();
-        radioSim9 = new javax.swing.JRadioButton();
-        radioNao17 = new javax.swing.JRadioButton();
-        radioNao18 = new javax.swing.JRadioButton();
-        radioNao19 = new javax.swing.JRadioButton();
+        rdbPequeno = new javax.swing.JRadioButton();
+        rdbMedio = new javax.swing.JRadioButton();
+        rdbGrande = new javax.swing.JRadioButton();
+        rdbGigante = new javax.swing.JRadioButton();
         jLabel231 = new javax.swing.JLabel();
         txtCor = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
@@ -1969,19 +1970,19 @@ public class Menu extends javax.swing.JFrame {
         jLabel131.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel131.setText("Esterelizado:");
 
-        radioSim8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        radioSim8.setText("Sim");
-        radioSim8.addActionListener(new java.awt.event.ActionListener() {
+        rdbSim.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        rdbSim.setText("Sim");
+        rdbSim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioSim8ActionPerformed(evt);
+                rdbSimActionPerformed(evt);
             }
         });
 
-        radioNao16.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        radioNao16.setText("Não");
-        radioNao16.addActionListener(new java.awt.event.ActionListener() {
+        rdbNao.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        rdbNao.setText("Não");
+        rdbNao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioNao16ActionPerformed(evt);
+                rdbNaoActionPerformed(evt);
             }
         });
 
@@ -2000,11 +2001,11 @@ public class Menu extends javax.swing.JFrame {
         jLabel134.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel134.setText("Sexo:");
 
-        radioMacho.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        radioMacho.setText("Macho");
+        rdbMacho.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        rdbMacho.setText("Macho");
 
-        radioFemea.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        radioFemea.setText("Fêmea");
+        rdbFemea.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        rdbFemea.setText("Fêmea");
 
         jLabel135.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel135.setText("Raça:");
@@ -2060,35 +2061,35 @@ public class Menu extends javax.swing.JFrame {
         jLabel139.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel139.setText("Porte:");
 
-        radioSim9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        radioSim9.setText("Pequeno");
-        radioSim9.addActionListener(new java.awt.event.ActionListener() {
+        rdbPequeno.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        rdbPequeno.setText("Pequeno");
+        rdbPequeno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioSim9ActionPerformed(evt);
+                rdbPequenoActionPerformed(evt);
             }
         });
 
-        radioNao17.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        radioNao17.setText("Médio");
-        radioNao17.addActionListener(new java.awt.event.ActionListener() {
+        rdbMedio.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        rdbMedio.setText("Médio");
+        rdbMedio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioNao17ActionPerformed(evt);
+                rdbMedioActionPerformed(evt);
             }
         });
 
-        radioNao18.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        radioNao18.setText("Grande");
-        radioNao18.addActionListener(new java.awt.event.ActionListener() {
+        rdbGrande.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        rdbGrande.setText("Grande");
+        rdbGrande.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioNao18ActionPerformed(evt);
+                rdbGrandeActionPerformed(evt);
             }
         });
 
-        radioNao19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        radioNao19.setText("Gigante");
-        radioNao19.addActionListener(new java.awt.event.ActionListener() {
+        rdbGigante.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        rdbGigante.setText("Gigante");
+        rdbGigante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioNao19ActionPerformed(evt);
+                rdbGiganteActionPerformed(evt);
             }
         });
 
@@ -2118,64 +2119,70 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(txtTelTutorPet, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(73, 73, 73))
             .addGroup(jPanel50Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel116, javax.swing.GroupLayout.PREFERRED_SIZE, 888, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel137, javax.swing.GroupLayout.PREFERRED_SIZE, 888, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel50Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel50Layout.createSequentialGroup()
+                                .addComponent(jLabel133)
+                                .addGap(58, 58, 58)
+                                .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel50Layout.createSequentialGroup()
+                                        .addComponent(txtDtNascPet, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(202, 202, 202)
+                                        .addComponent(jLabel131, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(rdbSim)
+                                        .addGap(62, 62, 62)
+                                        .addComponent(rdbNao))))
+                            .addComponent(jLabel130)
+                            .addGroup(jPanel50Layout.createSequentialGroup()
+                                .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel134)
+                                    .addComponent(jLabel129))
+                                .addGap(61, 61, 61)
+                                .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel50Layout.createSequentialGroup()
+                                        .addComponent(rdbMacho)
+                                        .addGap(29, 29, 29)
+                                        .addComponent(rdbFemea))
+                                    .addComponent(txtNomePet, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel50Layout.createSequentialGroup()
+                                .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel135)
+                                    .addComponent(jLabel136, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel231))
+                                .addGap(52, 52, 52)
+                                .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtRaca, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cmbEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel50Layout.createSequentialGroup()
+                                        .addComponent(txtCor, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel139, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel50Layout.createSequentialGroup()
+                                                .addGap(58, 58, 58)
+                                                .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addGroup(jPanel50Layout.createSequentialGroup()
+                                                        .addComponent(rdbPequeno)
+                                                        .addGap(32, 32, 32)
+                                                        .addComponent(rdbMedio))
+                                                    .addGroup(jPanel50Layout.createSequentialGroup()
+                                                        .addComponent(btnSalvaPaciente5)
+                                                        .addGap(18, 18, 18)
+                                                        .addComponent(btnCancelarTutor12)))
+                                                .addGap(41, 41, 41)
+                                                .addComponent(rdbGrande)
+                                                .addGap(43, 43, 43)
+                                                .addComponent(rdbGigante))))))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel50Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel116, javax.swing.GroupLayout.PREFERRED_SIZE, 888, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel137, javax.swing.GroupLayout.PREFERRED_SIZE, 888, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(0, 35, Short.MAX_VALUE))
-            .addGroup(jPanel50Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel50Layout.createSequentialGroup()
-                        .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel135)
-                            .addComponent(jLabel136, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel231))
-                        .addGap(52, 52, 52)
-                        .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtRaca, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cmbEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCor, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel50Layout.createSequentialGroup()
-                        .addComponent(jLabel133)
-                        .addGap(58, 58, 58)
-                        .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDtNascPet, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel50Layout.createSequentialGroup()
-                        .addComponent(jLabel131, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(radioSim9)
-                            .addComponent(radioSim8))
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(radioNao16)
-                            .addGroup(jPanel50Layout.createSequentialGroup()
-                                .addComponent(radioNao17)
-                                .addGap(41, 41, 41)
-                                .addComponent(radioNao18)
-                                .addGap(43, 43, 43)
-                                .addComponent(radioNao19))))
-                    .addComponent(jLabel130)
-                    .addComponent(jLabel139, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel50Layout.createSequentialGroup()
-                        .addGap(332, 332, 332)
-                        .addComponent(btnSalvaPaciente5)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnCancelarTutor12))
-                    .addGroup(jPanel50Layout.createSequentialGroup()
-                        .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel134)
-                            .addComponent(jLabel129))
-                        .addGap(61, 61, 61)
-                        .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel50Layout.createSequentialGroup()
-                                .addComponent(radioMacho)
-                                .addGap(29, 29, 29)
-                                .addComponent(radioFemea))
-                            .addComponent(txtNomePet, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel50Layout.setVerticalGroup(
             jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2200,20 +2207,30 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel134)
-                    .addComponent(radioMacho)
-                    .addComponent(radioFemea))
+                    .addComponent(rdbMacho)
+                    .addComponent(rdbFemea))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDtNascPet, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel130))
-                .addGap(25, 25, 25)
+                .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel50Layout.createSequentialGroup()
+                        .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtDtNascPet, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel130))
+                        .addGap(25, 25, 25))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel50Layout.createSequentialGroup()
+                        .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel131)
+                            .addComponent(rdbSim)
+                            .addComponent(rdbNao))
+                        .addGap(20, 20, 20)))
                 .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel133, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
+                .addGap(23, 23, 23)
                 .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel135)
-                    .addComponent(txtRaca, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtRaca, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCancelarTutor12, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSalvaPaciente5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2221,24 +2238,13 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel231))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel131)
-                    .addComponent(radioSim8)
-                    .addComponent(radioNao16))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel231)
                     .addComponent(jLabel139)
-                    .addComponent(radioSim9)
-                    .addComponent(radioNao17)
-                    .addComponent(radioNao18)
-                    .addComponent(radioNao19))
-                .addGap(17, 17, 17)
-                .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSalvaPaciente5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCancelarTutor12, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(131, 131, 131))
+                    .addComponent(rdbPequeno)
+                    .addComponent(rdbMedio)
+                    .addComponent(rdbGrande)
+                    .addComponent(rdbGigante))
+                .addContainerGap(255, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
@@ -3891,13 +3897,13 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDtNascPetActionPerformed
 
-    private void radioSim8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioSim8ActionPerformed
+    private void rdbSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbSimActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_radioSim8ActionPerformed
+    }//GEN-LAST:event_rdbSimActionPerformed
 
-    private void radioNao16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioNao16ActionPerformed
+    private void rdbNaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbNaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_radioNao16ActionPerformed
+    }//GEN-LAST:event_rdbNaoActionPerformed
 
     private void txtIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdadeActionPerformed
         // TODO add your handling code here:
@@ -3908,60 +3914,39 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbEspecieActionPerformed
 
     private void btnSalvaPaciente5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvaPaciente5ActionPerformed
-        //try {
-            /*if (txtNomePet.getText().equals("") || /*radioMacho4.get || radioFemea.get  txtDtNascPet.getText().equals("")
-            || txtIdade.getText().equals("") || txtRaca.getText().equals("") || /*especie em branco descobrir txtCor.getText().equals("")
-            /*|| esterelizado e porte em branco descobrir)     {
-            JOptionPane.showMessageDialog(null,"Favor verificar o preenchimento de todos os campos do formulário.","Aviso",JOptionPane.WARNING_MESSAGE);
-            }
-            else {
-            
-            }*/
-            
-            //ControlePaciente controlePaciente = new ControlePaciente();
-            String sexo = "";
-            if (radioMacho.isSelected()){
-               sexo = "Macho"; 
-            }               
-            else {
-                sexo = "Fêmea";
-            }
-            JOptionPane.showMessageDialog(null, sexo);
-            radioMacho.setSelected(false);
-            radioFemea.setSelected(false);
-            
-            /*String porte = 
-            String esterelizado = */
-                    
+        String sexo = getSexoPet(new Paciente());
+        Boolean esterelizado = esterelizado(new Paciente());
+        String porte = getPortePet(new Paciente());
+        String especie = getEspeciePet(new Paciente());
         
-                /*if (txtNomePet.getText().equals("") || /*radioMacho4.get || radioFemea.get  txtDtNascPet.getText().equals("")
-                    || txtIdade.getText().equals("") || txtRaca.getText().equals("") || /*especie em branco descobrir txtCor.getText().equals("")
-                /*|| esterelizado e porte em branco descobrir)     {
-            
-                JOptionPane.showMessageDialog(null,"Favor verificar o preenchimento de todos os campos do formulário.","Aviso",JOptionPane.WARNING_MESSAGE);     
+        try {
+            if ( (txtNomePet.getText().equals("") 
+                  || ( (!rdbMacho.isSelected() ) && (!rdbFemea.isSelected() ) ) 
+                  || txtDtNascPet.getText().equals("") 
+                  || txtIdade.getText().equals("") 
+                  || txtRaca.getText().equals("") 
+                  //|| /*especie em branco descobrir
+                  || txtCor.getText().equals("")
+                  || ((!rdbSim.isSelected()) && (!rdbNao.isSelected()))
+                  || ( (!rdbPequeno.isSelected()) && (!rdbMedio.isSelected()) && (!rdbGrande.isSelected()) && (!rdbGigante.isSelected())))
+                )  
+            {
+               JOptionPane.showMessageDialog(null,"Favor verificar o preenchimento de todos os campos do formulário.","Aviso",JOptionPane.WARNING_MESSAGE);
             }
-            else{*/
-               /* if (cargo==0){
-                    try{
-                        controlePaciente.salvarVeterinario(txtNomeFuncNovo.getText(), 
-                                                              txtRgFunc.getText(), 
-                                                              txtCPF_Func.getText(), 
-                                                              txtDtNascFunc.getText(), 
-                                                              txtDtAdmissao.getText(), 
-                                                              txtEndFunc.getText(), 
-                                                              txtComplFunc.getText(), 
-                                                              txtBairroFunc.getText(), 
-                                                              txtCidadeFunc.getText(), 
-                                                              txtTelFixoFunc.getText(), 
-                                                              txtCelularFunc.getText(), 
-                                                              txtEmailFunc.getText(), 
-                                                              TipoFuncionario.VETERINARIO, 
-                                                              Integer.parseInt(txtCrmv.getText()), 
-                                                              txtEspecialidade.getText());
-
-                               JOptionPane.showMessageDialog(null, "Veterinário cadastrado com sucesso. \nVocê será redirecionado para o Cadastro de Usuário");  
-                               painelFunc.setSelectedIndex(3);
-           }
+            else {
+                ControlePaciente controlePaciente = new ControlePaciente();
+                controlePaciente.salvarPaciente(txtNomePet.getText(),
+                                                txtIdade.getText(), 
+                                                txtCor.getText(), 
+                                                txtDtNascPet.getText(), 
+                                                txtRaca.getText(), 
+                                                especie,
+                                                porte,
+                                                esterelizado);
+                JOptionPane.showMessageDialog(null, "Paciente cadastrado com sucesso.");  
+            }
+            }
+              
             catch(SQLException e){
                 e.printStackTrace();
             }
@@ -3969,7 +3954,7 @@ public class Menu extends javax.swing.JFrame {
                 e.printStackTrace();
             }      
             
-            JOptionPane.showMessageDialog(null, new DaoTutor().getCodigoTutor());*/
+            
         
     }//GEN-LAST:event_btnSalvaPaciente5ActionPerformed
 
@@ -3977,21 +3962,21 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTelTutorPetActionPerformed
 
-    private void radioSim9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioSim9ActionPerformed
+    private void rdbPequenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbPequenoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_radioSim9ActionPerformed
+    }//GEN-LAST:event_rdbPequenoActionPerformed
 
-    private void radioNao17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioNao17ActionPerformed
+    private void rdbMedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbMedioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_radioNao17ActionPerformed
+    }//GEN-LAST:event_rdbMedioActionPerformed
 
-    private void radioNao18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioNao18ActionPerformed
+    private void rdbGrandeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbGrandeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_radioNao18ActionPerformed
+    }//GEN-LAST:event_rdbGrandeActionPerformed
 
-    private void radioNao19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioNao19ActionPerformed
+    private void rdbGiganteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbGiganteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_radioNao19ActionPerformed
+    }//GEN-LAST:event_rdbGiganteActionPerformed
 
     private void txtNomeFuncNovo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeFuncNovo1ActionPerformed
         // TODO add your handling code here:
@@ -4653,22 +4638,22 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTabbedPane painelOpcoes1;
     private javax.swing.JTabbedPane painelOpcoesPaciente;
     private javax.swing.JTabbedPane painelOpcoesTutor;
-    private javax.swing.JRadioButton radioFemea;
     private javax.swing.JRadioButton radioFemea2;
-    private javax.swing.JRadioButton radioMacho;
     private javax.swing.JRadioButton radioMacho2;
     private javax.swing.JRadioButton radioNao10;
     private javax.swing.JRadioButton radioNao11;
-    private javax.swing.JRadioButton radioNao16;
-    private javax.swing.JRadioButton radioNao17;
-    private javax.swing.JRadioButton radioNao18;
-    private javax.swing.JRadioButton radioNao19;
     private javax.swing.JRadioButton radioNao8;
     private javax.swing.JRadioButton radioNao9;
     private javax.swing.JRadioButton radioSim4;
     private javax.swing.JRadioButton radioSim5;
-    private javax.swing.JRadioButton radioSim8;
-    private javax.swing.JRadioButton radioSim9;
+    private javax.swing.JRadioButton rdbFemea;
+    private javax.swing.JRadioButton rdbGigante;
+    private javax.swing.JRadioButton rdbGrande;
+    private javax.swing.JRadioButton rdbMacho;
+    private javax.swing.JRadioButton rdbMedio;
+    private javax.swing.JRadioButton rdbNao;
+    private javax.swing.JRadioButton rdbPequeno;
+    private javax.swing.JRadioButton rdbSim;
     private javax.swing.JTextArea txaObservacoes;
     private javax.swing.JTextField txtBairroFunc;
     private javax.swing.JTextField txtBairroFunc1;
@@ -4851,4 +4836,80 @@ public class Menu extends javax.swing.JFrame {
         txaObservacoes.setText("");
     }
     
+    public String getPortePet(Paciente paciente){
+     String porte = "";
+         
+     if (rdbPequeno.isSelected()){
+        porte = "pequeno";
+        rdbMedio.setSelected(false);
+        rdbGrande.setSelected(false);
+        rdbGigante.setSelected(false);
+     }
+     else if (rdbMedio.isSelected()){
+         porte = "médio";
+         rdbPequeno.setSelected(false);
+         rdbGrande.setSelected(false);
+         rdbGigante.setSelected(false);
+     }
+     else if (rdbGrande.isSelected()){
+         porte = "grande";
+         rdbPequeno.setSelected(false);
+         rdbMedio.setSelected(false);
+         rdbGigante.setSelected(false);
+     }
+     else{
+         porte = "gigante";
+         rdbPequeno.setSelected(false);
+         rdbMedio.setSelected(false);
+         rdbGrande.setSelected(false);
+     }
+     return porte;
+    }
+    
+    public Boolean esterelizado(Paciente paciente){
+     Boolean status = null;
+     if (rdbSim.isSelected() && rdbNao.isSelected()){
+        JOptionPane.showMessageDialog(null,"Apenas uma opção deve ser selecionada.","Aviso",JOptionPane.WARNING_MESSAGE);          
+        rdbSim.setSelected(false);
+        rdbNao.setSelected(false);
+     }
+     else{
+        if (rdbSim.isSelected()){
+            status = true;
+        }
+        else if (rdbNao.isSelected()){
+            status = false;            
+        }
+     }     
+     return status;
+    }
+    
+    public String getSexoPet(Paciente paciente){
+        String sexo = "";
+        if (rdbMacho.isSelected() && rdbFemea.isSelected()){
+           JOptionPane.showMessageDialog(null,"Apenas uma opção deve ser selecionada.","Aviso",JOptionPane.WARNING_MESSAGE);
+           rdbMacho.setSelected(false);
+           rdbFemea.setSelected(false);
+        }
+        else{
+            if (rdbMacho.isSelected()){
+                sexo = "Macho";
+            }
+            else {
+                sexo = "Fêmea";
+            }
+        }
+        return sexo;
+    }
+    
+    public String getEspeciePet(Paciente paciente){
+        String especie = "";
+        if (cmbEspecie.getSelectedIndex()==0){
+            especie=TipoEspecie.CANINA.toString();
+        }
+        else if (cmbEspecie.getSelectedIndex()==1){
+            especie = TipoEspecie.FELINA.toString();
+        }
+        return especie;
+    }
 }
