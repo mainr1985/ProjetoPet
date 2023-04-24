@@ -39,7 +39,7 @@ public class DaoPaciente extends DaoFactory{
     
     public void salvar(Paciente paciente) throws SQLException {
         String insert = " INSERT INTO paciente (nome, sexo, dtnasc, idade, raca, especie, cor, esterelizado, porte, codtutor, dtcadastro) "
-                       + "VALUES (?,?,?,?,?,?,?,?,?,?) ";    
+                       + "VALUES (?,?,?,?,?,?,?,?,?,?,?) ";    
         
         salvar (insert,
                 paciente.getNome(), 
@@ -47,7 +47,7 @@ public class DaoPaciente extends DaoFactory{
                 paciente.getDtNascimento(), 
                 paciente.getIdade(),
                 paciente.getRaca(),
-                paciente.getEspecie(),
+                paciente.getEspecie().toString(),
                 paciente.getCor(),
                 paciente.getEsterelizado(),
                 paciente.getPorte(),
@@ -58,7 +58,7 @@ public class DaoPaciente extends DaoFactory{
     
     public int getCodigoPaciente() throws SQLException{
         int i=0;
-        String sql = "SELECT max(cod_paciente) FROM paciente";
+        String sql = "SELECT max(codpaciente) FROM paciente";
         try{
             PreparedStatement ps = getConnection().prepareStatement(sql);
             rs = ps.executeQuery();

@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import modelo.Paciente;
+import modelo.enums.TipoEspecie;
 import visao.Menu;
 //import modelo.enums.TipoEspecie;
 
@@ -15,7 +16,6 @@ import visao.Menu;
  */
 public class ControlePaciente {
 
-    Menu tela = new Menu();
     public ControlePaciente() {
     }
     
@@ -36,7 +36,9 @@ public class ControlePaciente {
         
         paciente.setRaca(raca);
         paciente.setSexo(sexo);
-        paciente.setEspecie(tela.getEspeciePet());
+        
+        //setando a espécie do paciente.        
+        setTipoEspecie(paciente);        
 
         //descobr ir como pegar o enum sem saber qual a opção marcada.
         paciente.setPorte(porte);
@@ -50,5 +52,15 @@ public class ControlePaciente {
         new DaoPaciente().salvar(paciente);  
     }
     
-    
+    public void setTipoEspecie(Paciente paciente){
+        
+        Menu tela = new Menu();       
+        String especie = tela.getEspeciePet(paciente);
+        if (especie.equals("Canina")) {
+            paciente.setEspecie(TipoEspecie.CANINA);
+        }
+        else if (especie.equals("Felina")){
+            paciente.setEspecie(TipoEspecie.FELINA);
+        }
+    }
 }

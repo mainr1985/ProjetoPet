@@ -3945,7 +3945,7 @@ public class Menu extends javax.swing.JFrame {
                                                 txtCor.getText(), 
                                                 txtDtNascPet.getText(), 
                                                 txtRaca.getText(), 
-                                                cmbEspecie.getSelectedIndex(),
+                                                cmbEspecie.getSelectedItem().toString(),
                                                 sexo,
                                                 porte,
                                                 esterelizado);
@@ -4908,14 +4908,9 @@ public class Menu extends javax.swing.JFrame {
         return sexo;
     }
     
-    public String getEspeciePet(){
+    public String getEspeciePet(Paciente paciente){
         String especie = "";
-        if (cmbEspecie.getSelectedIndex()==0){
-            especie=TipoEspecie.CANINA.toString();
-        }
-        else if (cmbEspecie.getSelectedIndex()==1){
-            especie = TipoEspecie.FELINA.toString();
-        }
+        especie = cmbEspecie.getSelectedItem().toString();
         return especie;
     }
 }
