@@ -1,14 +1,15 @@
 package controle;
 import dao.DaoPaciente;
+import dao.DaoTutor;
 import java.sql.SQLException;
 import java.text.Normalizer;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import modelo.Paciente;
+import modelo.Tutor;
 import modelo.enums.TipoEspecie;
 import visao.Menu;
-//import modelo.enums.TipoEspecie;
 
 /**
  *
@@ -27,7 +28,11 @@ public class ControlePaciente {
         paciente.setNome((Normalizer.normalize(nome,Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "")));
         paciente.setIdade(idade);
         paciente.setCor(cor);
-        
+                
+        Tutor tutor = new Tutor();
+        tutor.setCodigoTutor(new DaoTutor().getCodigoTutor());
+        //tutor.setNome(new DaoTutor().getNomeTutor());
+        paciente.setTutor(tutor);
         
         //convertendo a data digitada para inserção no banco de dados
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 

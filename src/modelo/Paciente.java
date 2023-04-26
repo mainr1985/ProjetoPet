@@ -22,7 +22,7 @@ public class Paciente implements Serializable{
     private String porte;
     private Boolean esterelizado;
     private Date dtCadastro;     
-    private Tutor tutor;    
+    private Tutor tutor;     
 
     public Paciente() {
     }

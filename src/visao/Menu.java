@@ -4217,8 +4217,10 @@ public class Menu extends javax.swing.JFrame {
 
                 JOptionPane.showMessageDialog(null, "Tutor cadastrado com sucesso. \nVocê será redirecionado para o Cadastro de Pets", "Salvar Tutor", JOptionPane.INFORMATION_MESSAGE);
                 limparTutor();
-                painelMenu.setSelectedIndex(1);
-                painelOpcoesPaciente.setSelectedIndex(2);
+                /*painelMenu.setSelectedIndex(1);
+                painelOpcoesPaciente.setSelectedIndex(2);*/
+                JOptionPane.showMessageDialog(null, "Código do Tutor cadastrado: " + new DaoTutor().getNomeTutor());
+                
             }
             catch(SQLException e){
                 e.printStackTrace();
@@ -4913,4 +4915,6 @@ public class Menu extends javax.swing.JFrame {
         especie = cmbEspecie.getSelectedItem().toString();
         return especie;
     }
+    
+    
 }

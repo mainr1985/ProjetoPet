@@ -63,7 +63,7 @@ public class DaoTutor extends DaoFactory{
     
     public String getNomeTutor() throws SQLException{
         String i="";
-        String sql = "SELECT nome FROM tutor WHERE codtutor = ?"; //+ getCodigoTutor()+1;
+        String sql = "SELECT nome FROM tutor WHERE codtutor = ?" + getCodigoTutor()+1;
         try{
             PreparedStatement ps = getConnection().prepareStatement(sql);
             rs = ps.executeQuery();
