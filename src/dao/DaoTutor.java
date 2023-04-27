@@ -45,7 +45,7 @@ public class DaoTutor extends DaoFactory{
         update(update, v.getCrmv(),v.getEspecialidade());
     }
 */    
-    public int getCodigoTutor() throws SQLException{
+    public Integer getCodigoTutor() throws SQLException{
         int i=0;
         String sql = "SELECT max(codtutor) FROM tutor";
         try{
@@ -63,11 +63,47 @@ public class DaoTutor extends DaoFactory{
     
     public String getNomeTutor() throws SQLException{
         String i="";
-        String sql = "SELECT nome FROM tutor WHERE codtutor = ?" + getCodigoTutor()+1;
+        String sql = "SELECT nome FROM tutor WHERE codtutor = ?";
         try{
             PreparedStatement ps = getConnection().prepareStatement(sql);
+            ps.setInt(1, getCodigoTutor());
             rs = ps.executeQuery();
-            if (rs.next()){
+            while (rs.next()){
+                
+                i = rs.getString(1);                                
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        return i;
+    }
+    
+    public String getCpfTutor() throws SQLException{
+        String i="";
+        String sql = "SELECT cpf FROM tutor WHERE codtutor = ?";
+        try{
+            PreparedStatement ps = getConnection().prepareStatement(sql);
+            ps.setInt(1, getCodigoTutor());
+            rs = ps.executeQuery();
+            while (rs.next()){
+                i = rs.getString(1);                                
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        return i;
+    }
+    
+    public String getTelTutor() throws SQLException{
+        String i="";
+        String sql = "SELECT telefone FROM tutor WHERE codtutor = ?";
+        try{
+            PreparedStatement ps = getConnection().prepareStatement(sql);
+            ps.setInt(1, getCodigoTutor());
+            rs = ps.executeQuery();
+            while (rs.next()){
                 i = rs.getString(1);                                
             }
         }

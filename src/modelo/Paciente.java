@@ -20,7 +20,7 @@ public class Paciente implements Serializable{
     private String raca;
     private TipoEspecie especie;
     private String porte;
-    private Boolean esterelizado;
+    private String esterelizado;
     private Date dtCadastro;     
     private Tutor tutor;     
 
@@ -28,7 +28,7 @@ public class Paciente implements Serializable{
     }
 
     public Paciente(Integer codigoPaciente, String nome, String idade, Date dtNascimento, String cor, String sexo,
-                    String raca, TipoEspecie especie, String porte, Boolean esterelizado, Tutor tutor, Date dtCadastro) {
+                    String raca, TipoEspecie especie, String porte, String esterelizado, Tutor tutor, Date dtCadastro) {
         
         this.codigoPaciente = codigoPaciente;
         this.nome = nome;        
@@ -124,11 +124,11 @@ public class Paciente implements Serializable{
         this.porte = porte;
     }
 
-    public Boolean getEsterelizado() {
+    public String getEsterelizado() {
         return esterelizado;
     }
 
-    public void setEsterelizado(Boolean esterelizado) {
+    public void setEsterelizado(String esterelizado) {
         this.esterelizado = esterelizado;
     }
 

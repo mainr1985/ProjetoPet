@@ -29,9 +29,9 @@ create table IF NOT EXISTS tutor ( codtutor serial not null primary key, cpf num
                                    dtcadastro date not null, telefone varchar(30), celular varchar(30), email varchar(50) not null );
 
 /*Tabela Paciente*/
-create table IF NOT EXISTS paciente ( codpaciente serial not null primary key, nome varchar(40) not null, sexo char not null, dtnasc date, idade varchar(30) not null, raca varchar(40) not null,
-                                     especie varchar(30) not null, cor varchar(30) not null, esterelizado char not null,
-                                     porte varchar(30) not null, codtutor integer not null, dtcadastro date not null );
+create table IF NOT EXISTS paciente ( codpaciente serial not null primary key, nome varchar(40) not null, sexo char not null, dtnasc date,
+                                     idade varchar(30) not null, raca varchar(40) not null, especie varchar(30) not null, 
+                                     cor varchar(30) not null, esterelizado char not null, porte varchar(30) not null, codtutor integer not null, dtcadastro date not null );
 
 /*Adicionando a Fk de tutor em paciente*/   
 alter table paciente add constraint fk_codtutor foreign key (codtutor) references tutor(codtutor);

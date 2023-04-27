@@ -40,7 +40,7 @@ public class DaoPaciente extends DaoFactory{
     
     public int getCodigoPaciente() throws SQLException{
         int i=0;
-        String sql = "SELECT max(cod_paciente) FROM paciente";
+        String sql = "SELECT max(codpaciente) FROM paciente";
         try{
             PreparedStatement ps = getConnection().prepareStatement(sql);
             rs = ps.executeQuery();

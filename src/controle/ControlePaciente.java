@@ -21,17 +21,16 @@ public class ControlePaciente {
     }
     
     public void salvarPaciente(String nome, String idade, String cor, String dataNascimento, String raca, String especie,
-                               String sexo, String porte, Boolean esterelizado) throws SQLException, ParseException{
+                               String sexo, String porte, String esterelizado) throws SQLException, ParseException{
      
         Paciente paciente = new Paciente();
         paciente.setCodigoPaciente(new DaoPaciente().getCodigoPaciente()+1);
         paciente.setNome((Normalizer.normalize(nome,Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "")));
-        paciente.setIdade(idade);
-        paciente.setCor(cor);
+        paciente.setIdade((Normalizer.normalize(idade,Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "")));
+        paciente.setCor((Normalizer.normalize(cor,Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "")));
                 
         Tutor tutor = new Tutor();
         tutor.setCodigoTutor(new DaoTutor().getCodigoTutor());
-        //tutor.setNome(new DaoTutor().getNomeTutor());
         paciente.setTutor(tutor);
         
         //convertendo a data digitada para inserção no banco de dados
@@ -39,14 +38,10 @@ public class ControlePaciente {
         java.sql.Date dtNascimento = new java.sql.Date(formato.parse(dataNascimento).getTime());
         paciente.setDtNascimento(dtNascimento);
         
-        paciente.setRaca(raca);
+        paciente.setRaca((Normalizer.normalize(raca,Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "")));
         paciente.setSexo(sexo);
-        
-        //setando a espécie do paciente.        
         setTipoEspecie(paciente);        
-
-        //descobr ir como pegar o enum sem saber qual a opção marcada.
-        paciente.setPorte(porte);
+        paciente.setPorte((Normalizer.normalize(porte,Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "")));
         paciente.setEsterelizado(esterelizado);
         
          //pegando a data atual

@@ -210,9 +210,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel50 = new javax.swing.JPanel();
         jLabel116 = new javax.swing.JLabel();
         jLabel119 = new javax.swing.JLabel();
-        txtNomeTutorPet = new javax.swing.JTextField();
         jLabel120 = new javax.swing.JLabel();
-        txtCPFTutorPet = new javax.swing.JFormattedTextField();
         jLabel129 = new javax.swing.JLabel();
         txtNomePet = new javax.swing.JTextField();
         jLabel130 = new javax.swing.JLabel();
@@ -233,7 +231,6 @@ public class Menu extends javax.swing.JFrame {
         btnCancelarTutor12 = new javax.swing.JButton();
         jLabel137 = new javax.swing.JLabel();
         jLabel138 = new javax.swing.JLabel();
-        txtTelTutorPet = new javax.swing.JFormattedTextField();
         jLabel139 = new javax.swing.JLabel();
         rdbPequeno = new javax.swing.JRadioButton();
         rdbMedio = new javax.swing.JRadioButton();
@@ -241,6 +238,9 @@ public class Menu extends javax.swing.JFrame {
         rdbGigante = new javax.swing.JRadioButton();
         jLabel231 = new javax.swing.JLabel();
         txtCor = new javax.swing.JTextField();
+        lblCpfTutor = new javax.swing.JLabel();
+        lblTelTutor = new javax.swing.JLabel();
+        lblNomeTutor = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         painelFunc = new javax.swing.JTabbedPane();
         jPanel16 = new javax.swing.JPanel();
@@ -344,7 +344,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel252 = new javax.swing.JLabel();
         txtDtAdmissao7 = new javax.swing.JFormattedTextField();
         jPanel2 = new javax.swing.JPanel();
-        painelOpcoes1 = new javax.swing.JTabbedPane();
+        painelOpcoes = new javax.swing.JTabbedPane();
         jPanel32 = new javax.swing.JPanel();
         jLabel97 = new javax.swing.JLabel();
         txtDtAfericao1 = new javax.swing.JFormattedTextField();
@@ -1919,27 +1919,8 @@ public class Menu extends javax.swing.JFrame {
         jLabel119.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel119.setText("Nome:");
 
-        txtNomeTutorPet.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomeTutorPetActionPerformed(evt);
-            }
-        });
-
         jLabel120.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel120.setText("CPF:");
-
-        try {
-            txtCPFTutorPet.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtCPFTutorPet.setNextFocusableComponent(txtRgTutor);
-        txtCPFTutorPet.setSelectionColor(new java.awt.Color(255, 204, 204));
-        txtCPFTutorPet.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCPFTutorPetActionPerformed(evt);
-            }
-        });
 
         jLabel129.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel129.setText("Nome:");
@@ -2038,25 +2019,18 @@ public class Menu extends javax.swing.JFrame {
         btnCancelarTutor12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnCancelarTutor12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/cancel.png"))); // NOI18N
         btnCancelarTutor12.setText("Cancelar");
+        btnCancelarTutor12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarTutor12ActionPerformed(evt);
+            }
+        });
 
         jLabel137.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel137.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel137.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Informações do Pet", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
+        jLabel137.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Informações do Pet", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
 
         jLabel138.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel138.setText("Telefone:");
-
-        try {
-            txtTelTutorPet.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtTelTutorPet.setNextFocusableComponent(txtCelTutor);
-        txtTelTutorPet.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTelTutorPetActionPerformed(evt);
-            }
-        });
 
         jLabel139.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel139.setText("Porte:");
@@ -2100,26 +2074,37 @@ public class Menu extends javax.swing.JFrame {
         txtCor.setFocusCycleRoot(true);
         txtCor.setNextFocusableComponent(txtCPFTutor);
 
+        lblCpfTutor.setBackground(new java.awt.Color(255, 255, 255));
+        lblCpfTutor.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblCpfTutor.setFocusable(false);
+
+        lblTelTutor.setBackground(new java.awt.Color(255, 255, 255));
+        lblTelTutor.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblTelTutor.setFocusable(false);
+
+        lblNomeTutor.setBackground(new java.awt.Color(255, 255, 255));
+        lblNomeTutor.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblNomeTutor.setFocusable(false);
+
         javax.swing.GroupLayout jPanel50Layout = new javax.swing.GroupLayout(jPanel50);
         jPanel50.setLayout(jPanel50Layout);
         jPanel50Layout.setHorizontalGroup(
             jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel50Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel119)
-                .addGap(56, 56, 56)
-                .addComponent(txtNomeTutorPet, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jLabel120, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txtCPFTutorPet, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel138)
-                .addGap(20, 20, 20)
-                .addComponent(txtTelTutorPet, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(73, 73, 73))
-            .addGroup(jPanel50Layout.createSequentialGroup()
                 .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel50Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel119)
+                        .addGap(63, 63, 63)
+                        .addComponent(lblNomeTutor, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(70, 70, 70)
+                        .addComponent(jLabel120, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblCpfTutor, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel138)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblTelTutor, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel50Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2190,14 +2175,15 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jLabel116)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtTelTutorPet, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel138))
-                    .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
                         .addComponent(jLabel119, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtNomeTutorPet, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel120)
-                        .addComponent(txtCPFTutorPet, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lblCpfTutor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblNomeTutor, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+                    .addComponent(lblTelTutor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel50Layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(jLabel138)))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel137)
                 .addGap(18, 18, 18)
@@ -2244,7 +2230,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(rdbMedio)
                     .addComponent(rdbGrande)
                     .addComponent(rdbGigante))
-                .addContainerGap(255, Short.MAX_VALUE))
+                .addContainerGap(256, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
@@ -3215,7 +3201,7 @@ public class Menu extends javax.swing.JFrame {
 
         painelMenu.addTab("Funcionários", jPanel6);
 
-        painelOpcoes1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        painelOpcoes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         jLabel97.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel97.setText("Data:");
@@ -3309,7 +3295,7 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        painelOpcoes1.addTab("Histórico", jPanel32);
+        painelOpcoes.addTab("Histórico", jPanel32);
 
         jLabel175.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel175.setText("Responsável:");
@@ -3512,7 +3498,7 @@ public class Menu extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
-        painelOpcoes1.addTab("Editar", jPanel33);
+        painelOpcoes.addTab("Editar", jPanel33);
 
         jLabel171.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel171.setText("Responsável:");
@@ -3578,6 +3564,11 @@ public class Menu extends javax.swing.JFrame {
         btnCancelar5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnCancelar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/cancel.png"))); // NOI18N
         btnCancelar5.setText("Cancelar");
+        btnCancelar5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelar5ActionPerformed(evt);
+            }
+        });
 
         jLabel232.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel232.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nova Aferição", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
@@ -3673,17 +3664,17 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap(213, Short.MAX_VALUE))
         );
 
-        painelOpcoes1.addTab("Nova", jPanel9);
+        painelOpcoes.addTab("Nova", jPanel9);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelOpcoes1)
+            .addComponent(painelOpcoes)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelOpcoes1)
+            .addComponent(painelOpcoes)
         );
 
         painelMenu.addTab("Aferições", jPanel2);
@@ -3885,10 +3876,6 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_radioNao11ActionPerformed
 
-    private void txtCPFTutorPetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCPFTutorPetActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCPFTutorPetActionPerformed
-
     private void txtNomePetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomePetActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomePetActionPerformed
@@ -3915,31 +3902,24 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnSalvaPaciente5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvaPaciente5ActionPerformed
         String sexo = getSexoPet(new Paciente());
-        Boolean esterelizado = esterelizado(new Paciente());
+        String esterelizado = esterelizado(new Paciente());
         String porte = getPortePet(new Paciente());
        
-        /*
-        public void salvarPaciente(String nome, String idade, String cor, String dataNascimento, String raca, TipoEspecie especie,
-                               String sexo, String porte, Boolean esterelizado)        
-        */
-
-        
-        try {
-            if ( (txtNomePet.getText().equals("") 
-                  || ( (!rdbMacho.isSelected() ) && (!rdbFemea.isSelected() ) ) 
-                  || txtDtNascPet.getText().equals("") 
-                  || txtIdade.getText().equals("") 
-                  || txtRaca.getText().equals("") 
-                  || cmbEspecie.getSelectedItem() == null
-                  || txtCor.getText().equals("")
-                  || ((!rdbSim.isSelected()) && (!rdbNao.isSelected()))
-                  || ( (!rdbPequeno.isSelected()) && (!rdbMedio.isSelected()) && (!rdbGrande.isSelected()) && (!rdbGigante.isSelected())))
-                )  
-            {
+        if ( (txtNomePet.getText().equals("") 
+              || ( (!rdbMacho.isSelected() ) && (!rdbFemea.isSelected() ) ) 
+              || txtDtNascPet.getText().equals("") 
+              || txtIdade.getText().equals("") 
+              || txtRaca.getText().equals("") 
+              || cmbEspecie.getSelectedItem() == null
+              || txtCor.getText().equals("")
+              || ((!rdbSim.isSelected()) && (!rdbNao.isSelected()))
+              || ( (!rdbPequeno.isSelected()) && (!rdbMedio.isSelected()) && (!rdbGrande.isSelected()) && (!rdbGigante.isSelected())))
+            ){
                JOptionPane.showMessageDialog(null,"Favor verificar o preenchimento de todos os campos do formulário.","Aviso",JOptionPane.WARNING_MESSAGE);
             }
-            else {
-                ControlePaciente controlePaciente = new ControlePaciente();
+        else {
+            ControlePaciente controlePaciente = new ControlePaciente();
+            try{
                 controlePaciente.salvarPaciente(txtNomePet.getText(),
                                                 txtIdade.getText(), 
                                                 txtCor.getText(), 
@@ -3950,23 +3930,16 @@ public class Menu extends javax.swing.JFrame {
                                                 porte,
                                                 esterelizado);
                 JOptionPane.showMessageDialog(null, "Paciente cadastrado com sucesso.");  
+                limparPacienteNovo();
             }
-            }
-              
             catch(SQLException e){
                 e.printStackTrace();
             }
             catch(ParseException e){
                 e.printStackTrace();
-            }      
-            
-            
-        
+            }
+        }
     }//GEN-LAST:event_btnSalvaPaciente5ActionPerformed
-
-    private void txtTelTutorPetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelTutorPetActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelTutorPetActionPerformed
 
     private void rdbPequenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbPequenoActionPerformed
         // TODO add your handling code here:
@@ -4216,11 +4189,18 @@ public class Menu extends javax.swing.JFrame {
                                           txtTelTutor.getText(),txtCelTutor.getText(),txtDtNascTutor.getText());
 
                 JOptionPane.showMessageDialog(null, "Tutor cadastrado com sucesso. \nVocê será redirecionado para o Cadastro de Pets", "Salvar Tutor", JOptionPane.INFORMATION_MESSAGE);
-                limparTutor();
-                /*painelMenu.setSelectedIndex(1);
-                painelOpcoesPaciente.setSelectedIndex(2);*/
-                JOptionPane.showMessageDialog(null, "Código do Tutor cadastrado: " + new DaoTutor().getNomeTutor());
-                
+                limparTutorNovo();
+                painelMenu.setSelectedIndex(1);
+                painelOpcoesPaciente.setSelectedIndex(2);
+                DaoTutor daoTutor = new DaoTutor();
+                try{
+                    lblNomeTutor.setText(daoTutor.getNomeTutor());
+                    lblCpfTutor.setText(daoTutor.getCpfTutor());
+                    lblTelTutor.setText(daoTutor.getTelTutor());
+                }
+                catch(SQLException e){
+                    e.printStackTrace();
+                }
             }
             catch(SQLException e){
                 e.printStackTrace();
@@ -4321,7 +4301,7 @@ public class Menu extends javax.swing.JFrame {
                                                  txaObservacoes.getText());
                 
                 JOptionPane.showMessageDialog(null, "Aferição cadastrada com sucesso.", "Salvar Aferição", JOptionPane.INFORMATION_MESSAGE);
-                limparAfericao();
+                limparAfericaoNova();
                 painelMenu.setSelectedIndex(1);
                 painelOpcoesPaciente.setSelectedIndex(2);
             }
@@ -4343,35 +4323,25 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_txtDtAdmissao7ActionPerformed
 
     private void btnCancelarTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarTutorActionPerformed
-        limparTutor();
+        limparTutorNovo();
     }//GEN-LAST:event_btnCancelarTutorActionPerformed
 
     private void btnCancelarTutor2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarTutor2ActionPerformed
         painelOpcoesTutor.setSelectedIndex(0);
     }//GEN-LAST:event_btnCancelarTutor2ActionPerformed
 
-    private void txtNomeTutorPetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeTutorPetActionPerformed
-        Integer codTutor = null;
-        try {
-            codTutor = new DaoTutor().getCodigoTutor();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        txtNomeTutorPet.setText(codTutor.toString());
-    }//GEN-LAST:event_txtNomeTutorPetActionPerformed
-
     private void txtVetRespActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVetRespActionPerformed
        
     }//GEN-LAST:event_txtVetRespActionPerformed
 
-    //private void limparFuncNovo(ActionEvent evt) {             
-       /*txtCodFuncNovo.setText("");
-       txtCPF_Func.setText("");
-       txtRgFunc.setText("");
-       txtCrmv.setText("");
-       txtEspecialidade.setText("");
-       cmbCargo.setSelectedIndex(0);       
-    }*/
+    private void btnCancelarTutor12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarTutor12ActionPerformed
+        limparPacienteNovo();
+    }//GEN-LAST:event_btnCancelarTutor12ActionPerformed
+
+    private void btnCancelar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar5ActionPerformed
+        limparAfericaoNova();
+    }//GEN-LAST:event_btnCancelar5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -4637,13 +4607,16 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel lblCpfTutor;
     private javax.swing.JLabel lblCrmv2;
     private javax.swing.JLabel lblCrmv4;
     private javax.swing.JLabel lblEspecialidade2;
     private javax.swing.JLabel lblEspecialidade4;
+    private javax.swing.JLabel lblNomeTutor;
+    private javax.swing.JLabel lblTelTutor;
     private javax.swing.JTabbedPane painelFunc;
     private javax.swing.JTabbedPane painelMenu;
-    private javax.swing.JTabbedPane painelOpcoes1;
+    private javax.swing.JTabbedPane painelOpcoes;
     private javax.swing.JTabbedPane painelOpcoesPaciente;
     private javax.swing.JTabbedPane painelOpcoesTutor;
     private javax.swing.JRadioButton radioFemea2;
@@ -4675,7 +4648,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField txtCPFTutor2;
     private javax.swing.JFormattedTextField txtCPFTutor5;
     private javax.swing.JFormattedTextField txtCPFTutor9;
-    private javax.swing.JFormattedTextField txtCPFTutorPet;
     private javax.swing.JFormattedTextField txtCPF_Func;
     private javax.swing.JFormattedTextField txtCPF_Func2;
     private javax.swing.JTextField txtCRMVResp;
@@ -4742,7 +4714,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField txtNomeTutor1;
     private javax.swing.JTextField txtNomeTutorBusca;
     private javax.swing.JTextField txtNomeTutorBusca6;
-    private javax.swing.JTextField txtNomeTutorPet;
     private javax.swing.JTextField txtRaca;
     private javax.swing.JTextField txtRaca3;
     private javax.swing.JTextField txtResp5;
@@ -4757,7 +4728,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField txtTelTutor;
     private javax.swing.JFormattedTextField txtTelTutor3;
     private javax.swing.JFormattedTextField txtTelTutor5;
-    private javax.swing.JFormattedTextField txtTelTutorPet;
     private javax.swing.JTextField txtTempMax;
     private javax.swing.JTextField txtTempMax5;
     private javax.swing.JTextField txtTempMin;
@@ -4798,21 +4768,21 @@ public class Menu extends javax.swing.JFrame {
         painelOpcoesPaciente.setEnabledAt(2, false);        
     }
     
-    /*public void modoEditarAfericao(){
+    public void modoEditarAfericao(){
         painelOpcoes.setEnabledAt(1,false);
     }
     
     public void modoCadastrarAfericao(){
         painelOpcoes.setEnabledAt(2,false);
     }
-*/
+
     //métodos criados para alimentar os comboBox com o conteúdo dos enums
     private void loadComboBoxes(){
         cmbCargo.setModel(new DefaultComboBoxModel<>(TipoFuncionario.values()));
         cmbEspecie.setModel(new DefaultComboBoxModel<>(TipoEspecie.values()));               
     }   
     
-    public void limparTutor(){
+    public void limparTutorNovo(){
          
         txtNomeTutor.setText("");
         txtRgTutor.setText("");
@@ -4826,16 +4796,29 @@ public class Menu extends javax.swing.JFrame {
         txtCelTutor.setText("");
         txtDtNascTutor.setText("");
     }
-
-    public JTextField getTxtNomeTutorPet() {
-        return txtNomeTutorPet;
-    }
-
-    public void setTxtNomeTutorPet(JTextField txtNomeTutorPet) {
-        this.txtNomeTutorPet = txtNomeTutorPet;
-    }
  
-    public void limparAfericao(){
+    public void limparPacienteNovo(){
+       
+        lblNomeTutor.setText("");
+        lblCpfTutor.setText("");
+        lblTelTutor.setText("");
+        txtNomePet.setText("");
+        rdbMacho.setSelected(false);
+        rdbFemea.setSelected(false);
+        txtDtNascPet.setText("");
+        txtIdade.setText("");
+        txtRaca.setText("");
+        cmbEspecie.setSelectedIndex(-1);
+        txtCor.setText("");
+        rdbSim.setSelected(false);
+        rdbNao.setSelected(false);
+        rdbPequeno.setSelected(false);
+        rdbMedio.setSelected(false);
+        rdbGrande.setSelected(false); 
+        rdbGigante.setSelected(false);
+    }
+    
+    public void limparAfericaoNova(){
  
         txtVetResp.setText(""); 
         txtCRMVResp.setText(""); 
@@ -4848,47 +4831,47 @@ public class Menu extends javax.swing.JFrame {
      String porte = "";
          
      if (rdbPequeno.isSelected()){
-        porte = "pequeno";
-        rdbMedio.setSelected(false);
+        porte = "Pequeno";
+      /*  rdbMedio.setSelected(false);
         rdbGrande.setSelected(false);
-        rdbGigante.setSelected(false);
+        rdbGigante.setSelected(false);*/
      }
      else if (rdbMedio.isSelected()){
-         porte = "médio";
-         rdbPequeno.setSelected(false);
+         porte = "Medio";
+         /*rdbPequeno.setSelected(false);
          rdbGrande.setSelected(false);
-         rdbGigante.setSelected(false);
+         rdbGigante.setSelected(false);*/
      }
      else if (rdbGrande.isSelected()){
-         porte = "grande";
-         rdbPequeno.setSelected(false);
+         porte = "Grande";
+         /*rdbPequeno.setSelected(false);
          rdbMedio.setSelected(false);
-         rdbGigante.setSelected(false);
+         rdbGigante.setSelected(false);*/
      }
      else{
-         porte = "gigante";
-         rdbPequeno.setSelected(false);
+         porte = "Gigante";
+         /*rdbPequeno.setSelected(false);
          rdbMedio.setSelected(false);
-         rdbGrande.setSelected(false);
+         rdbGrande.setSelected(false);*/
      }
      return porte;
     }
     
-    public Boolean esterelizado(Paciente paciente){
-     Boolean status = null;
-     if (rdbSim.isSelected() && rdbNao.isSelected()){
+    public String esterelizado(Paciente paciente){
+     String status = "";
+ /*    if (rdbSim.isSelected() && rdbNao.isSelected()){
         JOptionPane.showMessageDialog(null,"Apenas uma opção deve ser selecionada.","Aviso",JOptionPane.WARNING_MESSAGE);          
         rdbSim.setSelected(false);
         rdbNao.setSelected(false);
      }
-     else{
+     else{*/
         if (rdbSim.isSelected()){
-            status = true;
+            status = "Sim";
         }
         else if (rdbNao.isSelected()){
-            status = false;            
+            status = "Nao";            
         }
-     }     
+     //}     
      return status;
     }
     
@@ -4904,7 +4887,7 @@ public class Menu extends javax.swing.JFrame {
                 sexo = "Macho";
             }
             else {
-                sexo = "Fêmea";
+                sexo = "Femea";
             }
         }
         return sexo;
@@ -4915,6 +4898,4 @@ public class Menu extends javax.swing.JFrame {
         especie = cmbEspecie.getSelectedItem().toString();
         return especie;
     }
-    
-    
 }
