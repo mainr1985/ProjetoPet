@@ -22,15 +22,15 @@ public class DaoAfericao extends DaoFactory{
     public void salvarAfericao(Afericao afericao) throws SQLException{
         
        String insert = "INSERT INTO afericao "
-                     + " (responsavel, crmv, temp_min, temp_max, /*equipamento,*/ observacoes, dhafericao) "
+                     + " (responsavel, crmv, temp_min, temp_max, equipamento, observacoes, dhafericao) "
                      + " VALUES (?,?,?,?,?,?,?) ";
        
        salvar (insert, 
-               afericao.getResponsavel().getNome(),
-               afericao.getResponsavel().getCrmv(),
+               afericao.getVeterinario().getCrmv(),
+               afericao.getVeterinario().getNome(),
                afericao.getTempMin(),
                afericao.getTempMax(),
-               //afericao.getEquipamento(),
+               afericao.getEquipamento(),
                afericao.getObservacoes(),
                afericao.getDhAfericao());               
     }    

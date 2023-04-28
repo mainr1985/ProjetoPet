@@ -28,7 +28,7 @@ public class Afericao implements Serializable{
         this.observacoes = observacoes;
         this.dhAfericao = dhAfericao;
     }
-    
+
     public Integer getCodigo() {
         return codigo;
     }
@@ -53,16 +53,20 @@ public class Afericao implements Serializable{
         this.tempMax = tempMax;
     }
 
-    public Veterinario getResponsavel() {
+    public Veterinario getVeterinario() {
         return veterinario;
     }
 
-    public void setResponsavel(Veterinario veterinario) {
+    public void setVeterinario(Veterinario veterinario) {
         this.veterinario = veterinario;
     }
-    
+
     public String getEquipamento() {
         return equipamento;
+    }
+
+    public void setEquipamento(String equipamento) {
+        this.equipamento = equipamento;
     }
 
     public String getObservacoes() {
@@ -73,10 +77,6 @@ public class Afericao implements Serializable{
         this.observacoes = observacoes;
     }
 
-    public void setEquipamento(String equipamento) {
-        this.equipamento = equipamento;
-    }
-
     public String getDhAfericao() {
         return dhAfericao;
     }
@@ -84,7 +84,8 @@ public class Afericao implements Serializable{
     public void setDhAfericao(String dhAfericao) {
         this.dhAfericao = dhAfericao;
     }
-
+    
+    
     @Override
     public String toString() {
         return "Afericao{" + "codigo=" + codigo + ", tempMin=" + tempMin + ", tempMax=" + tempMax + ", veterinario=" + veterinario + ", equipamento=" 

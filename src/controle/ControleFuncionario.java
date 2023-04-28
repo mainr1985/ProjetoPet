@@ -60,6 +60,9 @@ public class ControleFuncionario{
         veterinario.setCargo(TipoFuncionario.VETERINARIO);
 
         daoFuncionario.salvarFuncionario(veterinario);
+        
+        
+        
         new DaoVeterinario().salvar(veterinario);
     }             
          

@@ -15,6 +15,7 @@ import dao.DaoTutor;
 import javax.swing.JTextField;
 import controle.ControleAfericoes;
 import controle.ControlePaciente;
+import modelo.Afericao;
 import modelo.Paciente;
 
 /**
@@ -386,8 +387,8 @@ public class Menu extends javax.swing.JFrame {
         jLabel184 = new javax.swing.JLabel();
         jLabel196 = new javax.swing.JLabel();
         jLabel202 = new javax.swing.JLabel();
-        jRadioButton11 = new javax.swing.JRadioButton();
-        jRadioButton12 = new javax.swing.JRadioButton();
+        rdbFreezer = new javax.swing.JRadioButton();
+        rdbGeladeira = new javax.swing.JRadioButton();
         jLabel203 = new javax.swing.JLabel();
         txtTempMax = new javax.swing.JTextField();
         jLabel204 = new javax.swing.JLabel();
@@ -2175,11 +2176,12 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jLabel116)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
-                        .addComponent(jLabel119, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel120)
-                        .addComponent(lblCpfTutor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblNomeTutor, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+                    .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(lblCpfTutor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblNomeTutor, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                        .addGroup(jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel119, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel120)))
                     .addComponent(lblTelTutor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel50Layout.createSequentialGroup()
                         .addGap(9, 9, 9)
@@ -3521,14 +3523,14 @@ public class Menu extends javax.swing.JFrame {
         jLabel202.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel202.setText("Equipamento:");
 
-        jRadioButton11.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jRadioButton11.setText("Freezer");
+        rdbFreezer.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        rdbFreezer.setText("Freezer");
 
-        jRadioButton12.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jRadioButton12.setText("Geladeira");
-        jRadioButton12.addActionListener(new java.awt.event.ActionListener() {
+        rdbGeladeira.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        rdbGeladeira.setText("Geladeira");
+        rdbGeladeira.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton12ActionPerformed(evt);
+                rdbGeladeiraActionPerformed(evt);
             }
         });
 
@@ -3603,9 +3605,9 @@ public class Menu extends javax.swing.JFrame {
                                     .addGroup(jPanel9Layout.createSequentialGroup()
                                         .addComponent(jLabel202)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jRadioButton11)
+                                        .addComponent(rdbFreezer)
                                         .addGap(6, 6, 6)
-                                        .addComponent(jRadioButton12))
+                                        .addComponent(rdbGeladeira))
                                     .addGroup(jPanel9Layout.createSequentialGroup()
                                         .addComponent(jLabel196)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -3651,8 +3653,8 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel202)
-                    .addComponent(jRadioButton11)
-                    .addComponent(jRadioButton12))
+                    .addComponent(rdbFreezer)
+                    .addComponent(rdbGeladeira))
                 .addGap(29, 29, 29)
                 .addComponent(jLabel206)
                 .addGap(18, 18, 18)
@@ -4275,9 +4277,9 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEditAfericao1ActionPerformed
 
-    private void jRadioButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton12ActionPerformed
+    private void rdbGeladeiraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbGeladeiraActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton12ActionPerformed
+    }//GEN-LAST:event_rdbGeladeiraActionPerformed
 
     private void txtTempMinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTempMinActionPerformed
         // TODO add your handling code here:
@@ -4285,10 +4287,15 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnSalvarAfericao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarAfericao1ActionPerformed
          ControleAfericoes controleAfericoes = new ControleAfericoes();
-                
-        if (txtVetResp.getText().equals("")||txtCRMVResp.getText().equals("")||txtTempMin.getText().equals("")||txtTempMax.getText().equals("")
-            ||txaObservacoes.getText().equals("")
-                ){
+         String equipamento = equipamento(new Afericao());                
+         
+        if ( txtVetResp.getText().equals("")
+             ||txtCRMVResp.getText().equals("")
+             ||txtTempMin.getText().equals("")
+             ||txtTempMax.getText().equals("")
+             ||txaObservacoes.getText().equals("")
+             || ((!rdbFreezer.isSelected() ) && (!rdbGeladeira.isSelected())) 
+            ){
             
             JOptionPane.showMessageDialog(null,"Favor verificar o preenchimento de todos os campos do formulário.","Aviso",JOptionPane.WARNING_MESSAGE);    
         }
@@ -4297,13 +4304,12 @@ public class Menu extends javax.swing.JFrame {
                 controleAfericoes.salvarAfericao(txtVetResp.getText(), 
                                                  Integer.parseInt(txtCRMVResp.getText()), 
                                                  Double.parseDouble(txtTempMin.getText()), 
-                                                 Double.parseDouble(txtTempMax.getText()), /*equipamento,*/ 
+                                                 Double.parseDouble(txtTempMax.getText()), 
+                                                 equipamento,
                                                  txaObservacoes.getText());
                 
                 JOptionPane.showMessageDialog(null, "Aferição cadastrada com sucesso.", "Salvar Aferição", JOptionPane.INFORMATION_MESSAGE);
-                limparAfericaoNova();
-                painelMenu.setSelectedIndex(1);
-                painelOpcoesPaciente.setSelectedIndex(2);
+                limparAfericaoNova();                
             }
             catch(SQLException e){
                 e.printStackTrace();
@@ -4586,8 +4592,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JRadioButton jRadioAdm;
     private javax.swing.JRadioButton jRadioAssistente;
-    private javax.swing.JRadioButton jRadioButton11;
-    private javax.swing.JRadioButton jRadioButton12;
     private javax.swing.JRadioButton jRadioButton15;
     private javax.swing.JRadioButton jRadioButton16;
     private javax.swing.JRadioButton jRadioButton3;
@@ -4628,6 +4632,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JRadioButton radioSim4;
     private javax.swing.JRadioButton radioSim5;
     private javax.swing.JRadioButton rdbFemea;
+    private javax.swing.JRadioButton rdbFreezer;
+    private javax.swing.JRadioButton rdbGeladeira;
     private javax.swing.JRadioButton rdbGigante;
     private javax.swing.JRadioButton rdbGrande;
     private javax.swing.JRadioButton rdbMacho;
@@ -4832,46 +4838,27 @@ public class Menu extends javax.swing.JFrame {
          
      if (rdbPequeno.isSelected()){
         porte = "Pequeno";
-      /*  rdbMedio.setSelected(false);
-        rdbGrande.setSelected(false);
-        rdbGigante.setSelected(false);*/
      }
      else if (rdbMedio.isSelected()){
          porte = "Medio";
-         /*rdbPequeno.setSelected(false);
-         rdbGrande.setSelected(false);
-         rdbGigante.setSelected(false);*/
      }
      else if (rdbGrande.isSelected()){
          porte = "Grande";
-         /*rdbPequeno.setSelected(false);
-         rdbMedio.setSelected(false);
-         rdbGigante.setSelected(false);*/
      }
      else{
          porte = "Gigante";
-         /*rdbPequeno.setSelected(false);
-         rdbMedio.setSelected(false);
-         rdbGrande.setSelected(false);*/
      }
      return porte;
     }
     
     public String esterelizado(Paciente paciente){
      String status = "";
- /*    if (rdbSim.isSelected() && rdbNao.isSelected()){
-        JOptionPane.showMessageDialog(null,"Apenas uma opção deve ser selecionada.","Aviso",JOptionPane.WARNING_MESSAGE);          
-        rdbSim.setSelected(false);
-        rdbNao.setSelected(false);
-     }
-     else{*/
         if (rdbSim.isSelected()){
             status = "Sim";
         }
         else if (rdbNao.isSelected()){
             status = "Nao";            
         }
-     //}     
      return status;
     }
     
@@ -4897,5 +4884,16 @@ public class Menu extends javax.swing.JFrame {
         String especie = "";
         especie = cmbEspecie.getSelectedItem().toString();
         return especie;
+    }
+    
+    public String equipamento(Afericao afericao){
+     String equipamento = "";
+        if (rdbFreezer.isSelected()){
+            equipamento = "Freezer";
+        }
+        else if (rdbGeladeira.isSelected()){
+            equipamento = "Geladeira";            
+        }
+     return equipamento;
     }
 }
