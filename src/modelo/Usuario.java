@@ -67,8 +67,8 @@ public class Usuario implements Serializable{
         this.usuario = usuario;
     }
 
-    public void cadastrarUsuario(Usuario user) {
-       
+    public void validarUsuario(String nomeUsuario, char senha){
+        
     }
 
     @Override

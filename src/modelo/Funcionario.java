@@ -16,22 +16,23 @@ public abstract class Funcionario extends Pessoa implements Serializable {
     private String nomeUsuario;
     private String senha;    
     private Date dtAdmissao;
-    private Date dtCadastro;
     private Date dtLimiteLogin;
     private TipoFuncionario cargo;
         
     public Funcionario (){}
 
-    public Funcionario(Integer codigoFunc, TipoFuncionario cargo, String permissao, String nomeUsuario, String senha, Date dtAdmissao, Date dtCadastro, Date dtLimiteLogin, TipoFuncionario tipoFuncionario, String rg, String cpf, String nome, Date dataNasc, String email, String endereco, String complemento, String bairro, String cidade, String telefone, String celular) {
-        super(rg, cpf, nome, dataNasc, email, endereco, complemento, bairro, cidade, telefone, celular);
+    public Funcionario(Integer codigoFunc, String permissao, String nomeUsuario, String senha, Date dtAdmissao, Date dtLimiteLogin, TipoFuncionario cargo, 
+                       String rg, String cpf, String nome, Date dataNasc, String email, String endereco, String complemento, String bairro, String cidade, 
+                       String telefone, String celular, Date dtCadastro) {
+        
+        super(rg, cpf, nome, dataNasc, email, endereco, complemento, bairro, cidade, telefone, celular, dtCadastro);
         this.codigoFunc = codigoFunc;
-        this.cargo = cargo;
         this.permissao = permissao;
         this.nomeUsuario = nomeUsuario;
         this.senha = senha;
         this.dtAdmissao = dtAdmissao;
-        this.dtCadastro = dtCadastro;
-        this.dtLimiteLogin = dtLimiteLogin;        
+        this.dtLimiteLogin = dtLimiteLogin;
+        this.cargo = cargo;
     }
 
     public TipoFuncionario getCargo() {
@@ -90,16 +91,9 @@ public abstract class Funcionario extends Pessoa implements Serializable {
         this.codigoFunc = codigoFunc;
     }
 
-    public Date getDtCadastro() {
-        return dtCadastro;
-    }
-
-    public void setDtCadastro(Date dtCadastro) {
-        this.dtCadastro = dtCadastro;
-    }
-
     @Override
     public String toString() {
-        return "Funcionario{" + "codigoFunc=" + codigoFunc + ", permissao=" + permissao + ", nomeUsuario=" + nomeUsuario + ", senha=" + senha + ", dtAdmissao=" + dtAdmissao + ", dtCadastro=" + dtCadastro + ", dtLimiteLogin=" + dtLimiteLogin + ", cargo=" + cargo + '}';
+        return "Funcionario{" + "codigoFunc=" + codigoFunc + ", permissao=" + permissao + ", nomeUsuario=" + nomeUsuario + ", senha=" + senha 
+                            + ", dtAdmissao=" + dtAdmissao + ", dtLimiteLogin=" + dtLimiteLogin + ", cargo=" + cargo + '}';
     }
 }

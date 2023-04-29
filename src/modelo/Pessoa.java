@@ -21,12 +21,13 @@ public class Pessoa implements Serializable{
     private String cidade;
     private String telefone;
     private String celular;
+    private Date dtCadastro;
     
 
     public Pessoa() {
     }
 
-    public Pessoa(String rg, String cpf, String nome, Date dataNasc, String email, String endereco, String complemento, String bairro, String cidade, String telefone, String celular) {
+    public Pessoa(String rg, String cpf, String nome, Date dataNasc, String email, String endereco, String complemento, String bairro, String cidade, String telefone, String celular, Date dtCadastro) {
         this.rg = rg;
         this.cpf = cpf;
         this.nome = nome;
@@ -38,6 +39,7 @@ public class Pessoa implements Serializable{
         this.cidade = cidade;
         this.telefone = telefone;
         this.celular = celular;
+        this.dtCadastro = dtCadastro;
     }
 
     public String getRg() {
@@ -128,8 +130,16 @@ public class Pessoa implements Serializable{
         this.celular = celular;
     }
 
+    public Date getDtCadastro() {
+        return dtCadastro;
+    }
+
+    public void setDtCadastro(Date dtCadastro) {
+        this.dtCadastro = dtCadastro;
+    }
+
     @Override
     public String toString() {
-        return "Pessoa{" + "rg=" + rg + ", cpf=" + cpf + ", nome=" + nome + ", dataNasc=" + dataNasc + ", email=" + email + ", endereco=" + endereco + ", complemento=" + complemento + ", bairro=" + bairro + ", cidade=" + cidade + ", telefone=" + telefone + ", celular=" + celular + '}';
+        return "Pessoa{" + "rg=" + rg + ", cpf=" + cpf + ", nome=" + nome + ", dataNasc=" + dataNasc + ", email=" + email + ", endereco=" + endereco + ", complemento=" + complemento + ", bairro=" + bairro + ", cidade=" + cidade + ", telefone=" + telefone + ", celular=" + celular + ", dtCadastro=" + dtCadastro + '}';
     }
 }
