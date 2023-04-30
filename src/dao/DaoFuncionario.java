@@ -1,6 +1,6 @@
-
 package dao;
 
+import controle.ControleFuncionario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,7 +17,7 @@ public class DaoFuncionario extends DaoFactory{
     private Connection conexao;
     private PreparedStatement ps;
     private ResultSet rs;
-        
+       
     public void salvarFuncionario(Veterinario veterinario) throws SQLException{
         
         String insert = "INSERT INTO funcionario "
@@ -42,21 +42,15 @@ public class DaoFuncionario extends DaoFactory{
     }    
         
     //DESCOBRIR COMO PEGAR O ID DO USUARIO CLICADO PARA PASSAR PRO UPDATE -> NÃO É INSERT!
-    public void salvarUsuario(Veterinario v) throws SQLException{
+    public void salvarUsuario(Veterinario veterinario) throws SQLException{
         
-        //select pra pegar o funcionário salvo
-        //String busca = "SELECT * FROM funcionario WHERE id_funcionario = ?";
+        String update = " UPDATE funcionario SET nomeusuario = ?, senha = ?, permissao = ? WHERE id_funcionario = " ; 
         
-        //fazer o sistema atribuir o código pro funcionario cadastrado, sem mostrar na tela.
-        
-        String update = " UPDATE funcionario SET nomeusuario = ?, senha = ?, permissao = ? where id_funcionario = ? "; 
-        
-        //String insert = "INSERT INTO funcionario (nomeusuario, senha, permissao) VALUES (?,?,?) ";
-                        
-        salvar (update, v.getNomeUsuario(),
-                        v.getSenha(),
-                        v.getPermissao()
-       );  
+        update (update, 
+                veterinario.getCodigoFunc(),
+                veterinario.getNomeUsuario(),
+                new ControleFuncionario().pegaSenha(veterinario),
+                veterinario.getPermissao());          
     }    
     
     public void alterar(Veterinario v) throws SQLException {
@@ -93,5 +87,5 @@ public class DaoFuncionario extends DaoFactory{
             JOptionPane.showMessageDialog(null, "Operação não realizada. Motivo : " + e.getMessage(), "Alerta", JOptionPane.WARNING_MESSAGE);
         }
         return i;
-     }    
+     }        
 }

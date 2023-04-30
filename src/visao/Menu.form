@@ -497,6 +497,26 @@
     </Component>
     <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
     </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup2">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup3">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup4">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup5">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup6">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup7">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup8">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup9">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup10">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup11">
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -2108,18 +2128,18 @@
                                           <Component id="jLabel122" min="-2" pref="88" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="radioSim5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="radioSim4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rdbPequeno2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rdbSim2" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="radioNao8" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rdbNao2" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="radioNao9" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="rdbMedio2" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                                                  <Component id="radioNao10" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="rdbGrande2" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                                                  <Component id="radioNao11" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="rdbGigante2" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -2139,9 +2159,9 @@
                                           <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" attributes="0">
-                                                  <Component id="radioMacho2" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="rdbMacho2" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                                                  <Component id="radioFemea2" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="rdbFemea2" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <Component id="txtNomePet2" min="-2" pref="234" max="-2" attributes="0"/>
                                           </Group>
@@ -2178,8 +2198,8 @@
                                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel124" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="radioMacho2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="radioFemea2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rdbMacho2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rdbFemea2" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -2209,16 +2229,16 @@
                                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel122" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="radioSim4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="radioNao8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rdbSim2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rdbNao2" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel132" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="radioSim5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="radioNao9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="radioNao10" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="radioNao11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rdbPequeno2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rdbMedio2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rdbGrande2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rdbGigante2" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -2338,7 +2358,7 @@
                             <Property name="text" type="java.lang.String" value="Esterelizado:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JRadioButton" name="radioSim4">
+                        <Component class="javax.swing.JRadioButton" name="rdbSim2">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="0"/>
@@ -2346,10 +2366,10 @@
                             <Property name="text" type="java.lang.String" value="Sim"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioSim4ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdbSim2ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JRadioButton" name="radioNao8">
+                        <Component class="javax.swing.JRadioButton" name="rdbNao2">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="0"/>
@@ -2357,7 +2377,7 @@
                             <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioNao8ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdbNao2ActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel123">
@@ -2394,7 +2414,7 @@
                             <Property name="text" type="java.lang.String" value="Sexo:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JRadioButton" name="radioMacho2">
+                        <Component class="javax.swing.JRadioButton" name="rdbMacho2">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="0"/>
@@ -2402,7 +2422,7 @@
                             <Property name="text" type="java.lang.String" value="Macho"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JRadioButton" name="radioFemea2">
+                        <Component class="javax.swing.JRadioButton" name="rdbFemea2">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="0"/>
@@ -2529,7 +2549,7 @@
                             <Property name="text" type="java.lang.String" value="Porte:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JRadioButton" name="radioSim5">
+                        <Component class="javax.swing.JRadioButton" name="rdbPequeno2">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="0"/>
@@ -2537,10 +2557,10 @@
                             <Property name="text" type="java.lang.String" value="Pequeno"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioSim5ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdbPequeno2ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JRadioButton" name="radioNao9">
+                        <Component class="javax.swing.JRadioButton" name="rdbMedio2">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="0"/>
@@ -2548,10 +2568,10 @@
                             <Property name="text" type="java.lang.String" value="M&#xe9;dio"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioNao9ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdbMedio2ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JRadioButton" name="radioNao10">
+                        <Component class="javax.swing.JRadioButton" name="rdbGrande2">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="0"/>
@@ -2559,10 +2579,10 @@
                             <Property name="text" type="java.lang.String" value="Grande"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioNao10ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdbGrande2ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JRadioButton" name="radioNao11">
+                        <Component class="javax.swing.JRadioButton" name="rdbGigante2">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="0"/>
@@ -2570,7 +2590,7 @@
                             <Property name="text" type="java.lang.String" value="Gigante"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioNao11ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdbGigante2ActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel172">
@@ -4509,9 +4529,9 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                                                       <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jRadioAssistente" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jRadioVet" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jRadioAdm" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="rdbAssistente" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="rdbVeterinario" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="rdbAdministrador" alignment="0" min="-2" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                                   <Component id="txtDtAdmissao7" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
@@ -4543,11 +4563,11 @@
                               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                               <Component id="jLabel51" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                              <Component id="jRadioAdm" min="-2" max="-2" attributes="0"/>
+                              <Component id="rdbAdministrador" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jRadioVet" min="-2" max="-2" attributes="0"/>
+                              <Component id="rdbVeterinario" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jRadioAssistente" min="-2" max="-2" attributes="0"/>
+                              <Component id="rdbAssistente" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                               <Component id="jLabel252" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -4596,7 +4616,7 @@
                     </Component>
                     <Component class="javax.swing.JPasswordField" name="txtSenhaUsu">
                     </Component>
-                    <Component class="javax.swing.JRadioButton" name="jRadioVet">
+                    <Component class="javax.swing.JRadioButton" name="rdbVeterinario">
                       <Properties>
                         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                           <ComponentRef name="buttonGroup1"/>
@@ -4608,7 +4628,7 @@
                         <Property name="name" type="java.lang.String" value="rbtPerjmissao" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JRadioButton" name="jRadioAssistente">
+                    <Component class="javax.swing.JRadioButton" name="rdbAssistente">
                       <Properties>
                         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                           <ComponentRef name="buttonGroup1"/>
@@ -4619,8 +4639,11 @@
                         <Property name="text" type="java.lang.String" value="Assistente"/>
                         <Property name="name" type="java.lang.String" value="rbtPerjmissao" noResource="true"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdbAssistenteActionPerformed"/>
+                      </Events>
                     </Component>
-                    <Component class="javax.swing.JRadioButton" name="jRadioAdm">
+                    <Component class="javax.swing.JRadioButton" name="rdbAdministrador">
                       <Properties>
                         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                           <ComponentRef name="buttonGroup1"/>
@@ -4920,9 +4943,9 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel198" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jRadioButton15" min="-2" max="-2" attributes="0"/>
+                                          <Component id="rdbFreezer2" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                          <Component id="jRadioButton16" min="-2" max="-2" attributes="0"/>
+                                          <Component id="rdbGeladeira2" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jLabel219" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
@@ -5009,8 +5032,8 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel198" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton15" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton16" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rdbFreezer2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rdbGeladeira2" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jLabel219" min="-2" max="-2" attributes="0"/>
@@ -5110,7 +5133,7 @@
                             <Property name="text" type="java.lang.String" value="Equipamento:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JRadioButton" name="jRadioButton15">
+                        <Component class="javax.swing.JRadioButton" name="rdbFreezer2">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="0"/>
@@ -5118,7 +5141,7 @@
                             <Property name="text" type="java.lang.String" value="Freezer"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JRadioButton" name="jRadioButton16">
+                        <Component class="javax.swing.JRadioButton" name="rdbGeladeira2">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="0"/>
@@ -5126,7 +5149,7 @@
                             <Property name="text" type="java.lang.String" value="Geladeira"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton16ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdbGeladeira2ActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel217">

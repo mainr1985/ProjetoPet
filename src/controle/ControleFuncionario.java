@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.text.Normalizer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import modelo.Usuario;
 import modelo.enums.TipoFuncionario;
 
 /**
@@ -127,4 +128,21 @@ public class ControleFuncionario{
             
         daoFuncionario.salvarFuncionario(administrador);    
     }       
+    
+    public void salvarLogin(String usuario, char[] senha, String permissao) throws SQLException, ParseException {
+        
+        Veterinario usuarioFunc = new Veterinario();
+                
+        usuarioFunc.setNomeUsuario(usuario);
+        usuarioFunc.setSenha(senha);
+        usuarioFunc.setPermissao(permissao);
+        
+        new DaoFuncionario().salvarUsuario(usuarioFunc);
+    }
+    
+    //transforma a senha em String.
+    public String pegaSenha(Veterinario veterinario){
+        String senha_decode = new String (veterinario.getSenha());
+        return senha_decode;
+    }
 }    

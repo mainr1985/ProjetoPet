@@ -53,16 +53,10 @@ public class Usuario implements Serializable{
         this.funcionario = funcionario;
     }
 
-    /**
-     * @return the usuario
-     */
     public String getUsuario() {
         return usuario;
     }
 
-    /**
-     * @param usuario the usuario to set
-     */
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
