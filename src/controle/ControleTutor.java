@@ -1,4 +1,5 @@
 package controle;
+import dao.DaoBuscaTutor;
 import dao.DaoTutor;
 import java.sql.SQLException;
 import java.text.Normalizer;
@@ -41,6 +42,10 @@ public class ControleTutor {
         tutor.setDtCadastro(dataCadastro);
                 
        new DaoTutor().salvar(tutor);  
+    }
+    
+    public String buscaTutor(String nome) throws SQLException{
+        new DaoBuscaTutor().findByName(nome);                
     }
     
     

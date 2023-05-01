@@ -15,6 +15,8 @@ import dao.DaoTutor;
 import javax.swing.JTextField;
 import controle.ControleAfericoes;
 import controle.ControlePaciente;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import modelo.Afericao;
 import modelo.Paciente;
 import modelo.Usuario;
@@ -141,8 +143,6 @@ public class Menu extends javax.swing.JFrame {
         btnEditarTutor = new javax.swing.JButton();
         btnExcluirTutor = new javax.swing.JButton();
         btnAddPet = new javax.swing.JButton();
-        jLabel82 = new javax.swing.JLabel();
-        txtCPFTutor5 = new javax.swing.JFormattedTextField();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTable5 = new javax.swing.JTable();
         jPanel46 = new javax.swing.JPanel();
@@ -798,17 +798,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel82.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel82.setText("CPF:");
-
-        try {
-            txtCPFTutor5.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtCPFTutor5.setNextFocusableComponent(txtRgTutor);
-        txtCPFTutor5.setSelectionColor(new java.awt.Color(255, 204, 204));
-
         jTable5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -835,14 +824,8 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addComponent(jLabel82)
-                        .addGap(42, 42, 42)
-                        .addComponent(txtCPFTutor5, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(125, 125, 125)
-                        .addComponent(btnBuscaTutor))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnAddPet, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnExcluirTutor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -851,42 +834,33 @@ public class Menu extends javax.swing.JFrame {
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(txtNomeTutorBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(76, 118, Short.MAX_VALUE))
+                        .addComponent(txtNomeTutorBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
+                        .addComponent(btnBuscaTutor)))
+                .addGap(79, 79, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNomeTutorBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscaTutor, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addGap(84, 84, 84)
-                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel82, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtCPFTutor5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(27, 27, 27))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(btnBuscaTutor, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)))
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addGap(57, 57, 57)
-                                .addComponent(btnEditarTutor, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnExcluirTutor, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnAddPet, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(28, 28, 28)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNomeTutorBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(80, Short.MAX_VALUE))
+                        .addGap(65, 65, 65)
+                        .addComponent(btnEditarTutor, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnExcluirTutor, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnAddPet, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(131, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
@@ -3860,7 +3834,18 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalvaUsuarioActionPerformed
 
     private void btnBuscaTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaTutorActionPerformed
-        // TODO add your handling code here:
+        ControleTutor controleTutor = new ControleTutor();
+        if (txtNomeTutorBusca.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"Favor informar o nome do Tutor para busca.","Aviso",JOptionPane.WARNING_MESSAGE);
+        }
+        else{
+            try {
+                String nomeTutor = controleTutor.buscaTutor(txtNomeTutorBusca.getText());
+            } 
+            catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
     }//GEN-LAST:event_btnBuscaTutorActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
@@ -4635,7 +4620,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel97;
     private javax.swing.JLabel jLabel98;
@@ -4728,7 +4712,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField txtCPF4;
     private javax.swing.JFormattedTextField txtCPFTutor;
     private javax.swing.JFormattedTextField txtCPFTutor2;
-    private javax.swing.JFormattedTextField txtCPFTutor5;
     private javax.swing.JFormattedTextField txtCPFTutor9;
     private javax.swing.JFormattedTextField txtCPF_Func;
     private javax.swing.JFormattedTextField txtCPF_Func2;
