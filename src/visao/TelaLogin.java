@@ -6,6 +6,7 @@ import controle.ControleLogin;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import modelo.Usuario;
+import modelo.Veterinario;
 
 /**
  *
@@ -120,6 +121,12 @@ public class TelaLogin extends javax.swing.JFrame {
         gridBagConstraints.ipady = 12;
         gridBagConstraints.insets = new java.awt.Insets(40, 294, 0, 146);
         jPanel1.add(jLabel1, gridBagConstraints);
+
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 1;
@@ -149,61 +156,14 @@ public class TelaLogin extends javax.swing.JFrame {
 
    
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-       /* ControleFuncionario cf = new ControleFuncionario();
-        int cargo = cmbCargo.getSelectedIndex();
-        
-        if (cargo==0){            
-            try{
-                cf.salvarVeterinario(Integer.parseInt(txtCrmv.getText()), 
-                                     txtEspecialidade.getText(), 
-                                     /*Integer.parseInt(txtCodFuncNovo.getText()),
-                                     txtNomeFuncNovo.getText(),
-                                     txtCPF_Func.getText(), 
-                                     txtRgFunc.getText(),
-                                     cmbCargo.getSelectedItem().toString());
-                
-                                     //txtEmailFunc.getText()
-                                    //txtLogFunc.getText(),
-                                     //Integer.parseInt(txtNumFunc.getText()),
-                                     //txtComplFunc.getText(),
-                                     //txtBairroFunc.getText(),
-                                     //txtCidadeFunc.getText(),
-                                     //txtEmailFunc.getText()
-                JOptionPane.showMessageDialog(null, "Veterinário cadastrado com sucesso. \nVocê será redirecionado para o Cadastro de Usuário");  
-                painelFunc.setSelectedIndex(3);
-            }
-            catch(SQLException e){
-                e.printStackTrace();
-            }
-            catch(ParseException e){
-                e.printStackTrace();
-            }        
-            limparFuncNovo(evt);
-        }
-        if (cargo==2){
-            txtEspecialidade.setEnabled(false);
-            try{
-                cf.salvarAssistente(/*Integer.parseInt(txtCodFuncNovo.getText()
-                                    txtRgFunc.getText(),
-                                    txtCPF_Func.getText(),
-                                    txtNomeFuncNovo.getText(),
-                                    cmbCargo.getSelectedItem().toString());
-                JOptionPane.showMessageDialog(null, "Assistente cadastrado com sucesso. \nVocê será redirecionado para o Cadastro de Usuário"); 
-                painelFunc.setSelectedIndex(3);
-            }
-            catch(SQLException e){
-                e.printStackTrace();
-            }
-                
-                
-        }
-        /*else if (cargo>0){
-            
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Não foi possível realizar o cadastro. Erro");
-        }*/
+       ControleLogin controleLogin = new ControleLogin();
+       controleLogin.fazerLogon();       
+       limpar();        
     }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -281,42 +241,31 @@ public class TelaLogin extends javax.swing.JFrame {
         this.txtUsuario = txtUsuario;
     }
     
-    
+    public Veterinario lerLogin(){
+      Veterinario usuario = new Veterinario();
+      String nomeUsuario = txtUsuario.getText();
+      char[] senha = txtSenha.getPassword();
+      String senhaString = String.valueOf(senha);
+      
+      if (nomeUsuario.isEmpty() || senhaString.isEmpty()){
+        JOptionPane.showMessageDialog(null,"Favor verificar preenchimento obrigatório dos campos: Usuário e Senha","Aviso",JOptionPane.WARNING_MESSAGE);           
+        return null;
+      }
+      else{
+          try{
+              usuario.setNomeUsuario(nomeUsuario);
+              usuario.setSenha(senhaString);
+          }
+          catch(Exception e){
+              e.printStackTrace();
+          }                  
+      }      
+      return usuario;
+    }
 
-    /*public void limpar()
+    public void limpar()
     {
         txtUsuario.setText("");
 	txtSenha.setText("");
-    }
-    */
-    //pra integrar com o DAO
-    /*public void setOuvinte (ControleLogin controleLogin){
-        btnLogin.addActionListener(controleLogin);
-    }
-    */
-    /*public Login lerLogin() throws SQLException, ClassNotFoundException{
-        Login login = new Login();
-        String nomeUsuario = txtUsuario.getText();
-        String senha = txtSenha.getPassword().toString();
-        DaoLogin daoLogin = new DaoLogin();
-        String tipoPermissao = "";
-        
-        if(nomeUsuario.equals("") || nomeUsuario == null || senha.equals("") || senha == null){
-            JOptionPane.showMessageDialog(null,"Favor verificar os dados informados: ","Aviso",JOptionPane.WARNING_MESSAGE);
-            return null;
-	}
-        else
-            try{
-		if (senha.contains("vet")){
-                    tipoPermissao = "Veterinário";
-                    Menu menu = new Menu();
-                    menu.modoInicial();
-                }
-            }
-	    catch(Exception ex){
-		JOptionPane.showMessageDialog(null,"Login não autorizado!","Aviso",JOptionPane.WARNING_MESSAGE);
-            }
-        
-        return null;
-    }*/
+    }   
 }

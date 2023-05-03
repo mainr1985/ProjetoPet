@@ -42,11 +42,5 @@ public class ControleTutor {
         tutor.setDtCadastro(dataCadastro);
                 
        new DaoTutor().salvar(tutor);  
-    }
-    
-    public String buscaTutor(String nome) throws SQLException{
-        new DaoBuscaTutor().findByName(nome);                
-    }
-    
-    
+    }  
 }

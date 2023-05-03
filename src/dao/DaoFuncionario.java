@@ -88,4 +88,46 @@ public class DaoFuncionario extends DaoFactory{
         }
         return i;
      }        
+    
+/*    public boolean verificaCpf(Dentista funcionario)
+	{
+		Veterinario funcionario  = new Veterinario();
+		String cpf = "";
+		boolean achou = false;
+		
+		try
+		{
+			ps = c.prepareStatement("select cpf from funcionario where cpf = ?");
+			ps.setString(1, funcionario.getCpf());
+			String cpfRecebido = funcionario.getCpf();
+			
+			r = ps.executeQuery();
+						
+			if(r.next())
+			{
+				func.setCpf(r.getString("cpf"));
+				cpfConsulta = func.getCpf();
+			}
+		
+				if(cpfRecebido.equals(cpfConsulta))
+					{
+						JOptionPane.showMessageDialog(null, "CPF já existente! Inclusão inválida.",
+								"Aviso",JOptionPane.WARNING_MESSAGE);
+						achou = true;
+					}
+					else
+					
+							
+							achou = false;
+					
+			}
+		catch(SQLException ex)
+		{
+			
+			JOptionPane.showMessageDialog(null, "Operação não realizada.Motivo: "+"\n"+ex.getMessage(),
+					"Aviso",JOptionPane.WARNING_MESSAGE);
+			
+		}
+		return achou;
+	}*/
 }
