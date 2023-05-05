@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import modelo.Veterinario;
 
 /**
@@ -30,6 +32,25 @@ public class DaoVeterinario extends DaoFactory{
         update(update, v.getCrmv(),v.getEspecialidade());
     }
     
-    
-   
+    public List<Veterinario> pegarVeterinarios(){
+        String sql = "SELECT nome "
+                + "   FROM funcionario func "
+                + "     INNER JOIN veterinario vet ON func.id_funcionario = vet.id_funcionario "
+                + "   WHERE cargo LIKE 'VET%' ";    
+        String nome ="";
+        List<Veterinario> veterinarios = new ArrayList<Veterinario>();
+        try{
+            PreparedStatement ps = getConnection().prepareStatement(sql);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                Veterinario v = new Veterinario();
+                v.setNome(rs.getString("nome"));
+                veterinarios.add(v);
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        return veterinarios;
+    }
 }

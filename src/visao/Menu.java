@@ -15,6 +15,9 @@ import dao.DaoTutor;
 import javax.swing.JTextField;
 import controle.ControleAfericoes;
 import controle.ControlePaciente;
+import dao.DaoVeterinario;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.Afericao;
@@ -35,7 +38,7 @@ public class Menu extends javax.swing.JFrame {
         setLocationRelativeTo(null); //centraliza
         setDefaultCloseOperation(EXIT_ON_CLOSE);  
         loadComboBoxes();
-        setGruposBotoes();
+        setGruposBotoes();        
     }
 
     public void setGruposBotoes(){
@@ -423,8 +426,6 @@ public class Menu extends javax.swing.JFrame {
         btnCancelar7 = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         jLabel171 = new javax.swing.JLabel();
-        txtVetResp = new javax.swing.JTextField();
-        txtCRMVResp = new javax.swing.JTextField();
         jLabel173 = new javax.swing.JLabel();
         jLabel184 = new javax.swing.JLabel();
         jLabel196 = new javax.swing.JLabel();
@@ -441,6 +442,8 @@ public class Menu extends javax.swing.JFrame {
         btnSalvarAfericao1 = new javax.swing.JButton();
         btnCancelar5 = new javax.swing.JButton();
         jLabel232 = new javax.swing.JLabel();
+        cmbResponsavel = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -3550,12 +3553,6 @@ public class Menu extends javax.swing.JFrame {
         jLabel171.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel171.setText("Responsável:");
 
-        txtVetResp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtVetRespActionPerformed(evt);
-            }
-        });
-
         jLabel173.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel173.setText("CRMV:");
 
@@ -3620,6 +3617,16 @@ public class Menu extends javax.swing.JFrame {
         jLabel232.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel232.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nova Aferição", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
 
+        cmbResponsavel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cmbResponsavel.setBorder(null);
+        cmbResponsavel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbResponsavelActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFocusable(false);
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
@@ -3629,21 +3636,6 @@ public class Menu extends javax.swing.JFrame {
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(62, 62, 62)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addComponent(jLabel171)
-                                .addGap(27, 27, 27)
-                                .addComponent(txtVetResp, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel184)
-                                    .addComponent(jLabel173))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtCRMVResp, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel9Layout.createSequentialGroup()
-                                        .addComponent(txtTempMin, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel204))))
                             .addGroup(jPanel9Layout.createSequentialGroup()
                                 .addGap(4, 4, 4)
                                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3660,7 +3652,21 @@ public class Menu extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel203))
                                     .addComponent(jLabel206)
-                                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel184)
+                                    .addComponent(jLabel173)
+                                    .addComponent(jLabel171))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cmbResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel9Layout.createSequentialGroup()
+                                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(txtTempMin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel204))))))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel232, javax.swing.GroupLayout.PREFERRED_SIZE, 882, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -3677,14 +3683,17 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel232)
-                .addGap(32, 32, 32)
+                .addGap(29, 29, 29)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel171)
-                    .addComponent(txtVetResp, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel173)
-                    .addComponent(txtCRMVResp, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jLabel173))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTempMin, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4348,7 +4357,8 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTempMinActionPerformed
 
     private void btnSalvarAfericao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarAfericao1ActionPerformed
-         ControleAfericoes controleAfericoes = new ControleAfericoes();
+    
+        /*         ControleAfericoes controleAfericoes = new ControleAfericoes();
          String equipamento = equipamento(new Afericao());                
          
         if ( txtVetResp.getText().equals("")
@@ -4379,7 +4389,7 @@ public class Menu extends javax.swing.JFrame {
             catch(ParseException e){
                 e.printStackTrace();
             }
-        }        
+        }        */
     }//GEN-LAST:event_btnSalvarAfericao1ActionPerformed
 
     private void txtDtAdmissaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDtAdmissaoActionPerformed
@@ -4398,10 +4408,6 @@ public class Menu extends javax.swing.JFrame {
         painelOpcoesTutor.setSelectedIndex(0);
     }//GEN-LAST:event_btnCancelarTutor2ActionPerformed
 
-    private void txtVetRespActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVetRespActionPerformed
-       
-    }//GEN-LAST:event_txtVetRespActionPerformed
-
     private void btnCancelarTutor12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarTutor12ActionPerformed
         limparPacienteNovo();
     }//GEN-LAST:event_btnCancelarTutor12ActionPerformed
@@ -4417,6 +4423,10 @@ public class Menu extends javax.swing.JFrame {
     private void txtCPFTutorBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCPFTutorBuscaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCPFTutorBuscaActionPerformed
+
+    private void cmbResponsavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbResponsavelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbResponsavelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -4501,6 +4511,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JComboBox<TipoFuncionario> cmbCargo2;
     private javax.swing.JComboBox<TipoEspecie> cmbEspecie;
     private javax.swing.JComboBox<TipoEspecie> cmbEspecie3;
+    private javax.swing.JComboBox<Object> cmbResponsavel;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton15;
@@ -4508,6 +4519,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JFormattedTextField jFormattedTextField3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel111;
@@ -4736,7 +4748,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField txtCPFTutorBusca;
     private javax.swing.JFormattedTextField txtCPF_Func;
     private javax.swing.JFormattedTextField txtCPF_Func2;
-    private javax.swing.JTextField txtCRMVResp;
     private javax.swing.JTextField txtCRMVResp5;
     private javax.swing.JFormattedTextField txtCelTutor;
     private javax.swing.JFormattedTextField txtCelTutor1;
@@ -4819,7 +4830,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField txtTempMin;
     private javax.swing.JTextField txtTempMin5;
     private javax.swing.JTextField txtUser;
-    private javax.swing.JTextField txtVetResp;
     // End of variables declaration//GEN-END:variables
 
     /**
