@@ -32,25 +32,28 @@ public class DaoVeterinario extends DaoFactory{
         update(update, v.getCrmv(),v.getEspecialidade());
     }
     
-    public List<Veterinario> pegarVeterinarios(){
+    public List<String> listarVeterinarios(){
         String sql = "SELECT nome "
                 + "   FROM funcionario func "
                 + "     INNER JOIN veterinario vet ON func.id_funcionario = vet.id_funcionario "
                 + "   WHERE cargo LIKE 'VET%' ";    
         String nome ="";
-        List<Veterinario> veterinarios = new ArrayList<Veterinario>();
+        List<String> veterinarios = new ArrayList<>();
         try{
             PreparedStatement ps = getConnection().prepareStatement(sql);
             rs = ps.executeQuery();
             while(rs.next()){
                 Veterinario v = new Veterinario();
                 v.setNome(rs.getString("nome"));
-                veterinarios.add(v);
+                veterinarios.add(v.toString());
             }
+            return veterinarios;
         }
+        
         catch(SQLException e){
             e.printStackTrace();
+            return null;
         }
-        return veterinarios;
+        
     }
 }

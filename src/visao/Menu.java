@@ -443,7 +443,7 @@ public class Menu extends javax.swing.JFrame {
         btnCancelar5 = new javax.swing.JButton();
         jLabel232 = new javax.swing.JLabel();
         cmbResponsavel = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
+        lblCrmv = new javax.swing.JLabel();
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -3619,13 +3619,22 @@ public class Menu extends javax.swing.JFrame {
 
         cmbResponsavel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         cmbResponsavel.setBorder(null);
+        cmbResponsavel.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                cmbResponsavelAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         cmbResponsavel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbResponsavelActionPerformed(evt);
             }
         });
 
-        jLabel1.setFocusable(false);
+        lblCrmv.setFocusable(false);
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -3663,7 +3672,7 @@ public class Menu extends javax.swing.JFrame {
                                     .addComponent(cmbResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel9Layout.createSequentialGroup()
                                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(lblCrmv, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(txtTempMin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel204))))))
@@ -3693,7 +3702,7 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(jLabel173))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(27, 27, 27)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lblCrmv, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTempMin, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4357,7 +4366,8 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTempMinActionPerformed
 
     private void btnSalvarAfericao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarAfericao1ActionPerformed
-    
+        ControleFuncionario func = new ControleFuncionario();
+        func.listaVeterinarios();
         /*         ControleAfericoes controleAfericoes = new ControleAfericoes();
          String equipamento = equipamento(new Afericao());                
          
@@ -4425,8 +4435,13 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCPFTutorBuscaActionPerformed
 
     private void cmbResponsavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbResponsavelActionPerformed
-        // TODO add your handling code here:
+         
     }//GEN-LAST:event_cmbResponsavelActionPerformed
+
+    private void cmbResponsavelAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_cmbResponsavelAncestorAdded
+       
+        
+    }//GEN-LAST:event_cmbResponsavelAncestorAdded
 
     /**
      * @param args the command line arguments
@@ -4511,7 +4526,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JComboBox<TipoFuncionario> cmbCargo2;
     private javax.swing.JComboBox<TipoEspecie> cmbEspecie;
     private javax.swing.JComboBox<TipoEspecie> cmbEspecie3;
-    private javax.swing.JComboBox<Object> cmbResponsavel;
+    private javax.swing.JComboBox<Veterinario> cmbResponsavel;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton15;
@@ -4519,7 +4534,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JFormattedTextField jFormattedTextField3;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel111;
@@ -4699,6 +4713,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel lblCpfTutor;
+    private javax.swing.JLabel lblCrmv;
     private javax.swing.JLabel lblCrmv2;
     private javax.swing.JLabel lblCrmv4;
     private javax.swing.JLabel lblEspecialidade2;
@@ -4916,8 +4931,8 @@ public class Menu extends javax.swing.JFrame {
     
     public void limparAfericaoNova(){
  
-        txtVetResp.setText(""); 
-        txtCRMVResp.setText(""); 
+        cmbResponsavel.setSelectedIndex(-1);
+        lblCrmv.setText(""); 
         txtTempMin.setText(""); 
         txtTempMax.setText(""); 
         txaObservacoes.setText("");
