@@ -9,8 +9,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.text.Normalizer;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.swing.JOptionPane;
 import modelo.Usuario;
 import modelo.enums.TipoFuncionario;
 
@@ -147,9 +149,13 @@ public class ControleFuncionario{
         return senha_decode;
     }
     
-    public String listaVeterinarios(){
-        DaoVeterinario dao = new DaoVeterinario();
-        String lista = dao.listarVeterinarios().toString();
-        return lista;
+    public List<Veterinario> pegarVeterinarios(){
+        DaoVeterinario vet = new DaoVeterinario();
+        return vet.listarVeterinarios();
+    }
+    
+    public Integer pegarCrmvResponsavel(Veterinario v){
+        DaoVeterinario vet = new DaoVeterinario();
+        return vet.getCrmvResponsavel(v);
     }
 }    

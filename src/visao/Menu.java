@@ -1,7 +1,6 @@
 package visao;
 
 import controle.ControleFuncionario;
-import controle.ControleLogin;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -9,17 +8,11 @@ import javax.swing.DefaultComboBoxModel;
 import modelo.enums.TipoFuncionario;
 import modelo.enums.TipoEspecie;
 import modelo.Veterinario;
-import modelo.Tutor;
 import controle.ControleTutor;
 import dao.DaoTutor;
-import javax.swing.JTextField;
-import controle.ControleAfericoes;
 import controle.ControlePaciente;
 import dao.DaoVeterinario;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import modelo.Afericao;
 import modelo.Paciente;
 import modelo.Usuario;
@@ -38,7 +31,8 @@ public class Menu extends javax.swing.JFrame {
         setLocationRelativeTo(null); //centraliza
         setDefaultCloseOperation(EXIT_ON_CLOSE);  
         loadComboBoxes();
-        setGruposBotoes();        
+        setGruposBotoes();                
+        loadVeterinarios();
     }
 
     public void setGruposBotoes(){
@@ -3619,6 +3613,11 @@ public class Menu extends javax.swing.JFrame {
 
         cmbResponsavel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         cmbResponsavel.setBorder(null);
+        cmbResponsavel.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cmbResponsavelItemStateChanged(evt);
+            }
+        });
         cmbResponsavel.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -3626,6 +3625,17 @@ public class Menu extends javax.swing.JFrame {
                 cmbResponsavelAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        cmbResponsavel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cmbResponsavelMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                cmbResponsavelMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                cmbResponsavelMouseReleased(evt);
             }
         });
         cmbResponsavel.addActionListener(new java.awt.event.ActionListener() {
@@ -4366,8 +4376,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTempMinActionPerformed
 
     private void btnSalvarAfericao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarAfericao1ActionPerformed
-        ControleFuncionario func = new ControleFuncionario();
-        func.listaVeterinarios();
+    
         /*         ControleAfericoes controleAfericoes = new ControleAfericoes();
          String equipamento = equipamento(new Afericao());                
          
@@ -4435,13 +4444,34 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCPFTutorBuscaActionPerformed
 
     private void cmbResponsavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbResponsavelActionPerformed
-         
+        if (cmbResponsavel.isPopupVisible()){
+            ControleFuncionario veterinario = new ControleFuncionario();
+            int crmv = veterinario.pegarCrmvResponsavel(new Veterinario());
+            String testes = Integer.toString(crmv); //FALTA TESTAR
+            lblCrmv.setText("2"); 
+        }
     }//GEN-LAST:event_cmbResponsavelActionPerformed
 
     private void cmbResponsavelAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_cmbResponsavelAncestorAdded
        
-        
+       
     }//GEN-LAST:event_cmbResponsavelAncestorAdded
+
+    private void cmbResponsavelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmbResponsavelMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbResponsavelMouseClicked
+
+    private void cmbResponsavelMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmbResponsavelMouseReleased
+        
+    }//GEN-LAST:event_cmbResponsavelMouseReleased
+
+    private void cmbResponsavelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmbResponsavelMousePressed
+        
+    }//GEN-LAST:event_cmbResponsavelMousePressed
+
+    private void cmbResponsavelItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbResponsavelItemStateChanged
+        
+    }//GEN-LAST:event_cmbResponsavelItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -4893,6 +4923,18 @@ public class Menu extends javax.swing.JFrame {
         cmbEspecie.setModel(new DefaultComboBoxModel<>(TipoEspecie.values()));               
     }   
     
+    private void loadVeterinarios(){
+        
+        ControleFuncionario veterinario = new ControleFuncionario();
+        List<Veterinario> lista = veterinario.pegarVeterinarios();
+        //JOptionPane.showMessageDialog(null,lista);
+        if (!lista.isEmpty()){
+            for (Veterinario v:lista){
+                cmbResponsavel.addItem(v);    
+            }
+        }
+    }    
+    
     public void limparTutorNovo(){
          
         txtNomeTutor.setText("");
@@ -5031,4 +5073,6 @@ public class Menu extends javax.swing.JFrame {
         }
         return nomeTutor;        
     }
+    
+    
 }

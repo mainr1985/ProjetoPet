@@ -46,6 +46,6 @@ public class Veterinario extends Funcionario implements Serializable{
 
     @Override
     public String toString() {
-        return "Veterinario{" + "crmv=" + crmv + ", especialidade=" + especialidade + '}';
+        return this.getNome();
     }
 }

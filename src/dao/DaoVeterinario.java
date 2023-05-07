@@ -14,7 +14,6 @@ import modelo.Veterinario;
  */
 public class DaoVeterinario extends DaoFactory{
    
-    private Connection conexao;
     private PreparedStatement ps;
     private ResultSet rs;
         
@@ -32,28 +31,44 @@ public class DaoVeterinario extends DaoFactory{
         update(update, v.getCrmv(),v.getEspecialidade());
     }
     
-    public List<String> listarVeterinarios(){
+    public List<Veterinario> listarVeterinarios(){
         String sql = "SELECT nome "
                 + "   FROM funcionario func "
                 + "     INNER JOIN veterinario vet ON func.id_funcionario = vet.id_funcionario "
-                + "   WHERE cargo LIKE 'VET%' ";    
-        String nome ="";
-        List<String> veterinarios = new ArrayList<>();
+                + "   WHERE upper(cargo) LIKE 'VET%' ";    
+        
+        List<Veterinario> veterinarios = new ArrayList();
         try{
             PreparedStatement ps = getConnection().prepareStatement(sql);
             rs = ps.executeQuery();
             while(rs.next()){
                 Veterinario v = new Veterinario();
                 v.setNome(rs.getString("nome"));
-                veterinarios.add(v.toString());
+                veterinarios.add(v);                
             }
-            return veterinarios;
+            return veterinarios;            
         }
         
         catch(SQLException e){
             e.printStackTrace();
             return null;
+        }        
+    }
+    
+    public Integer getCrmvResponsavel(Veterinario veterinario){
+        int crmv = 0;
+        String sql = " SELECT crmv FROM veterinario v INNER JOIN funcionario f ON v.id_funcionario = f.id_funcionario WHERE id_funcionario = ? ";
+        try{
+            ps = getConnection().prepareStatement(sql);
+            ps.setInt(1, veterinario.getCodigoFunc()); //analisar se está correto
+            rs = ps.executeQuery();
+            while (rs.next()){
+                crmv = rs.getInt("crmv");
+            }
         }
-        
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        return crmv;            
     }
 }

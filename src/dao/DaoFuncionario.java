@@ -73,10 +73,9 @@ public class DaoFuncionario extends DaoFactory{
         int i=0;
         String sql = "SELECT max(id_funcionario) FROM funcionario";
         try{
-            PreparedStatement ps = getConnection().prepareStatement(sql);
+            ps = getConnection().prepareStatement(sql);
             rs = ps.executeQuery();
-            if (rs.next()){
-                
+            if (rs.next()){                
                 i = rs.getInt(1);                
                 //Veterinario vet = new Veterinario();
                 //vet.setCodigoFunc(i);
