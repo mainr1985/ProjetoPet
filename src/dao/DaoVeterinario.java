@@ -1,6 +1,5 @@
 package dao;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,7 +17,6 @@ public class DaoVeterinario extends DaoFactory{
     private ResultSet rs;
         
     public void salvar(Veterinario veterinario) throws SQLException{
-
         
        String insert = "INSERT INTO veterinario (crmv,especialidade,id_funcionario) VALUES (?,?,?)";
        salvar (insert,veterinario.getCrmv(),veterinario.getEspecialidade(),veterinario.getCodigoFunc());
@@ -54,21 +52,23 @@ public class DaoVeterinario extends DaoFactory{
             return null;
         }        
     }
-    
-    public Integer getCrmvResponsavel(Veterinario veterinario){
+   
+    public int getCrmvResponsavel(String nome){
+        String sql = " SELECT crmv FROM funcionario f INNER JOIN veterinario v ON f.id_funcionario = v.id_funcionario WHERE nome = ? ";
         int crmv = 0;
-        String sql = " SELECT crmv FROM veterinario v INNER JOIN funcionario f ON v.id_funcionario = f.id_funcionario WHERE id_funcionario = ? ";
         try{
             ps = getConnection().prepareStatement(sql);
-            ps.setInt(1, veterinario.getCodigoFunc()); //analisar se está correto
+            ps.setString(1, nome);
             rs = ps.executeQuery();
-            while (rs.next()){
-                crmv = rs.getInt("crmv");
+            while(rs.next()){
+                Veterinario veterinario = new Veterinario();
+                veterinario.setCrmv(rs.getInt("crmv"));                
+                crmv = veterinario.getCrmv();                
             }
         }
         catch(SQLException e){
             e.printStackTrace();
         }
-        return crmv;            
+        return crmv;
     }
 }

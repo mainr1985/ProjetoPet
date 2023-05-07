@@ -154,8 +154,5 @@ public class ControleFuncionario{
         return vet.listarVeterinarios();
     }
     
-    public Integer pegarCrmvResponsavel(Veterinario v){
-        DaoVeterinario vet = new DaoVeterinario();
-        return vet.getCrmvResponsavel(v);
-    }
+    
 }    

@@ -1,5 +1,6 @@
 package visao;
 
+import controle.ControleAfericoes;
 import controle.ControleFuncionario;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
@@ -32,7 +33,7 @@ public class Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);  
         loadComboBoxes();
         setGruposBotoes();                
-        loadVeterinarios();
+        loadComboVeterinarios();
     }
 
     public void setGruposBotoes(){
@@ -420,7 +421,6 @@ public class Menu extends javax.swing.JFrame {
         btnCancelar7 = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         jLabel171 = new javax.swing.JLabel();
-        jLabel173 = new javax.swing.JLabel();
         jLabel184 = new javax.swing.JLabel();
         jLabel196 = new javax.swing.JLabel();
         jLabel202 = new javax.swing.JLabel();
@@ -437,7 +437,6 @@ public class Menu extends javax.swing.JFrame {
         btnCancelar5 = new javax.swing.JButton();
         jLabel232 = new javax.swing.JLabel();
         cmbResponsavel = new javax.swing.JComboBox<>();
-        lblCrmv = new javax.swing.JLabel();
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -3547,9 +3546,6 @@ public class Menu extends javax.swing.JFrame {
         jLabel171.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel171.setText("Responsável:");
 
-        jLabel173.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel173.setText("CRMV:");
-
         jLabel184.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel184.setText("Temp. Mínima:");
 
@@ -3644,8 +3640,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        lblCrmv.setFocusable(false);
-
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
@@ -3655,6 +3649,16 @@ public class Menu extends javax.swing.JFrame {
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(62, 62, 62)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addComponent(jLabel171)
+                                .addGap(27, 27, 27)
+                                .addComponent(cmbResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addComponent(jLabel184)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtTempMin, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel204))
                             .addGroup(jPanel9Layout.createSequentialGroup()
                                 .addGap(4, 4, 4)
                                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3671,31 +3675,16 @@ public class Menu extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel203))
                                     .addComponent(jLabel206)
-                                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel184)
-                                    .addComponent(jLabel173)
-                                    .addComponent(jLabel171))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cmbResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel9Layout.createSequentialGroup()
-                                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(lblCrmv, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(txtTempMin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel204))))))
+                                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel232, javax.swing.GroupLayout.PREFERRED_SIZE, 882, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel232, javax.swing.GroupLayout.PREFERRED_SIZE, 882, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(333, 333, 333)
+                        .addComponent(btnSalvarAfericao1)
+                        .addGap(31, 31, 31)
+                        .addComponent(btnCancelar5)))
                 .addContainerGap(41, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnSalvarAfericao1)
-                .addGap(31, 31, 31)
-                .addComponent(btnCancelar5)
-                .addGap(351, 351, 351))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3706,13 +3695,6 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel171)
                     .addComponent(cmbResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jLabel173))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(lblCrmv, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTempMin, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3725,18 +3707,18 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jLabel196))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel202)
                     .addComponent(rdbFreezer)
-                    .addComponent(rdbGeladeira))
+                    .addComponent(rdbGeladeira)
+                    .addComponent(jLabel202))
                 .addGap(29, 29, 29)
                 .addComponent(jLabel206)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(47, 47, 47)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSalvarAfericao1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(213, Short.MAX_VALUE))
+                .addContainerGap(255, Short.MAX_VALUE))
         );
 
         painelOpcoes.addTab("Nova", jPanel9);
@@ -3985,7 +3967,7 @@ public class Menu extends javax.swing.JFrame {
         String porte = getPortePet(new Paciente());
        
         if ( (txtNomePet.getText().equals("") 
-              || ( (!rdbMacho.isSelected() ) && (!rdbFemea.isSelected() ) ) 
+              || ((!rdbMacho.isSelected()) && (!rdbFemea.isSelected())) 
               || txtDtNascPet.getText().equals("") 
               || txtIdade.getText().equals("") 
               || txtRaca.getText().equals("") 
@@ -4377,24 +4359,23 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnSalvarAfericao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarAfericao1ActionPerformed
     
-        /*         ControleAfericoes controleAfericoes = new ControleAfericoes();
-         String equipamento = equipamento(new Afericao());                
-         
-        if ( txtVetResp.getText().equals("")
-             ||txtCRMVResp.getText().equals("")
-             ||txtTempMin.getText().equals("")
-             ||txtTempMax.getText().equals("")
-             ||txaObservacoes.getText().equals("")
-             || ((!rdbFreezer.isSelected() ) && (!rdbGeladeira.isSelected())) 
+        ControleAfericoes controleAfericoes = new ControleAfericoes();
+        String equipamento = equipamento(new Afericao());                
+        String nome = cmbResponsavel.getSelectedItem().toString();
+                
+        if (cmbResponsavel.getSelectedIndex()==-1
+            ||txtTempMin.getText().equals("")
+            ||txtTempMax.getText().equals("")
+            ||txaObservacoes.getText().equals("")
+            || ((!rdbFreezer.isSelected()) && (!rdbGeladeira.isSelected())) 
             ){
-            
-            JOptionPane.showMessageDialog(null,"Favor verificar o preenchimento de todos os campos do formulário.","Aviso",JOptionPane.WARNING_MESSAGE);    
+                JOptionPane.showMessageDialog(null,"Favor verificar o preenchimento de todos os campos do formulário.","Aviso",JOptionPane.WARNING_MESSAGE);    
         }
         else{
             try{
-                controleAfericoes.salvarAfericao(txtVetResp.getText(), 
-                                                 Integer.parseInt(txtCRMVResp.getText()), 
-                                                 Double.parseDouble(txtTempMin.getText()), 
+                controleAfericoes.salvarAfericao(nome,
+                                                 new DaoVeterinario().getCrmvResponsavel(nomeResponsavel);                         
+                        Double.parseDouble(txtTempMin.getText()), 
                                                  Double.parseDouble(txtTempMax.getText()), 
                                                  equipamento,
                                                  txaObservacoes.getText());
@@ -4408,7 +4389,7 @@ public class Menu extends javax.swing.JFrame {
             catch(ParseException e){
                 e.printStackTrace();
             }
-        }        */
+        }        
     }//GEN-LAST:event_btnSalvarAfericao1ActionPerformed
 
     private void txtDtAdmissaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDtAdmissaoActionPerformed
@@ -4445,10 +4426,11 @@ public class Menu extends javax.swing.JFrame {
 
     private void cmbResponsavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbResponsavelActionPerformed
         if (cmbResponsavel.isPopupVisible()){
-            ControleFuncionario veterinario = new ControleFuncionario();
-            int crmv = veterinario.pegarCrmvResponsavel(new Veterinario());
-            String testes = Integer.toString(crmv); //FALTA TESTAR
-            lblCrmv.setText("2"); 
+            //String testes = Integer.toString(crmv); //FALTA TESTAR
+            DaoVeterinario dao = new DaoVeterinario();
+            dao.getCrmvResponsavel(cmbResponsavel.getSelectedItem().toString());
+            
+            
         }
     }//GEN-LAST:event_cmbResponsavelActionPerformed
 
@@ -4606,7 +4588,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel170;
     private javax.swing.JLabel jLabel171;
     private javax.swing.JLabel jLabel172;
-    private javax.swing.JLabel jLabel173;
     private javax.swing.JLabel jLabel175;
     private javax.swing.JLabel jLabel178;
     private javax.swing.JLabel jLabel18;
@@ -4743,7 +4724,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel lblCpfTutor;
-    private javax.swing.JLabel lblCrmv;
     private javax.swing.JLabel lblCrmv2;
     private javax.swing.JLabel lblCrmv4;
     private javax.swing.JLabel lblEspecialidade2;
@@ -4923,11 +4903,10 @@ public class Menu extends javax.swing.JFrame {
         cmbEspecie.setModel(new DefaultComboBoxModel<>(TipoEspecie.values()));               
     }   
     
-    private void loadVeterinarios(){
+    private void loadComboVeterinarios(){
         
         ControleFuncionario veterinario = new ControleFuncionario();
-        List<Veterinario> lista = veterinario.pegarVeterinarios();
-        //JOptionPane.showMessageDialog(null,lista);
+        List<Veterinario> lista = veterinario.pegarVeterinarios();        
         if (!lista.isEmpty()){
             for (Veterinario v:lista){
                 cmbResponsavel.addItem(v);    
@@ -5073,6 +5052,12 @@ public class Menu extends javax.swing.JFrame {
         }
         return nomeTutor;        
     }
+    
+    /*public String getVetResponsavel(){
+        String responsavel = "";
+        responsavel = cmbResponsavel.getSelectedItem().toString();
+        return responsavel;
+    }*/
     
     
 }

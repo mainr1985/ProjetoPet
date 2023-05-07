@@ -22,7 +22,7 @@ public class DaoAfericao extends DaoFactory{
     public void salvarAfericao(Afericao afericao) throws SQLException{
         
        String insert = "INSERT INTO afericao "
-                     + " (responsavel, crmv, temp_min, temp_max, equipamento, observacoes, dhafericao) "
+                     + " (responsavel, crmv_responsavel, temp_min, temp_max, equipamento, observacoes, dhafericao) "
                      + " VALUES (?,?,?,?,?,?,?) ";
        
        salvar (insert, 

@@ -1,7 +1,6 @@
 package controle;
 
 import dao.DaoAfericao;
-import dao.DaoFuncionario;
 import dao.DaoVeterinario;
 import java.sql.SQLException;
 import java.text.Normalizer;
@@ -20,13 +19,13 @@ public class ControleAfericoes {
     
     DaoAfericao daoAfericao = new DaoAfericao();
    
-    public void salvarAfericao (String nomeResponsavel, Integer crmv, Double tempMin, Double tempMax, String equipamento, String observacoes) throws SQLException, ParseException{
+    public void salvarAfericao (String nomeResponsavel, Integer crmv,Double tempMin, Double tempMax, String equipamento, String observacoes) throws SQLException, ParseException{
         Afericao afericao = new Afericao();
         Veterinario veterinario = new Veterinario();
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");        
         
-        veterinario.setCrmv(crmv);
         veterinario.setNome((Normalizer.normalize(nomeResponsavel, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "")));
+        veterinario.setCrmv(crmv);
         afericao.setVeterinario(veterinario);
         
         afericao.setCodigo(new DaoAfericao().getCodigoAfericao()+1);
@@ -40,6 +39,12 @@ public class ControleAfericoes {
         afericao.setDhAfericao(dataAtual);
         
         daoAfericao.salvarAfericao(afericao);
+    }
+    
+    public Integer getCrmvVet(){
+        DaoVeterinario dao = new DaoVeterinario();
+        Integer crmv = dao.getCrmvResponsavel(new Veterinario().getNome());
+        return crmv;
     }
 }           
                 
