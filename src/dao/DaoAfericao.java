@@ -26,8 +26,8 @@ public class DaoAfericao extends DaoFactory{
                      + " VALUES (?,?,?,?,?,?,?) ";
        
        salvar (insert, 
-               afericao.getVeterinario().getCrmv(),
                afericao.getVeterinario().getNome(),
+               afericao.getVeterinario().getCrmv(),
                afericao.getTempMin(),
                afericao.getTempMax(),
                afericao.getEquipamento(),
@@ -65,7 +65,24 @@ public class DaoAfericao extends DaoFactory{
             JOptionPane.showMessageDialog(null, "Operação não realizada. Motivo : " + e.getMessage(), "Alerta", JOptionPane.WARNING_MESSAGE);
         }
         return i;
+    }
+    
+    public int getCrmvResponsavel(String nome){
+        String sql = " SELECT crmv FROM funcionario f INNER JOIN veterinario v ON f.id_funcionario = v.id_funcionario WHERE nome = ? ";
+        int crmv = 0;
+        try{
+            ps = getConnection().prepareStatement(sql);
+            ps.setString(1, nome);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                Veterinario veterinario = new Veterinario();
+                veterinario.setCrmv(rs.getInt("crmv"));                
+                crmv = veterinario.getCrmv();                 
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        return crmv;
     }    
-
-        
 }

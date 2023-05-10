@@ -1,6 +1,7 @@
 package modelo;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  *
@@ -14,11 +15,11 @@ public class Afericao implements Serializable{
    private Veterinario veterinario;
    private String equipamento;
    private String observacoes;
-   private String dhAfericao;
+   private Date dhAfericao;
    
    public Afericao(){}
     
-   public Afericao(Integer codigo, Double tempMin, Double tempMax, Veterinario veterinario, String equipamento, String observacoes,String dhAfericao) {
+   public Afericao(Integer codigo, Double tempMin, Double tempMax, Veterinario veterinario, String equipamento, String observacoes,Date dhAfericao) {
         
         this.codigo = codigo;
         this.tempMin = tempMin;
@@ -77,11 +78,11 @@ public class Afericao implements Serializable{
         this.observacoes = observacoes;
     }
 
-    public String getDhAfericao() {
+    public Date getDhAfericao() {
         return dhAfericao;
     }
 
-    public void setDhAfericao(String dhAfericao) {
+    public void setDhAfericao(Date dhAfericao) {
         this.dhAfericao = dhAfericao;
     }
     

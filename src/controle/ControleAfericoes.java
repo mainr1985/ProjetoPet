@@ -19,13 +19,13 @@ public class ControleAfericoes {
     
     DaoAfericao daoAfericao = new DaoAfericao();
    
-    public void salvarAfericao (String nomeResponsavel, Integer crmv,Double tempMin, Double tempMax, String equipamento, String observacoes) throws SQLException, ParseException{
+    public void salvarAfericao (String nomeResponsavel, Double tempMin, Double tempMax, String equipamento, String observacoes) throws SQLException, ParseException{
         Afericao afericao = new Afericao();
         Veterinario veterinario = new Veterinario();
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");        
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy HH:mm");         
         
         veterinario.setNome((Normalizer.normalize(nomeResponsavel, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "")));
-        veterinario.setCrmv(crmv);
+        veterinario.setCrmv(new DaoAfericao().getCrmvResponsavel(veterinario.getNome()));
         afericao.setVeterinario(veterinario);
         
         afericao.setCodigo(new DaoAfericao().getCodigoAfericao()+1);
@@ -34,18 +34,15 @@ public class ControleAfericoes {
         afericao.setEquipamento(equipamento);
         afericao.setObservacoes(observacoes);
     
-        //pegando a data/hora atual
-        String dataAtual = formato.format(new Date());
-        afericao.setDhAfericao(dataAtual);
+        //pegando a data/hora atual        
+       String dataAtual = formato.format(new Date());
+       java.sql.Date dataCadastro = new java.sql.Date(formato.parse(dataAtual).getTime());        
+       afericao.setDhAfericao(dataCadastro);
         
         daoAfericao.salvarAfericao(afericao);
     }
     
-    public Integer getCrmvVet(){
-        DaoVeterinario dao = new DaoVeterinario();
-        Integer crmv = dao.getCrmvResponsavel(new Veterinario().getNome());
-        return crmv;
-    }
+    
 }           
                 
         

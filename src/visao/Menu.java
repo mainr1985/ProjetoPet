@@ -4374,8 +4374,7 @@ public class Menu extends javax.swing.JFrame {
         else{
             try{
                 controleAfericoes.salvarAfericao(nome,
-                                                 new DaoVeterinario().getCrmvResponsavel(nomeResponsavel);                         
-                        Double.parseDouble(txtTempMin.getText()), 
+                                                 Double.parseDouble(txtTempMin.getText()), 
                                                  Double.parseDouble(txtTempMax.getText()), 
                                                  equipamento,
                                                  txaObservacoes.getText());
@@ -4425,13 +4424,14 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCPFTutorBuscaActionPerformed
 
     private void cmbResponsavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbResponsavelActionPerformed
-        if (cmbResponsavel.isPopupVisible()){
+        /*if (cmbResponsavel.isPopupVisible()){
             //String testes = Integer.toString(crmv); //FALTA TESTAR
-            DaoVeterinario dao = new DaoVeterinario();
-            dao.getCrmvResponsavel(cmbResponsavel.getSelectedItem().toString());
-            
-            
-        }
+            //DaoVeterinario dao = new DaoVeterinario();
+            //dao.getCrmvResponsavel(cmbResponsavel.getSelectedItem().toString());
+            /*String nome = cmbResponsavel.getSelectedItem().toString();
+            ControleAfericoes c = new ControleAfericoes();
+            c.getCrmvVet(new Veterinario());
+        */
     }//GEN-LAST:event_cmbResponsavelActionPerformed
 
     private void cmbResponsavelAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_cmbResponsavelAncestorAdded
@@ -4953,10 +4953,11 @@ public class Menu extends javax.swing.JFrame {
     public void limparAfericaoNova(){
  
         cmbResponsavel.setSelectedIndex(-1);
-        lblCrmv.setText(""); 
         txtTempMin.setText(""); 
         txtTempMax.setText(""); 
         txaObservacoes.setText("");
+        rdbFreezer.setSelected(false);
+        rdbGeladeira.setSelected(false);
     }
     
     public String getPortePet(Paciente paciente){
@@ -5051,13 +5052,5 @@ public class Menu extends javax.swing.JFrame {
             nomeTutor = txtCPFTutorBusca.getText();           
         }
         return nomeTutor;        
-    }
-    
-    /*public String getVetResponsavel(){
-        String responsavel = "";
-        responsavel = cmbResponsavel.getSelectedItem().toString();
-        return responsavel;
-    }*/
-    
-    
+    }   
 }

@@ -51,24 +51,5 @@ public class DaoVeterinario extends DaoFactory{
             e.printStackTrace();
             return null;
         }        
-    }
-   
-    public int getCrmvResponsavel(String nome){
-        String sql = " SELECT crmv FROM funcionario f INNER JOIN veterinario v ON f.id_funcionario = v.id_funcionario WHERE nome = ? ";
-        int crmv = 0;
-        try{
-            ps = getConnection().prepareStatement(sql);
-            ps.setString(1, nome);
-            rs = ps.executeQuery();
-            while(rs.next()){
-                Veterinario veterinario = new Veterinario();
-                veterinario.setCrmv(rs.getInt("crmv"));                
-                crmv = veterinario.getCrmv();                
-            }
-        }
-        catch(SQLException e){
-            e.printStackTrace();
-        }
-        return crmv;
-    }
+    }   
 }
