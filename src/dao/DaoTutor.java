@@ -69,7 +69,6 @@ public class DaoTutor extends DaoFactory{
             ps.setInt(1, getCodigoTutor());
             rs = ps.executeQuery();
             while (rs.next()){
-                
                 i = rs.getString(1);                                
             }
         }

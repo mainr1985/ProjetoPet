@@ -14,14 +14,14 @@ public abstract class Funcionario extends Pessoa implements Serializable {
     private Integer codigoFunc;
     private String permissao;
     private String nomeUsuario;
-    private String senha;    
+    private char[] senha;    
     private Date dtAdmissao;
     private Date dtLimiteLogin;
     private TipoFuncionario cargo;
         
     public Funcionario (){}
 
-    public Funcionario(Integer codigoFunc, String permissao, String nomeUsuario, String senha, Date dtAdmissao, Date dtLimiteLogin, TipoFuncionario cargo, 
+    public Funcionario(Integer codigoFunc, String permissao, String nomeUsuario, char[] senha, Date dtAdmissao, Date dtLimiteLogin, TipoFuncionario cargo, 
                        String rg, String cpf, String nome, Date dataNasc, String email, String endereco, String complemento, String bairro, String cidade, 
                        String telefone, String celular, Date dtCadastro) {
         
@@ -59,11 +59,11 @@ public abstract class Funcionario extends Pessoa implements Serializable {
         this.nomeUsuario = nomeUsuario;
     }
 
-    public String getSenha() {
+    public char[] getSenha() {
         return senha;
     }
 
-    public void setSenha(String senha) {
+    public void setSenha(char[] senha) {
         this.senha = senha;
     }
     

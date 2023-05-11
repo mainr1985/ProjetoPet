@@ -41,15 +41,15 @@ public class DaoFuncionario extends DaoFactory{
                );               
     }    
         
-    //DESCOBRIR COMO PEGAR O ID DO USUARIO CLICADO PARA PASSAR PRO UPDATE -> NÃO É INSERT!
     public void salvarUsuario(Veterinario veterinario) throws SQLException{
         
         String update = " UPDATE funcionario SET nomeusuario = ?, senha = ?, permissao = ? WHERE id_funcionario = " ; 
         
         update (update, 
-                veterinario.getCodigoFunc(),
+                //veterinario.getCodigoFunc(),
                 veterinario.getNomeUsuario(),
-                new ControleFuncionario().pegaSenha(veterinario),
+                veterinario.getSenha(),
+                //new ControleFuncionario().pegaSenha(veterinario),
                 veterinario.getPermissao());          
     }    
     
@@ -76,10 +76,7 @@ public class DaoFuncionario extends DaoFactory{
             ps = getConnection().prepareStatement(sql);
             rs = ps.executeQuery();
             if (rs.next()){                
-                i = rs.getInt(1);                
-                //Veterinario vet = new Veterinario();
-                //vet.setCodigoFunc(i);
-                System.out.println("entrei");
+                i = rs.getInt(1);            
             }
         }
         catch(SQLException e){
@@ -129,4 +126,38 @@ public class DaoFuncionario extends DaoFactory{
 		}
 		return achou;
 	}*/
+    
+    public String getNomeFunc() throws SQLException{
+        String nome="";
+        String sql = "SELECT nome FROM funcionario WHERE id_funcionario = ?";
+        try{
+            PreparedStatement ps = getConnection().prepareStatement(sql);
+            ps.setInt(1, getCodigoFuncionario());
+            rs = ps.executeQuery();
+            while (rs.next()){
+                nome = rs.getString(1);                                
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        return nome;
+    }
+    
+    public String getCargo() throws SQLException{
+        String cargo="";
+        String sql = "SELECT cargo FROM funcionario WHERE id_funcionario = ?";
+        try{
+            PreparedStatement ps = getConnection().prepareStatement(sql);
+            ps.setInt(1, getCodigoFuncionario());
+            rs = ps.executeQuery();
+            while (rs.next()){
+                cargo = rs.getString(1);                                
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        return cargo;
+    }
 }

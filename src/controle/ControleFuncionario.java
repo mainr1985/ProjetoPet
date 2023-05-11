@@ -9,11 +9,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.text.Normalizer;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import javax.swing.JOptionPane;
-import modelo.Usuario;
 import modelo.enums.TipoFuncionario;
 
 /**
@@ -132,7 +129,7 @@ public class ControleFuncionario{
         daoFuncionario.salvarFuncionario(administrador);    
     }       
     
-   /* public void salvarLogin(String usuario, char[] senha, String permissao) throws SQLException, ParseException {
+    public void salvarLogin(String usuario, char[] senha, String permissao) throws SQLException, ParseException {
         
         Veterinario usuarioFunc = new Veterinario();
                 
@@ -141,18 +138,16 @@ public class ControleFuncionario{
         usuarioFunc.setPermissao(permissao);
         
         new DaoFuncionario().salvarUsuario(usuarioFunc);
-    }*/
+    }
     
     //transforma a senha em String.
-    public String pegaSenha(Veterinario veterinario){
+    /*public String pegaSenha(Veterinario veterinario){
         String senha_decode = new String (veterinario.getSenha());
         return senha_decode;
-    }
+    }*/
     
     public List<Veterinario> pegarVeterinarios(){
         DaoVeterinario vet = new DaoVeterinario();
         return vet.listarVeterinarios();
-    }
-    
-    
+    }    
 }    

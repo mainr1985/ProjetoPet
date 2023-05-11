@@ -1,5 +1,4 @@
 package controle;
-import dao.DaoBuscaTutor;
 import dao.DaoTutor;
 import java.sql.SQLException;
 import java.text.Normalizer;
