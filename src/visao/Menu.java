@@ -2,6 +2,7 @@ package visao;
 
 import controle.ControleAfericoes;
 import controle.ControleFuncionario;
+import controle.ControleLogin;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -2112,15 +2113,21 @@ public class Menu extends javax.swing.JFrame {
         txtCor.setNextFocusableComponent(txtCPFTutor);
 
         lblCpfTutor.setBackground(new java.awt.Color(255, 255, 255));
-        lblCpfTutor.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblCpfTutor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblCpfTutor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        lblCpfTutor.setEnabled(false);
         lblCpfTutor.setFocusable(false);
 
         lblTelTutor.setBackground(new java.awt.Color(255, 255, 255));
-        lblTelTutor.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblTelTutor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblTelTutor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        lblTelTutor.setEnabled(false);
         lblTelTutor.setFocusable(false);
 
         lblNomeTutor.setBackground(new java.awt.Color(255, 255, 255));
-        lblNomeTutor.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblNomeTutor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblNomeTutor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        lblNomeTutor.setEnabled(false);
         lblNomeTutor.setFocusable(false);
 
         javax.swing.GroupLayout jPanel50Layout = new javax.swing.GroupLayout(jPanel50);
@@ -3136,14 +3143,18 @@ public class Menu extends javax.swing.JFrame {
         jLabel140.setText("Nome:");
 
         lblNomeFunc.setBackground(new java.awt.Color(255, 255, 255));
-        lblNomeFunc.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblNomeFunc.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblNomeFunc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        lblNomeFunc.setEnabled(false);
         lblNomeFunc.setFocusable(false);
 
         jLabel141.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel141.setText("Cargo:");
 
         lblCargo.setBackground(new java.awt.Color(255, 255, 255));
-        lblCargo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblCargo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblCargo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        lblCargo.setEnabled(false);
         lblCargo.setFocusable(false);
 
         jLabel55.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -3151,7 +3162,8 @@ public class Menu extends javax.swing.JFrame {
         jLabel55.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Usuário", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
 
         lblPermissao.setBackground(new java.awt.Color(255, 255, 255));
-        lblPermissao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblPermissao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblPermissao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         lblPermissao.setFocusable(false);
 
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
@@ -3830,38 +3842,17 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNf3ActionPerformed
 
     private void btnSalvaUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvaUsuarioActionPerformed
-        /*ControleLogin controleUsu = new ControleLogin();
-        char[] senha = txtSenhaUsu.getPassword();
-        String permissaoUsu = getPermissaoUsu(new Usuario());
-        
-        
-        
-        else {
-            try {
-                controleUsu.salvarLogin(txtUser.getText(), senha, permissaoUsu);
-                JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso.");  
-            }
-            catch(SQLException e){
-                e.printStackTrace();
-            }
-            catch(ParseException e){
-                e.printStackTrace();
-            }
-        }*/
-        
-        ControleFuncionario controleFuncionario = new ControleFuncionario();
-        char[] senha = txtSenhaUsu.getPassword();
+        ControleLogin controleUsu = new ControleLogin();
+        String senha = new String(txtSenhaUsu.getPassword());
         String permissao = lblPermissao.getText();
         if (txtUser.getText().equals("") ||txtSenhaUsu.getPassword().equals("")){
             JOptionPane.showMessageDialog(null,"Favor verificar o preenchimento de todos os campos do formulário.","Aviso",JOptionPane.WARNING_MESSAGE);
         }        
         else {
             try {
-                controleFuncionario.salvarLogin(txtUser.getText(), 
-                                                senha,
-                                                permissao);
-                
+                controleUsu.salvarLogin(txtUser.getText(), senha, permissao);
                 JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso.");  
+                limparUsuarioNovo();
             }
             catch(SQLException e){
                 e.printStackTrace();
@@ -4994,6 +4985,11 @@ public class Menu extends javax.swing.JFrame {
         rdbGeladeira.setSelected(false);
     }
     
+    public void limparUsuarioNovo(){
+        txtUser.setText("");
+        txtSenhaUsu.setText("");        
+    }
+    
     public String getPortePet(Paciente paciente){
         String porte = "";
 
@@ -5051,20 +5047,6 @@ public class Menu extends javax.swing.JFrame {
         }
      return equipamento;
     }
-    
-    /*public String getPermissaoUsu(Usuario usuario){
-     String permissao = "";
-        if (rdbAdministrador.isSelected()){
-            permissao = "Administrador";
-        }
-        else if (rdbVeterinario.isSelected()){
-            permissao = "Veterinario";            
-        }
-        else if (rdbAssistente.isSelected()){
-            permissao = "Assistente";            
-        }
-     return permissao;
-    }*/
     
     public String getNomeTutorBusca(){
         String nomeTutor = "";

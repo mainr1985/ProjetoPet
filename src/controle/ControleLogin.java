@@ -5,9 +5,7 @@ import java.text.ParseException;
 import modelo.Veterinario;
 import dao.DaoFuncionario;
 import dao.DaoUsuarios;
-import javax.swing.JOptionPane;
 import modelo.Usuario;
-import visao.TelaLogin;
 
 public class ControleLogin{
 
@@ -15,25 +13,22 @@ public class ControleLogin{
     
     public void salvarLogin(String usuario, String senha, String permissao) throws SQLException, ParseException {
         
-        Veterinario veterinario = new Veterinario();
-        //Usuario usuarios = new Usuario();
+        Veterinario funcionario = new Veterinario();
+        Usuario usuarios = new Usuario();
         
-        veterinario.setNomeUsuario(usuario);
-        veterinario.setSenha(senha);
-        veterinario.setPermissao(permissao);
-        
-        
-        /*usuarios.setUsuario(usuario);
+        usuarios.setUsuario(usuario);
         usuarios.setSenha(senha);
-        usuarios.setPermissao(permissao);        
-        //new DaoUsuarios().salvar(veterinario,usuarios);*/
+        usuarios.setPermissao(permissao);
         
-        new DaoFuncionario().salvarUsuario(veterinario);
+        funcionario.setCodigoFunc(new DaoFuncionario().getCodigoFuncionario());
+        usuarios.setFuncionario(funcionario);
+        
+        new DaoUsuarios().salvar(usuarios);
     }
     
     
     //método para efetuar o login
-    public void fazerLogon() {
+    /*public void fazerLogon() {
         TelaLogin telaLogin = new TelaLogin();
         Veterinario permissao = telaLogin.lerLogin();
         Veterinario usuario;
@@ -47,7 +42,7 @@ public class ControleLogin{
                 JOptionPane.showMessageDialog(null, "Entrei no logon");    
             }
         }
-    }
+    }*/
     
     //descobrir como validar data limite de acesso do usu
     

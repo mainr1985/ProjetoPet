@@ -52,3 +52,11 @@ create table if not exists afericao (cod_afericao serial not null primary key,
 				     equipamento varchar(30) not null,
 				     observacoes varchar(300) not null,
 				     constraint fk_crmv_responsavel foreign key (crmv_responsavel) references veterinario(crmv));
+
+/*Tabela Usuário*/
+create table usuario (codigo serial not null primary key, 
+                      nomeusu varchar(15) not null, 
+                      senha char not null, 
+                      permissao varchar(20) not null, 
+                      id_funcionario integer not null, 
+                      constraint fk_idfuncionario foreign key (id_funcionario) references funcionario(id_funcionario));

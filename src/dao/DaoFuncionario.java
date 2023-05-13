@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import modelo.Usuario;
 import modelo.Veterinario;
 
 /**
@@ -14,7 +15,6 @@ import modelo.Veterinario;
  */
 public class DaoFuncionario extends DaoFactory{
             
-    private Connection conexao;
     private PreparedStatement ps;
     private ResultSet rs;
        
@@ -40,18 +40,33 @@ public class DaoFuncionario extends DaoFactory{
                veterinario.getCelular()
                );               
     }    
+    
+    public void salvarUsuarios(Usuario usuario) throws SQLException{
         
-    public void salvarUsuario(Veterinario veterinario) throws SQLException{
+        String insert = "INSERT INTO usuario "
+                     + " (nomeusu, senha, permissao, id_funcionario) "
+                     + " VALUES (?,?,?,?) ";
+       
+       salvar (insert, 
+               usuario.getUsuario(),
+               usuario.getSenha(),
+               usuario.getPermissao(),
+               usuario.getFuncionario().getCodigoFunc());                           
+    }
+    
+    /*public void salvarUsuario(Veterinario veterinario) throws SQLException{
         
         String update = " UPDATE funcionario SET nomeusuario = ?, senha = ?, permissao = ? WHERE id_funcionario = " ; 
         
         update (update, 
-                //veterinario.getCodigoFunc(),
+                getCodigoFuncionario(),
                 veterinario.getNomeUsuario(),
                 veterinario.getSenha(),
                 //new ControleFuncionario().pegaSenha(veterinario),
                 veterinario.getPermissao());          
-    }    
+    } */   
+    
+    
     
     public void alterar(Veterinario v) throws SQLException {
         /*String update = "UPDATE veterinario " +
@@ -84,49 +99,7 @@ public class DaoFuncionario extends DaoFactory{
         }
         return i;
      }        
-    
-/*    public boolean verificaCpf(Dentista funcionario)
-	{
-		Veterinario funcionario  = new Veterinario();
-		String cpf = "";
-		boolean achou = false;
-		
-		try
-		{
-			ps = c.prepareStatement("select cpf from funcionario where cpf = ?");
-			ps.setString(1, funcionario.getCpf());
-			String cpfRecebido = funcionario.getCpf();
-			
-			r = ps.executeQuery();
-						
-			if(r.next())
-			{
-				func.setCpf(r.getString("cpf"));
-				cpfConsulta = func.getCpf();
-			}
-		
-				if(cpfRecebido.equals(cpfConsulta))
-					{
-						JOptionPane.showMessageDialog(null, "CPF já existente! Inclusão inválida.",
-								"Aviso",JOptionPane.WARNING_MESSAGE);
-						achou = true;
-					}
-					else
-					
-							
-							achou = false;
-					
-			}
-		catch(SQLException ex)
-		{
-			
-			JOptionPane.showMessageDialog(null, "Operação não realizada.Motivo: "+"\n"+ex.getMessage(),
-					"Aviso",JOptionPane.WARNING_MESSAGE);
-			
-		}
-		return achou;
-	}*/
-    
+        
     public String getNomeFunc() throws SQLException{
         String nome="";
         String sql = "SELECT nome FROM funcionario WHERE id_funcionario = ?";

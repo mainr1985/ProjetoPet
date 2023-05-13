@@ -51,12 +51,9 @@ public abstract class DaoFactory {
         for (int i = 0; i < parametros.length; i++) {
             ps.setObject(i+1, parametros[i]);
         }
-
+        
         ps.execute();
         ps.close();
         connection.close();
     }  
-    
-   
-  
 }

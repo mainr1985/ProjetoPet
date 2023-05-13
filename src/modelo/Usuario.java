@@ -10,30 +10,30 @@ public class Usuario implements Serializable{
     
     private static final long serialVersionUID = 1L;      
     private String usuario;
-    private char[] senha;	 
+    private String senha;	 
     private String permissao;	 
     private Funcionario funcionario;
 
     public Usuario() {
     }
         
-    public Usuario(String usuario, char[] senha){
+    public Usuario(String usuario, String senha){
         this.usuario = usuario;
         this.senha = senha;
     }
     
-    public Usuario(String usuario, char[] senha, String permissao, Funcionario funcionario) {
+    public Usuario(String usuario, String senha, String permissao, Funcionario funcionario) {
         this.usuario = usuario;
         this.senha = senha;
         this.permissao = permissao;
         this.funcionario = funcionario;
     }
     
-    public char[] getSenha() {
+    public String getSenha() {
         return senha;
     }
 
-    public void setSenha(char[] senha) {
+    public void setSenha(String senha) {
         this.senha = senha;
     }
 

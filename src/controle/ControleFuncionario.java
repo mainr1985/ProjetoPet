@@ -129,7 +129,7 @@ public class ControleFuncionario{
         daoFuncionario.salvarFuncionario(administrador);    
     }       
     
-    public void salvarLogin(String usuario, char[] senha, String permissao) throws SQLException, ParseException {
+    public void salvarLogin(String usuario, String senha, String permissao) throws SQLException, ParseException {
         
         Veterinario usuarioFunc = new Veterinario();
                 
@@ -141,7 +141,7 @@ public class ControleFuncionario{
     }
     
     //transforma a senha em String.
-    /*public String pegaSenha(Veterinario veterinario){
+    /*public String converteSenha(Veterinario veterinario){
         String senha_decode = new String (veterinario.getSenha());
         return senha_decode;
     }*/
