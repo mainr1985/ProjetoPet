@@ -1,7 +1,5 @@
 package dao;
 
-import static dao.ConnectionFactory.getConnection;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,7 +13,6 @@ import modelo.Tutor;
  */
 public class DaoPaciente extends DaoFactory{
  
-    private Connection c;
     private PreparedStatement ps;
     private ResultSet rs;
         
@@ -69,5 +66,4 @@ public class DaoPaciente extends DaoFactory{
         }        
         return nome;
     }
-    
 }

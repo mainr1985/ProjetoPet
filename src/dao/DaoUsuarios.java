@@ -1,5 +1,4 @@
 package dao;
-import controle.ControleLogin;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,7 +12,6 @@ public class DaoUsuarios extends DaoFactory {
 
     private PreparedStatement ps;
     private ResultSet rs;
-    ControleLogin controleLogin = new ControleLogin();
     
     public void salvar(Usuario usuario) throws SQLException {
         String insert = "INSERT INTO usuario (nomeusu,senha,permissao,id_funcionario) VALUES (?,?,?,?)";

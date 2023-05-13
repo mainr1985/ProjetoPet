@@ -26,7 +26,6 @@ public class ControleLogin{
         new DaoUsuarios().salvar(usuarios);
     }
     
-    
     //método para efetuar o login
     /*public void fazerLogon() {
         TelaLogin telaLogin = new TelaLogin();

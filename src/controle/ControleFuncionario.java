@@ -128,24 +128,7 @@ public class ControleFuncionario{
             
         daoFuncionario.salvarFuncionario(administrador);    
     }       
-    
-    public void salvarLogin(String usuario, String senha, String permissao) throws SQLException, ParseException {
-        
-        Veterinario usuarioFunc = new Veterinario();
-                
-        usuarioFunc.setNomeUsuario(usuario);
-        usuarioFunc.setSenha(senha);
-        usuarioFunc.setPermissao(permissao);
-        
-        new DaoFuncionario().salvarUsuario(usuarioFunc);
-    }
-    
-    //transforma a senha em String.
-    /*public String converteSenha(Veterinario veterinario){
-        String senha_decode = new String (veterinario.getSenha());
-        return senha_decode;
-    }*/
-    
+
     public List<Veterinario> pegarVeterinarios(){
         DaoVeterinario vet = new DaoVeterinario();
         return vet.listarVeterinarios();

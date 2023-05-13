@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import modelo.Usuario;
 import modelo.Veterinario;
 
 /**
@@ -40,34 +39,7 @@ public class DaoFuncionario extends DaoFactory{
                veterinario.getCelular()
                );               
     }    
-    
-    public void salvarUsuarios(Usuario usuario) throws SQLException{
         
-        String insert = "INSERT INTO usuario "
-                     + " (nomeusu, senha, permissao, id_funcionario) "
-                     + " VALUES (?,?,?,?) ";
-       
-       salvar (insert, 
-               usuario.getUsuario(),
-               usuario.getSenha(),
-               usuario.getPermissao(),
-               usuario.getFuncionario().getCodigoFunc());                           
-    }
-    
-    /*public void salvarUsuario(Veterinario veterinario) throws SQLException{
-        
-        String update = " UPDATE funcionario SET nomeusuario = ?, senha = ?, permissao = ? WHERE id_funcionario = " ; 
-        
-        update (update, 
-                getCodigoFuncionario(),
-                veterinario.getNomeUsuario(),
-                veterinario.getSenha(),
-                //new ControleFuncionario().pegaSenha(veterinario),
-                veterinario.getPermissao());          
-    } */   
-    
-    
-    
     public void alterar(Veterinario v) throws SQLException {
         /*String update = "UPDATE veterinario " +
                         "SET crmv = ?, especialidade = ? " +

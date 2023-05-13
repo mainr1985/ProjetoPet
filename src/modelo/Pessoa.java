@@ -22,12 +22,12 @@ public class Pessoa implements Serializable{
     private String telefone;
     private String celular;
     private Date dtCadastro;
-    
 
     public Pessoa() {
     }
 
-    public Pessoa(String rg, String cpf, String nome, Date dataNasc, String email, String endereco, String complemento, String bairro, String cidade, String telefone, String celular, Date dtCadastro) {
+    public Pessoa(String rg, String cpf, String nome, Date dataNasc, String email, String endereco, String complemento, 
+                  String bairro, String cidade, String telefone, String celular, Date dtCadastro) {
         this.rg = rg;
         this.cpf = cpf;
         this.nome = nome;
