@@ -1,7 +1,6 @@
 package visao;
 
 import controle.ControleLogin;
-import dao.DaoUsuarios;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -254,7 +253,5 @@ public class TelaLogin extends javax.swing.JFrame {
     {
         txtUsuario.setText("");
 	txtSenha.setText("");
-    }   
-    
-    
+    }      
 }

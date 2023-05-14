@@ -3,6 +3,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import modelo.Usuario;
 
@@ -63,4 +64,42 @@ public class DaoUsuarios extends DaoFactory {
             return null;
         }        
     }
+    
+    public String getPermissao(String usuario) throws SQLException{
+        String sql = " SELECT permissao FROM usuario WHERE nomeusu = ? ";
+        String permissao = "";
+        try{
+            ps = getConnection().prepareStatement(sql);
+            ps.setString(1, usuario);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                Usuario usu = new Usuario();
+                usu.setPermissao(rs.getString("permissao"));
+                permissao = usu.getPermissao();                           
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        return permissao;
+    }    
+    
+    public Date getDtLimAcesso(String usuario) throws SQLException{
+        String sql = " SELECT dtlimacesso FROM usuario WHERE nomeusu = ? ";
+        Date data = null;
+        try{
+            ps = getConnection().prepareStatement(sql);
+            ps.setString(1, usuario);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                Usuario usu = new Usuario();
+                usu.setDtLimAcesso(rs.getDate("dtlimacesso"));
+                data = usu.getDtLimAcesso();                           
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        return data;
+    }       
 }

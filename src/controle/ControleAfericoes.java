@@ -1,7 +1,6 @@
 package controle;
 
-import dao.DaoAfericao;
-import dao.DaoVeterinario;
+import dao.DaoAfericao;;
 import java.sql.SQLException;
 import java.text.Normalizer;
 import java.text.ParseException;
@@ -41,16 +40,4 @@ public class ControleAfericoes {
         
         daoAfericao.salvarAfericao(afericao);
     }
-    
-    
-}           
-                
-        
-        
-            
-        
-        
-        
-    
-
-
+}    

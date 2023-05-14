@@ -5,6 +5,8 @@ import java.text.ParseException;
 import modelo.Veterinario;
 import dao.DaoFuncionario;
 import dao.DaoUsuarios;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import modelo.Usuario;
@@ -35,47 +37,46 @@ public class ControleLogin{
         return usuario.listarUsuarios();
     }  
     
-    public void validarLogin(String usuario, String senha) throws SQLException{
+    public void validarLogin(String usuario, String senha) throws SQLException, ParseException{
         Usuario usuarios = new Usuario();
         usuarios.setUsuario(usuario);
         usuarios.setSenha(senha);
         
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");         
+        String dataAtual = formato.format(new Date());
+        java.sql.Date data = new java.sql.Date(formato.parse(dataAtual).getTime());
+        
+        String data1 = data.toString();
+        
+        
         DaoUsuarios dao = new DaoUsuarios();
         boolean check = dao.validarUsuario(usuarios);
+        Menu telaPrincipal = new Menu();
+     
+          //descobrir como validar data limite de acesso do usu    
         if (check){
-            Menu telaPrincipal = new Menu();
+            String permissao = dao.getPermissao(usuario);
+            /*Date dataLimite = dao.getDtLimAcesso(usuario);
+            
+            
+            if ((check)
+                 &&((dataLimite == null) || (dataLimite > data)))            {
+                */
             telaPrincipal.setVisible(true);
+            switch(permissao){
+                case "Veterinario":
+                    telaPrincipal.modoInicialVet();
+                    break;                   
+                case "Administrador":
+                    telaPrincipal.modoInicialAdm();
+                    break;                   
+                case "Assistente":
+                    telaPrincipal.modoInicialAdm();
+                    break;        
+            }
         }
         else{
             JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválido.", "Erro", JOptionPane.ERROR_MESSAGE);
         }
-        System.out.println(check);
     }
-
-
-//método para efetuar o login
-    /*public void fazerLogon() {
-        TelaLogin telaLogin = new TelaLogin();
-        Veterinario permissao = telaLogin.lerLogin();
-        Veterinario usuario;
-        DaoUsuarios daoUsuario = null;
-        boolean check = false;
-        
-        if (permissao != null){
-            
-            check = daoUsuario.consultarLogin(permissao);
-            if (check==true){
-                JOptionPane.showMessageDialog(null, "Entrei no logon");    
-            }
-        }
-    }*/
-    
-    //descobrir como validar data limite de acesso do usu
-    
 }      
-	
-	
-	
-
-
-

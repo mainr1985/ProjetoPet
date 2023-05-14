@@ -4888,11 +4888,10 @@ public class Menu extends javax.swing.JFrame {
         
     public void modoInicialVet(){
         
-        painelMenu.setEnabledAt(3,false);
-        painelMenu.setEnabledAt(4,false);
-        painelMenu.setSelectedIndex(5);
-        painelMenu.setEnabledAt(4,false);
-        painelOpcoesPaciente.setEnabledAt(2, false);        
+        painelMenu.setEnabledAt(2,false);
+        painelMenu.setEnabledAt(3,true);        
+        painelMenu.setSelectedIndex(3);
+        painelOpcoes.setSelectedIndex(2);
     }
         
     public void modoInicialAdm(){        
