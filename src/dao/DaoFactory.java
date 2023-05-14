@@ -20,7 +20,6 @@ public abstract class DaoFactory {
         return connection;
     }
     
-    //método para salvar
     protected void salvar(String insertSql, Object... parametros) throws SQLException{
         
         PreparedStatement ps = getConnection().prepareStatement(insertSql);

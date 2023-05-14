@@ -6,7 +6,9 @@ import modelo.Veterinario;
 import dao.DaoFuncionario;
 import dao.DaoUsuarios;
 import java.util.List;
+import javax.swing.JOptionPane;
 import modelo.Usuario;
+import visao.Menu;
 import visao.TelaLogin;
 
 public class ControleLogin{
@@ -34,9 +36,20 @@ public class ControleLogin{
     }  
     
     public void validarLogin(String usuario, String senha) throws SQLException{
-        String usuario = usuario;
+        Usuario usuarios = new Usuario();
+        usuarios.setUsuario(usuario);
+        usuarios.setSenha(senha);
         
-        System.out.println(usuario,senha);
+        DaoUsuarios dao = new DaoUsuarios();
+        boolean check = dao.validarUsuario(usuarios);
+        if (check){
+            Menu telaPrincipal = new Menu();
+            telaPrincipal.setVisible(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválido.", "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+        System.out.println(check);
     }
 
 

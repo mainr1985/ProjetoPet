@@ -24,6 +24,22 @@ public class DaoUsuarios extends DaoFactory {
                 usuario.getFuncionario().getCodigoFunc());
     }
     
+    public boolean validarUsuario(Usuario usuario) throws SQLException{
+        boolean autenticado = false;
+        String sql = "SELECT nomeusu, senha FROM usuario WHERE nomeusu = ? AND senha = ? ";
+        ps = getConnection().prepareStatement(sql);
+        ps.setString(1, usuario.getUsuario());
+        ps.setString(2, usuario.getSenha());
+        rs = ps.executeQuery();
+        if (rs.next()){
+           String login = rs.getString("nomeusu");
+           String senha = rs.getString("senha");
+           autenticado = true;
+        }
+        ps.close();
+        return autenticado;
+    }
+    
     public List<Usuario> listarUsuarios(){
         String sql = "SELECT nomeusu,senha "
                 + "   FROM funcionario func "

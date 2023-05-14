@@ -1,14 +1,10 @@
 package visao;
 
-import controle.ControleFuncionario;
-import javax.swing.JOptionPane;
 import controle.ControleLogin;
 import dao.DaoUsuarios;
-import java.awt.event.ActionEvent;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-import modelo.Usuario;
-import modelo.Veterinario;
 
 /**
  *
@@ -159,32 +155,19 @@ public class TelaLogin extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         ControleLogin controleLogin = new ControleLogin();
         String senha = new String(txtSenha.getPassword());
-        try{
-            controleLogin.validarLogin(txtUsuario.getText(),senha);
-            //controleLogin.validarLogin();
-        }
-        catch(SQLException e){
-            e.printStackTrace();
-        }
-       /*if (txtUsuario.getText().equals("") || txtSenha.getPassword().equals("")){
+               
+        if (txtUsuario.getText().equals("") || txtSenha.getPassword().equals("")){
            JOptionPane.showMessageDialog(null, "Usuário ou senha incorreto.","Aviso",JOptionPane.INFORMATION_MESSAGE);
-       }
-       else{
-           try{
-               ControleLogin controleLogin = new ControleLogin();
-               controleLogin.validarLogin(new Usuario());
-               
-           }
-           catch(SQLException e){
-               e.printStackTrace();
-           }*/
-               
-       //}
-       //System.out.println(controleLogin.listarUsuarios());
-       //controleLogin.fazerLogon();       
-       //limpar();        
-       //DaoUsuarios dao = new DaoUsuarios();
-       //System.out.println(dao.listarUsuarios());
+        }
+        else{
+            try{
+                controleLogin.validarLogin(txtUsuario.getText(),senha);
+                limpar();        
+            }
+            catch(SQLException e){
+                e.printStackTrace();
+            }
+        }
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
@@ -266,28 +249,6 @@ public class TelaLogin extends javax.swing.JFrame {
     public void setTxtUsuario(JTextField txtUsuario) {
         this.txtUsuario = txtUsuario;
     }
-    
-    /*public Usuario lerLogin(){
-      Usuario usuario = new Usuario();
-      String nomeUsuario = txtUsuario.getText();
-      char[] senha = txtSenha.getPassword();
-      String senhaString = String.valueOf(senha);
-      
-      if (nomeUsuario.isEmpty() || senhaString.isEmpty()){
-        JOptionPane.showMessageDialog(null,"Favor verificar preenchimento obrigatório dos campos: Usuário e Senha","Aviso",JOptionPane.WARNING_MESSAGE);           
-        return null;
-      }
-      else{
-          try{
-              usuario.setUsuario(nomeUsuario);
-              usuario.setSenha(senhaString);
-          }
-          catch(Exception e){
-              e.printStackTrace();
-          }                  
-      }      
-      return usuario;
-    }*/
 
     public void limpar()
     {
