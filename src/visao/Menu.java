@@ -13,12 +13,11 @@ import modelo.Veterinario;
 import controle.ControleTutor;
 import dao.DaoTutor;
 import controle.ControlePaciente;
-import dao.DaoVeterinario;
 import dao.DaoFuncionario;
 import java.util.List;
 import modelo.Afericao;
 import modelo.Paciente;
-import modelo.Usuario;
+
 
 /**
  *
@@ -4931,7 +4930,7 @@ public class Menu extends javax.swing.JFrame {
     private void loadComboVeterinarios(){
         
         ControleFuncionario veterinario = new ControleFuncionario();
-        List<Veterinario> lista = veterinario.pegarVeterinarios();        
+        List<Veterinario> lista = veterinario.listarVeterinarios();        
         if (!lista.isEmpty()){
             for (Veterinario v:lista){
                 cmbResponsavel.addItem(v);    

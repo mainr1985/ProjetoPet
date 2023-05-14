@@ -5,7 +5,9 @@ import java.text.ParseException;
 import modelo.Veterinario;
 import dao.DaoFuncionario;
 import dao.DaoUsuarios;
+import java.util.List;
 import modelo.Usuario;
+import visao.TelaLogin;
 
 public class ControleLogin{
 
@@ -26,7 +28,19 @@ public class ControleLogin{
         new DaoUsuarios().salvar(usuarios);
     }
     
-    //método para efetuar o login
+    public List<Usuario> listarUsuarios(){
+        DaoUsuarios usuario = new DaoUsuarios();
+        return usuario.listarUsuarios();
+    }  
+    
+    public void validarLogin(String usuario, String senha) throws SQLException{
+        String usuario = usuario;
+        
+        System.out.println(usuario,senha);
+    }
+
+
+//método para efetuar o login
     /*public void fazerLogon() {
         TelaLogin telaLogin = new TelaLogin();
         Veterinario permissao = telaLogin.lerLogin();

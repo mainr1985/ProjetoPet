@@ -1,6 +1,7 @@
 package modelo;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  *
@@ -13,20 +14,17 @@ public class Usuario implements Serializable{
     private String senha;	 
     private String permissao;	 
     private Funcionario funcionario;
+    private Date dtLimAcesso;
 
     public Usuario() {
     }
         
-    public Usuario(String usuario, String senha){
-        this.usuario = usuario;
-        this.senha = senha;
-    }
-    
-    public Usuario(String usuario, String senha, String permissao, Funcionario funcionario) {
+    public Usuario(String usuario, String senha, String permissao, Funcionario funcionario,Date dtLimAcesso) {
         this.usuario = usuario;
         this.senha = senha;
         this.permissao = permissao;
         this.funcionario = funcionario;
+        this.dtLimAcesso = dtLimAcesso;
     }
     
     public String getSenha() {
@@ -65,8 +63,16 @@ public class Usuario implements Serializable{
         
     }
 
+    public Date getDtLimAcesso() {
+        return dtLimAcesso;
+    }
+
+    public void setDtLimAcesso(Date dtLimAcesso) {
+        this.dtLimAcesso = dtLimAcesso;
+    }
+
     @Override
     public String toString() {
-        return "Usuario{" + "usuario=" + usuario + ", senha=" + senha + ", permissao=" + permissao + ", funcionario=" + funcionario + '}';
-    }
+        return "Usuario{" + "usuario=" + usuario + ", senha=" + senha + ", permissao=" + permissao + ", funcionario=" + funcionario + ", dtLimAcesso=" + dtLimAcesso + '}';
+    }   
 }

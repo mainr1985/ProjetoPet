@@ -129,7 +129,7 @@ public class ControleFuncionario{
         daoFuncionario.salvarFuncionario(administrador);    
     }       
 
-    public List<Veterinario> pegarVeterinarios(){
+    public List<Veterinario> listarVeterinarios(){
         DaoVeterinario vet = new DaoVeterinario();
         return vet.listarVeterinarios();
     }    

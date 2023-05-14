@@ -2,6 +2,8 @@ package dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import modelo.Usuario;
 
 /**
@@ -22,29 +24,27 @@ public class DaoUsuarios extends DaoFactory {
                 usuario.getFuncionario().getCodigoFunc());
     }
     
-    
-    /*public boolean consultarLogin(Veterinario usuario){
-        boolean achou=false;
-            try{
-		ps = conexao.prepareStatement("select permissao,nome from funcionario where nomeusuario = ? and senha = ?");
-		ps.setString(1, usuario.getNomeUsuario());
-		ps.setString(2, usuario.getSenha());
-			
-		rs = ps.executeQuery();			
-			
-		if(rs.next()){
-                    usuario.setPermissao(rs.getString("permissao"));
-		    usuario.setNome(rs.getString("nome"));
-		    achou = true;			
-		}
-                else {
-                    JOptionPane.showMessageDialog(null, "Usuário não encontrado.Entre em contato com o administrador!","Aviso",JOptionPane.WARNING_MESSAGE);
-		    achou = false;
-		}
-	    }
-            catch(SQLException ex){
-		JOptionPane.showMessageDialog(null, "Operação não realizada"+ex.getMessage(),"Aviso",JOptionPane.WARNING_MESSAGE);
+    public List<Usuario> listarUsuarios(){
+        String sql = "SELECT nomeusu,senha "
+                + "   FROM funcionario func "
+                + "     INNER JOIN usuario usu ON func.id_funcionario = usu.id_funcionario ";    
+        
+        List<Usuario> usuarios = new ArrayList();
+        try{
+            PreparedStatement ps = getConnection().prepareStatement(sql);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                Usuario usuario = new Usuario();
+                usuario.setUsuario(rs.getString("nomeusu"));
+                usuario.setSenha(rs.getString("senha"));
+                usuarios.add(usuario);                
             }
-	    return achou;
-    }*/
+            return usuarios;            
+        }
+        
+        catch(SQLException e){
+            e.printStackTrace();
+            return null;
+        }        
+    }
 }

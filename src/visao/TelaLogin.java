@@ -3,7 +3,9 @@ package visao;
 import controle.ControleFuncionario;
 import javax.swing.JOptionPane;
 import controle.ControleLogin;
+import dao.DaoUsuarios;
 import java.awt.event.ActionEvent;
+import java.sql.SQLException;
 import javax.swing.JTextField;
 import modelo.Usuario;
 import modelo.Veterinario;
@@ -87,7 +89,6 @@ public class TelaLogin extends javax.swing.JFrame {
         btnLogin.setBorderPainted(false);
         btnLogin.setContentAreaFilled(false);
         btnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnLogin.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/login-button-icon-12.jpg"))); // NOI18N
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
@@ -156,9 +157,34 @@ public class TelaLogin extends javax.swing.JFrame {
 
    
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-       ControleLogin controleLogin = new ControleLogin();
-       controleLogin.fazerLogon();       
-       limpar();        
+        ControleLogin controleLogin = new ControleLogin();
+        String senha = new String(txtSenha.getPassword());
+        try{
+            controleLogin.validarLogin(txtUsuario.getText(),senha);
+            //controleLogin.validarLogin();
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+       /*if (txtUsuario.getText().equals("") || txtSenha.getPassword().equals("")){
+           JOptionPane.showMessageDialog(null, "Usuário ou senha incorreto.","Aviso",JOptionPane.INFORMATION_MESSAGE);
+       }
+       else{
+           try{
+               ControleLogin controleLogin = new ControleLogin();
+               controleLogin.validarLogin(new Usuario());
+               
+           }
+           catch(SQLException e){
+               e.printStackTrace();
+           }*/
+               
+       //}
+       //System.out.println(controleLogin.listarUsuarios());
+       //controleLogin.fazerLogon();       
+       //limpar();        
+       //DaoUsuarios dao = new DaoUsuarios();
+       //System.out.println(dao.listarUsuarios());
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
@@ -241,8 +267,8 @@ public class TelaLogin extends javax.swing.JFrame {
         this.txtUsuario = txtUsuario;
     }
     
-    public Veterinario lerLogin(){
-      Veterinario usuario = new Veterinario();
+    /*public Usuario lerLogin(){
+      Usuario usuario = new Usuario();
       String nomeUsuario = txtUsuario.getText();
       char[] senha = txtSenha.getPassword();
       String senhaString = String.valueOf(senha);
@@ -253,7 +279,7 @@ public class TelaLogin extends javax.swing.JFrame {
       }
       else{
           try{
-              usuario.setNomeUsuario(nomeUsuario);
+              usuario.setUsuario(nomeUsuario);
               usuario.setSenha(senhaString);
           }
           catch(Exception e){
@@ -261,11 +287,13 @@ public class TelaLogin extends javax.swing.JFrame {
           }                  
       }      
       return usuario;
-    }
+    }*/
 
     public void limpar()
     {
         txtUsuario.setText("");
 	txtSenha.setText("");
     }   
+    
+    
 }
