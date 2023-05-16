@@ -388,13 +388,14 @@ public class Menu extends javax.swing.JFrame {
         painelOpcoes = new javax.swing.JTabbedPane();
         jPanel32 = new javax.swing.JPanel();
         jLabel97 = new javax.swing.JLabel();
-        txtDtAfericao1 = new javax.swing.JFormattedTextField();
-        jLabel98 = new javax.swing.JLabel();
-        txtResponsavel1 = new javax.swing.JTextField();
+        txtDtIni = new javax.swing.JFormattedTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         btnInsereAfericao1 = new javax.swing.JButton();
         btnEditarAfericao1 = new javax.swing.JButton();
+        jLabel99 = new javax.swing.JLabel();
+        jLabel100 = new javax.swing.JLabel();
+        txtDtFim = new javax.swing.JFormattedTextField();
         jPanel33 = new javax.swing.JPanel();
         jPanel24 = new javax.swing.JPanel();
         jLabel175 = new javax.swing.JLabel();
@@ -3275,21 +3276,18 @@ public class Menu extends javax.swing.JFrame {
         painelOpcoes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         jLabel97.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel97.setText("Data:");
+        jLabel97.setText("Período:");
 
         try {
-            txtDtAfericao1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            txtDtIni.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        txtDtAfericao1.addActionListener(new java.awt.event.ActionListener() {
+        txtDtIni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDtAfericao1ActionPerformed(evt);
+                txtDtIniActionPerformed(evt);
             }
         });
-
-        jLabel98.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel98.setText("Responsável:");
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -3322,48 +3320,69 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jLabel99.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel99.setText("De:");
+
+        jLabel100.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel100.setText("a");
+
+        try {
+            txtDtFim.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtDtFim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDtFimActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
         jPanel32.setLayout(jPanel32Layout);
         jPanel32Layout.setHorizontalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel32Layout.createSequentialGroup()
+            .addGroup(jPanel32Layout.createSequentialGroup()
                 .addGap(89, 89, 89)
-                .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2)
-                    .addGroup(jPanel32Layout.createSequentialGroup()
-                        .addGap(163, 163, 163)
-                        .addComponent(jLabel97)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtDtAfericao1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48)
-                        .addComponent(jLabel98)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtResponsavel1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(40, 40, 40)
                 .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnInsereAfericao1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEditarAfericao1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel32Layout.createSequentialGroup()
+                        .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel97, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(40, 40, 40)
+                        .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnInsereAfericao1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEditarAfericao1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel32Layout.createSequentialGroup()
+                        .addComponent(jLabel99, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtDtIni, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel100, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtDtFim, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         jPanel32Layout.setVerticalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel32Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel97)
-                    .addComponent(txtDtAfericao1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel98)
-                    .addComponent(txtResponsavel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addComponent(jLabel97)
                 .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel32Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel32Layout.createSequentialGroup()
                         .addGap(74, 74, 74)
                         .addComponent(btnInsereAfericao1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnEditarAfericao1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnEditarAfericao1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel32Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtDtIni, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel99)
+                            .addComponent(jLabel100)
+                            .addComponent(txtDtFim, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(37, 37, 37)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(431, Short.MAX_VALUE))
         );
 
         painelOpcoes.addTab("Histórico", jPanel32);
@@ -4343,9 +4362,9 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomeTutorActionPerformed
 
-    private void txtDtAfericao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDtAfericao1ActionPerformed
+    private void txtDtIniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDtIniActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtDtAfericao1ActionPerformed
+    }//GEN-LAST:event_txtDtIniActionPerformed
 
     private void btnInsereAfericao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsereAfericao1ActionPerformed
         // TODO add your handling code here:
@@ -4477,6 +4496,10 @@ public class Menu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_cmbResponsavelItemStateChanged
 
+    private void txtDtFimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDtFimActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDtFimActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -4568,6 +4591,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JFormattedTextField jFormattedTextField3;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel111;
     private javax.swing.JLabel jLabel112;
@@ -4703,7 +4727,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel97;
-    private javax.swing.JLabel jLabel98;
+    private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -4820,9 +4844,10 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField txtDtAdmissao;
     private javax.swing.JFormattedTextField txtDtAdmissao4;
     private javax.swing.JFormattedTextField txtDtAdmissao7;
-    private javax.swing.JFormattedTextField txtDtAfericao1;
     private javax.swing.JFormattedTextField txtDtAfericaoEdit1;
     private javax.swing.JFormattedTextField txtDtDemissao4;
+    private javax.swing.JFormattedTextField txtDtFim;
+    private javax.swing.JFormattedTextField txtDtIni;
     private javax.swing.JFormattedTextField txtDtNascFunc;
     private javax.swing.JFormattedTextField txtDtNascFunc4;
     private javax.swing.JFormattedTextField txtDtNascPet;
@@ -4863,7 +4888,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField txtRaca;
     private javax.swing.JTextField txtRaca3;
     private javax.swing.JTextField txtResp5;
-    private javax.swing.JTextField txtResponsavel1;
     private javax.swing.JFormattedTextField txtRgFunc;
     private javax.swing.JFormattedTextField txtRgFunc2;
     private javax.swing.JFormattedTextField txtRgTutor;
@@ -4898,18 +4922,23 @@ public class Menu extends javax.swing.JFrame {
         
         painelMenu.setEnabledAt(0,false);
         painelMenu.setEnabledAt(1,false);
-        painelMenu.setSelectedIndex(4);
+        painelMenu.setSelectedIndex(3);
+        painelFunc.setSelectedIndex(1);
+        painelFunc.setEnabledAt(2,false);
+        painelOpcoes.setEnabledAt(1, false);
+        painelOpcoes.setEnabledAt(2, false);
+        btnInsereAfericao1.setEnabled(false);
     }
         
     public void modoInicialAssistente(){
         
+        painelMenu.setEnabledAt(2,false);
         painelMenu.setEnabledAt(3,false);
-        painelMenu.setEnabledAt(4,false);
-        painelMenu.setEnabledAt(5,false);
         painelOpcoesTutor.setEnabledAt(1, false);
-        painelMenu.setSelectedIndex(5);        
-        painelMenu.setEnabledAt(4,false);        
-        painelOpcoesPaciente.setEnabledAt(2, false);        
+        painelOpcoesPaciente.setEnabledAt(1, false);
+        painelOpcoesPaciente.setEnabledAt(2, false);
+        painelMenu.setSelectedIndex(0);    
+        painelOpcoesTutor.setSelectedIndex(0);    
     }
     
     public void modoEditarAfericao(){

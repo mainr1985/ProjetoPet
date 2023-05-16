@@ -2,6 +2,9 @@ package visao;
 
 import controle.ControleLogin;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -166,6 +169,10 @@ public class TelaLogin extends javax.swing.JFrame {
             catch(SQLException e){
                 e.printStackTrace();
             }
+            
+            catch(ParseException e){
+                e.printStackTrace();
+            } 
         }
     }//GEN-LAST:event_btnLoginActionPerformed
 

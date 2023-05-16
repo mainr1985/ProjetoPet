@@ -71,7 +71,7 @@ public class ControleLogin{
                     telaPrincipal.modoInicialAdm();
                     break;                   
                 case "Assistente":
-                    telaPrincipal.modoInicialAdm();
+                    telaPrincipal.modoInicialAssistente();
                     break;        
             }
         }
