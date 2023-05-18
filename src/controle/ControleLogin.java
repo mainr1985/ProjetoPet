@@ -29,7 +29,14 @@ public class ControleLogin{
         funcionario.setCodigoFunc(new DaoFuncionario().getCodigoFuncionario());
         usuarios.setFuncionario(funcionario);
         
-        new DaoUsuarios().salvar(usuarios);
+        DaoUsuarios dao = new DaoUsuarios();
+        boolean check = dao.validarNomeUsuario(usuarios);
+        if (check){
+            JOptionPane.showMessageDialog(null, "Usuário já existente.");
+        }
+        else{
+            new DaoUsuarios().salvar(usuarios);    
+        }
     }
     
     public List<Usuario> listarUsuarios(){
@@ -52,7 +59,8 @@ public class ControleLogin{
         DaoUsuarios dao = new DaoUsuarios();
         boolean check = dao.validarUsuario(usuarios);
         Menu telaPrincipal = new Menu();
-     
+        TelaLogin telaLogin = new TelaLogin();
+        
           //descobrir como validar data limite de acesso do usu    
         if (check){
             String permissao = dao.getPermissao(usuario);
@@ -62,6 +70,7 @@ public class ControleLogin{
             if ((check)
                  &&((dataLimite == null) || (dataLimite > data)))            {
                 */
+            telaLogin.setVisible(false);
             telaPrincipal.setVisible(true);
             switch(permissao){
                 case "Veterinario":

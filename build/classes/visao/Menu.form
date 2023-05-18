@@ -5313,7 +5313,6 @@
                                 </LineBorder>
                               </Border>
                             </Property>
-                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                         </Component>
@@ -5340,7 +5339,6 @@
                                 </LineBorder>
                               </Border>
                             </Property>
-                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                         </Component>
