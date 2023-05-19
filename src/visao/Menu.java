@@ -15,6 +15,8 @@ import dao.DaoTutor;
 import controle.ControlePaciente;
 import dao.DaoFuncionario;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import modelo.Afericao;
 import modelo.Paciente;
 
@@ -4879,14 +4881,25 @@ public class Menu extends javax.swing.JFrame {
         }
         else{
             String senha = new String(txtSenhaUsu.getPassword());
-            try{
-                controleLogin.salvarLogin(txtUser.getText(), senha, lblPermissao.getText());
-                JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso.");  
-            }
-            catch(SQLException e){
-                e.printStackTrace();
-            }
-            catch(ParseException e){
+            try {
+                boolean check = controleLogin.validaUsuario(txtUser.getText());
+                if (check){
+                    try{
+                        controleLogin.salvarLogin(txtUser.getText(), senha, lblPermissao.getText());
+                        JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso.");  
+                    }
+                    catch(SQLException e){
+                        e.printStackTrace();
+                    }
+                    catch(ParseException e){
+                        e.printStackTrace();
+                    }
+                }
+                else {
+                    limparUsuarioNovo();
+                }
+            } 
+            catch (SQLException e) {
                 e.printStackTrace();
             }
         }

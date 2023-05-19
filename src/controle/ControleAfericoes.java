@@ -5,9 +5,12 @@ import java.sql.SQLException;
 import java.text.Normalizer;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 import modelo.Afericao;
 import modelo.Veterinario;
+
 
 
 /**
@@ -31,13 +34,18 @@ public class ControleAfericoes {
         afericao.setTempMin(tempMin);
         afericao.setTempMax(tempMax);
         afericao.setEquipamento(equipamento);
-        afericao.setObservacoes(observacoes);
+        afericao.setObservacoes((Normalizer.normalize(observacoes, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "")));
     
         //pegando a data/hora atual        
-       String dataAtual = formato.format(new Date());
-       java.sql.Date dataCadastro = new java.sql.Date(formato.parse(dataAtual).getTime());        
-       afericao.setDhAfericao(dataCadastro);
+        String dataAtual = formato.format(new Date());
+        //java.sql.Date dataAfericao = new java.sql.Date(formato.parse(dataAtual).getTime());
+                
+        /*LocalTime localTime = LocalTime.now();
+        int hora = localTime.getHour();
+        int minuto = localTime.getMinute();*/
         
-        daoAfericao.salvarAfericao(afericao);
+        afericao.setDhAfericao(dataAtual);
+        
+       daoAfericao.salvarAfericao(afericao);
     }
 }    

@@ -29,14 +29,22 @@ public class ControleLogin{
         funcionario.setCodigoFunc(new DaoFuncionario().getCodigoFuncionario());
         usuarios.setFuncionario(funcionario);
         
+        new DaoUsuarios().salvar(usuarios);                
+    }
+    
+    public boolean validaUsuario(String usuario) throws SQLException{
+        Usuario usuarios = new Usuario();
+        usuarios.setUsuario(usuario);
         DaoUsuarios dao = new DaoUsuarios();
         boolean check = dao.validarNomeUsuario(usuarios);
         if (check){
-            JOptionPane.showMessageDialog(null, "Usuário já existente.");
+            JOptionPane.showMessageDialog(null, "Usuário já existente."); 
+            check = false;
         }
         else{
-            new DaoUsuarios().salvar(usuarios);    
+            check = true;
         }
+        return check;
     }
     
     public List<Usuario> listarUsuarios(){
@@ -52,9 +60,6 @@ public class ControleLogin{
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");         
         String dataAtual = formato.format(new Date());
         java.sql.Date data = new java.sql.Date(formato.parse(dataAtual).getTime());
-        
-        String data1 = data.toString();
-        
         
         DaoUsuarios dao = new DaoUsuarios();
         boolean check = dao.validarUsuario(usuarios);
