@@ -17,7 +17,7 @@ public class ControleLogin{
 
     public ControleLogin() {}
     
-    public void salvarLogin(String usuario, String senha, String permissao) throws SQLException, ParseException {
+    public void salvarLogin(String usuario, String senha, String permissao, String dtlimacesso) throws SQLException, ParseException {
         
         Veterinario funcionario = new Veterinario();
         Usuario usuarios = new Usuario();
@@ -25,6 +25,7 @@ public class ControleLogin{
         usuarios.setUsuario(usuario);
         usuarios.setSenha(senha);
         usuarios.setPermissao(permissao);
+        usuarios.setDtLimAcesso(dtLimAcesso);
         
         funcionario.setCodigoFunc(new DaoFuncionario().getCodigoFuncionario());
         usuarios.setFuncionario(funcionario);
