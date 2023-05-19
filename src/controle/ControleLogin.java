@@ -66,7 +66,7 @@ public class ControleLogin{
         boolean check = dao.validarUsuario(usuarios);
         Menu telaPrincipal = new Menu();
         TelaLogin telaLogin = new TelaLogin();
-        
+        Date dataAtual = new Date(); //TESTAR!
           //descobrir como validar data limite de acesso do usu    
         if (check){
             String permissao = dao.getPermissao(usuario);
