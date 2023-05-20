@@ -17,7 +17,7 @@ public class ControleLogin{
 
     public ControleLogin() {}
     
-    public void salvarLogin(String usuario, String senha, String permissao, String dtlimacesso) throws SQLException, ParseException {
+    public void salvarLogin(String usuario, String senha, String permissao) throws SQLException, ParseException {
         
         Veterinario funcionario = new Veterinario();
         Usuario usuarios = new Usuario();
@@ -25,7 +25,6 @@ public class ControleLogin{
         usuarios.setUsuario(usuario);
         usuarios.setSenha(senha);
         usuarios.setPermissao(permissao);
-        usuarios.setDtLimAcesso(dtLimAcesso);
         
         funcionario.setCodigoFunc(new DaoFuncionario().getCodigoFuncionario());
         usuarios.setFuncionario(funcionario);
@@ -33,6 +32,7 @@ public class ControleLogin{
         new DaoUsuarios().salvar(usuarios);                
     }
     
+    //método para validar se inserção de nome de usuário já existente
     public boolean validaUsuario(String usuario) throws SQLException{
         Usuario usuarios = new Usuario();
         usuarios.setUsuario(usuario);
@@ -53,41 +53,62 @@ public class ControleLogin{
         return usuario.listarUsuarios();
     }  
     
+    //método para validar se o usuário está expirado ou não
+    public boolean validarLimAcesso(String usuario) throws SQLException, ParseException{
+        boolean check = false;
+        Usuario usuarios = new Usuario();
+        DaoUsuarios dao = new DaoUsuarios();
+        
+        usuarios.setUsuario(usuario);
+        
+        Date dataLimite = dao.getDtLimAcesso(usuario);           
+                
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
+        String data = formato.format(new Date());
+        java.sql.Date dataAtual1 = new java.sql.Date(formato.parse(data).getTime());
+        
+        if (dataLimite==null || dataLimite.before(dataAtual1)){
+            check = true;   
+        }
+        
+        else if ((dataLimite.equals(dataAtual1))|| (dataLimite.after(dataAtual1))) {
+            check=false;
+        }
+        
+       return check;
+    }
+    
+    //método para validar se o usuário pode realizar o login no sistema
     public void validarLogin(String usuario, String senha) throws SQLException, ParseException{
         Usuario usuarios = new Usuario();
         usuarios.setUsuario(usuario);
         usuarios.setSenha(senha);
-        
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");         
-        String dataAtual = formato.format(new Date());
-        java.sql.Date data = new java.sql.Date(formato.parse(dataAtual).getTime());
-        
+                
         DaoUsuarios dao = new DaoUsuarios();
         boolean check = dao.validarUsuario(usuarios);
         Menu telaPrincipal = new Menu();
         TelaLogin telaLogin = new TelaLogin();
-        Date dataAtual = new Date(); //TESTAR!
-          //descobrir como validar data limite de acesso do usu    
+        
         if (check){
             String permissao = dao.getPermissao(usuario);
-            /*Date dataLimite = dao.getDtLimAcesso(usuario);
-            
-            
-            if ((check)
-                 &&((dataLimite == null) || (dataLimite > data)))            {
-                */
-            telaLogin.setVisible(false);
-            telaPrincipal.setVisible(true);
-            switch(permissao){
-                case "Veterinario":
-                    telaPrincipal.modoInicialVet();
-                    break;                   
-                case "Administrador":
-                    telaPrincipal.modoInicialAdm();
-                    break;                   
-                case "Assistente":
-                    telaPrincipal.modoInicialAssistente();
-                    break;        
+            boolean check1 = validarLimAcesso(usuario);
+            if (!check1){
+                JOptionPane.showMessageDialog(null,"Impossível realizar login. Usuário expirado.","Aviso",JOptionPane.WARNING_MESSAGE);                       
+            }
+            else {
+                telaLogin.setVisible(false);
+                telaPrincipal.setVisible(true);
+                switch(permissao){
+                    case "Veterinario":
+                        telaPrincipal.modoInicialVet();
+                        break;                   
+                    case "Administrador":
+                        telaPrincipal.modoInicialAdm();
+                        break;                   
+                    case "Assistente":
+                        telaPrincipal.modoInicialAssistente();
+                        break;            
+                }
             }
         }
         else{
