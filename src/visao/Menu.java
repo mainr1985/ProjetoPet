@@ -15,11 +15,8 @@ import dao.DaoTutor;
 import controle.ControlePaciente;
 import dao.DaoFuncionario;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import modelo.Afericao;
 import modelo.Paciente;
-
 
 /**
  *
@@ -135,13 +132,13 @@ public class Menu extends javax.swing.JFrame {
         jPanel11 = new javax.swing.JPanel();
         jLabel37 = new javax.swing.JLabel();
         txtNomeTutorBusca = new javax.swing.JTextField();
-        jButton10 = new javax.swing.JButton();
+        btnCancelaBuscaTutor = new javax.swing.JButton();
         btnBuscaTutor = new javax.swing.JButton();
         btnEditarTutor = new javax.swing.JButton();
         btnExcluirTutor = new javax.swing.JButton();
         btnAddPet = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        jtbTutores = new javax.swing.JTable();
         jLabel23 = new javax.swing.JLabel();
         txtCPFTutorBusca = new javax.swing.JFormattedTextField();
         jPanel46 = new javax.swing.JPanel();
@@ -203,21 +200,19 @@ public class Menu extends javax.swing.JFrame {
         jPanel44 = new javax.swing.JPanel();
         jLabel111 = new javax.swing.JLabel();
         txtNomePetBusca = new javax.swing.JTextField();
-        jButton15 = new javax.swing.JButton();
+        btnCancelaBuscaPaciente = new javax.swing.JButton();
         btnBuscaTutor4 = new javax.swing.JButton();
-        btnEditarTutor5 = new javax.swing.JButton();
-        btnExcluirTutor5 = new javax.swing.JButton();
+        btnEditarPaciente = new javax.swing.JButton();
+        btnExcluirPaciente = new javax.swing.JButton();
         jLabel112 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jTable7 = new javax.swing.JTable();
+        jtbPacientes = new javax.swing.JTable();
         txtNomeTutorBusca6 = new javax.swing.JTextField();
         jPanel45 = new javax.swing.JPanel();
         jPanel47 = new javax.swing.JPanel();
         jLabel113 = new javax.swing.JLabel();
         jLabel114 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
         jLabel115 = new javax.swing.JLabel();
-        txtCPFTutor9 = new javax.swing.JFormattedTextField();
         jLabel118 = new javax.swing.JLabel();
         txtNomePet2 = new javax.swing.JTextField();
         jLabel121 = new javax.swing.JLabel();
@@ -238,7 +233,6 @@ public class Menu extends javax.swing.JFrame {
         btnCancelarTutor10 = new javax.swing.JButton();
         jLabel127 = new javax.swing.JLabel();
         jLabel128 = new javax.swing.JLabel();
-        txtTelTutor5 = new javax.swing.JFormattedTextField();
         jLabel132 = new javax.swing.JLabel();
         rdbPequeno2 = new javax.swing.JRadioButton();
         rdbMedio2 = new javax.swing.JRadioButton();
@@ -246,6 +240,9 @@ public class Menu extends javax.swing.JFrame {
         rdbGigante2 = new javax.swing.JRadioButton();
         jLabel172 = new javax.swing.JLabel();
         txtCor2 = new javax.swing.JTextField();
+        lblNomeTutor1 = new javax.swing.JLabel();
+        lblCpfTutor1 = new javax.swing.JLabel();
+        lblTelTutor1 = new javax.swing.JLabel();
         jPanel21 = new javax.swing.JPanel();
         jPanel50 = new javax.swing.JPanel();
         jLabel116 = new javax.swing.JLabel();
@@ -321,16 +318,16 @@ public class Menu extends javax.swing.JFrame {
         jLabel251 = new javax.swing.JLabel();
         jPanel17 = new javax.swing.JPanel();
         jPanel34 = new javax.swing.JPanel();
-        jLabel53 = new javax.swing.JLabel();
-        txtCodFuncBusca = new javax.swing.JTextField();
         jLabel54 = new javax.swing.JLabel();
-        txtNomeFuncBusca = new javax.swing.JTextField();
-        jButton11 = new javax.swing.JButton();
+        txtNome_Func = new javax.swing.JTextField();
+        btnCancelaBuscaFunc = new javax.swing.JButton();
         btnBuscaFuncionario = new javax.swing.JButton();
         jScrollPane8 = new javax.swing.JScrollPane();
-        jTable8 = new javax.swing.JTable();
-        btnEditarTutor1 = new javax.swing.JButton();
-        btnExcluirTutor1 = new javax.swing.JButton();
+        jtbFuncionarios = new javax.swing.JTable();
+        btnEditarFunc = new javax.swing.JButton();
+        btnExcluirFunc = new javax.swing.JButton();
+        jLabel27 = new javax.swing.JLabel();
+        txtCPF_func = new javax.swing.JFormattedTextField();
         jPanel18 = new javax.swing.JPanel();
         jPanel35 = new javax.swing.JPanel();
         jLabel199 = new javax.swing.JLabel();
@@ -371,15 +368,16 @@ public class Menu extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         painelOpcoesUsu = new javax.swing.JTabbedPane();
         jPanel32 = new javax.swing.JPanel();
-        jLabel97 = new javax.swing.JLabel();
-        txtDtIni = new javax.swing.JFormattedTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        btnInsereAfericao1 = new javax.swing.JButton();
-        btnEditarAfericao1 = new javax.swing.JButton();
-        jLabel99 = new javax.swing.JLabel();
-        jLabel100 = new javax.swing.JLabel();
-        txtDtFim = new javax.swing.JFormattedTextField();
+        jtbUsuarios = new javax.swing.JTable();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        txtNome_Func1 = new javax.swing.JTextField();
+        txtCPF_func1 = new javax.swing.JFormattedTextField();
+        btnBuscaFuncionario1 = new javax.swing.JButton();
+        btnEditarUsu = new javax.swing.JButton();
+        btnExcluirUsu = new javax.swing.JButton();
+        btnCancelaBuscaUsu = new javax.swing.JButton();
         jPanel33 = new javax.swing.JPanel();
         jPanel39 = new javax.swing.JPanel();
         jLabel62 = new javax.swing.JLabel();
@@ -420,8 +418,8 @@ public class Menu extends javax.swing.JFrame {
         jLabel98 = new javax.swing.JLabel();
         txtDtIni1 = new javax.swing.JFormattedTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
-        btnInsereAfericao2 = new javax.swing.JButton();
+        jtbAfericoes = new javax.swing.JTable();
+        btnInsereAfericao = new javax.swing.JButton();
         btnEditarAfericao2 = new javax.swing.JButton();
         jLabel101 = new javax.swing.JLabel();
         jLabel102 = new javax.swing.JLabel();
@@ -786,12 +784,12 @@ public class Menu extends javax.swing.JFrame {
         jLabel37.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel37.setText("Nome:");
 
-        jButton10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/cancel.png"))); // NOI18N
-        jButton10.setText("Cancelar");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        btnCancelaBuscaTutor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnCancelaBuscaTutor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/cancel.png"))); // NOI18N
+        btnCancelaBuscaTutor.setText("Cancelar");
+        btnCancelaBuscaTutor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                btnCancelaBuscaTutorActionPerformed(evt);
             }
         });
 
@@ -827,7 +825,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        jtbTutores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -843,7 +841,7 @@ public class Menu extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane5.setViewportView(jTable5);
+        jScrollPane5.setViewportView(jtbTutores);
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel23.setText("CPF:");
@@ -875,7 +873,7 @@ public class Menu extends javax.swing.JFrame {
                             .addComponent(btnAddPet, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnExcluirTutor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnEditarTutor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnCancelaBuscaTutor, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -912,7 +910,7 @@ public class Menu extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnAddPet, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnCancelaBuscaTutor, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(79, 79, 79))
         );
 
@@ -1417,7 +1415,7 @@ public class Menu extends javax.swing.JFrame {
                                             .addComponent(txtCelTutor, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(331, 331, 331)
+                .addGap(327, 327, 327)
                 .addComponent(btnSalvaTutor)
                 .addGap(29, 29, 29)
                 .addComponent(btnCancelarTutor)
@@ -1477,11 +1475,11 @@ public class Menu extends javax.swing.JFrame {
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtCelTutor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel31))))
-                .addGap(18, 18, 18)
+                .addGap(43, 43, 43)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalvaTutor, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCancelarTutor, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(243, 243, 243))
+                .addGap(218, 218, 218))
         );
 
         painelOpcoesTutor.addTab(" Novo", jPanel7);
@@ -1510,12 +1508,12 @@ public class Menu extends javax.swing.JFrame {
         jLabel111.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel111.setText("Nome:");
 
-        jButton15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/cancel.png"))); // NOI18N
-        jButton15.setText("Cancelar");
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
+        btnCancelaBuscaPaciente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnCancelaBuscaPaciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/cancel.png"))); // NOI18N
+        btnCancelaBuscaPaciente.setText("Cancelar");
+        btnCancelaBuscaPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
+                btnCancelaBuscaPacienteActionPerformed(evt);
             }
         });
 
@@ -1529,23 +1527,23 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        btnEditarTutor5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnEditarTutor5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/form_edit.png"))); // NOI18N
-        btnEditarTutor5.setText("Editar");
-        btnEditarTutor5.addActionListener(new java.awt.event.ActionListener() {
+        btnEditarPaciente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnEditarPaciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/form_edit.png"))); // NOI18N
+        btnEditarPaciente.setText("Editar");
+        btnEditarPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarTutor5ActionPerformed(evt);
+                btnEditarPacienteActionPerformed(evt);
             }
         });
 
-        btnExcluirTutor5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnExcluirTutor5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/excluir.png"))); // NOI18N
-        btnExcluirTutor5.setText("Excluir");
+        btnExcluirPaciente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnExcluirPaciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/excluir.png"))); // NOI18N
+        btnExcluirPaciente.setText("Excluir");
 
         jLabel112.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel112.setText("Nome do Tutor:");
 
-        jTable7.setModel(new javax.swing.table.DefaultTableModel(
+        jtbPacientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -1561,7 +1559,7 @@ public class Menu extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane7.setViewportView(jTable7);
+        jScrollPane7.setViewportView(jtbPacientes);
 
         javax.swing.GroupLayout jPanel44Layout = new javax.swing.GroupLayout(jPanel44);
         jPanel44.setLayout(jPanel44Layout);
@@ -1572,11 +1570,11 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel44Layout.createSequentialGroup()
                         .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
+                        .addGap(61, 61, 61)
                         .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnExcluirTutor5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnEditarTutor5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnExcluirPaciente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnEditarPaciente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnCancelaBuscaPaciente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel44Layout.createSequentialGroup()
                         .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel112)
@@ -1588,7 +1586,7 @@ public class Menu extends javax.swing.JFrame {
                                 .addComponent(txtNomeTutorBusca6, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(61, 61, 61)
                                 .addComponent(btnBuscaTutor4)))))
-                .addGap(76, 133, Short.MAX_VALUE))
+                .addGap(104, 104, Short.MAX_VALUE))
         );
         jPanel44Layout.setVerticalGroup(
             jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1610,19 +1608,18 @@ public class Menu extends javax.swing.JFrame {
                     .addGroup(jPanel44Layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addComponent(jLabel111, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel44Layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(btnEditarTutor5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnExcluirTutor5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel44Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                         .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66))))
+                        .addGap(66, 66, 66))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel44Layout.createSequentialGroup()
+                        .addComponent(btnEditarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnExcluirPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCancelaBuscaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(184, 184, 184))))
         );
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
@@ -1651,19 +1648,6 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel115.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel115.setText("CPF:");
-
-        try {
-            txtCPFTutor9.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtCPFTutor9.setNextFocusableComponent(txtRgTutor);
-        txtCPFTutor9.setSelectionColor(new java.awt.Color(255, 204, 204));
-        txtCPFTutor9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCPFTutor9ActionPerformed(evt);
-            }
-        });
 
         jLabel118.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel118.setText("Nome:");
@@ -1769,18 +1753,6 @@ public class Menu extends javax.swing.JFrame {
         jLabel128.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel128.setText("Telefone:");
 
-        try {
-            txtTelTutor5.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtTelTutor5.setNextFocusableComponent(txtCelTutor);
-        txtTelTutor5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTelTutor5ActionPerformed(evt);
-            }
-        });
-
         jLabel132.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel132.setText("Porte:");
 
@@ -1823,24 +1795,28 @@ public class Menu extends javax.swing.JFrame {
         txtCor2.setFocusCycleRoot(true);
         txtCor2.setNextFocusableComponent(txtCPFTutor);
 
+        lblNomeTutor1.setBackground(new java.awt.Color(255, 255, 255));
+        lblNomeTutor1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblNomeTutor1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        lblNomeTutor1.setEnabled(false);
+        lblNomeTutor1.setFocusable(false);
+
+        lblCpfTutor1.setBackground(new java.awt.Color(255, 255, 255));
+        lblCpfTutor1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblCpfTutor1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        lblCpfTutor1.setEnabled(false);
+        lblCpfTutor1.setFocusable(false);
+
+        lblTelTutor1.setBackground(new java.awt.Color(255, 255, 255));
+        lblTelTutor1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblTelTutor1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        lblTelTutor1.setEnabled(false);
+        lblTelTutor1.setFocusable(false);
+
         javax.swing.GroupLayout jPanel47Layout = new javax.swing.GroupLayout(jPanel47);
         jPanel47.setLayout(jPanel47Layout);
         jPanel47Layout.setHorizontalGroup(
             jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel47Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel114)
-                .addGap(18, 18, 18)
-                .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jLabel115, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txtCPFTutor9, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel128)
-                .addGap(20, 20, 20)
-                .addComponent(txtTelTutor5, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(73, 73, 73))
             .addGroup(jPanel47Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1848,58 +1824,74 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jLabel127, javax.swing.GroupLayout.PREFERRED_SIZE, 888, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel47Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel47Layout.createSequentialGroup()
-                        .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel125)
-                            .addComponent(jLabel126, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel172))
-                        .addGap(52, 52, 52)
-                        .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtRaca3, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cmbEspecie3, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCor2, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel114)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblNomeTutor1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addComponent(jLabel115, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblCpfTutor1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel128)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblTelTutor1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel47Layout.createSequentialGroup()
-                        .addComponent(jLabel123)
-                        .addGap(58, 58, 58)
-                        .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtIdade3, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDtNascPet3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel47Layout.createSequentialGroup()
-                        .addComponent(jLabel122, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rdbPequeno2)
-                            .addComponent(rdbSim2))
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rdbNao2)
-                            .addGroup(jPanel47Layout.createSequentialGroup()
-                                .addComponent(rdbMedio2)
-                                .addGap(41, 41, 41)
-                                .addComponent(rdbGrande2)
-                                .addGap(43, 43, 43)
-                                .addComponent(rdbGigante2))))
-                    .addComponent(jLabel121)
-                    .addComponent(jLabel132, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel47Layout.createSequentialGroup()
-                        .addGap(332, 332, 332)
-                        .addComponent(btnSalvaPaciente3)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnCancelarTutor10))
-                    .addGroup(jPanel47Layout.createSequentialGroup()
-                        .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel124)
-                            .addComponent(jLabel118))
-                        .addGap(61, 61, 61)
+                        .addGap(20, 20, 20)
                         .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel47Layout.createSequentialGroup()
-                                .addComponent(rdbMacho2)
-                                .addGap(29, 29, 29)
-                                .addComponent(rdbFemea2))
-                            .addComponent(txtNomePet2, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel125)
+                                    .addComponent(jLabel126, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel172))
+                                .addGap(52, 52, 52)
+                                .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtRaca3, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cmbEspecie3, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtCor2, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel47Layout.createSequentialGroup()
+                                .addComponent(jLabel123)
+                                .addGap(58, 58, 58)
+                                .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtIdade3, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtDtNascPet3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel47Layout.createSequentialGroup()
+                                .addComponent(jLabel122, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(rdbPequeno2)
+                                    .addComponent(rdbSim2))
+                                .addGap(32, 32, 32)
+                                .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(rdbNao2)
+                                    .addGroup(jPanel47Layout.createSequentialGroup()
+                                        .addComponent(rdbMedio2)
+                                        .addGap(41, 41, 41)
+                                        .addComponent(rdbGrande2)
+                                        .addGap(43, 43, 43)
+                                        .addComponent(rdbGigante2))))
+                            .addComponent(jLabel121)
+                            .addComponent(jLabel132, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel47Layout.createSequentialGroup()
+                                .addGap(332, 332, 332)
+                                .addComponent(btnSalvaPaciente3)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnCancelarTutor10))
+                            .addGroup(jPanel47Layout.createSequentialGroup()
+                                .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel124)
+                                    .addComponent(jLabel118))
+                                .addGap(61, 61, 61)
+                                .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel47Layout.createSequentialGroup()
+                                        .addComponent(rdbMacho2)
+                                        .addGap(29, 29, 29)
+                                        .addComponent(rdbFemea2))
+                                    .addComponent(txtNomePet2, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel47Layout.setVerticalGroup(
             jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1908,13 +1900,14 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtTelTutor5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel128))
-                    .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel114, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel115)
-                        .addComponent(txtCPFTutor9, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel115))
+                    .addComponent(lblNomeTutor1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCpfTutor1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel47Layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(jLabel128))
+                    .addComponent(lblTelTutor1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel127)
                 .addGap(18, 18, 18)
@@ -1951,7 +1944,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jLabel122)
                     .addComponent(rdbSim2)
                     .addComponent(rdbNao2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1, Short.MAX_VALUE)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel132)
                     .addComponent(rdbPequeno2)
@@ -2678,25 +2671,15 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel34.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel53.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel53.setText("Código:");
-
-        txtCodFuncBusca.setEditable(false);
-        txtCodFuncBusca.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodFuncBuscaActionPerformed(evt);
-            }
-        });
-
-        jLabel54.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel54.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel54.setText("Nome.:");
 
-        jButton11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/cancel.png"))); // NOI18N
-        jButton11.setText("Cancelar");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
+        btnCancelaBuscaFunc.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnCancelaBuscaFunc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/cancel.png"))); // NOI18N
+        btnCancelaBuscaFunc.setText("Cancelar");
+        btnCancelaBuscaFunc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
+                btnCancelaBuscaFuncActionPerformed(evt);
             }
         });
 
@@ -2704,27 +2687,50 @@ public class Menu extends javax.swing.JFrame {
         btnBuscaFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/magnifier.png"))); // NOI18N
         btnBuscaFuncionario.setText("Buscar");
         btnBuscaFuncionario.setActionCommand("Confirmar");
+        btnBuscaFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscaFuncionarioActionPerformed(evt);
+            }
+        });
 
-        jTable8.setModel(new javax.swing.table.DefaultTableModel(
+        jtbFuncionarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nome", "Cpf", "Cargo", "Telefone", "Celular", "E-mail"
             }
         ));
-        jScrollPane8.setViewportView(jTable8);
+        jScrollPane8.setViewportView(jtbFuncionarios);
 
-        btnEditarTutor1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnEditarTutor1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/form_edit.png"))); // NOI18N
-        btnEditarTutor1.setText("Editar");
+        btnEditarFunc.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnEditarFunc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/form_edit.png"))); // NOI18N
+        btnEditarFunc.setText("Editar");
+        btnEditarFunc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarFuncActionPerformed(evt);
+            }
+        });
 
-        btnExcluirTutor1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnExcluirTutor1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/excluir.png"))); // NOI18N
-        btnExcluirTutor1.setText("Excluir");
+        btnExcluirFunc.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnExcluirFunc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/excluir.png"))); // NOI18N
+        btnExcluirFunc.setText("Excluir");
+
+        jLabel27.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel27.setText("CPF:");
+
+        try {
+            txtCPF_func.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtCPF_func.setNextFocusableComponent(txtRgTutor);
+        txtCPF_func.setSelectionColor(new java.awt.Color(255, 204, 204));
+        txtCPF_func.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCPF_funcActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
         jPanel34.setLayout(jPanel34Layout);
@@ -2734,49 +2740,59 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel34Layout.createSequentialGroup()
-                        .addComponent(jLabel53)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtCodFuncBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(86, 86, 86)
-                        .addComponent(jLabel54)
-                        .addGap(62, 62, 62)
-                        .addComponent(txtNomeFuncBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
-                        .addComponent(btnBuscaFuncionario)
-                        .addGap(149, 149, 149))
-                    .addGroup(jPanel34Layout.createSequentialGroup()
                         .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 633, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42)
-                        .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnExcluirTutor1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnEditarTutor1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton11))
-                        .addContainerGap(111, Short.MAX_VALUE))))
+                        .addGap(57, 57, 57)
+                        .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel34Layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(btnEditarFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btnExcluirFunc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnCancelaBuscaFunc, javax.swing.GroupLayout.Alignment.TRAILING))))
+                    .addGroup(jPanel34Layout.createSequentialGroup()
+                        .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel54)
+                            .addComponent(jLabel27))
+                        .addGap(39, 39, 39)
+                        .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel34Layout.createSequentialGroup()
+                                .addComponent(txtCPF_func, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(168, 168, 168)
+                                .addComponent(btnBuscaFuncionario))
+                            .addComponent(txtNome_Func, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
         jPanel34Layout.setVerticalGroup(
             jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel34Layout.createSequentialGroup()
+            .addGroup(jPanel34Layout.createSequentialGroup()
                 .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel34Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtCodFuncBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnBuscaFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtNomeFuncBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(29, 29, 29)
-                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel34Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(txtNome_Func, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel34Layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(btnEditarTutor1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel34Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel27)
+                                    .addComponent(txtCPF_func, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel34Layout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addComponent(btnBuscaFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(96, 96, 96)
+                        .addComponent(btnEditarFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnExcluirTutor1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnExcluirFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(139, Short.MAX_VALUE))
+                        .addComponent(btnCancelaBuscaFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel34Layout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(78, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
@@ -2791,7 +2807,7 @@ public class Menu extends javax.swing.JFrame {
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addComponent(jPanel34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 247, Short.MAX_VALUE))
         );
 
         painelFunc.addTab("Buscar", jPanel17);
@@ -3151,65 +3167,59 @@ public class Menu extends javax.swing.JFrame {
 
         painelOpcoesUsu.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
-        jLabel97.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel97.setText("Período:");
-
-        try {
-            txtDtIni.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtDtIni.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDtIniActionPerformed(evt);
-            }
-        });
-
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jtbUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nome", "Usuário", "Cargo"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(jtbUsuarios);
 
-        btnInsereAfericao1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnInsereAfericao1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/add.png"))); // NOI18N
-        btnInsereAfericao1.setText("Nova");
-        btnInsereAfericao1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInsereAfericao1ActionPerformed(evt);
-            }
-        });
+        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel36.setText("CPF:");
 
-        btnEditarAfericao1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnEditarAfericao1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/form_edit.png"))); // NOI18N
-        btnEditarAfericao1.setText("Editar");
-        btnEditarAfericao1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarAfericao1ActionPerformed(evt);
-            }
-        });
-
-        jLabel99.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel99.setText("De:");
-
-        jLabel100.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel100.setText("a");
+        jLabel55.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel55.setText("Nome.:");
 
         try {
-            txtDtFim.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            txtCPF_func1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        txtDtFim.addActionListener(new java.awt.event.ActionListener() {
+        txtCPF_func1.setNextFocusableComponent(txtRgTutor);
+        txtCPF_func1.setSelectionColor(new java.awt.Color(255, 204, 204));
+        txtCPF_func1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDtFimActionPerformed(evt);
+                txtCPF_func1ActionPerformed(evt);
+            }
+        });
+
+        btnBuscaFuncionario1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnBuscaFuncionario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/magnifier.png"))); // NOI18N
+        btnBuscaFuncionario1.setText("Buscar");
+        btnBuscaFuncionario1.setActionCommand("Confirmar");
+
+        btnEditarUsu.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnEditarUsu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/form_edit.png"))); // NOI18N
+        btnEditarUsu.setText("Editar");
+        btnEditarUsu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarUsuActionPerformed(evt);
+            }
+        });
+
+        btnExcluirUsu.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnExcluirUsu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/excluir.png"))); // NOI18N
+        btnExcluirUsu.setText("Excluir");
+
+        btnCancelaBuscaUsu.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnCancelaBuscaUsu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/cancel.png"))); // NOI18N
+        btnCancelaBuscaUsu.setText("Cancelar");
+        btnCancelaBuscaUsu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelaBuscaUsuActionPerformed(evt);
             }
         });
 
@@ -3218,47 +3228,59 @@ public class Menu extends javax.swing.JFrame {
         jPanel32Layout.setHorizontalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel32Layout.createSequentialGroup()
-                .addGap(89, 89, 89)
+                .addGap(48, 48, 48)
                 .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel32Layout.createSequentialGroup()
                         .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel97, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(40, 40, 40)
+                            .addComponent(jLabel55)
+                            .addComponent(jLabel36))
+                        .addGap(39, 39, 39)
                         .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnInsereAfericao1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnEditarAfericao1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel32Layout.createSequentialGroup()
+                                .addComponent(txtCPF_func1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(168, 168, 168)
+                                .addComponent(btnBuscaFuncionario1))
+                            .addComponent(txtNome_Func1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel32Layout.createSequentialGroup()
-                        .addComponent(jLabel99, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtDtIni, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
-                        .addComponent(jLabel100, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtDtFim, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(52, Short.MAX_VALUE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49)
+                        .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel32Layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(btnEditarUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btnExcluirUsu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnCancelaBuscaUsu, javax.swing.GroupLayout.Alignment.TRAILING)))))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
         jPanel32Layout.setVerticalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel32Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jLabel97)
+                .addGap(36, 36, 36)
                 .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel32Layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addComponent(btnInsereAfericao1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnEditarAfericao1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNome_Func1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel32Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtDtIni, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel99)
-                            .addComponent(jLabel100)
-                            .addComponent(txtDtFim, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(37, 37, 37)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(431, Short.MAX_VALUE))
+                            .addComponent(jLabel36)
+                            .addComponent(txtCPF_func1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel32Layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(btnBuscaFuncionario1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel32Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel32Layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(btnEditarUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnExcluirUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCancelaBuscaUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(402, Short.MAX_VALUE))
         );
 
         painelOpcoesUsu.addTab("Buscar", jPanel32);
@@ -3371,13 +3393,10 @@ public class Menu extends javax.swing.JFrame {
                                             .addComponent(jLabel62)
                                             .addComponent(jLabel63)
                                             .addComponent(jLabel64))
+                                        .addGap(41, 41, 41)
                                         .addGroup(jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel39Layout.createSequentialGroup()
-                                                .addGap(41, 41, 41)
-                                                .addComponent(lblPermissao1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel39Layout.createSequentialGroup()
-                                                .addGap(41, 41, 41)
-                                                .addComponent(txtSenhaUsu1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                            .addComponent(lblPermissao1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtSenhaUsu1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addComponent(jLabel66, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel39Layout.createSequentialGroup()
@@ -3642,25 +3661,22 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        jtbAfericoes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Dia", "Hora", "Responsável", "Temp. Mín.", "Temp Máx.", "Observação"
             }
         ));
-        jScrollPane3.setViewportView(jTable3);
+        jScrollPane3.setViewportView(jtbAfericoes);
 
-        btnInsereAfericao2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnInsereAfericao2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/add.png"))); // NOI18N
-        btnInsereAfericao2.setText("Nova");
-        btnInsereAfericao2.addActionListener(new java.awt.event.ActionListener() {
+        btnInsereAfericao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnInsereAfericao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/add.png"))); // NOI18N
+        btnInsereAfericao.setText("Nova");
+        btnInsereAfericao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInsereAfericao2ActionPerformed(evt);
+                btnInsereAfericaoActionPerformed(evt);
             }
         });
 
@@ -3701,9 +3717,9 @@ public class Menu extends javax.swing.JFrame {
                         .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel98, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(40, 40, 40)
+                        .addGap(45, 45, 45)
                         .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnInsereAfericao2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnInsereAfericao, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnEditarAfericao2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel36Layout.createSequentialGroup()
                         .addComponent(jLabel101, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3713,28 +3729,28 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(jLabel102, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtDtFim1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         jPanel36Layout.setVerticalGroup(
             jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel36Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(jLabel98)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtDtIni1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel101)
+                    .addComponent(jLabel102)
+                    .addComponent(txtDtFim1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel36Layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addComponent(btnInsereAfericao2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnEditarAfericao2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel36Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtDtIni1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel101)
-                            .addComponent(jLabel102)
-                            .addComponent(txtDtFim1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(37, 37, 37)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel36Layout.createSequentialGroup()
+                        .addGap(86, 86, 86)
+                        .addComponent(btnInsereAfericao, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnEditarAfericao2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(431, Short.MAX_VALUE))
         );
 
@@ -4176,33 +4192,25 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCPF4ActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+    private void btnCancelaBuscaFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelaBuscaFuncActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton11ActionPerformed
-
-    private void txtCodFuncBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodFuncBuscaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodFuncBuscaActionPerformed
+    }//GEN-LAST:event_btnCancelaBuscaFuncActionPerformed
 
     private void btnAddPetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddPetActionPerformed
         painelMenu.setSelectedIndex(1); 
-        painelOpcoesPaciente.setEnabledAt(1,false);
-        painelOpcoesPaciente.setEnabledAt(2,false);
-        painelOpcoesPaciente.setSelectedIndex(0);
+        painelOpcoesPaciente.setSelectedIndex(2);
         
     }//GEN-LAST:event_btnAddPetActionPerformed
 
     private void btnEditarTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarTutorActionPerformed
-        /*painelOpcoesTutor.setEnabledAt(1, true);
-        painelOpcoesTutor.setSelectedIndex(1);
-        painelOpcoesTutor.setEnabledAt(0,false);
-        painelOpcoesTutor.setEnabledAt(2,true);*/
+        painelOpcoesTutor.setEnabledAt(1, true);
+        painelOpcoesTutor.setSelectedIndex(1);       
     }//GEN-LAST:event_btnEditarTutorActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void btnCancelaBuscaTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelaBuscaTutorActionPerformed
 
      //   painelOpcoesTutor.setSelectedIndex(0);
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_btnCancelaBuscaTutorActionPerformed
 
     private void txtNf1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNf1ActionPerformed
         // TODO add your handling code here:
@@ -4216,21 +4224,17 @@ public class Menu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnBuscaTutorActionPerformed
 
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+    private void btnCancelaBuscaPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelaBuscaPacienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton15ActionPerformed
+    }//GEN-LAST:event_btnCancelaBuscaPacienteActionPerformed
 
     private void btnBuscaTutor4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaTutor4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBuscaTutor4ActionPerformed
 
-    private void btnEditarTutor5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarTutor5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEditarTutor5ActionPerformed
-
-    private void txtCPFTutor9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCPFTutor9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCPFTutor9ActionPerformed
+    private void btnEditarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPacienteActionPerformed
+        painelOpcoesPaciente.setSelectedIndex(1);
+    }//GEN-LAST:event_btnEditarPacienteActionPerformed
 
     private void txtNomePet2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomePet2ActionPerformed
         // TODO add your handling code here:
@@ -4259,10 +4263,6 @@ public class Menu extends javax.swing.JFrame {
     private void btnSalvaPaciente3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvaPaciente3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSalvaPaciente3ActionPerformed
-
-    private void txtTelTutor5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelTutor5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelTutor5ActionPerformed
 
     private void rdbPequeno2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbPequeno2ActionPerformed
         // TODO add your handling code here:
@@ -4720,18 +4720,6 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomeTutorActionPerformed
 
-    private void txtDtIniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDtIniActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDtIniActionPerformed
-
-    private void btnInsereAfericao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsereAfericao1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnInsereAfericao1ActionPerformed
-
-    private void btnEditarAfericao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarAfericao1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEditarAfericao1ActionPerformed
-
     private void txtDtAdmissaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDtAdmissaoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDtAdmissaoActionPerformed
@@ -4752,20 +4740,18 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCPFTutorBuscaActionPerformed
 
-    private void txtDtFimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDtFimActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDtFimActionPerformed
-
     private void txtDtIni1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDtIni1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDtIni1ActionPerformed
 
-    private void btnInsereAfericao2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsereAfericao2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnInsereAfericao2ActionPerformed
+    private void btnInsereAfericaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsereAfericaoActionPerformed
+        painelOpcoes.setEnabledAt(2,true);        
+        painelOpcoes.setSelectedIndex(2);
+    }//GEN-LAST:event_btnInsereAfericaoActionPerformed
 
     private void btnEditarAfericao2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarAfericao2ActionPerformed
-        // TODO add your handling code here:
+        painelOpcoes.setEnabledAt(1,true);        
+        painelOpcoes.setSelectedIndex(1);
     }//GEN-LAST:event_btnEditarAfericao2ActionPerformed
 
     private void txtDtFim1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDtFim1ActionPerformed
@@ -4904,6 +4890,31 @@ public class Menu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_txtEmailFuncKeyTyped
 
+    private void txtCPF_funcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCPF_funcActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCPF_funcActionPerformed
+
+    private void txtCPF_func1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCPF_func1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCPF_func1ActionPerformed
+
+    private void btnCancelaBuscaUsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelaBuscaUsuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCancelaBuscaUsuActionPerformed
+
+    private void btnEditarFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarFuncActionPerformed
+        painelFunc.setSelectedIndex(2);
+    }//GEN-LAST:event_btnEditarFuncActionPerformed
+
+    private void btnEditarUsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarUsuActionPerformed
+        painelOpcoesUsu.setSelectedIndex(1);
+    }//GEN-LAST:event_btnEditarUsuActionPerformed
+
+    private void btnBuscaFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaFuncionarioActionPerformed
+        DaoFuncionario daoFuncionarios = new DaoFuncionario();
+        //String tbData[] = {campo1,campo2,campo3...}
+    }//GEN-LAST:event_btnBuscaFuncionarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -4943,8 +4954,13 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddPet;
     private javax.swing.JButton btnBuscaFuncionario;
+    private javax.swing.JButton btnBuscaFuncionario1;
     private javax.swing.JButton btnBuscaTutor;
     private javax.swing.JButton btnBuscaTutor4;
+    private javax.swing.JButton btnCancelaBuscaFunc;
+    private javax.swing.JButton btnCancelaBuscaPaciente;
+    private javax.swing.JButton btnCancelaBuscaTutor;
+    private javax.swing.JButton btnCancelaBuscaUsu;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnCancelar8;
     private javax.swing.JButton btnCancelarFunc;
@@ -4956,16 +4972,16 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelarTutor12;
     private javax.swing.JButton btnCancelarTutor2;
     private javax.swing.JButton btnEditAfericao2;
-    private javax.swing.JButton btnEditarAfericao1;
     private javax.swing.JButton btnEditarAfericao2;
+    private javax.swing.JButton btnEditarFunc;
+    private javax.swing.JButton btnEditarPaciente;
     private javax.swing.JButton btnEditarTutor;
-    private javax.swing.JButton btnEditarTutor1;
-    private javax.swing.JButton btnEditarTutor5;
+    private javax.swing.JButton btnEditarUsu;
+    private javax.swing.JButton btnExcluirFunc;
+    private javax.swing.JButton btnExcluirPaciente;
     private javax.swing.JButton btnExcluirTutor;
-    private javax.swing.JButton btnExcluirTutor1;
-    private javax.swing.JButton btnExcluirTutor5;
-    private javax.swing.JButton btnInsereAfericao1;
-    private javax.swing.JButton btnInsereAfericao2;
+    private javax.swing.JButton btnExcluirUsu;
+    private javax.swing.JButton btnInsereAfericao;
     private javax.swing.JButton btnSalvaFuncionario;
     private javax.swing.JButton btnSalvaFuncionario1;
     private javax.swing.JButton btnSalvaPaciente3;
@@ -4991,15 +5007,11 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JComboBox<TipoEspecie> cmbEspecie;
     private javax.swing.JComboBox<TipoEspecie> cmbEspecie3;
     private javax.swing.JComboBox<Veterinario> cmbResponsavel;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JFormattedTextField jFormattedTextField3;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel102;
     private javax.swing.JLabel jLabel11;
@@ -5105,6 +5117,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel266;
     private javax.swing.JLabel jLabel268;
     private javax.swing.JLabel jLabel269;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel271;
     private javax.swing.JLabel jLabel272;
     private javax.swing.JLabel jLabel29;
@@ -5114,13 +5127,14 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
@@ -5143,9 +5157,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jLabel97;
     private javax.swing.JLabel jLabel98;
-    private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -5186,19 +5198,19 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable5;
-    private javax.swing.JTable jTable7;
-    private javax.swing.JTable jTable8;
     private javax.swing.JTextArea jTextArea7;
-    private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTable jtbAfericoes;
+    private javax.swing.JTable jtbFuncionarios;
+    private javax.swing.JTable jtbPacientes;
+    private javax.swing.JTable jtbTutores;
+    private javax.swing.JTable jtbUsuarios;
     private javax.swing.JLabel lblCargo;
     private javax.swing.JLabel lblCargo1;
     private javax.swing.JLabel lblCpfTutor;
+    private javax.swing.JLabel lblCpfTutor1;
     private javax.swing.JLabel lblCrmv2;
     private javax.swing.JLabel lblCrmv4;
     private javax.swing.JLabel lblEspecialidade2;
@@ -5206,9 +5218,11 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel lblNomeFunc;
     private javax.swing.JLabel lblNomeFunc1;
     private javax.swing.JLabel lblNomeTutor;
+    private javax.swing.JLabel lblNomeTutor1;
     private javax.swing.JLabel lblPermissao;
     private javax.swing.JLabel lblPermissao1;
     private javax.swing.JLabel lblTelTutor;
+    private javax.swing.JLabel lblTelTutor1;
     private javax.swing.JTabbedPane painelFunc;
     private javax.swing.JTabbedPane painelMenu;
     private javax.swing.JTabbedPane painelOpcoes;
@@ -5246,10 +5260,11 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField txtCPF4;
     private javax.swing.JFormattedTextField txtCPFTutor;
     private javax.swing.JFormattedTextField txtCPFTutor2;
-    private javax.swing.JFormattedTextField txtCPFTutor9;
     private javax.swing.JFormattedTextField txtCPFTutorBusca;
     private javax.swing.JFormattedTextField txtCPF_Func;
     private javax.swing.JFormattedTextField txtCPF_Func2;
+    private javax.swing.JFormattedTextField txtCPF_func;
+    private javax.swing.JFormattedTextField txtCPF_func1;
     private javax.swing.JTextField txtCRMVResp6;
     private javax.swing.JFormattedTextField txtCelTutor;
     private javax.swing.JFormattedTextField txtCelTutor1;
@@ -5260,7 +5275,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField txtCidadeFunc1;
     private javax.swing.JTextField txtCidadeTutor;
     private javax.swing.JTextField txtCidadeTutor2;
-    private javax.swing.JTextField txtCodFuncBusca;
     private javax.swing.JTextField txtCodTutor;
     private javax.swing.JTextField txtComplFunc;
     private javax.swing.JTextField txtComplFunc1;
@@ -5274,9 +5288,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField txtDtAdmissao4;
     private javax.swing.JFormattedTextField txtDtAfericaoEdit2;
     private javax.swing.JFormattedTextField txtDtDemissao4;
-    private javax.swing.JFormattedTextField txtDtFim;
     private javax.swing.JFormattedTextField txtDtFim1;
-    private javax.swing.JFormattedTextField txtDtIni;
     private javax.swing.JFormattedTextField txtDtIni1;
     private javax.swing.JFormattedTextField txtDtLimAcesso1;
     private javax.swing.JFormattedTextField txtDtNascFunc;
@@ -5306,7 +5318,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField txtLogradouro4;
     private javax.swing.JTextField txtNf1;
     private javax.swing.JTextField txtNf3;
-    private javax.swing.JTextField txtNomeFuncBusca;
     private javax.swing.JTextField txtNomeFuncNovo;
     private javax.swing.JTextField txtNomeFuncNovo1;
     private javax.swing.JTextField txtNomePet;
@@ -5316,6 +5327,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField txtNomeTutor1;
     private javax.swing.JTextField txtNomeTutorBusca;
     private javax.swing.JTextField txtNomeTutorBusca6;
+    private javax.swing.JTextField txtNome_Func;
+    private javax.swing.JTextField txtNome_Func1;
     private javax.swing.JTextField txtRaca;
     private javax.swing.JTextField txtRaca3;
     private javax.swing.JTextField txtResp6;
@@ -5329,7 +5342,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField txtTelFixoFunc4;
     private javax.swing.JFormattedTextField txtTelTutor;
     private javax.swing.JFormattedTextField txtTelTutor3;
-    private javax.swing.JFormattedTextField txtTelTutor5;
     private javax.swing.JTextField txtTempMax;
     private javax.swing.JTextField txtTempMax6;
     private javax.swing.JTextField txtTempMin;
@@ -5348,8 +5360,8 @@ public class Menu extends javax.swing.JFrame {
         painelMenu.setEnabledAt(2,false);
         painelMenu.setEnabledAt(3,false);        
         painelMenu.setEnabledAt(4,true);
-        painelMenu.setSelectedIndex(3);
-        painelOpcoesUsu.setSelectedIndex(2);
+        painelMenu.setSelectedIndex(4);
+        painelOpcoesUsu.setEnabled(false);
     }
         
     public void modoInicialAdm(){        
@@ -5362,7 +5374,7 @@ public class Menu extends javax.swing.JFrame {
         painelOpcoesUsu.setEnabledAt(1,false);        
         painelMenu.setSelectedIndex(2);
         painelFunc.setSelectedIndex(1);        
-        btnInsereAfericao1.setEnabled(false);
+        btnInsereAfericao.setEnabled(false);
     }
         
     public void modoInicialAssistente(){

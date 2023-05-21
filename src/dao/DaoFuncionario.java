@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import modelo.Veterinario;
 
@@ -89,6 +91,23 @@ public class DaoFuncionario extends DaoFactory{
         return nome;
     }
     
+    public String getCpfFunc() throws SQLException{
+        String cpf="";
+        String sql = "SELECT cpf FROM funcionario WHERE id_funcionario = ?";
+        try{
+            PreparedStatement ps = getConnection().prepareStatement(sql);
+            ps.setInt(1, getCodigoFuncionario());
+            rs = ps.executeQuery();
+            while (rs.next()){
+                cpf = rs.getString(1);                                
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        return cpf;
+    }
+    
     public String getCargo() throws SQLException{
         String cargo="";
         String sql = "SELECT cargo FROM funcionario WHERE id_funcionario = ?";
@@ -98,6 +117,36 @@ public class DaoFuncionario extends DaoFactory{
             rs = ps.executeQuery();
             while (rs.next()){
                 cargo = rs.getString(1);                                
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        return cargo;
+    }
+    
+    public String getFuncionarios() throws SQLException{
+        
+        //String sql = "SELECT nome, cpf, cargo, telefone, celular, email, dtAdmissao FROM funcionario WHERE upper(nome) like ? OR cpf = ?";
+        String sql = "SELECT nome, cpf, cargo, telefone, celular, email, dtAdmissao FROM funcionario WHERE cpf = ?";
+        try{
+            PreparedStatement ps = getConnection().prepareStatement(sql);
+            ps.setString(1, getCpfFunc());
+            rs = ps.executeQuery();
+            while (rs.next()){
+                
+                String nome = rs.getString("nome");
+                String cpf = rs.getString("cpf");
+                String cargo = rs.getString("cargo");                                
+                String telefone = rs.getString("telefone");                                
+                String celular = rs.getString("celular");
+                String email = rs.getString("email");
+                Date dtAdmissao = rs.getDate("dtAdmissao");
+                
+                SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");                
+                String admissao = formato.format(dtAdmissao); 
+                
+                //estudar clone do método para popular responsáveis aferição
             }
         }
         catch(SQLException e){
