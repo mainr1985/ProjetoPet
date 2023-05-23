@@ -11,6 +11,8 @@ import java.text.Normalizer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import modelo.enums.TipoFuncionario;
 
 /**
@@ -133,4 +135,15 @@ public class ControleFuncionario{
         DaoVeterinario vet = new DaoVeterinario();
         return vet.listarVeterinarios();
     }    
+    
+    public String buscarFuncionarioNome(String nome) {
+        Veterinario funcionario = new Veterinario();
+        funcionario.setNome(nome);
+        DaoFuncionario dao = new DaoFuncionario();
+        String nomeFunc = funcionario.getNome();
+        String endereco = funcionario.getEndereco();
+        //System.out.println(nomeFunc + "" + endereco);
+        return nomeFunc;
+        //return dao.getFuncionarioPorNome(nome);
+    }
 }    

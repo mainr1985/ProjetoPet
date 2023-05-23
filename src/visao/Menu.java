@@ -15,6 +15,7 @@ import dao.DaoTutor;
 import controle.ControlePaciente;
 import dao.DaoFuncionario;
 import java.util.List;
+import javax.swing.table.DefaultTableModel;
 import modelo.Afericao;
 import modelo.Paciente;
 
@@ -2698,7 +2699,7 @@ public class Menu extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "Cpf", "Cargo", "Telefone", "Celular", "E-mail"
+                "Nome", "Endereço", "Telefone", "Celular", "E-mail", "Cargo", "Dt. Admissão"
             }
         ));
         jScrollPane8.setViewportView(jtbFuncionarios);
@@ -4911,8 +4912,20 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEditarUsuActionPerformed
 
     private void btnBuscaFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaFuncionarioActionPerformed
-        DaoFuncionario daoFuncionarios = new DaoFuncionario();
-        //String tbData[] = {campo1,campo2,campo3...}
+        /*ControleFuncionario funcionario = new ControleFuncionario();
+        List<Veterinario> lista = funcionario.listarVeterinarios();        
+        if (!lista.isEmpty()){
+            for (Veterinario v:lista){
+                String nome = v.getNome();
+                String funcionarios[] = {nome};
+                for (int i=0;i<funcionarios.length;i++){
+                    System.out.println(funcionarios[i]);
+                }
+            }
+        }*/
+        DaoFuncionario dao = new DaoFuncionario();
+        List<Veterinario> lista = dao.listarFuncionarios();    
+        
     }//GEN-LAST:event_btnBuscaFuncionarioActionPerformed
 
     /**
@@ -5522,28 +5535,6 @@ public class Menu extends javax.swing.JFrame {
         }
      return equipamento;
     }
-    
-    public String getNomeTutorBusca(){
-        String nomeTutor = "";
-        if (txtNomeTutorBusca.getText().equals("")){
-            JOptionPane.showMessageDialog(null,"Favor informar o nome do Tutor para busca.","Aviso",JOptionPane.WARNING_MESSAGE);
-        }
-        else{
-            nomeTutor = txtNomeTutorBusca.getText();           
-        }
-        return nomeTutor;        
-    }
-    
-    public String getCpfTutorBusca(){
-        String nomeTutor = "";
-        if (txtCPFTutorBusca.getText().equals("")){
-            JOptionPane.showMessageDialog(null,"Favor informar o nome do Tutor para busca.","Aviso",JOptionPane.WARNING_MESSAGE);
-        }
-        else{
-            nomeTutor = txtCPFTutorBusca.getText();           
-        }
-        return nomeTutor;        
-    }   
     
     /*public boolean validaCPF_func(String cpf_Func) {
 	    int i, j, k;

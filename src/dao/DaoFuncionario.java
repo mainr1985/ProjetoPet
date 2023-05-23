@@ -6,9 +6,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import javax.swing.JOptionPane;
+import modelo.Funcionario;
 import modelo.Veterinario;
+import modelo.enums.TipoFuncionario;
 
 /**
  *
@@ -125,33 +129,26 @@ public class DaoFuncionario extends DaoFactory{
         return cargo;
     }
     
-    public String getFuncionarios() throws SQLException{
+    public List<Veterinario> getFuncionarioPorNome(String nome){
+              
+        String sql = "SELECT endereco FROM funcionario WHERE upper(nome) like ?";
+        List<Veterinario> funcionarios = new ArrayList();
         
-        //String sql = "SELECT nome, cpf, cargo, telefone, celular, email, dtAdmissao FROM funcionario WHERE upper(nome) like ? OR cpf = ?";
-        String sql = "SELECT nome, cpf, cargo, telefone, celular, email, dtAdmissao FROM funcionario WHERE cpf = ?";
         try{
             PreparedStatement ps = getConnection().prepareStatement(sql);
-            ps.setString(1, getCpfFunc());
+            ps.setString(1, nome);
             rs = ps.executeQuery();
             while (rs.next()){
-                
-                String nome = rs.getString("nome");
-                String cpf = rs.getString("cpf");
-                String cargo = rs.getString("cargo");                                
-                String telefone = rs.getString("telefone");                                
-                String celular = rs.getString("celular");
-                String email = rs.getString("email");
-                Date dtAdmissao = rs.getDate("dtAdmissao");
-                
-                SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");                
-                String admissao = formato.format(dtAdmissao); 
-                
-                //estudar clone do método para popular responsáveis aferição
+                Veterinario funcionario = new Veterinario();
+                funcionario.setNome(nome);
+                funcionario.setEndereco(rs.getString("endereco"));
+                System.out.println(funcionario.getNome() + "" + funcionario.getEndereco());
+                funcionarios.add(funcionario);
             }
         }
         catch(SQLException e){
             e.printStackTrace();
         }
-        return cargo;
+        return funcionarios;
     }
-}
+}    
