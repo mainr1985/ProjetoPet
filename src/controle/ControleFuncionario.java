@@ -134,16 +134,5 @@ public class ControleFuncionario{
     public List<Veterinario> listarVeterinarios(){
         DaoVeterinario vet = new DaoVeterinario();
         return vet.listarVeterinarios();
-    }    
-    
-    public String buscarFuncionarioNome(String nome) {
-        Veterinario funcionario = new Veterinario();
-        funcionario.setNome(nome);
-        DaoFuncionario dao = new DaoFuncionario();
-        String nomeFunc = funcionario.getNome();
-        String endereco = funcionario.getEndereco();
-        //System.out.println(nomeFunc + "" + endereco);
-        return nomeFunc;
-        //return dao.getFuncionarioPorNome(nome);
-    }
+    }        
 }    

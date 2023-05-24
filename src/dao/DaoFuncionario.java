@@ -128,21 +128,51 @@ public class DaoFuncionario extends DaoFactory{
         }
         return cargo;
     }
-    
-    public List<Veterinario> getFuncionarioPorNome(String nome){
+       
+    public List<Veterinario> listarFuncionarioPorNome(String nome) throws SQLException{
               
-        String sql = "SELECT endereco FROM funcionario WHERE upper(nome) like ?";
+        String sql = "SELECT "
+                + "         id_funcionario, "
+                + "         nome, "
+                + "         endereco, "
+                + "         telefone, "
+                + "         celular, "
+                + "         email, "
+                //+ "         cargo, "
+                + "         dtAdmissao "
+                + "FROM funcionario WHERE nome ilike concat (?,'%') ";
+        
+        //String cargo = "";
         List<Veterinario> funcionarios = new ArrayList();
         
         try{
             PreparedStatement ps = getConnection().prepareStatement(sql);
-            ps.setString(1, nome);
+            ps.setString(1, nome + "%");
             rs = ps.executeQuery();
             while (rs.next()){
-                Veterinario funcionario = new Veterinario();
-                funcionario.setNome(nome);
+                Veterinario funcionario = new Veterinario();   
+                funcionario.setCodigoFunc(rs.getInt("id_funcionario"));
+                funcionario.setNome(rs.getString("nome"));
                 funcionario.setEndereco(rs.getString("endereco"));
-                System.out.println(funcionario.getNome() + "" + funcionario.getEndereco());
+                funcionario.setTelefone(rs.getString("telefone"));
+                funcionario.setCelular(rs.getString("celular"));
+                funcionario.setEmail(rs.getString("email"));
+                
+                /*cargo = rs.getString("cargo");
+                switch(cargo){
+                    case "Administrador":
+                        funcionario.setCargo(TipoFuncionario.ADMINISTRADOR);
+                        break;
+                    case "Assistente":
+                        funcionario.setCargo(TipoFuncionario.ASSISTENTE);
+                        break;
+                    case "Veterinario":
+                        funcionario.setCargo(TipoFuncionario.VETERINARIO);
+                        break;
+                }*/
+                
+                funcionario.setDtAdmissao(rs.getDate("dtadmissao"));
+                
                 funcionarios.add(funcionario);
             }
         }

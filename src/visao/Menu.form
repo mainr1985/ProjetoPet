@@ -610,7 +610,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="painelOpcoesTutor" min="-2" pref="717" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="78" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="168" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -899,9 +899,9 @@
                           <EmptySpace min="0" pref="918" max="32767" attributes="0"/>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="14" max="32767" attributes="0"/>
                                   <Component id="jPanel20" min="-2" pref="889" max="-2" attributes="0"/>
-                                  <EmptySpace pref="19" max="32767" attributes="0"/>
+                                  <EmptySpace pref="15" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -953,10 +953,12 @@
                                           </Group>
                                           <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="txtCPFTutor2" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
-                                              <Component id="txtRgTutor1" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
                                               <Component id="txtDtNascTutor1" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
                                               <Component id="txtNomeTutor1" alignment="0" min="-2" pref="288" max="-2" attributes="0"/>
+                                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="txtRgTutor2" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="txtCPFTutor2" alignment="0" pref="149" max="32767" attributes="0"/>
+                                              </Group>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
@@ -1012,28 +1014,22 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel26" max="32767" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                                                  <Component id="jLabel58" min="-2" pref="32" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="32767" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                          <Component id="jLabel26" max="32767" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jLabel58" min="-2" pref="32" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                                           <Component id="jLabel40" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           <Component id="txtNomeTutor1" min="-2" pref="32" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                          <Component id="txtRgTutor1" min="-2" pref="34" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="txtCPFTutor2" min="-2" pref="34" max="-2" attributes="0"/>
+                                          <Component id="txtRgTutor2" min="-2" pref="32" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="txtCPFTutor2" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                              <Component id="jLabel49" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                           <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                                           <Component id="txtDtNascTutor1" min="-2" pref="34" max="-2" attributes="0"/>
                                       </Group>
@@ -1153,19 +1149,6 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="RG:"/>
                           </Properties>
-                        </Component>
-                        <Component class="javax.swing.JFormattedTextField" name="txtRgTutor1">
-                          <Properties>
-                            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                              <Format format="##.###.###-#" subtype="-1" type="5"/>
-                            </Property>
-                            <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                              <ComponentRef name="txtDtNascTutor"/>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRgTutor1ActionPerformed"/>
-                          </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel72">
                           <Properties>
@@ -1330,6 +1313,17 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalvaTutor1ActionPerformed"/>
                           </Events>
                         </Component>
+                        <Component class="javax.swing.JTextField" name="txtRgTutor2">
+                          <Properties>
+                            <Property name="focusCycleRoot" type="boolean" value="true"/>
+                            <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                              <ComponentRef name="txtCPFTutor"/>
+                            </Property>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRgTutor2ActionPerformed"/>
+                          </Events>
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -1367,10 +1361,12 @@
                                       </Group>
                                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="txtCPFTutor" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
-                                          <Component id="txtRgTutor" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
                                           <Component id="txtDtNascTutor" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
                                           <Component id="txtNomeTutor" min="-2" pref="288" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="txtRgTutor" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtCPFTutor" alignment="0" pref="149" max="32767" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
@@ -1440,9 +1436,9 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       <Component id="txtNomeTutor" min="-2" pref="32" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                      <Component id="txtRgTutor" min="-2" pref="34" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="txtRgTutor" min="-2" pref="32" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                                       <Component id="txtCPFTutor" min="-2" pref="34" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
@@ -1579,19 +1575,6 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="RG:"/>
                       </Properties>
-                    </Component>
-                    <Component class="javax.swing.JFormattedTextField" name="txtRgTutor">
-                      <Properties>
-                        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                          <Format format="##.###.###-#" subtype="-1" type="5"/>
-                        </Property>
-                        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                          <ComponentRef name="txtDtNascTutor"/>
-                        </Property>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRgTutorActionPerformed"/>
-                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel30">
                       <Properties>
@@ -1756,6 +1739,17 @@
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalvaTutorActionPerformed"/>
                       </Events>
                     </Component>
+                    <Component class="javax.swing.JTextField" name="txtRgTutor">
+                      <Properties>
+                        <Property name="focusCycleRoot" type="boolean" value="true"/>
+                        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                          <ComponentRef name="txtCPFTutor"/>
+                        </Property>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRgTutorActionPerformed"/>
+                      </Events>
+                    </Component>
                   </SubComponents>
                 </Container>
               </SubComponents>
@@ -1818,7 +1812,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jPanel44" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="220" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="310" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -2228,7 +2222,7 @@
                                       <Component id="rdbSim2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="rdbNao2" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="1" max="32767" attributes="0"/>
+                                  <EmptySpace pref="91" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel132" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="rdbPequeno2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -2852,7 +2846,7 @@
                                       <Component id="rdbGrande" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="rdbGigante" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="256" max="32767" attributes="0"/>
+                                  <EmptySpace pref="346" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -3348,22 +3342,25 @@
                                                       <Component id="txtCPF_Func" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
                                                       <Component id="cmbCargo" alignment="0" min="-2" pref="161" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <EmptySpace pref="62" max="32767" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Group type="102" attributes="0">
-                                                          <Component id="lblCrmv4" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="32767" attributes="0"/>
-                                                          <Component id="txtCrmv" min="-2" pref="120" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" attributes="0">
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Group type="102" alignment="1" attributes="0">
                                                           <Component id="jLabel242" min="-2" max="-2" attributes="0"/>
                                                           <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                                                          <Component id="txtRgFunc" min="-2" pref="120" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Group type="102" alignment="1" attributes="0">
+                                                          <Component id="lblCrmv4" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="txtCrmv" pref="120" max="32767" attributes="0"/>
+                                                      <Component id="txtRgFunc" max="32767" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace pref="71" max="32767" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
                                                       <Group type="102" attributes="0">
-                                                          <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                                                          <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                                                           <Group type="103" groupAlignment="0" attributes="0">
                                                               <Component id="txtDtAdmissao" alignment="1" min="-2" pref="136" max="-2" attributes="0"/>
                                                               <Group type="102" alignment="1" attributes="0">
@@ -3373,7 +3370,6 @@
                                                           </Group>
                                                       </Group>
                                                       <Group type="102" alignment="1" attributes="0">
-                                                          <EmptySpace max="-2" attributes="0"/>
                                                           <Component id="lblEspecialidade4" min="-2" max="-2" attributes="0"/>
                                                           <EmptySpace min="-2" pref="202" max="-2" attributes="0"/>
                                                       </Group>
@@ -3470,10 +3466,10 @@
                                           <Component id="txtCPF_Func" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                                           <Component id="jLabel221" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel242" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                                          <Component id="txtRgFunc" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                          <Component id="txtRgFunc" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="38" max="32767" attributes="0"/>
+                                  <EmptySpace pref="128" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel248" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="cmbCargo" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
@@ -3554,16 +3550,6 @@
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCPF_FuncActionPerformed"/>
-                          </Events>
-                        </Component>
-                        <Component class="javax.swing.JFormattedTextField" name="txtRgFunc">
-                          <Properties>
-                            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                              <Format format="##.###.###-#" subtype="-1" type="5"/>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRgFuncActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel242">
@@ -3801,6 +3787,17 @@
                             </Property>
                           </Properties>
                         </Component>
+                        <Component class="javax.swing.JTextField" name="txtRgFunc">
+                          <Properties>
+                            <Property name="focusCycleRoot" type="boolean" value="true"/>
+                            <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                              <ComponentRef name="txtCPFTutor"/>
+                            </Property>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRgFuncActionPerformed"/>
+                          </Events>
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -3827,7 +3824,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jPanel34" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="247" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -3843,40 +3840,39 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <Component id="jScrollPane8" min="-2" pref="633" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                                  <Component id="btnEditarFunc" min="-2" pref="93" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                                  <Component id="btnExcluirFunc" alignment="1" min="-2" pref="93" max="-2" attributes="0"/>
-                                                  <Component id="btnCancelaBuscaFunc" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jScrollPane8" min="-2" pref="860" max="-2" attributes="0"/>
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jLabel54" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel27" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Group type="102" attributes="0">
+                                                          <Component id="txtCPF_func" min="-2" pref="121" max="-2" attributes="0"/>
+                                                          <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
+                                                          <Component id="btnBuscaFuncionario" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="txtNome_Func" min="-2" pref="246" max="-2" attributes="0"/>
+                                                  </Group>
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel54" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel27" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <Component id="txtCPF_func" min="-2" pref="121" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
-                                                  <Component id="btnBuscaFuncionario" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="txtNome_Func" min="-2" pref="246" max="-2" attributes="0"/>
-                                          </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="219" max="-2" attributes="0"/>
+                                          <Component id="btnEditarFunc" min="-2" pref="93" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                                          <Component id="btnExcluirFunc" min="-2" pref="93" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                                          <Component id="btnCancelaBuscaFunc" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="96" max="32767" attributes="0"/>
+                                  <EmptySpace pref="31" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -3894,33 +3890,27 @@
                                       </Group>
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="3" attributes="0">
-                                                      <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="txtCPF_func" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                                  <Component id="btnBuscaFuncionario" min="-2" pref="34" max="-2" attributes="0"/>
-                                              </Group>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="txtCPF_func" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
-                                          <Component id="btnEditarFunc" min="-2" pref="33" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="btnExcluirFunc" min="-2" pref="33" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="btnCancelaBuscaFunc" min="-2" pref="34" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
-                                          <Component id="jScrollPane8" min="-2" pref="290" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                                          <Component id="btnBuscaFuncionario" min="-2" pref="34" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="78" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane8" min="-2" pref="389" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="btnCancelaBuscaFunc" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Component id="btnExcluirFunc" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                                      <Component id="btnEditarFunc" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="245" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -3974,14 +3964,16 @@
                           <SubComponents>
                             <Component class="javax.swing.JTable" name="jtbFuncionarios">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Tahoma" size="14" style="0"/>
+                                </Property>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                  <Table columnCount="7" rowCount="0">
+                                  <Table columnCount="6" rowCount="0">
                                     <Column editable="true" title="Nome" type="java.lang.Object"/>
                                     <Column editable="true" title="Endere&#xe7;o" type="java.lang.Object"/>
                                     <Column editable="true" title="Telefone" type="java.lang.Object"/>
                                     <Column editable="true" title="Celular" type="java.lang.Object"/>
                                     <Column editable="true" title="E-mail" type="java.lang.Object"/>
-                                    <Column editable="true" title="Cargo" type="java.lang.Object"/>
                                     <Column editable="true" title="Dt. Admiss&#xe3;o" type="java.lang.Object"/>
                                   </Table>
                                 </Property>
@@ -4056,7 +4048,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jPanel35" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="24" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -4153,9 +4145,9 @@
                                           <EmptySpace pref="57" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="jLabel201" min="-2" max="-2" attributes="0"/>
-                                              <Component id="txtRgFunc2" pref="111" max="32767" attributes="0"/>
                                               <Component id="jLabel222" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="txtDtAdmissao4" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtDtAdmissao4" alignment="0" pref="111" max="32767" attributes="0"/>
+                                              <Component id="txtRgFunc1" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -4183,11 +4175,13 @@
                                               <Component id="jLabel201" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="txtDtNascFunc4" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                                              <Component id="txtRgFunc2" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="txtDtNascFunc4" min="-2" pref="38" max="-2" attributes="0"/>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="txtRgFunc1" max="32767" attributes="0"/>
+                                                  <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="jLabel223" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel222" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -4311,16 +4305,6 @@
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCPF_Func2ActionPerformed"/>
-                          </Events>
-                        </Component>
-                        <Component class="javax.swing.JFormattedTextField" name="txtRgFunc2">
-                          <Properties>
-                            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                              <Format format="##.###.###-#" subtype="-1" type="5"/>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRgFunc2ActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel201">
@@ -4557,6 +4541,17 @@
                             <Property name="text" type="java.lang.String" value="Cancelar"/>
                           </Properties>
                         </Component>
+                        <Component class="javax.swing.JTextField" name="txtRgFunc1">
+                          <Properties>
+                            <Property name="focusCycleRoot" type="boolean" value="true"/>
+                            <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                              <ComponentRef name="txtCPFTutor"/>
+                            </Property>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRgFunc1ActionPerformed"/>
+                          </Events>
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -4680,7 +4675,7 @@
                                       <Component id="btnCancelaBuscaUsu" min="-2" pref="34" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="402" max="32767" attributes="0"/>
+                              <EmptySpace pref="492" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -4817,7 +4812,7 @@
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="764" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="854" max="32767" attributes="0"/>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -5160,7 +5155,7 @@
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="764" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="854" max="32767" attributes="0"/>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -5495,31 +5490,34 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jScrollPane3" alignment="0" min="-2" pref="649" max="-2" attributes="0"/>
                                           <Component id="jLabel98" alignment="0" min="-2" pref="69" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="btnInsereAfericao" alignment="0" min="-2" pref="103" max="-2" attributes="0"/>
-                                          <Component id="btnEditarAfericao2" alignment="0" min="-2" pref="103" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel101" min="-2" pref="35" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="txtDtIni" min="-2" pref="112" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                              <Component id="jLabel102" min="-2" pref="35" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="txtDtFim" min="-2" pref="112" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                                              <Component id="btnBuscaAfericoes" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="jScrollPane3" min="-2" pref="834" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel101" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtDtIni1" min="-2" pref="112" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                                      <Component id="jLabel102" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtDtFim1" min="-2" pref="112" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
+                                      <Component id="btnInsereAfericao" min="-2" pref="103" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                                      <Component id="btnEditarAfericao2" min="-2" pref="103" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="47" max="32767" attributes="0"/>
+                              <EmptySpace pref="44" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -5530,24 +5528,20 @@
                               <Component id="jLabel98" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtDtIni1" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                  <Component id="txtDtIni" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                   <Component id="jLabel101" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel102" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtDtFim1" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                  <Component id="txtDtFim" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                  <Component id="btnBuscaAfericoes" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane3" min="-2" pref="192" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                                      <Component id="btnInsereAfericao" min="-2" pref="33" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="btnEditarAfericao2" min="-2" pref="33" max="-2" attributes="0"/>
-                                  </Group>
+                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="jScrollPane3" min="-2" pref="275" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="btnEditarAfericao2" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Component id="btnInsereAfericao" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="431" max="32767" attributes="0"/>
+                              <EmptySpace pref="340" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -5561,14 +5555,14 @@
                         <Property name="text" type="java.lang.String" value="Per&#xed;odo:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JFormattedTextField" name="txtDtIni1">
+                    <Component class="javax.swing.JFormattedTextField" name="txtDtIni">
                       <Properties>
                         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                           <Format format="##/##/####" subtype="-1" type="5"/>
                         </Property>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDtIni1ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDtIniActionPerformed"/>
                       </Events>
                     </Component>
                     <Container class="javax.swing.JScrollPane" name="jScrollPane3">
@@ -5581,10 +5575,11 @@
                         <Component class="javax.swing.JTable" name="jtbAfericoes">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="6" rowCount="0">
+                              <Table columnCount="7" rowCount="0">
                                 <Column editable="true" title="Dia" type="java.lang.Object"/>
                                 <Column editable="true" title="Hora" type="java.lang.Object"/>
                                 <Column editable="true" title="Respons&#xe1;vel" type="java.lang.Object"/>
+                                <Column editable="true" title="Crmv" type="java.lang.Object"/>
                                 <Column editable="true" title="Temp. M&#xed;n." type="java.lang.Object"/>
                                 <Column editable="true" title="Temp M&#xe1;x." type="java.lang.Object"/>
                                 <Column editable="true" title="Observa&#xe7;&#xe3;o" type="java.lang.Object"/>
@@ -5638,14 +5633,29 @@
                         <Property name="text" type="java.lang.String" value="a"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JFormattedTextField" name="txtDtFim1">
+                    <Component class="javax.swing.JFormattedTextField" name="txtDtFim">
                       <Properties>
                         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
                           <Format format="##/##/####" subtype="-1" type="5"/>
                         </Property>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDtFim1ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDtFimActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnBuscaAfericoes">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="14" style="0"/>
+                        </Property>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/images/icons/magnifier.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Buscar"/>
+                        <Property name="actionCommand" type="java.lang.String" value="Confirmar"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscaAfericoesActionPerformed"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -5674,7 +5684,7 @@
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="764" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="854" max="32767" attributes="0"/>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -6088,7 +6098,7 @@
                                   <Component id="btnCancelar" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                   <Component id="btnSalvarAfericao" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="255" max="32767" attributes="0"/>
+                              <EmptySpace pref="345" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
