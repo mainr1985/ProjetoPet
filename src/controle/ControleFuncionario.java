@@ -134,9 +134,4 @@ public class ControleFuncionario{
         DaoVeterinario vet = new DaoVeterinario();
         return vet.listarVeterinarios();
     }        
-    
-    public List<Usuario> listarUsuarios(){
-        DaoUsuarios usuario = new DaoUsuarios();
-        return usuario.listarUsuarios();
-    }  
 }    
