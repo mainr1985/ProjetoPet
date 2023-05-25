@@ -3,16 +3,16 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import modelo.Veterinario;
 import dao.DaoFuncionario;
+import dao.DaoUsuarios;
 import dao.DaoVeterinario;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.text.Normalizer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import modelo.Usuario;
 import modelo.enums.TipoFuncionario;
 
 /**
@@ -21,7 +21,6 @@ import modelo.enums.TipoFuncionario;
  */
 public class ControleFuncionario{
 
-    private Connection c;
     private PreparedStatement ps;
     private ResultSet r;
     DaoFuncionario daoFuncionario = new DaoFuncionario();
@@ -135,4 +134,9 @@ public class ControleFuncionario{
         DaoVeterinario vet = new DaoVeterinario();
         return vet.listarVeterinarios();
     }        
+    
+    public List<Usuario> listarUsuarios(){
+        DaoUsuarios usuario = new DaoUsuarios();
+        return usuario.listarUsuarios();
+    }  
 }    

@@ -2,10 +2,12 @@ package dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import modelo.Usuario;
+import modelo.Veterinario;
 
 /**
  *
@@ -115,5 +117,47 @@ public class DaoUsuarios extends DaoFactory {
             e.printStackTrace();
         }
         return data;
-    }       
+    }
+    
+    public List<Usuario> listarUsuariosPorFuncionario(String funcionario) throws SQLException{
+              
+        String sql = "SELECT "
+                +    "      func.id_funcionario, "
+                + "         func.nome, "
+                + "         usu.nomeusu, "
+                + "         usu.senha, "
+                + "         usu.permissao, "
+                + "         usu.dtlimacesso "
+                + "FROM funcionario func "
+                + "     INNER JOIN usuario usu ON func.id_funcionario = usu.id_funcionario "
+                + "WHERE upper(func.nome) ilike concat (?,'%') ";
+        
+        List<Usuario> usuarios = new ArrayList();
+        
+        try{
+            PreparedStatement ps = getConnection().prepareStatement(sql);
+            ps.setString(1, ((Normalizer.normalize(funcionario,Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", ""))) + "%");
+            rs = ps.executeQuery();
+            while (rs.next()){
+                Usuario usuario = new Usuario();   
+                Veterinario funcionario1 = new Veterinario();
+                funcionario1.setCodigoFunc(rs.getInt("id_funcionario"));
+                funcionario1.setNome(rs.getString("nome"));
+                usuario.setFuncionario(funcionario1);
+                usuario.setUsuario(rs.getString("nomeusu"));
+                usuario.setSenha(rs.getString("senha"));
+                usuario.setPermissao(rs.getString("permissao"));
+                
+                Date data = rs.getDate("dtlimacesso");
+                if (data != null){
+                    usuario.setDtLimAcesso(data);
+                }
+                usuarios.add(usuario);
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        return usuarios;
+    }
 }

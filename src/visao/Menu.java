@@ -20,6 +20,8 @@ import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import modelo.Afericao;
 import modelo.Paciente;
+import dao.DaoUsuarios;
+import modelo.Usuario;
 
 /**
  *
@@ -373,14 +375,13 @@ public class Menu extends javax.swing.JFrame {
         jPanel32 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jtbUsuarios = new javax.swing.JTable();
-        jLabel36 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
         txtNome_Func1 = new javax.swing.JTextField();
-        txtCPF_func1 = new javax.swing.JFormattedTextField();
         btnBuscaFuncionario1 = new javax.swing.JButton();
         btnEditarUsu = new javax.swing.JButton();
         btnExcluirUsu = new javax.swing.JButton();
         btnCancelaBuscaUsu = new javax.swing.JButton();
+        jLabel237 = new javax.swing.JLabel();
         jPanel33 = new javax.swing.JPanel();
         jPanel39 = new javax.swing.JPanel();
         jLabel62 = new javax.swing.JLabel();
@@ -2475,6 +2476,11 @@ public class Menu extends javax.swing.JFrame {
         btnCancelarFunc7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnCancelarFunc7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/cancel.png"))); // NOI18N
         btnCancelarFunc7.setText("Cancelar");
+        btnCancelarFunc7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarFunc7ActionPerformed(evt);
+            }
+        });
 
         jLabel251.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel251.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "INFORMAÇÕES GERAIS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
@@ -2538,10 +2544,12 @@ public class Menu extends javax.swing.JFrame {
                                         .addComponent(lblEspecialidade4)
                                         .addGap(202, 202, 202)))))))
                 .addGap(35, 35, 35))
-            .addGroup(jPanel53Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel53Layout.createSequentialGroup()
                 .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel53Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
+                        .addContainerGap(18, Short.MAX_VALUE)
+                        .addComponent(jLabel251, javax.swing.GroupLayout.PREFERRED_SIZE, 882, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel53Layout.createSequentialGroup()
                                 .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2558,7 +2566,7 @@ public class Menu extends javax.swing.JFrame {
                                         .addComponent(btnSalvaFuncionario)
                                         .addGap(18, 18, 18)
                                         .addComponent(btnCancelarFunc7)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE))
                                     .addGroup(jPanel53Layout.createSequentialGroup()
                                         .addComponent(txtEndFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -2578,12 +2586,8 @@ public class Menu extends javax.swing.JFrame {
                                         .addGap(46, 46, 46)
                                         .addComponent(txtCelularFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(txtTelFixoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(jPanel53Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel249, javax.swing.GroupLayout.PREFERRED_SIZE, 882, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel251, javax.swing.GroupLayout.PREFERRED_SIZE, 882, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(jLabel249, javax.swing.GroupLayout.PREFERRED_SIZE, 882, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(23, 23, 23))
         );
         jPanel53Layout.setVerticalGroup(
@@ -2607,7 +2611,7 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(jLabel221)
                         .addComponent(jLabel242, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtRgFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
+                .addGap(33, 33, 33)
                 .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel248)
                     .addComponent(cmbCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2615,7 +2619,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(txtCrmv, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblCrmv4)
                     .addComponent(lblEspecialidade4))
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel249)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -2643,7 +2647,7 @@ public class Menu extends javax.swing.JFrame {
                     .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel268, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtCidadeFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(252, 252, 252))
+                .addContainerGap(357, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
@@ -2691,9 +2695,14 @@ public class Menu extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "Endereço", "Telefone", "Celular", "E-mail", "Dt. Admissão"
+                "Nome", "Endereço", "Telefone", "Celular", "E-mail", "Cargo", "Dt. Admissão"
             }
         ));
+        jtbFuncionarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jtbFuncionariosMousePressed(evt);
+            }
+        });
         jScrollPane8.setViewportView(jtbFuncionarios);
 
         btnEditarFunc.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -3154,39 +3163,34 @@ public class Menu extends javax.swing.JFrame {
 
         painelOpcoesUsu.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
+        jtbUsuarios.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jtbUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Nome", "Usuário", "Cargo"
+                "Nome", "Usuário", "Senha", "Permissão", "Limite Acesso"
             }
         ));
-        jScrollPane2.setViewportView(jtbUsuarios);
-
-        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel36.setText("CPF:");
-
-        jLabel55.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel55.setText("Nome.:");
-
-        try {
-            txtCPF_func1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtCPF_func1.setNextFocusableComponent(txtRgTutor);
-        txtCPF_func1.setSelectionColor(new java.awt.Color(255, 204, 204));
-        txtCPF_func1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCPF_func1ActionPerformed(evt);
+        jtbUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jtbUsuariosMousePressed(evt);
             }
         });
+        jScrollPane2.setViewportView(jtbUsuarios);
+
+        jLabel55.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel55.setText("Funcionário:");
 
         btnBuscaFuncionario1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnBuscaFuncionario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/magnifier.png"))); // NOI18N
         btnBuscaFuncionario1.setText("Buscar");
         btnBuscaFuncionario1.setActionCommand("Confirmar");
+        btnBuscaFuncionario1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscaFuncionario1ActionPerformed(evt);
+            }
+        });
 
         btnEditarUsu.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnEditarUsu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/form_edit.png"))); // NOI18N
@@ -3210,6 +3214,9 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jLabel237.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel237.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busca de Usuários", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
+
         javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
         jPanel32.setLayout(jPanel32Layout);
         jPanel32Layout.setHorizontalGroup(
@@ -3218,19 +3225,14 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel32Layout.createSequentialGroup()
-                        .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel55)
-                            .addComponent(jLabel36))
+                        .addComponent(jLabel55)
                         .addGap(39, 39, 39)
-                        .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel32Layout.createSequentialGroup()
-                                .addComponent(txtCPF_func1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(168, 168, 168)
-                                .addComponent(btnBuscaFuncionario1))
-                            .addComponent(txtNome_Func1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtNome_Func1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49)
+                        .addComponent(btnBuscaFuncionario1))
                     .addGroup(jPanel32Layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(49, 49, 49)
+                        .addGap(46, 46, 46)
                         .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel32Layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
@@ -3238,36 +3240,34 @@ public class Menu extends javax.swing.JFrame {
                             .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(btnExcluirUsu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(btnCancelaBuscaUsu, javax.swing.GroupLayout.Alignment.TRAILING)))))
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(85, Short.MAX_VALUE))
+            .addGroup(jPanel32Layout.createSequentialGroup()
+                .addComponent(jLabel237, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel32Layout.setVerticalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel32Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addContainerGap()
+                .addComponent(jLabel237)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNome_Func1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel32Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel36)
-                            .addComponent(txtCPF_func1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel32Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(btnBuscaFuncionario1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNome_Func1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnBuscaFuncionario1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel32Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
+                        .addGap(28, 28, 28)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel32Layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
+                        .addGap(55, 55, 55)
                         .addComponent(btnEditarUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnExcluirUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnCancelaBuscaUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(492, Short.MAX_VALUE))
+                .addContainerGap(545, Short.MAX_VALUE))
         );
 
         painelOpcoesUsu.addTab("Buscar", jPanel32);
@@ -4496,6 +4496,9 @@ public class Menu extends javax.swing.JFrame {
            (cpf.equals("777.777.777-77")) || (cpf.equals("888.888.888-88"))|| (cpf.equals("999.999.999-99"))||
            (cpf.equals("000.000.000-00"))){
               JOptionPane.showMessageDialog(null, "Digite um cpf válido.","Aviso",JOptionPane.INFORMATION_MESSAGE);
+              txtCPF_Func.setText("");
+              txtCPF_Func.requestFocus();
+              
         }
                 
          /*   else{
@@ -4539,8 +4542,7 @@ public class Menu extends javax.swing.JFrame {
                                 catch(SQLException e){
                                     e.printStackTrace();
                                 }
-                   }        
-                
+                   }       
                     catch(SQLException e){
                         e.printStackTrace();
                     }
@@ -4876,10 +4878,6 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCPF_funcActionPerformed
 
-    private void txtCPF_func1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCPF_func1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCPF_func1ActionPerformed
-
     private void btnCancelaBuscaUsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelaBuscaUsuActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelaBuscaUsuActionPerformed
@@ -4905,7 +4903,7 @@ public class Menu extends javax.swing.JFrame {
             String email = "";
             SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
             String data_admissao = "";
-            //String cargo = "";
+            TipoFuncionario cargo = null;
                         
             if(!lista.isEmpty()){
                 for (Veterinario v:lista){
@@ -4915,9 +4913,9 @@ public class Menu extends javax.swing.JFrame {
                   celular = v.getCelular();
                   email = v.getEmail();                    
                   data_admissao = formato.format(v.getDtAdmissao());
-                  //cargo = v.getCargo().descricao;
-                  
-                  String funcionarios [] = {nome1,endereco,telefone,celular,email,/*cargo,*/data_admissao};      
+                  cargo = v.getCargo();
+                  String cargoFunc = cargo.toString();
+                  String funcionarios [] = {nome1,endereco,telefone,celular,email,cargoFunc,data_admissao};      
                   DefaultTableModel tblModel = (DefaultTableModel)jtbFuncionarios.getModel();
                   tblModel.addRow(funcionarios);                        
                 }
@@ -4986,6 +4984,59 @@ public class Menu extends javax.swing.JFrame {
             ex.printStackTrace();
         }
     }//GEN-LAST:event_btnBuscaAfericoesActionPerformed
+
+    private void btnCancelarFunc7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarFunc7ActionPerformed
+        limparFuncionarioNovo();
+    }//GEN-LAST:event_btnCancelarFunc7ActionPerformed
+
+    private void btnBuscaFuncionario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaFuncionario1ActionPerformed
+        DaoUsuarios dao = new DaoUsuarios();
+        String nome = txtNome_Func1.getText();
+        try {
+            List<Usuario> lista = dao.listarUsuariosPorFuncionario(nome);
+            
+            String nome1;
+            String nomeUsuario;
+            String senha;
+            String permissao;
+            String dtLimAcesso;
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+                                    
+            if(!lista.isEmpty()){
+                for (Usuario usuario:lista){
+                  nome1 = usuario.getFuncionario().getNome();
+                  nomeUsuario = usuario.getUsuario();
+                  senha = usuario.getSenha();
+                  permissao = usuario.getPermissao();
+                  
+                  if (usuario.getDtLimAcesso()==null){
+                      dtLimAcesso = "";
+                  }
+                  else{
+                      dtLimAcesso = formato.format(usuario.getDtLimAcesso());
+                  }
+                  
+                  String usuarios [] = {nome1,nomeUsuario,senha,permissao,dtLimAcesso};      
+                  DefaultTableModel tblModel = (DefaultTableModel)jtbUsuarios.getModel();
+                  tblModel.addRow(usuarios); 
+                  System.out.println(jtbUsuarios.getSelectedRow());
+                }
+            }            
+        }
+        catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }//GEN-LAST:event_btnBuscaFuncionario1ActionPerformed
+
+    private void jtbUsuariosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtbUsuariosMousePressed
+        int opcao = jtbUsuarios.getSelectedRow();
+        System.out.println(jtbUsuarios.getValueAt(opcao, 1));
+    }//GEN-LAST:event_jtbUsuariosMousePressed
+
+    private void jtbFuncionariosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtbFuncionariosMousePressed
+        int opcao = jtbFuncionarios.getSelectedRow();
+        System.out.println(jtbFuncionarios.getValueAt(opcao, 1));
+    }//GEN-LAST:event_jtbFuncionariosMousePressed
 
     /**
      * @param args the command line arguments
@@ -5174,6 +5225,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel234;
     private javax.swing.JLabel jLabel235;
     private javax.swing.JLabel jLabel236;
+    private javax.swing.JLabel jLabel237;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel241;
     private javax.swing.JLabel jLabel242;
@@ -5200,7 +5252,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
@@ -5337,7 +5388,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField txtCPF_Func;
     private javax.swing.JFormattedTextField txtCPF_Func2;
     private javax.swing.JFormattedTextField txtCPF_func;
-    private javax.swing.JFormattedTextField txtCPF_func1;
     private javax.swing.JTextField txtCRMVResp6;
     private javax.swing.JFormattedTextField txtCelTutor;
     private javax.swing.JFormattedTextField txtCelTutor1;
@@ -5533,6 +5583,24 @@ public class Menu extends javax.swing.JFrame {
         rdbGeladeira.setSelected(false);
     }
     
+    public void limparFuncionarioNovo(){
+        txtNomeFuncNovo.setText("");
+        txtCPF_Func.setText("");
+        txtRgFunc.setText("");
+        txtDtNascFunc.setText("");
+        txtDtAdmissao.setText("");
+        txtEspecialidade.setText("");
+        txtCrmv.setText("");
+        cmbCargo.setSelectedIndex(-1);
+        txtEndFunc.setText("");
+        txtEmailFunc.setText("");
+        txtComplFunc.setText("");
+        txtTelFixoFunc.setText("");
+        txtCelularFunc.setText("");
+        txtBairroFunc.setText("");
+        txtCidadeFunc.setText("");
+    }
+    
     public void limparUsuarioNovo(){
         txtUser.setText("");
         txtSenhaUsu.setText("");        
@@ -5595,40 +5663,4 @@ public class Menu extends javax.swing.JFrame {
         }
      return equipamento;
     }
-    
-    /*public boolean validaCPF_func(String cpf_Func) {
-	    int i, j, k;
-	    int soma;
-	    int digito;
-	    int numeroI;
-	    String numero;
-	    if (cpf_Func.length() == 11){
-		numero = cpf_Func.substring(0, 9);
-		for (j=1; j<3; j++){
-                    k = 2;
-                    soma = 0;
-                    for (i= (numero.length() - 1); i>=0; i--){
-                        numeroI = Integer.parseInt(String.valueOf(numero.charAt(i)));
-                        soma = soma + numeroI * k;
-                        k = k + 1;
-                    }
-                    digito = 11 - (soma % 11);
-                    if (digito >= 10)
-                        digito = 0;
-                    numero = numero + digito;
-		}
-		
-		if (!cpf_Func.equals(numero)){
-			JOptionPane.showMessageDialog(null, "Cpf inválido !","Alerta",JOptionPane.WARNING_MESSAGE);
-			numero="";
-			txtCPF_Func.setText("");			
-		}
-		}
-                else {
-			JOptionPane.showMessageDialog(null, "Cpf deve conter 11 números !","Alerta",JOptionPane.WARNING_MESSAGE);
-		}
-		
-		return true;
-}*/
-
 }

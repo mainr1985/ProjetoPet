@@ -1,16 +1,11 @@
 package dao;
 
-import controle.ControleFuncionario;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
-import modelo.Funcionario;
 import modelo.Veterinario;
 import modelo.enums.TipoFuncionario;
 
@@ -138,11 +133,11 @@ public class DaoFuncionario extends DaoFactory{
                 + "         telefone, "
                 + "         celular, "
                 + "         email, "
-                //+ "         cargo, "
+                + "         cargo, "
                 + "         dtAdmissao "
                 + "FROM funcionario WHERE nome ilike concat (?,'%') ";
         
-        //String cargo = "";
+        String cargo = "";
         List<Veterinario> funcionarios = new ArrayList();
         
         try{
@@ -158,7 +153,7 @@ public class DaoFuncionario extends DaoFactory{
                 funcionario.setCelular(rs.getString("celular"));
                 funcionario.setEmail(rs.getString("email"));
                 
-                /*cargo = rs.getString("cargo");
+                cargo = rs.getString("cargo");
                 switch(cargo){
                     case "Administrador":
                         funcionario.setCargo(TipoFuncionario.ADMINISTRADOR);
@@ -169,7 +164,7 @@ public class DaoFuncionario extends DaoFactory{
                     case "Veterinario":
                         funcionario.setCargo(TipoFuncionario.VETERINARIO);
                         break;
-                }*/
+                }
                 
                 funcionario.setDtAdmissao(rs.getDate("dtadmissao"));
                 
