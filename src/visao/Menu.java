@@ -2549,45 +2549,43 @@ public class Menu extends javax.swing.JFrame {
                     .addGroup(jPanel53Layout.createSequentialGroup()
                         .addContainerGap(18, Short.MAX_VALUE)
                         .addComponent(jLabel251, javax.swing.GroupLayout.PREFERRED_SIZE, 882, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel53Layout.createSequentialGroup()
+                        .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel266)
+                            .addComponent(jLabel260)
+                            .addComponent(jLabel268))
+                        .addGap(46, 46, 46)
                         .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel53Layout.createSequentialGroup()
-                                .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel266)
-                                    .addComponent(jLabel260)
-                                    .addComponent(jLabel268))
-                                .addGap(46, 46, 46)
-                                .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel53Layout.createSequentialGroup()
-                                        .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtBairroFunc)
-                                            .addComponent(txtCidadeFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(140, 140, 140)
-                                        .addComponent(btnSalvaFuncionario)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(btnCancelarFunc7)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE))
-                                    .addGroup(jPanel53Layout.createSequentialGroup()
-                                        .addComponent(txtEndFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel272)
-                                        .addGap(46, 46, 46)
-                                        .addComponent(txtEmailFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtBairroFunc)
+                                    .addComponent(txtCidadeFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(140, 140, 140)
+                                .addComponent(btnSalvaFuncionario)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnCancelarFunc7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE))
                             .addGroup(jPanel53Layout.createSequentialGroup()
-                                .addComponent(jLabel265)
-                                .addGap(14, 14, 14)
-                                .addComponent(txtComplFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(45, 45, 45)
-                                .addComponent(jLabel269)
+                                .addComponent(txtEndFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel272)
                                 .addGap(46, 46, 46)
-                                .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel53Layout.createSequentialGroup()
-                                        .addComponent(jLabel271)
-                                        .addGap(46, 46, 46)
-                                        .addComponent(txtCelularFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(txtTelFixoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addComponent(jLabel249, javax.swing.GroupLayout.PREFERRED_SIZE, 882, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtEmailFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel53Layout.createSequentialGroup()
+                        .addComponent(jLabel265)
+                        .addGap(14, 14, 14)
+                        .addComponent(txtComplFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)
+                        .addComponent(jLabel269)
+                        .addGap(46, 46, 46)
+                        .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel53Layout.createSequentialGroup()
+                                .addComponent(jLabel271)
+                                .addGap(46, 46, 46)
+                                .addComponent(txtCelularFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtTelFixoFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel249, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 882, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23))
         );
         jPanel53Layout.setVerticalGroup(
@@ -2717,6 +2715,11 @@ public class Menu extends javax.swing.JFrame {
         btnExcluirFunc.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnExcluirFunc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/excluir.png"))); // NOI18N
         btnExcluirFunc.setText("Excluir");
+        btnExcluirFunc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirFuncActionPerformed(evt);
+            }
+        });
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel27.setText("CPF:");
@@ -4497,134 +4500,129 @@ public class Menu extends javax.swing.JFrame {
            (cpf.equals("000.000.000-00"))){
               JOptionPane.showMessageDialog(null, "Digite um cpf válido.","Aviso",JOptionPane.INFORMATION_MESSAGE);
               txtCPF_Func.setText("");
-              txtCPF_Func.requestFocus();
-              
         }
-                
-         /*   else{
-                validaCPF(cpf);
-            }*/
+        else if ((txtCPF_Func.getText().equals("   .   .   -  ")) || txtRgFunc.getText().equals("  .   .   - ")){
+            JOptionPane.showMessageDialog(null,"Favor verificar o preenchimento de todos os campos do formulário.","Aviso",JOptionPane.WARNING_MESSAGE);     
+        }
         else{
-        
-        //if (validaCPF(cpf)){
-        switch (cargo){
-            case 0:
-                if (txtCrmv.getText().equals("") || txtEspecialidade.getText().equals("")){
-                    JOptionPane.showMessageDialog(null,"Favor verificar o preenchimento de todos os campos do formulário.","Aviso",JOptionPane.WARNING_MESSAGE);     
-                }
-                else{
-                    try{
-                        controleFuncionario.salvarVeterinario(txtNomeFuncNovo.getText(), 
-                                                              txtRgFunc.getText(), 
-                                                              txtCPF_Func.getText(), 
-                                                              txtDtNascFunc.getText(), 
-                                                              txtDtAdmissao.getText(), 
-                                                              txtEndFunc.getText(), 
-                                                              txtComplFunc.getText(), 
-                                                              txtBairroFunc.getText(), 
-                                                              txtCidadeFunc.getText(), 
-                                                              txtTelFixoFunc.getText(), 
-                                                              txtCelularFunc.getText(), 
-                                                              txtEmailFunc.getText(), 
-                                                              TipoFuncionario.VETERINARIO, 
-                                                              Integer.parseInt(txtCrmv.getText()), 
-                                                              txtEspecialidade.getText());
+            switch (cargo){
+                case 0:
+                    if (txtCrmv.getText().equals("") || txtEspecialidade.getText().equals("")){
+                        JOptionPane.showMessageDialog(null,"Favor verificar o preenchimento de todos os campos do formulário.","Aviso",JOptionPane.WARNING_MESSAGE);     
+                    }
+                    else{
+                        try{
+                            controleFuncionario.salvarVeterinario(txtNomeFuncNovo.getText(), 
+                                                                  txtRgFunc.getText(), 
+                                                                  txtCPF_Func.getText(), 
+                                                                  txtDtNascFunc.getText(), 
+                                                                  txtDtAdmissao.getText(), 
+                                                                  txtEndFunc.getText(), 
+                                                                  txtComplFunc.getText(), 
+                                                                  txtBairroFunc.getText(), 
+                                                                  txtCidadeFunc.getText(), 
+                                                                  txtTelFixoFunc.getText(), 
+                                                                  txtCelularFunc.getText(), 
+                                                                  txtEmailFunc.getText(), 
+                                                                  TipoFuncionario.VETERINARIO, 
+                                                                  Integer.parseInt(txtCrmv.getText()), 
+                                                                  txtEspecialidade.getText());
 
-                               JOptionPane.showMessageDialog(null, "Veterinário cadastrado com sucesso. \nVocê será redirecionado para o Cadastro de Usuário");  
-                               painelMenu.setSelectedIndex(3);
-                               painelOpcoesUsu.setSelectedIndex(2);
-                               DaoFuncionario daoFuncionario = new DaoFuncionario();
-                               try{
-                                    lblNomeFunc.setText(daoFuncionario.getNomeFunc());
-                                    lblCargo.setText(daoFuncionario.getCargo());
-                                    lblPermissao.setText("Veterinario");
-                               }
-                                catch(SQLException e){
-                                    e.printStackTrace();
-                                }
-                   }       
+                                   JOptionPane.showMessageDialog(null, "Veterinário cadastrado com sucesso. \nVocê será redirecionado para o Cadastro de Usuário");  
+                                   painelMenu.setSelectedIndex(3);
+                                   painelOpcoesUsu.setSelectedIndex(2);
+                                   DaoFuncionario daoFuncionario = new DaoFuncionario();
+                                   try{
+                                        lblNomeFunc.setText(daoFuncionario.getNomeFunc());
+                                        lblCargo.setText(daoFuncionario.getCargo());
+                                        lblPermissao.setText("Veterinario");
+                                   }
+                                    catch(SQLException e){
+                                        e.printStackTrace();
+                                    }
+                       }       
+                        catch(SQLException e){
+                            e.printStackTrace();
+                        }
+                        catch(ParseException e){
+                            e.printStackTrace();
+                        }      
+                    }  
+                    break;
+                case 1:
+                    try{
+                        controleFuncionario.salvarAssistente(txtNomeFuncNovo.getText(), 
+                                                             txtRgFunc.getText(), 
+                                                             txtCPF_Func.getText(), 
+                                                             txtDtNascFunc.getText(), 
+                                                             txtDtAdmissao.getText(), 
+                                                             TipoFuncionario.ASSISTENTE,
+                                                             txtEndFunc.getText(), 
+                                                             txtComplFunc.getText(), 
+                                                             txtBairroFunc.getText(), 
+                                                             txtCidadeFunc.getText(), 
+                                                             txtTelFixoFunc.getText(), 
+                                                             txtCelularFunc.getText(), 
+                                                             txtEmailFunc.getText()
+                                                             ) ;
+                        JOptionPane.showMessageDialog(null, "Assistente cadastrado com sucesso. \nVocê será redirecionado para o Cadastro de Usuário");  
+                        painelMenu.setSelectedIndex(3);
+                        painelOpcoesUsu.setSelectedIndex(2);
+                        DaoFuncionario daoFuncionario = new DaoFuncionario();
+
+                        try{
+                            lblNomeFunc.setText(daoFuncionario.getNomeFunc());
+                            lblCargo.setText(daoFuncionario.getCargo());
+                            lblPermissao.setText("Assistente");
+                        }
+                        catch(SQLException e){
+                            e.printStackTrace();
+                        }
+                    }
+
                     catch(SQLException e){
                         e.printStackTrace();
-                    }
+                    }         
+                    catch(ParseException e){
+                        e.printStackTrace();
+                    }   
+                    break;
+                case 2:
+                    try{
+                        controleFuncionario.salvarAssistente(txtNomeFuncNovo.getText(), 
+                                                             txtRgFunc.getText(), 
+                                                             txtCPF_Func.getText(), 
+                                                             txtDtNascFunc.getText(), 
+                                                             txtDtAdmissao.getText(), 
+                                                             TipoFuncionario.ASSISTENTE,
+                                                             txtEndFunc.getText(), 
+                                                             txtComplFunc.getText(), 
+                                                             txtBairroFunc.getText(), 
+                                                             txtCidadeFunc.getText(), 
+                                                             txtTelFixoFunc.getText(), 
+                                                             txtCelularFunc.getText(), 
+                                                             txtEmailFunc.getText()
+                                                             ) ;
+                        JOptionPane.showMessageDialog(null, "Assistente cadastrado com sucesso. \nVocê será redirecionado para o Cadastro de Usuário");  
+                        painelMenu.setSelectedIndex(3);
+                        painelOpcoesUsu.setSelectedIndex(2);
+                        DaoFuncionario daoFuncionario = new DaoFuncionario();
+                        try{
+                            lblNomeFunc.setText(daoFuncionario.getNomeFunc());
+                            lblCargo.setText(daoFuncionario.getCargo());
+                            lblPermissao.setText("Assistente");
+                        }
+                        catch(SQLException e){
+                            e.printStackTrace();
+                        }                 
+                    }                
+                    catch(SQLException e){
+                        e.printStackTrace();
+                    }         
                     catch(ParseException e){
                         e.printStackTrace();
                     }      
-                }  
-                break;
-            case 1:
-                try{
-                    controleFuncionario.salvarAssistente(txtNomeFuncNovo.getText(), 
-                                                         txtRgFunc.getText(), 
-                                                         txtCPF_Func.getText(), 
-                                                         txtDtNascFunc.getText(), 
-                                                         txtDtAdmissao.getText(), 
-                                                         TipoFuncionario.ASSISTENTE,
-                                                         txtEndFunc.getText(), 
-                                                         txtComplFunc.getText(), 
-                                                         txtBairroFunc.getText(), 
-                                                         txtCidadeFunc.getText(), 
-                                                         txtTelFixoFunc.getText(), 
-                                                         txtCelularFunc.getText(), 
-                                                         txtEmailFunc.getText()
-                                                         ) ;
-                    JOptionPane.showMessageDialog(null, "Assistente cadastrado com sucesso. \nVocê será redirecionado para o Cadastro de Usuário");  
-                    painelMenu.setSelectedIndex(3);
-                    painelOpcoesUsu.setSelectedIndex(2);
-                    DaoFuncionario daoFuncionario = new DaoFuncionario();
-
-                    try{
-                        lblNomeFunc.setText(daoFuncionario.getNomeFunc());
-                        lblCargo.setText(daoFuncionario.getCargo());
-                        lblPermissao.setText("Assistente");
-                    }
-                    catch(SQLException e){
-                        e.printStackTrace();
-                    }
-                }
-                
-                catch(SQLException e){
-                    e.printStackTrace();
-                }         
-                catch(ParseException e){
-                    e.printStackTrace();
-                }   
-                break;
-            case 2:
-                try{
-                    controleFuncionario.salvarAssistente(txtNomeFuncNovo.getText(), 
-                                                         txtRgFunc.getText(), 
-                                                         txtCPF_Func.getText(), 
-                                                         txtDtNascFunc.getText(), 
-                                                         txtDtAdmissao.getText(), 
-                                                         TipoFuncionario.ASSISTENTE,
-                                                         txtEndFunc.getText(), 
-                                                         txtComplFunc.getText(), 
-                                                         txtBairroFunc.getText(), 
-                                                         txtCidadeFunc.getText(), 
-                                                         txtTelFixoFunc.getText(), 
-                                                         txtCelularFunc.getText(), 
-                                                         txtEmailFunc.getText()
-                                                         ) ;
-                    JOptionPane.showMessageDialog(null, "Assistente cadastrado com sucesso. \nVocê será redirecionado para o Cadastro de Usuário");  
-                    painelMenu.setSelectedIndex(3);
-                    painelOpcoesUsu.setSelectedIndex(2);
-                    DaoFuncionario daoFuncionario = new DaoFuncionario();
-                    try{
-                        lblNomeFunc.setText(daoFuncionario.getNomeFunc());
-                        lblCargo.setText(daoFuncionario.getCargo());
-                        lblPermissao.setText("Assistente");
-                    }
-                    catch(SQLException e){
-                        e.printStackTrace();
-                    }                 
-                }                
-                catch(SQLException e){
-                    e.printStackTrace();
-                }         
-                catch(ParseException e){
-                    e.printStackTrace();
-                }      
-        }
+            }
     }
     }//GEN-LAST:event_btnSalvaFuncionarioActionPerformed
 
@@ -5034,9 +5032,14 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jtbUsuariosMousePressed
 
     private void jtbFuncionariosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtbFuncionariosMousePressed
+        /*int opcao = jtbFuncionarios.getSelectedRow();
+        System.out.println(jtbFuncionarios.getValueAt(opcao, 1));*/
+    }//GEN-LAST:event_jtbFuncionariosMousePressed
+
+    private void btnExcluirFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirFuncActionPerformed
         int opcao = jtbFuncionarios.getSelectedRow();
         System.out.println(jtbFuncionarios.getValueAt(opcao, 1));
-    }//GEN-LAST:event_jtbFuncionariosMousePressed
+    }//GEN-LAST:event_btnExcluirFuncActionPerformed
 
     /**
      * @param args the command line arguments

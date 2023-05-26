@@ -3386,56 +3386,52 @@
                                           <EmptySpace pref="18" max="32767" attributes="0"/>
                                           <Component id="jLabel251" min="-2" pref="882" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel266" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel260" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel268" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jLabel266" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jLabel260" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jLabel268" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="txtBairroFunc" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="txtCidadeFunc" alignment="0" min="-2" pref="247" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                              <Component id="txtBairroFunc" alignment="0" max="32767" attributes="0"/>
-                                                              <Component id="txtCidadeFunc" alignment="0" min="-2" pref="247" max="-2" attributes="0"/>
-                                                          </Group>
-                                                          <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
-                                                          <Component id="btnSalvaFuncionario" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                          <Component id="btnCancelarFunc7" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace pref="185" max="32767" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="txtEndFunc" min="-2" pref="393" max="-2" attributes="0"/>
-                                                          <EmptySpace max="32767" attributes="0"/>
-                                                          <Component id="jLabel272" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                                                          <Component id="txtEmailFunc" min="-2" pref="225" max="-2" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
+                                                  <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
+                                                  <Component id="btnSalvaFuncionario" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="btnCancelarFunc7" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace pref="185" max="32767" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel265" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                                  <Component id="txtComplFunc" min="-2" pref="140" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                                                  <Component id="jLabel269" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="txtEndFunc" min="-2" pref="393" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="jLabel272" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jLabel271" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                                                          <Component id="txtCelularFunc" min="-2" pref="112" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Component id="txtTelFixoFunc" min="-2" pref="112" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                  <Component id="txtEmailFunc" min="-2" pref="225" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <Component id="jLabel249" min="-2" pref="882" max="-2" attributes="0"/>
                                       </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel265" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                          <Component id="txtComplFunc" min="-2" pref="140" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                                          <Component id="jLabel269" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel271" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                                                  <Component id="txtCelularFunc" min="-2" pref="112" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="txtTelFixoFunc" min="-2" pref="112" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="jLabel249" alignment="0" min="-2" pref="882" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                               </Group>
@@ -4009,6 +4005,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="Excluir"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluirFuncActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel27">
                           <Properties>

@@ -135,7 +135,7 @@ public class DaoFuncionario extends DaoFactory{
                 + "         email, "
                 + "         cargo, "
                 + "         dtAdmissao "
-                + "FROM funcionario WHERE nome ilike concat (?,'%') ";
+                + "FROM funcionario WHERE upper(nome) ilike concat (?,'%') ";
         
         String cargo = "";
         List<Veterinario> funcionarios = new ArrayList();

@@ -61,8 +61,9 @@ public class ControleFuncionario{
         veterinario.setEspecialidade(Normalizer.normalize(especialidade,Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", ""));        
         veterinario.setCargo(TipoFuncionario.VETERINARIO);
 
-        daoFuncionario.salvarFuncionario(veterinario);
-        new DaoVeterinario().salvar(veterinario);
+        if ()
+            daoFuncionario.salvarFuncionario(veterinario);
+            new DaoVeterinario().salvar(veterinario);        
     }             
          
     //INCLUIR ASSISTENTE
@@ -94,8 +95,8 @@ public class ControleFuncionario{
         assistente.setTelefone(telefone);
         assistente.setCelular(celular);
         assistente.setEmail(email);
-            
-        daoFuncionario.salvarFuncionario(assistente);
+        
+            daoFuncionario.salvarFuncionario(assistente);            
     }    
     
     //INCLUIR ADMINISTRADOR
@@ -126,8 +127,8 @@ public class ControleFuncionario{
         administrador.setTelefone(telefone);
         administrador.setCelular(celular);
         administrador.setEmail(email);
-            
-        daoFuncionario.salvarFuncionario(administrador);    
+        
+            daoFuncionario.salvarFuncionario(administrador);    
     }       
 
     public List<Veterinario> listarVeterinarios(){
