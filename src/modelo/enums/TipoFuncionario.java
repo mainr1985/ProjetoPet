@@ -4,7 +4,7 @@ package modelo.enums;
  * @author Maíra
  */
 public enum TipoFuncionario {
-    VETERINARIO ("Veterinário"),
+    VETERINARIO ("Veterinario"),
     ADMINISTRADOR ("Administrador"),
     ASSISTENTE ("Assistente");
     

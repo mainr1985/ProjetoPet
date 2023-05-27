@@ -41,21 +41,18 @@ public class DaoFuncionario extends DaoFactory{
                );               
     }    
         
+    public void apagarFuncionario(Veterinario funcionario) throws SQLException{
+        String delete = "DELETE FROM funcionario WHERE id_funcionario = ? ";
+        apagar(delete,
+               funcionario.getCodigoFunc());
+    }
+    
     public void alterar(Veterinario v) throws SQLException {
         /*String update = "UPDATE veterinario " +
                         "SET crmv = ?, especialidade = ? " +
                         "WHERE id_funcionario = ? ";
         update(update, v.getCrmv(),v.getEspecialidade());*/
     }
-    
-    public void alterarUsuario(Veterinario v) throws SQLException {
-        /*String update = " UPDATE veterinario " +
-                        " SET nomeusuario = ?, "
-                        + "  senha = ?, " 
-                        + "  permissao = ? "
-                        + " WHERE id_funcionario = ? ";
-        update(update, v.getNomeUsuario(),v.getSenha(), v.getPermissao());*/
-    }    
     
     public int getCodigoFuncionario() throws SQLException{
         int i=0;
@@ -89,24 +86,7 @@ public class DaoFuncionario extends DaoFactory{
         }
         return nome;
     }
-    
-    public String getCpfFunc() throws SQLException{
-        String cpf="";
-        String sql = "SELECT cpf FROM funcionario WHERE id_funcionario = ?";
-        try{
-            PreparedStatement ps = getConnection().prepareStatement(sql);
-            ps.setInt(1, getCodigoFuncionario());
-            rs = ps.executeQuery();
-            while (rs.next()){
-                cpf = rs.getString(1);                                
-            }
-        }
-        catch(SQLException e){
-            e.printStackTrace();
-        }
-        return cpf;
-    }
-    
+        
     public String getCargo() throws SQLException{
         String cargo="";
         String sql = "SELECT cargo FROM funcionario WHERE id_funcionario = ?";
@@ -142,7 +122,7 @@ public class DaoFuncionario extends DaoFactory{
         
         try{
             PreparedStatement ps = getConnection().prepareStatement(sql);
-            ps.setString(1, nome + "%");
+            ps.setString(1, "%" + nome.trim() + "%");
             rs = ps.executeQuery();
             while (rs.next()){
                 Veterinario funcionario = new Veterinario();   

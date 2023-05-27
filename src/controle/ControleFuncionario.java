@@ -3,7 +3,6 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import modelo.Veterinario;
 import dao.DaoFuncionario;
-import dao.DaoUsuarios;
 import dao.DaoVeterinario;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,8 +10,6 @@ import java.text.Normalizer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import javax.swing.JOptionPane;
-import modelo.Usuario;
 import modelo.enums.TipoFuncionario;
 
 /**
@@ -61,9 +58,8 @@ public class ControleFuncionario{
         veterinario.setEspecialidade(Normalizer.normalize(especialidade,Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", ""));        
         veterinario.setCargo(TipoFuncionario.VETERINARIO);
 
-        if ()
-            daoFuncionario.salvarFuncionario(veterinario);
-            new DaoVeterinario().salvar(veterinario);        
+        daoFuncionario.salvarFuncionario(veterinario);
+        new DaoVeterinario().salvar(veterinario);        
     }             
          
     //INCLUIR ASSISTENTE
@@ -96,7 +92,7 @@ public class ControleFuncionario{
         assistente.setCelular(celular);
         assistente.setEmail(email);
         
-            daoFuncionario.salvarFuncionario(assistente);            
+        daoFuncionario.salvarFuncionario(assistente);            
     }    
     
     //INCLUIR ADMINISTRADOR
@@ -128,9 +124,19 @@ public class ControleFuncionario{
         administrador.setCelular(celular);
         administrador.setEmail(email);
         
-            daoFuncionario.salvarFuncionario(administrador);    
+        daoFuncionario.salvarFuncionario(administrador);    
     }       
 
+    public void apagarFuncionario(String nome) throws SQLException {
+        DaoFuncionario dao = new DaoFuncionario();
+        List<Veterinario> lista = dao.listarFuncionarioPorNome(nome);
+        for (Veterinario funcionarios:lista){
+            Veterinario funcionario = new Veterinario();
+            funcionario.setCodigoFunc(funcionarios.getCodigoFunc());
+            dao.apagarFuncionario(funcionario);
+        }
+    }
+    
     public List<Veterinario> listarVeterinarios(){
         DaoVeterinario vet = new DaoVeterinario();
         return vet.listarVeterinarios();

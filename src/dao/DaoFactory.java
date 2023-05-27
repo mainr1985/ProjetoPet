@@ -44,7 +44,7 @@ public abstract class DaoFactory {
         connection.close();
     }
 
-    protected void delete(String deleteSql, Object... parametros) throws SQLException {
+    protected void apagar(String deleteSql, Object... parametros) throws SQLException {
         PreparedStatement ps = getConnection().prepareStatement(deleteSql);
 			
         for (int i = 0; i < parametros.length; i++) {
